@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+
+# Sitemaps
+Sitemap: https://ozzonehair.com/sitemap_index.xml
+Sitemap: https://ozzonehair.com/sitemap.xml

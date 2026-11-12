@@ -1,0 +1,593 @@
+export interface ServiceItem {
+  id: string;
+  slug: string;
+  title: string;
+  shortDesc: string;
+  fullDesc: string;
+  benefits: string[];
+  duration: string;
+  suitability: string;
+  icon: string;
+  image: string;
+  priceStarting: string;
+}
+
+export interface ProductItem {
+  id: string;
+  title: string;
+  category: string;
+  baseType: string;
+  hairType: string;
+  lifespan: string;
+  description: string;
+  image: string;
+  price: string;
+  rating: number;
+}
+
+export interface GalleryItem {
+  id: string;
+  clientType: string;
+  category: string;
+  ageGroup: string;
+  beforeImg: string;
+  afterImg: string;
+  solutionProvided: string;
+  recoveryTime: string;
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  date: string;
+  readTime: string;
+  image: string;
+  summary: string;
+  content: string[];
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+  category: string;
+}
+
+export interface PricingPlan {
+  id: string;
+  name: string;
+  subtitle: string;
+  price: string;
+  popular?: boolean;
+  features: string[];
+  bestFor: string;
+  ctaText: string;
+}
+
+export const SITE_INFO = {
+  name: "ozzone Hair - Hair Fixing & Replacement Studio",
+  shortName: "ozzone Hair Thiruvananthapuram",
+  tagline: "Premier Non-Surgical Hair Replacement Center in Trivandrum",
+  phone: "+91 94470 28419",
+  altPhone: "+91 98460 35782",
+  whatsapp: "+919447028419",
+  email: "consult@ozzonehair.com",
+  timing: "Mon - Sat: 9:00 AM - 7:30 PM | Sunday: By Appointment",
+  address: "2nd Floor, Capital Centre, Opp. Secretariat, MG Road, Statue Junction, Thiruvananthapuram, Kerala 695001",
+  branch2: "Pattom Medical Center Complex, Kesavadasapuram, Thiruvananthapuram, Kerala 695004",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.9818815124036!2d76.94829397576571!3d8.497554991544415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbb7217fb0eb%3A0xc3c6f1a8e2cb2955!2sStatue%2C%20Palayam%2C%20Thiruvananthapuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+};
+
+export const SERVICES_DATA: ServiceItem[] = [
+  {
+    id: "hair-patching",
+    slug: "hair-patching-service",
+    title: "Custom Hair Patching System",
+    shortDesc: "Natural human hair patch seamlessly fitted to bald areas with zero pain and instant 100% density.",
+    fullDesc: "Our high-precision hair patching service in Thiruvananthapuram is tailored to individual scalp topography. Crafted from 100% natural virgin human hair, our featherlight breathable lace bases blend imperceptibly with your natural hair texture, wave pattern, and color tone.",
+    benefits: [
+      "100% Natural Human Hair with invisible hairline",
+      "Breathable Swiss & French lace base technology",
+      "Custom cut, color blend, and salon styling included",
+      "Instant transformation in single 90-minute session"
+    ],
+    duration: "90 minutes",
+    suitability: "Male pattern baldness, crown thinning, receding hairline",
+    icon: "Scissors",
+    image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80",
+    priceStarting: "₹9,999",
+  },
+  {
+    id: "hair-bonding",
+    slug: "hair-bonding-technique",
+    title: "Dermatological Hair Bonding",
+    shortDesc: "Long-lasting secure bonding using FDA-approved hypoallergenic adhesive resins for active lifestyles.",
+    fullDesc: "Hair bonding is the perfect solution for professionals and athletes in Kerala seeking worry-free confidence. Using medical-grade, dermatologically tested hypoallergenic bonding fluids, your hair system stays rock-solid during swimming, workouts, and humid Kerala weather.",
+    benefits: [
+      "Waterproof & sweat-resistant medical grade bond",
+      "Withstands high humidity, showering, and active sports",
+      "Requires maintenance only once every 4 to 6 weeks",
+      "Non-surgical, painless, and zero downtime"
+    ],
+    duration: "120 minutes",
+    suitability: "Active lifestyles, swimmers, sports enthusiasts",
+    icon: "ShieldCheck",
+    image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80",
+    priceStarting: "₹12,499",
+  },
+  {
+    id: "hair-weaving",
+    slug: "micro-ring-hair-weaving",
+    title: "Non-Surgical Hair Weaving",
+    shortDesc: "Glue-free tracking method interlocking hair system with your existing roots using micro-tracks.",
+    fullDesc: "Ideal for clients who prefer an adhesive-free approach, our advanced micro-track hair weaving anchors the high-grade replacement unit to thin strands of your existing hair without chemicals, solvents, or heat.",
+    benefits: [
+      "Zero adhesives, chemical solvents, or glue residues",
+      "Firm mechanical anchor using micro-silicone tracks",
+      "Breathable scalp exposure for natural shampooing",
+      "Ideal for clients with sensitive or allergy-prone scalps"
+    ],
+    duration: "100 minutes",
+    suitability: "Moderate thinning, adhesive sensitivities",
+    icon: "Sparkles",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    priceStarting: "₹11,999",
+  },
+  {
+    id: "non-surgical-replacement",
+    slug: "non-surgical-hair-replacement",
+    title: "Full Scalp Non-Surgical Replacement",
+    shortDesc: "Comprehensive hair restoration for advanced alopecia and high-grade baldness without surgery.",
+    fullDesc: "Engineered for clients suffering from Alopecia Areata, Totalis, or advanced Norwood Scale 5-7 baldness. Our full cranial prosthesis delivers a full head of thick, buoyant, natural hair with customized hair direction.",
+    benefits: [
+      "Full crown and perimeter coverage",
+      "Ultra-thin skin polyurethane membrane",
+      "Micro-knotting technique mimics scalp follicles",
+      "Complete styling versatility — comb in any direction"
+    ],
+    duration: "150 minutes",
+    suitability: "Extensive baldness, alopecia, medical hair loss",
+    icon: "Award",
+    image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80",
+    priceStarting: "₹18,500",
+  },
+  {
+    id: "womens-hair-extensions",
+    slug: "womens-toppers-extensions",
+    title: "Women's Crown Toppers & Extensions",
+    shortDesc: "Discreet volumizing crown pieces and clip-in toppers designed exclusively for female hair thinning.",
+    fullDesc: "Hair thinning along the partition or crown in women can affect confidence deeply. Our silk-base toppers offer natural parting lines that simulate scalp tissue with undetectable silk injection.",
+    benefits: [
+      "Silk-top illusion with genuine scalp look",
+      "Ultra-light clip-in or semi-permanent micro-ring fix",
+      "Heat-resistant natural hair — curl, straighten, and blow-dry",
+      "Private female consulting suite with licensed stylists"
+    ],
+    duration: "75 minutes",
+    suitability: "Female pattern diffuse thinning, post-partum loss",
+    icon: "HeartHandshake",
+    image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80",
+    priceStarting: "₹14,000",
+  },
+  {
+    id: "maintenance-servicing",
+    slug: "hair-patch-service-maintenance",
+    title: "Hair Patch Servicing & Scalp Spa",
+    shortDesc: "Professional re-bonding, deep scalp cleansing, system conditioning, and precision re-styling.",
+    fullDesc: "Prolong the life of your hair system with our comprehensive monthly maintenance ritual. Includes deep detangling, ultrasonic base sanitization, scalp exfoliation, and fresh medical adhesive re-application.",
+    benefits: [
+      "Scalp detox and anti-dandruff treatment",
+      "System deep conditioning and keratin polish",
+      "Precision perimeter touch-up and adhesive reset",
+      "Quick 45-minute express turnaround available"
+    ],
+    duration: "45-60 minutes",
+    suitability: "Monthly routine for all hair patch users",
+    icon: "CheckCircle",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
+    priceStarting: "₹1,200",
+  },
+];
+
+export const PRODUCTS_DATA: ProductItem[] = [
+  {
+    id: "c22-solvent",
+    title: "C22 solvent",
+    category: "Solvents & Cleaners",
+    baseType: "Citrus-Based Fast Acting Formula",
+    hairType: "Safe for All Hair Systems & Scalp",
+    lifespan: "118ml / 4 oz",
+    description: "Citrus solution for cleaning the hair systems. C-22 is the #1 fast-acting cleaner for scalp and all hair systems. Gentle on skin, with a pleasant fresh citrus scent, and easily rinses off with soap and water.",
+    image: "/images/products/c22-solvent.webp",
+    price: "Enquire for Price",
+    rating: 5.0,
+  },
+  {
+    id: "ultrahold",
+    title: "ULTRAHOLD",
+    category: "Adhesives & Bonding",
+    baseType: "Medical Grade Waterproof Acrylic Adhesive",
+    hairType: "Lace, Poly & Skin Bases",
+    lifespan: "4+ Weeks Maximum Wear",
+    description: "Ultrahold® Power is a highly versatile, easy to use anionic styling polymer and medical-grade hair system adhesive suitable for long-lasting, waterproof, and sweat-resistant bonding in Kerala's climate.",
+    image: "/images/products/ultrahold.jpg",
+    price: "Enquire for Price",
+    rating: 5.0,
+  },
+  {
+    id: "prod-1",
+    title: "Mirage HD Ultra-Thin Skin System",
+    category: "Men's Systems",
+    baseType: "0.03mm Polyurethane Micro-Skin",
+    hairType: "100% Remy Virgin Human Hair",
+    lifespan: "3 - 5 Months",
+    description: "Our thinnest, most invisible front hairline system. The base melts into your skin tone for complete undetectable realism.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+    price: "₹18,500",
+    rating: 4.9,
+  },
+  {
+    id: "prod-2",
+    title: "Quantum French Lace Breathable Unit",
+    category: "Men's Systems",
+    baseType: "French Lace with Poly Perimeter",
+    hairType: "100% Natural Human Hair",
+    lifespan: "6 - 9 Months",
+    description: "The gold standard for Kerala's warm tropical weather. Provides optimal air and moisture transfer while retaining durability.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+    price: "₹16,000",
+    rating: 4.8,
+  },
+  {
+    id: "prod-3",
+    title: "Silk Top Crown Integration Topper",
+    category: "Women's Toppers",
+    baseType: "Triple Silk Base with Invisible Knots",
+    hairType: "100% European Remy Hair",
+    lifespan: "8 - 12 Months",
+    description: "Multi-directional parting piece that replicates real scalp tissue. Perfect for women with diffuse thinning along the midline.",
+    image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80",
+    price: "₹22,000",
+    rating: 5.0,
+  },
+  {
+    id: "prod-4",
+    title: "Mono-Filament Heavy Duty Toupee",
+    category: "Men's Systems",
+    baseType: "Fine Welded Monofilament with PU edge",
+    hairType: "100% Double Drawn Hair",
+    lifespan: "10 - 14 Months",
+    description: "Exceptional durability and high hair density. Resistant to rough handling and suited for everyday heavy duty wear.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    price: "₹14,500",
+    rating: 4.7,
+  },
+  {
+    id: "prod-5",
+    title: "Medical Scalp Bond & Solvent Care Kit",
+    category: "Accessories",
+    baseType: "Hypoallergenic Adhesive + Citrus Solvent",
+    hairType: "Formulated for Lace & Poly",
+    lifespan: "30+ Applications",
+    description: "Complete professional maintenance kit with scalp protector, moisture barrier spray, and organic solvent remover.",
+    image: "https://images.unsplash.com/photo-1608248597359-5f2182be5fa3?auto=format&fit=crop&w=800&q=80",
+    price: "₹3,200",
+    rating: 4.9,
+  },
+  {
+    id: "prod-6",
+    title: "Customized Full Cranial Medical Wig",
+    category: "Medical Solutions",
+    baseType: "Anti-Bacterial Soft Silicone Mesh",
+    hairType: "Virgin Human Hair Grade 11A",
+    lifespan: "12 - 18 Months",
+    description: "Specially designed for chemotherapy patients and alopecia totalis sufferers with ultra-sensitive scalp skin.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+    price: "₹28,000",
+    rating: 5.0,
+  },
+];
+
+export const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: "gal-1",
+    clientType: "Male - 32 Yrs, IT Professional (Technopark Trivandrum)",
+    category: "Hair Patching",
+    ageGroup: "30-35",
+    beforeImg: "/images/gallery/client_1-1.jpg",
+    afterImg: "/images/gallery/client_1-1.jpg",
+    solutionProvided: "Custom Hair Fixing & Replacement",
+    recoveryTime: "Instant 90-min transformation",
+  },
+  {
+    id: "gal-2",
+    clientType: "Male - 45 Yrs, Govt Officer (Secretariat)",
+    category: "Hair Bonding",
+    ageGroup: "45-50",
+    beforeImg: "/images/gallery/client_2-1.jpg",
+    afterImg: "/images/gallery/client_2-1.jpg",
+    solutionProvided: "Non-Surgical Hair Replacement System",
+    recoveryTime: "Zero downtime",
+  },
+  {
+    id: "gal-3",
+    clientType: "Male - 29 Yrs, Marketing Executive (Kesavadasapuram)",
+    category: "Hair Fixing",
+    ageGroup: "25-30",
+    beforeImg: "/images/gallery/client_3-1.jpg",
+    afterImg: "/images/gallery/client_3-1.jpg",
+    solutionProvided: "100% Natural Human Hair Patch",
+    recoveryTime: "Immediate same-day wear",
+  },
+  {
+    id: "gal-4",
+    clientType: "Male - 38 Yrs, Business Owner (Pattom)",
+    category: "Hair Patching",
+    ageGroup: "35-40",
+    beforeImg: "/images/gallery/client_4-1.jpg",
+    afterImg: "/images/gallery/client_4-1.jpg",
+    solutionProvided: "Dermatological Scalp Bonding Result",
+    recoveryTime: "90 minutes studio session",
+  },
+  {
+    id: "gal-5",
+    clientType: "Male - 38 Yrs, Doctor (TMC Medical College)",
+    category: "Hair Weaving",
+    ageGroup: "35-40",
+    beforeImg: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+    afterImg: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80",
+    solutionProvided: "Micro-track glue-free weaving with breathable vertex",
+    recoveryTime: "Zero irritation",
+  },
+  {
+    id: "gal-6",
+    clientType: "Female - 52 Yrs, Homemaker (Vellayambalam)",
+    category: "Women's Topper",
+    ageGroup: "50+",
+    beforeImg: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
+    afterImg: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+    solutionProvided: "Natural Wave Silk Top Topper seamlessly blended",
+    recoveryTime: "Instant volume",
+  },
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: "blog-hair-fixing-thiruvananthapuram",
+    slug: "hair-fixing-in-thiruvananthapuram",
+    title: "Hair Fixing in Thiruvananthapuram: The Complete Non-Surgical Hair Replacement Guide",
+    category: "Hair Fixing",
+    date: "November 10, 2026",
+    readTime: "6 min read",
+    image: "/images/blog/hair-fixing-in-thiruvananthapuram.jpg",
+    summary: "Complete 2026 guide to professional hair fixing in Thiruvananthapuram. Learn how non-surgical hair systems, custom hair patches, and medical bonding deliver 100% natural, undetectable results in just 90 minutes at our Trivandrum studios.",
+    content: [
+      "Hair loss and thinning affect thousands of men and women across Kerala every year. For residents in Thiruvananthapuram seeking a guaranteed, painless, and instant solution, hair fixing has emerged as the premier non-surgical alternative to invasive surgical transplants.",
+      "What is Hair Fixing? Hair fixing in Thiruvananthapuram is an advanced cosmetic hair restoration technique where a custom-crafted hair system — made exclusively with 100% natural human hair — is seamlessly integrated with your existing hair and scalp. Whether you suffer from crown baldness, receding hairlines, or diffuse thinning, hair fixing restores complete volume and a natural graduated hairline without incisions, stitches, or medication.",
+      "How Does the 90-Minute Procedure Work? At ozzone Hair Studio in Statue Junction and Pattom, the hair fixing process begins with a confidential scalp analysis. Our certified specialists create an exact mold of your thinning area, match your hair texture, density, curl pattern, and color tone, and securely bond the featherlight lace or micro-skin base using FDA-approved dermatological polymers. Finally, our senior stylists cut and style your new hair to blend flawlessly with your natural hair.",
+      "Why Hair Fixing Outperforms Hair Transplants in Kerala: Traditional hair transplant surgery requires 9 to 12 months for uncertain growth, costs upwards of ₹1 Lakh, and often leaves visible donor area scarring. In contrast, non-surgical hair fixing delivers guaranteed 100% hair density immediately in a single 90-minute session with zero downtime, zero pain, and complete styling flexibility.",
+      "Engineered for Kerala's Humid Coastal Climate: One of the most frequent questions Trivandrum clients ask is whether sweating, swimming, or humid weather will dislodge a hair patch. Modern hair systems utilize breathable Swiss and French lace bases paired with waterproof medical adhesives like Ultra Hold and Ghost Bond. You can shower daily, ride your two-wheeler through MG Road traffic, work out at the gym, and swim at Kovalam beach with 100% confidence.",
+      "Cost of Hair Fixing in Thiruvananthapuram: Professional hair fixing in Trivandrum starts from ₹8,500 for targeted crown patches, with premium custom lace systems ranging between ₹16,000 and ₹24,000. With affordable monthly maintenance averaging ₹1,000 to ₹1,500, it remains one of the most accessible aesthetic investments for your personal and professional confidence.",
+      "Book Your Free Consultation in Trivandrum: Ready to restore your natural look? Visit ozzone Hair Studio at Capital Centre, Statue Junction (Opposite Secretariat) or our Pattom branch for a free, confidential hair analysis with our certified technicians."
+    ]
+  },
+  {
+    id: "blog-1",
+    slug: "hair-patch-vs-hair-transplant-trivandrum",
+    title: "Hair Patch vs Hair Transplant: Why Non-Surgical Fixing Wins in Kerala",
+    category: "Hair Restoration",
+    date: "November 5, 2026",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80",
+    summary: "A transparent comparison of cost, surgical risks, recovery time, and guaranteed density for hair loss sufferers in Thiruvananthapuram.",
+    content: [
+      "When confronted with male pattern baldness or thinning hair, most individuals in Thiruvananthapuram weigh two major options: surgical hair transplant and non-surgical hair fixing.",
+      "Surgical hair transplants require surgical incisions, long healing periods of 9-12 months, substantial financial investment (often upwards of ₹80,000 to ₹1.5 Lakhs), and rely heavily on existing donor hair density. If donor hair is sparse, surgical results can look thin and disappointing.",
+      "Non-surgical hair patching, on the other hand, delivers instant 100% hair density within a single 90-minute session. There are zero needles, zero scars, and zero downtime. You walk into our Thiruvananthapuram clinic and walk out with your youthful look restored completely.",
+      "Moreover, Kerala's humid climate is uniquely accommodated by our breathable Swiss and French lace systems, ensuring complete scalp comfort throughout monsoon and summer."
+    ]
+  },
+  {
+    id: "blog-2",
+    slug: "how-to-care-for-hair-patch-kerala-climate",
+    title: "Essential Care Guide for Hair Systems in Kerala's Humid Climate",
+    category: "Maintenance Tips",
+    date: "October 28, 2026",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80",
+    summary: "Practical tips to protect your hair patch adhesive and base from coastal moisture, sweat, and sea salt in Trivandrum.",
+    content: [
+      "Thiruvananthapuram's coastal location brings high humidity and tropical warmth. Clients often ask if sweating or rainfall will affect their hair patch.",
+      "With medical-grade waterproof polymers like Ultra Hold and Ghost Bond, sweat does not dissolve the adhesive bond. However, regular scalp care is essential to maintain optimal hygiene.",
+      "Key maintenance habits include using sulfate-free shampoos, applying leave-in argan serum to hair ends to prevent dryness, and scheduling professional servicing every 3 to 4 weeks.",
+      "Always pat dry with a soft microfiber towel after swimming in Kovalam or working out in the gym, rather than rubbing vigorously."
+    ]
+  },
+  {
+    id: "blog-3",
+    slug: "top-5-misconceptions-about-hair-fixing",
+    title: "5 Common Myths About Non-Surgical Hair Fixing Debunked",
+    category: "Hair Myths",
+    date: "October 14, 2026",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    summary: "Discover why modern hair systems are completely indistinguishable from real hair, debunking outdated wig stereotypes.",
+    content: [
+      "Myth 1: 'Hair patches look fake like traditional wigs.' Fact: Modern lace bases use single hair knotting that mimics real hair follicles emerging from your scalp.",
+      "Myth 2: 'It can fall off during wind or sports.' Fact: Dermatological bonding withstands up to 25 kg of direct tensile pull, keeping it secure while running, swimming, or riding two-wheelers.",
+      "Myth 3: 'It causes damage to remaining hair.' Fact: Breathable bases allow natural hair under the perimeter to grow normally without follicle damage.",
+      "Myth 4: 'Only elderly men use hair patches.' Fact: Over 60% of our clients in Trivandrum are young professionals aged 22-38 looking for confidence at work and weddings."
+    ]
+  },
+  {
+    id: "blog-4",
+    slug: "womens-hair-loss-solutions-thiruvananthapuram",
+    title: "Discreet Hair Restoration Solutions for Women in Trivandrum",
+    category: "Women's Health",
+    date: "September 30, 2026",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80",
+    summary: "How silk crown toppers provide natural volume and partition coverage for women experiencing hormonal or stress-related hair thinning.",
+    content: [
+      "Hair loss in women is often accompanied by emotional stress and hesitance to seek help. Unlike men who experience receding hairlines, women typically experience diffuse thinning across the crown and widened parting lines.",
+      "Our specialized Women's Silk Toppers clip effortlessly into your natural hair or are secured with semi-permanent micro-rings, blending invisibly with your hair color and texture.",
+      "We provide private, confidential consulting rooms staffed by experienced female hair stylists at our Statue Junction and Pattom clinics."
+    ]
+  },
+  {
+    id: "blog-5",
+    slug: "understanding-hair-patch-pricing-in-kerala",
+    title: "How Much Does Hair Fixing Cost in Thiruvananthapuram? Complete Pricing Breakdown",
+    category: "Pricing Guide",
+    date: "September 18, 2026",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    summary: "Everything you need to know about hair patch costs, base materials, customization levels, and ongoing servicing charges.",
+    content: [
+      "Hair patch costs in Thiruvananthapuram depend on three factors: base construction (Lace, Silk, or Thin-Skin PU), hair grade (Standard Remy vs 100% Virgin Cuticle Hair), and custom size.",
+      "Basic systems range from ₹8,500 to ₹12,000, while premium Swiss Lace and European Hair Systems range between ₹16,000 and ₹26,000.",
+      "Monthly maintenance averages ₹1,000 to ₹1,500, making hair fixing one of the most cost-effective aesthetic investments compared to repeated PRP sessions or expensive surgeries."
+    ]
+  },
+  {
+    id: "blog-6",
+    slug: "swimming-gym-shower-with-hair-patch",
+    title: "Can You Swim, Gym, and Shower with a Hair Patch? The Ultimate Lifestyle Guide",
+    category: "Lifestyle",
+    date: "September 02, 2026",
+    readTime: "4 min read",
+    image: "/images/blog/hair-patch-lifestyle-swimming-gym.jpg",
+    summary: "Live an unrestricted life: ride your bike without a helmet cap, dive into the pool, and wash your hair normally.",
+    content: [
+      "One of the biggest concerns for prospective clients in Trivandrum is whether a hair system will limit their active lifestyle.",
+      "The answer is a resounding NO. Medical poly-adhesive creates a waterproof barrier that resists chlorine, ocean salt, and sweat.",
+      "You can shower daily, style your hair with wax or gel, and ride your motorbike across Thiruvananthapuram with complete freedom."
+    ]
+  }
+];
+
+export const FAQS_DATA: FAQItem[] = [
+  {
+    question: "What is non-surgical hair fixing and how does it work?",
+    answer: "Non-surgical hair fixing is a modern, painless hair restoration procedure where a customized hair system made of 100% natural human hair is attached to the scalp using medical-grade adhesive (hair bonding) or micro-tracks (hair weaving). It seamlessly merges with your natural hair, restoring your hairline and full crown density instantly without surgery or incisions.",
+    category: "General"
+  },
+  {
+    question: "Can anyone notice that I am wearing a hair patch?",
+    answer: "No. Our hair systems feature ultra-thin, breathable French/Swiss lace and micro-skin bases. Individual hairs are hand-knotted to replicate real follicles growing naturally from your scalp. The hairline is graduated and matched precisely to your hair texture, wave pattern, and color, making it virtually undetectable even from inches away.",
+    category: "Appearance"
+  },
+  {
+    question: "How long does a hair patch stay attached before maintenance?",
+    answer: "Depending on your scalp oiliness, sweat levels, and lifestyle, a bonded hair system typically stays securely attached for 3 to 5 weeks. After this period, you visit our studio in Thiruvananthapuram for a routine 45-minute service where the unit is cleaned, deep conditioned, and re-secured.",
+    category: "Maintenance"
+  },
+  {
+    question: "Can I shower, shampoo, swim, and ride a bike with it?",
+    answer: "Yes, 100%! Our medical-grade bonding adhesives are completely waterproof and sweat-resistant. You can take hot showers, swim in chlorinated pools or the sea, work out at the gym, and ride your bike with a helmet without any fear of detachment.",
+    category: "Lifestyle"
+  },
+  {
+    question: "Is the procedure painful or does it have side effects?",
+    answer: "Hair fixing is completely non-invasive, 100% pain-free, and has zero side effects. We use hypoallergenic, FDA-approved dermatological bonding agents that are gentle on sensitive scalps.",
+    category: "Safety"
+  },
+  {
+    question: "What is the lifespan of a premium hair patch?",
+    answer: "Depending on the base type and maintenance care, a high-quality human hair system lasts between 8 to 14 months. Ultra-thin skin bases last 4 to 6 months due to their delicate invisible perimeter, while fine monofilament systems can last up to 14 to 18 months.",
+    category: "Durability"
+  },
+  {
+    question: "How much does hair fixing cost in Thiruvananthapuram?",
+    answer: "Our hair fixing packages in Trivandrum start from ₹8,999 for standard breathable systems up to ₹24,999 for ultra-premium HD Swiss lace systems. We provide transparent upfront pricing with zero hidden charges, including initial styling, haircut, and first wash.",
+    category: "Cost"
+  },
+  {
+    question: "Do you offer private consultation rooms in Trivandrum?",
+    answer: "Yes, client privacy and comfort are our highest priorities. Our clinics at Statue Junction (MG Road) and Pattom feature private consultation suites for both male and female clients with dedicated styling specialists.",
+    category: "Consultation"
+  }
+];
+
+export const PRICING_PLANS: PricingPlan[] = [
+  {
+    id: "essential",
+    name: "Essential Breathable",
+    subtitle: "Ideal for first-time clients seeking reliable daily density",
+    price: "₹9,999",
+    features: [
+      "100% Natural Human Hair",
+      "Fine Monofilament Breathable Base",
+      "Dermatological Hair Bonding / Weaving",
+      "Custom Haircut & Styling Included",
+      "Anti-bacterial Scalp Cleansing",
+      "30-day Free First Servicing Warranty",
+      "Lifespan: 8 - 12 Months"
+    ],
+    bestFor: "Budget-conscious professionals & college students",
+    ctaText: "Book Essential Plan"
+  },
+  {
+    id: "premium-hd",
+    name: "RonEx Royal HD Lace",
+    subtitle: "Our most popular choice — undetectable front hairline",
+    price: "₹15,999",
+    popular: true,
+    features: [
+      "100% Virgin Remy Human Hair",
+      "Ultra-Fine Swiss/French HD Lace Base",
+      "Micro-bleached Knots for Zero Visible Grid",
+      "Super-strength Waterproof Medical Bond",
+      "Fully customized hairline contour",
+      "Exclusive Scalp Serum Treatment",
+      "2 Free Service & Re-Bonding Sessions",
+      "Lifespan: 9 - 14 Months"
+    ],
+    bestFor: "Executives, wedding grooms, active lifestyles",
+    ctaText: "Choose Royal HD Lace"
+  },
+  {
+    id: "ultra-skin",
+    name: "Crown Elite Poly-Skin",
+    subtitle: "0.03mm second-skin technology for extreme realism",
+    price: "₹22,999",
+    features: [
+      "Hand-selected Grade 11A Virgin Hair",
+      "0.03mm Polyurethane Invisible Skin Base",
+      "Featherlight 35g Total System Weight",
+      "V-looped hair implantation mimics natural pores",
+      "Multi-directional 360° parting flexibility",
+      "VIP Private Studio Suite Styling",
+      "3 Free Monthly Maintenance Sessions",
+      "Dedicated Personal Stylist Support"
+    ],
+    bestFor: "Maximum realism, luxury styling, high-profile personalities",
+    ctaText: "Book Elite Consultation"
+  }
+];
+
+export const TESTIMONIALS = [
+  {
+    name: "Arun Kumar S.",
+    role: "Senior Project Lead, Technopark Trivandrum",
+    comment: "I was losing hair on my crown since age 25. After consulting ozzone Hair Fixing at Statue, my entire look transformed in just 90 minutes! My colleagues couldn't tell it wasn't my natural hair. The RonEx blue clinic environment was pristine and professional.",
+    rating: 5,
+    location: "Kazhakkoottam, Trivandrum"
+  },
+  {
+    name: "Dr. Deepa Nair",
+    role: "Assistant Professor, Medical College",
+    comment: "The women's private consultation suite in Pattom gave me tremendous comfort. My silk crown topper feels so natural, light, and comfortable even during 8-hour hospital shifts.",
+    rating: 5,
+    location: "Pattom, Thiruvananthapuram"
+  },
+  {
+    name: "Rahul Chandran",
+    role: "Entrepreneur & Fitness Enthusiast",
+    comment: "I swim 3 times a week at Jimmy George indoor pool. The medical bonding has never loosened. Unmatched service and very transparent pricing with no hidden charges.",
+    rating: 5,
+    location: "Kowdiar, Thiruvananthapuram"
+  }
+];
+
