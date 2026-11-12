@@ -1,26 +1,26 @@
 import type { Metadata } from 'next'
 import ProductsClient from './ProductsClient'
-import { PRODUCTS_DATA } from '@/data/siteData'
+import { PRODUCTS_DATA, PRODUCT_FAQS } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Products & Hair Systems in Thiruvananthapuram | ozzone Hair',
-  description: 'Explore certified hair systems, C22 solvent, Ultrahold adhesive & hair patch accessories in Thiruvananthapuram. 100% genuine human hair, lace & skin bases.',
+  title: 'Hair Fixing Products & Care Solutions in Thiruvananthapuram | ozzone Hair',
+  description: 'Explore authentic Walker Tape C-22 solvent, Ultrahold adhesive and hair system maintenance products in Thiruvananthapuram. Fast delivery and studio pickup.',
   alternates: {
     canonical: 'https://ozzonehair.com/products/',
   },
   openGraph: {
-    title: 'Hair Systems & Maintenance Products in Thiruvananthapuram | ozzone Hair',
-    description: 'Certified men & women hair systems, C-22 solvent, Ultrahold adhesive and hair patch tapes in Trivandrum. 100% human hair systems.',
+    title: 'Hair Fixing Products & Maintenance Solutions | ozzone Hair Thiruvananthapuram',
+    description: 'Certified C-22 solvent, Ultrahold bonding adhesive and professional hair patch maintenance products in Trivandrum.',
     url: 'https://ozzonehair.com/products/',
     siteName: 'ozzone Hair Thiruvananthapuram',
-    images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Hair Fixing Products in Thiruvananthapuram' }],
+    images: [{ url: '/images/products-hero.jpg', width: 1200, height: 630, alt: 'Hair Fixing Products in Thiruvananthapuram' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Products & Hair Systems in Thiruvananthapuram',
-    description: 'Certified hair systems, C-22 solvent, Ultrahold bonding adhesive in Trivandrum.',
-    images: ['/images/hero-indian-hair.jpg'],
+    title: 'Hair Fixing Products & Maintenance Solutions | ozzone Hair',
+    description: 'Certified Walker Tape C-22 solvent & Ultrahold bonding adhesive in Trivandrum.',
+    images: ['/images/products-hero.jpg'],
   },
 }
 
@@ -54,6 +54,19 @@ const breadcrumbSchema = {
   ],
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: PRODUCT_FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+}
+
 export default function ProductsPage() {
   return (
     <>
@@ -64,6 +77,10 @@ export default function ProductsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ProductsClient />
     </>
