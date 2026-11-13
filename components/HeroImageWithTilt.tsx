@@ -1,13 +1,12 @@
 'use client'
 
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion'
-import { Sparkles, MapPin } from 'lucide-react'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { Sparkles } from 'lucide-react'
 
 export default function HeroImageWithTilt() {
   const cardRef = useRef<HTMLDivElement>(null)
-  const [region, setRegion] = useState<'kerala' | 'delhi'>('kerala')
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -35,46 +34,8 @@ export default function HeroImageWithTilt() {
     y.set(0)
   }
 
-  const currentImage = region === 'kerala'
-    ? '/images/hero-kerala-before-after-mobile.jpg'
-    : '/images/hero-delhi-before-after-mobile.jpg'
-
-  const currentAlt = region === 'kerala'
-    ? 'Authentic Kerala male client before and after non-surgical hair fixing transformation at Ozzone Hair Thiruvananthapuram'
-    : 'Authentic Delhi NCR male professional before and after undetectable hair system transformation at Ozzone Hair'
-
   return (
     <div className="w-full max-w-md lg:max-w-[460px] mx-auto">
-      {/* Region Switcher Pills */}
-      <div className="flex items-center justify-center gap-2 mb-3 bg-[#003B5C]/60 backdrop-blur-md p-1.5 rounded-full border border-white/15 w-fit mx-auto shadow-lg">
-        <button
-          type="button"
-          onClick={() => setRegion('kerala')}
-          className={`flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
-            region === 'kerala'
-              ? 'bg-[#29B6EB] text-white shadow-md'
-              : 'text-white/70 hover:text-white hover:bg-white/10'
-          }`}
-          aria-label="View Kerala client hair transformation"
-        >
-          <MapPin className="w-3 h-3" />
-          Kerala / Trivandrum
-        </button>
-        <button
-          type="button"
-          onClick={() => setRegion('delhi')}
-          className={`flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
-            region === 'delhi'
-              ? 'bg-[#29B6EB] text-white shadow-md'
-              : 'text-white/70 hover:text-white hover:bg-white/10'
-          }`}
-          aria-label="View Delhi NCR client hair transformation"
-        >
-          <MapPin className="w-3 h-3" />
-          Delhi NCR
-        </button>
-      </div>
-
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -92,25 +53,16 @@ export default function HeroImageWithTilt() {
         >
           {/* Main Image Container */}
           <div className="relative rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl aspect-[3/4] sm:aspect-[4/5] bg-[#075078]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={region}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0"
-              >
-                <Image
-                  src={currentImage}
-                  alt={currentAlt}
-                  fill
-                  className="object-cover object-center"
-                  priority
-                  sizes="(max-width: 1024px) 90vw, 460px"
-                />
-              </motion.div>
-            </AnimatePresence>
+            <div className="absolute inset-0">
+              <Image
+                src="/images/hero-kerala-before-after-mobile.jpg"
+                alt="Authentic Kerala male client before and after non-surgical hair fixing transformation at Ozzone Hair Thiruvananthapuram"
+                fill
+                className="object-cover object-center"
+                priority
+                sizes="(max-width: 1024px) 90vw, 460px"
+              />
+            </div>
 
             {/* Split Screen Indicator Badges (Rendered via clean HTML UI, zero image burn-in) */}
             <div className="absolute top-3 left-3 z-10 bg-black/60 backdrop-blur-md text-white/90 border border-white/20 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-md tracking-wider uppercase shadow-md pointer-events-none">
