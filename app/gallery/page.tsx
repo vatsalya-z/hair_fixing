@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     siteName: 'ozzone Hair Thiruvananthapuram',
     images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Hair Fixing Before and After Gallery Trivandrum' }],
     type: 'website',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
@@ -28,8 +29,8 @@ const gallerySchema = {
   '@context': 'https://schema.org',
   '@type': 'ImageGallery',
   name: 'Hair Fixing Before & After Results in Thiruvananthapuram',
-  description: 'Real client non-surgical hair fixing and replacement transformations at ozzone Hair Studio Thiruvananthapuram',
-  image: GALLERY_ITEMS.map((item) => item.afterImg),
+  description: 'Real client non-surgical hair fixing and replacement transformations at ozzone Hair Studio Thiruvananthapuram, Kerala',
+  image: GALLERY_ITEMS.map((item) => item.afterImg.startsWith('http') ? item.afterImg : `https://ozzonehair.com${item.afterImg}`),
 }
 
 const breadcrumbSchema = {

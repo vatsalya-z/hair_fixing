@@ -7,23 +7,24 @@ import { SERVICES_DATA, SITE_INFO } from '@/data/siteData'
 import ServicesHeroImageWithTilt from '@/components/ServicesHeroImageWithTilt'
 
 export const metadata: Metadata = {
-  title: 'Best Hair Fixing in Trivandrum and Bangalore | Ozzone Hair',
-  description: '18+ years in non-surgical hair replacement & hair fixing in Trivandrum and Bangalore. 100% natural virgin human hair systems, undetectable results, and zero surgery.',
+  title: 'Hair Fixing Services in Thiruvananthapuram | Professional Hair Replacement Centre',
+  description: 'Professional non-surgical hair fixing, custom hair patching, dermatological bonding & micro-weaving in Thiruvananthapuram, Kerala. 100% natural human hair, 90-min results.',
   alternates: {
     canonical: 'https://ozzonehair.com/services/',
   },
   openGraph: {
-    title: 'Best Hair Fixing in Trivandrum & Bangalore | Ozzone Hair Studio',
-    description: '18+ years expertise in non-surgical hair fixing, custom hair systems, and hair bonding in Trivandrum & Bangalore. Walk out with full hair in 90 minutes.',
+    title: 'Hair Fixing Services in Thiruvananthapuram | ozzone Hair Studio',
+    description: '14+ years expertise in non-surgical hair fixing, custom hair patching, and dermatological bonding in Thiruvananthapuram, Kerala. Walk out with full hair in 90 minutes.',
     url: 'https://ozzonehair.com/services/',
-    siteName: 'Ozzone Hair Studio',
-    images: [{ url: '/images/services-hero.jpg', width: 1200, height: 630, alt: 'Best Hair Fixing in Trivandrum and Bangalore' }],
+    siteName: 'ozzone Hair Thiruvananthapuram',
+    images: [{ url: '/images/services-hero.jpg', width: 1200, height: 630, alt: 'Hair Fixing Services in Thiruvananthapuram' }],
     type: 'website',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Hair Fixing in Trivandrum and Bangalore | Ozzone Hair',
-    description: 'Instant, non-surgical hair replacement systems in Trivandrum and Bangalore. 100% natural human hair.',
+    title: 'Hair Fixing Services in Thiruvananthapuram | ozzone Hair Studio',
+    description: 'Instant, non-surgical hair replacement & hair fixing services in Trivandrum. 100% natural human hair.',
     images: ['/images/services-hero.jpg'],
   },
 }
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
 const servicesSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Hair Fixing & Non-Surgical Hair Replacement in Trivandrum and Bangalore',
-  description: 'Comprehensive hair replacement and fixing techniques at Ozzone Hair Studio Trivandrum and Bangalore',
+  name: 'Hair Fixing & Non-Surgical Hair Replacement Services in Thiruvananthapuram',
+  description: 'Comprehensive hair replacement and hair fixing techniques at ozzone Hair Studio Thiruvananthapuram, Kerala',
   itemListElement: SERVICES_DATA.map((service, index) => ({
     '@type': 'Service',
     position: index + 1,
@@ -40,12 +41,21 @@ const servicesSchema = {
     description: service.shortDesc,
     provider: {
       '@type': 'HairSalon',
-      name: 'Ozzone Hair Studio',
+      name: 'ozzone Hair - Hair Fixing & Replacement Studio',
       url: 'https://ozzonehair.com/',
+      telephone: SITE_INFO.phone,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '2nd Floor, Capital Centre, Opp. Secretariat, MG Road, Statue Junction',
+        addressLocality: 'Thiruvananthapuram',
+        addressRegion: 'Kerala',
+        postalCode: '695001',
+        addressCountry: 'IN',
+      },
     },
     areaServed: [
       { '@type': 'City', name: 'Thiruvananthapuram' },
-      { '@type': 'City', name: 'Bangalore' },
+      { '@type': 'AdministrativeArea', name: 'Kerala' },
     ],
   })),
 }
@@ -61,28 +71,28 @@ const breadcrumbSchema = {
 
 const servicesFaqs = [
   {
-    q: 'How does hair fixing at Ozzone Hair work in Trivandrum and Bangalore?',
-    a: 'Hair fixing is an instant, non-surgical procedure where a high-grade 100% natural human hair system is custom-designed and attached to your scalp using hypoallergenic bonding fluids, micro-tracks, or clips. It blends seamlessly with your existing hair, restoring full density and youthful hairline in a single 90-minute session.',
+    q: 'How does hair fixing at ozzone Hair work in Thiruvananthapuram?',
+    a: 'Hair fixing is an instant, non-surgical procedure where a high-grade 100% natural human hair system is custom-designed and attached to your scalp using hypoallergenic medical bonding fluids, micro-tracks, or clips. It blends seamlessly with your existing hair, restoring full density and a youthful hairline in a single 90-minute session.',
   },
   {
     q: 'What are the main advantages of hair fixing compared to hair transplant surgery?',
-    a: 'Unlike hair transplants which require invasive surgery, scalp incisions, donor follicles, and months of waiting with unpredictable growth, hair fixing gives immediate results in 90 minutes, involves zero surgery, zero pain, zero downtime, and is 100% reversible.',
+    a: 'Unlike hair transplants which require invasive surgery, scalp incisions, donor follicles, and 9 to 12 months of waiting with unpredictable growth, hair fixing gives immediate results in 90 minutes, involves zero surgery, zero pain, zero downtime, and is 100% reversible.',
   },
   {
     q: 'How long does a hair system stay attached before needing maintenance?',
-    a: 'In Kerala’s tropical humid weather and Bangalore’s active lifestyle, our medical-grade waterproof bonds (like Ultrahold) typically hold firm for 3 to 5 weeks. After this period, clients visit our Trivandrum or Bangalore studios for a routine 45-minute cleaning, scalp exfoliation, and re-bonding service.',
+    a: 'In Kerala’s tropical humid weather, our medical-grade waterproof bonds (like Walker Tape Ultrahold) typically hold firm for 3 to 5 weeks. After this period, clients visit our Statue Junction or Pattom studios in Trivandrum for a routine 45-minute cleaning, scalp exfoliation, and re-bonding service.',
   },
   {
     q: 'Can I shower, swim, work out, and ride a motorcycle with a bonded hair system?',
-    a: 'Yes, 100%! Our bonding adhesives are completely waterproof and sweat-resistant. You can take hot showers, swim in pools or the sea, hit the gym, and wear full-face motorcycle helmets with complete confidence.',
+    a: 'Yes, 100%! Our bonding adhesives are completely waterproof and sweat-resistant. You can take hot showers, swim in pools or the sea at Kovalam, hit the gym, and wear full-face motorcycle helmets with complete confidence.',
   },
   {
-    q: 'Do you offer hair fixing services in both Trivandrum and Bangalore?',
-    a: 'Yes, Ozzone Hair operates premier hair replacement centers in both Thiruvananthapuram (Statue Junction, MG Road & Pattom) and Bangalore. Both studios offer private consultation suites, experienced trichologists, and identical gold-standard hair systems.',
+    q: 'Where are your hair fixing studios located in Thiruvananthapuram?',
+    a: 'ozzone Hair operates two centrally located studios in Thiruvananthapuram: our Main Studio at 2nd Floor, Capital Centre, Opp. Government Secretariat, MG Road, Statue Junction, and our Branch Studio at Pattom Medical Center Complex, Kesavadasapuram. Both feature private, confidential consultation suites.',
   },
   {
     q: 'How is the hair system customized to look 100% natural?',
-    a: 'Our specialists evaluate your exact hair color shade, wave/curl pattern, hair density, scalp skin tone, and age-appropriate hairline. We hand-knot individual virgin human hairs onto ultra-fine Swiss lace or micro-skin membranes, making the hairline completely undetectable even up close.',
+    a: 'Our certified specialists evaluate your exact hair color shade, wave/curl pattern, hair density, scalp skin tone, and age-appropriate hairline. We hand-knot individual virgin human hairs onto ultra-fine Swiss lace or micro-skin membranes, making the hairline completely undetectable even from inches away.',
   },
 ]
 
@@ -140,24 +150,24 @@ export default function ServicesPage() {
               {/* Tag / Badge */}
               <div className="inline-flex items-center gap-2 bg-[#29B6EB]/20 border border-[#29B6EB]/40 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold text-[#29B6EB] tracking-wide mb-3 sm:mb-4">
                 <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
-                <span>18+ Years in Hair Replacement · Trivandrum &amp; Bangalore</span>
+                <span>14+ Years in Hair Replacement · Thiruvananthapuram, Kerala</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.18] mb-3 sm:mb-4 tracking-tight">
-                Best Hair Fixing &amp; Hair Replacement in{' '}
-                <span className="text-[#29B6EB] drop-shadow-sm">Trivandrum &amp; Bangalore</span>
+                Professional Hair Fixing &amp; Hair Replacement Services in{' '}
+                <span className="text-[#29B6EB] drop-shadow-sm">Thiruvananthapuram</span>
               </h1>
 
               {/* Subtitle */}
               <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed mb-6 font-normal max-w-xl">
-                Experience reliable, splendid hair fixing at our Trivandrum and Bangalore locations. Our expert hair restoration offers natural, undetectable results that restore your confidence and style with zero surgery, zero pain, and immediate 90-minute transformation.
+                Experience reliable, natural hair fixing at our Statue Junction and Pattom studios in Trivandrum. Our certified specialists deliver undetectable results that restore your confidence with zero surgery, zero pain, and immediate 90-minute transformations.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-7 sm:mb-8 w-full sm:w-auto">
                 <a
-                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20hair%20fixing%20services%20in%20Trivandrum%20and%20Bangalore.`}
+                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20hair%20fixing%20services%20in%20Thiruvananthapuram.`}
                   target="_blank"
                   rel="noreferrer"
                   className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-xs sm:text-sm lg:text-base px-6 py-3 rounded-lg shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
@@ -177,7 +187,7 @@ export default function ServicesPage() {
               <div className="grid grid-cols-2 gap-2.5 sm:gap-4 text-[11px] sm:text-xs lg:text-sm text-white/85 w-full pt-4 sm:pt-5 border-t border-white/15">
                 <div className="flex items-center gap-1.5 sm:gap-2 text-left">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB] shrink-0" />
-                  <span>18+ Years Industry Excellence</span>
+                  <span>14+ Years Clinical Practice</span>
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-2 text-left">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB] shrink-0" />
@@ -209,14 +219,14 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Why Choose Ozzone Hair
+              Why Choose ozzone Hair
             </span>
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-2.5 mb-2.5 sm:mt-3 sm:mb-3">
               Advantages of Our Hair Fixing &amp; Replacement Services
             </h2>
             <div className="w-14 sm:w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-3 sm:mb-4" />
             <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
-              Discover why thousands of clients in Thiruvananthapuram and Bangalore trust Ozzone Hair for natural, comfortable, and dependable hair restoration.
+              Discover why thousands of clients in Thiruvananthapuram and across Kerala trust ozzone Hair for natural, comfortable, and dependable hair restoration.
             </p>
           </div>
 
@@ -227,7 +237,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">Instant Transformation</h3>
               <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed">
-                Unlike surgical procedures that take months, hair fixing delivers immediate transformation in a single 90-minute session.
+                Unlike surgical procedures that take 9 to 12 months, hair fixing delivers immediate, 100% hair density in a single 90-minute session.
               </p>
             </div>
 
@@ -237,7 +247,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">Zero Surgery or Downtime</h3>
               <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed">
-                Hair fixing is completely non-invasive and painless with no incisions, needles, or post-surgical recovery periods.
+                Hair fixing is completely non-invasive and painless with no incisions, needles, donor scarring, or post-surgical recovery periods.
               </p>
             </div>
 
@@ -247,7 +257,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">Undetectable Realism</h3>
               <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed">
-                Every unit is handcrafted with 100% genuine virgin human hair. Micro-knotting mimics hair sprouting directly from scalp.
+                Every unit is handcrafted with 100% genuine virgin human hair. Micro-knotting replicates natural follicles emerging directly from your scalp.
               </p>
             </div>
 
@@ -255,9 +265,9 @@ export default function ServicesPage() {
               <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] font-extrabold flex items-center justify-center mb-2.5 sm:mb-4 text-xs sm:text-base">
                 04
               </div>
-              <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">Budget-Friendly Costs</h3>
+              <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">Transparent, Honest Pricing</h3>
               <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed">
-                Clear, cost-effective pricing structure with zero hidden fees, saving you substantial expenses while preserving quality.
+                Clear packages starting from ₹9,999 with zero hidden charges, covering scalp template design, haircut, salon styling, and warranty.
               </p>
             </div>
 
@@ -267,7 +277,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">100% Customized to You</h3>
               <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed">
-                Length, texture, curl pattern, density, and grey percentage are customized to authentically match your natural hair.
+                Length, texture, wave pattern, density, and natural grey percentages are matched precisely to your existing hair.
               </p>
             </div>
 
@@ -277,7 +287,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">Restores Confidence</h3>
               <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed">
-                Empowering you to look and feel your absolute best in professional, social, and personal settings without anxiety.
+                Empowering you to look and feel your absolute best in professional, social, and personal settings without hair loss anxiety.
               </p>
             </div>
           </div>
@@ -285,48 +295,48 @@ export default function ServicesPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 3 — DUAL LOCATION SPOTLIGHT: TRIVANDRUM & BANGALORE
+          SECTION 3 — DUAL CLINIC LOCATIONS IN THIRUVANANTHAPURAM
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#F3F7FB] py-12 sm:py-16 lg:py-20 border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Our Regional Studios
+              Our Trivandrum Studios
             </span>
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-2.5 mb-2.5 sm:mt-3 sm:mb-3">
-              Professional Hair Fixing Services in Trivandrum &amp; Bangalore
+              Two Convenient Hair Fixing Centers in Thiruvananthapuram
             </h2>
             <div className="w-14 sm:w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-3 sm:mb-4" />
             <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
-              Equipped with cutting-edge tools, private consultation rooms, and experienced hair replacement specialists in both major centers.
+              Equipped with modern styling suites, private consultation chambers, and certified hair replacement specialists across both locations.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 max-w-5xl mx-auto">
-            {/* Trivandrum Studio Card */}
+            {/* Main Studio Card - Statue Junction */}
             <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-5 sm:p-7 lg:p-9 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="inline-block bg-[#EBF5FB] text-[#005675] font-bold text-[11px] sm:text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-3 sm:mb-4">
-                  Kerala Center
+                  Main Studio • Statue Junction
                 </div>
                 <h3 className="text-lg sm:text-2xl font-bold text-[#075078] mb-2 sm:mb-3">
-                  Trivandrum Hair Fixing Services
+                  Statue Junction Hair Fixing Studio
                 </h3>
                 <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4 sm:mb-5">
-                  In Trivandrum, our dedicated hair technicians bring decades of hands-on expertise to deliver personalized hair systems for local clients. We understand every subtle aspect of consultations — from selecting the exact texture and shade for color blending to configuring high-breathability French lace designed specifically for Kerala&apos;s humid coastal climate.
+                  Located directly opposite the Kerala Government Secretariat on MG Road in the heart of Trivandrum’s commercial district. Our flagship studio features private suites for men and women, custom scalp mapping, high-breathability French/Swiss lace systems, and on-site servicing.
                 </p>
                 <div className="space-y-2 text-xs sm:text-sm text-[#334155] border-t border-[#E2E8F0] pt-4 mb-5 sm:mb-6">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                    <span>Statue Junction (Opp. Secretariat, MG Road) &amp; Pattom</span>
+                    <span>2nd Floor, Capital Centre, Opp. Secretariat, MG Road, Statue</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                    <span>Sweat-resistant, humidity-proof medical bonding</span>
+                    <span>Sweat-resistant, humidity-proof dermatological medical bonding</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                    <span>Direct access to Walker Tape C-22 and Ultrahold supplies</span>
+                    <span>Genuine Walker Tape C-22 and Ultrahold supplies available on-site</span>
                   </div>
                 </div>
               </div>
@@ -337,46 +347,46 @@ export default function ServicesPage() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
                 >
-                  <span>Book Trivandrum Studio &rarr;</span>
+                  <span>Book Statue Studio Consultation &rarr;</span>
                 </a>
               </div>
             </div>
 
-            {/* Bangalore Studio Card */}
+            {/* Branch Studio Card - Pattom */}
             <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-5 sm:p-7 lg:p-9 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="inline-block bg-[#EBF5FB] text-[#005675] font-bold text-[11px] sm:text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-3 sm:mb-4">
-                  Karnataka Center
+                  Branch Studio • Pattom
                 </div>
                 <h3 className="text-lg sm:text-2xl font-bold text-[#075078] mb-2 sm:mb-3">
-                  Bangalore Hair Fixing Services
+                  Pattom &amp; Kesavadasapuram Studio
                 </h3>
                 <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4 sm:mb-5">
-                  We bring the same gold standard of quality, expertise, and commitment to Bangalore, catering to the dynamic needs of a corporate and metropolitan clientele. Our Bangalore center features flexible appointment schedules to allow busy professionals to experience rapid hair replacement with complete discretion and long-lasting durability.
+                  Conveniently positioned for residents of Kesavadasapuram, Kowdiar, Medical College, and Technopark commuters. Features dedicated trichologists, flexible evening timings, private women’s consultation chambers, and express monthly maintenance re-bonding.
                 </p>
                 <div className="space-y-2 text-xs sm:text-sm text-[#334155] border-t border-[#E2E8F0] pt-4 mb-5 sm:mb-6">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                    <span>Convenient metropolitan access &amp; flexible weekend timings</span>
+                    <span>Pattom Medical Center Complex, Kesavadasapuram, Trivandrum</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                    <span>Modern styling trends tailored for corporate &amp; tech professionals</span>
+                    <span>Dedicated private consultation rooms for male &amp; female clients</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                    <span>Equipped with cutting-edge tools and premium hair replacement systems</span>
+                    <span>Express 45-minute monthly maintenance servicing available</span>
                   </div>
                 </div>
               </div>
               <div className="pt-2">
                 <a
-                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20want%20to%20inquire%20about%20Bangalore%20Hair%20Fixing%20Services.`}
+                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20want%20to%20book%20a%20consultation%20at%20Pattom%20Studio.`}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
                 >
-                  <span>Book Bangalore Studio &rarr;</span>
+                  <span>Book Pattom Studio Consultation &rarr;</span>
                 </a>
               </div>
             </div>
@@ -391,10 +401,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Techniques Catalog
+              Our Core Offerings
             </span>
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-2.5 mb-2.5 sm:mt-3 sm:mb-3">
-              Advanced Hair Replacement Techniques
+              Hair Fixing &amp; Replacement Services in Detail
             </h2>
             <div className="w-14 sm:w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-3 sm:mb-4" />
             <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
@@ -418,7 +428,7 @@ export default function ServicesPage() {
                     <div className="relative h-48 xs:h-56 sm:h-72 lg:h-80 rounded-xl overflow-hidden shadow-md border-2 border-white aspect-[4/3] bg-[#075078]">
                       <Image
                         src={service.image}
-                        alt={`${service.title} - Non-Surgical Hair Replacement in Trivandrum and Bangalore`}
+                        alt={`${service.title} - Non-Surgical Hair Replacement in Thiruvananthapuram`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 1024px) 100vw, 40vw"
@@ -504,7 +514,7 @@ export default function ServicesPage() {
             </h2>
             <div className="w-14 sm:w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-3 sm:mb-4" />
             <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
-              Every 3 to 5 weeks, visit our Trivandrum or Bangalore studio for a relaxing 45-minute rejuvenation routine.
+              Every 3 to 5 weeks, visit our Statue Junction or Pattom studio in Trivandrum for a relaxing 45-minute rejuvenation routine.
             </p>
           </div>
 
@@ -518,26 +528,30 @@ export default function ServicesPage() {
               {
                 num: '02',
                 title: 'Deep Scalp Cleansing',
-                desc: 'Anti-fungal tea-tree scalp scrub removes dead skin cells and excess sebum for refreshed scalp breathing.',
+                desc: 'Antiseptic tea tree and citrus scalp scrub eliminates sweat crystals, dead skin, and excess sebum.',
               },
               {
                 num: '03',
-                title: 'Ultrasonic Conditioning',
-                desc: 'Base sanitization and deep Moroccan argan conditioning restore silkiness, shine, and natural bounce.',
+                title: 'System Conditioning',
+                desc: 'Ultrasonic acoustic bath detangles hair, followed by Moroccan argan keratin mask infusion.',
               },
               {
                 num: '04',
-                title: 'Fresh Re-Bond & Style',
-                desc: 'Fresh waterproof medical adhesive applied with precision haircut blending for an undetectable refreshed finish.',
+                title: 'Fresh Re-Bonding & Style',
+                desc: 'Application of fresh medical-grade waterproof polymer with precision hairline perimeter trim and haircut reset.',
               },
             ].map((step) => (
-              <div key={step.num} className="bg-white p-3.5 sm:p-6 lg:p-7 rounded-xl sm:rounded-2xl border border-[#E2E8F0] shadow-xs flex flex-col justify-between">
+              <div key={step.num} className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-4 sm:p-6 shadow-xs flex flex-col justify-between">
                 <div>
-                  <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-base flex items-center justify-center mb-2.5 sm:mb-4 shadow-xs">
+                  <div className="text-2xl sm:text-4xl font-black text-[#29B6EB] mb-2 sm:mb-3">
                     {step.num}
                   </div>
-                  <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">{step.title}</h3>
-                  <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed">{step.desc}</p>
+                  <h3 className="text-xs sm:text-base lg:text-lg font-bold text-[#075078] mb-1 sm:mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-relaxed">
+                    {step.desc}
+                  </p>
                 </div>
               </div>
             ))}
@@ -546,7 +560,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 6 — DIRECT CUSTOMER CARE & HELPLINE BAR
+          SECTION 6 — CONTACT / IMMEDIATE ASSISTANCE STRIP
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-gradient-to-r from-[#075078] via-[#104C88] to-[#174BA5] py-10 sm:py-12 px-4 sm:px-8 text-white">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center md:text-left">
@@ -558,15 +572,15 @@ export default function ServicesPage() {
               Perfect Solution for Your Hair Loss
             </h3>
             <p className="text-xs sm:text-base text-white/80 mt-1">
-              Customer Care Hotline: +91 77360 77110 / +91 98470 62707 / {SITE_INFO.phone}
+              Customer Care Helpline: {SITE_INFO.phone} | {SITE_INFO.altPhone}
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 shrink-0 w-full sm:w-auto">
             <a
-              href="tel:+917736077110"
+              href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
               className="bg-white hover:bg-slate-100 text-[#075078] font-bold text-xs sm:text-sm px-5 py-3 rounded-lg shadow-md transition-colors flex-1 sm:flex-initial text-center"
             >
-              Call 077360 77110
+              Call {SITE_INFO.phone}
             </a>
             <a
               href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20want%20to%20inquire%20about%20hair%20fixing.`}
@@ -591,11 +605,11 @@ export default function ServicesPage() {
               Expert Insights
             </span>
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-2.5 mb-2.5 sm:mt-3 sm:mb-3">
-              Frequently Asked Questions on Hair Fixing
+              Frequently Asked Questions on Hair Fixing in Thiruvananthapuram
             </h2>
             <div className="w-14 sm:w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-3 sm:mb-4" />
             <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto">
-              Direct answers to common questions about hair fixing, patching, maintenance, and durability in Trivandrum and Bangalore.
+              Direct answers to common questions about hair fixing, patching, maintenance, and durability in Thiruvananthapuram.
             </p>
           </div>
 
@@ -634,7 +648,7 @@ export default function ServicesPage() {
             Fits You Best?
           </h2>
           <p className="text-white/85 text-xs sm:text-base lg:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
-            Let our senior hair replacement trichologists in Trivandrum or Bangalore inspect your scalp density and suggest the ideal match. Book a free, private consultation today.
+            Let our senior hair replacement trichologists in Trivandrum inspect your scalp density and suggest the ideal match. Book a free, private consultation today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <a

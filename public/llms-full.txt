@@ -106,12 +106,12 @@
 ## 4. PRODUCTS CATALOGUE & USAGE INSTRUCTIONS
 
 ### 4.1 C-22 Solvent (Citrus Cleanser)
-- Canonical URL: `https://ozzonehair.com/products#c22-solvent`
+- Canonical URL: `https://ozzonehair.com/products/#c22-solvent`
 - Application: Spray directly on hair patch lace boundary. Allow 60 seconds to penetrate and dissolve adhesive. Lift unit gently from back to front.
 - Safety: Organic citrus extract, dermatologically safe, non-corrosive, easily rinses with mild shampoo.
 
 ### 4.2 Walker ULTRAHOLD Liquid Adhesive
-- Canonical URL: `https://ozzonehair.com/products#ultrahold`
+- Canonical URL: `https://ozzonehair.com/products/#ultrahold`
 - Application: Brush a thin, even layer onto clean, dry scalp skin. Let dry until tacky (approximately 3–5 minutes) before firmly placing the hair system.
 - Durability: Maximum wear (4+ weeks) in 80%+ relative humidity environments like Kerala.
 

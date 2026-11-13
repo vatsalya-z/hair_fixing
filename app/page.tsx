@@ -525,7 +525,7 @@ export default function HomePage() {
             <FadeInUp delay={0.1}>
               <TiltCard3D maxTilt={10} depth={15}>
                 <Link
-                  href="/products#c22-solvent"
+                  href="/products/#c22-solvent"
                   className="group ronex-card overflow-hidden block bg-[#005675] h-full card-3d-interactive border border-[#005675]/30 shadow-lg"
                 >
                   <div className="relative aspect-square overflow-hidden bg-white flex items-center justify-center p-3 sm:p-6">
@@ -550,7 +550,7 @@ export default function HomePage() {
             <FadeInUp delay={0.2}>
               <TiltCard3D maxTilt={10} depth={15}>
                 <Link
-                  href="/products#ultrahold"
+                  href="/products/#ultrahold"
                   className="group ronex-card overflow-hidden block bg-[#005675] h-full card-3d-interactive border border-[#005675]/30 shadow-lg"
                 >
                   <div className="relative aspect-square overflow-hidden bg-white flex items-center justify-center p-3 sm:p-6">

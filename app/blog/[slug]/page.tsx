@@ -18,6 +18,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = BLOG_POSTS.find((p) => p.slug === slug)
   if (!post) return { title: 'Post Not Found' }
 
+  const postImageUrl = post.image.startsWith('http')
+    ? post.image
+    : `https://ozzonehair.com${post.image}`
+
   return {
     title: `${post.title} | ozzone Hair Thiruvananthapuram Blog`,
     description: post.summary,
@@ -28,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.summary,
       url: `https://ozzonehair.com/blog/${post.slug}/`,
-      images: [{ url: post.image, width: 800, height: 500, alt: post.title }],
+      images: [{ url: postImageUrl, width: 800, height: 500, alt: post.title }],
       type: 'article',
       siteName: 'ozzone Hair Thiruvananthapuram',
       locale: 'en_IN',
@@ -37,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: post.title,
       description: post.summary,
-      images: [post.image],
+      images: [postImageUrl],
     },
   }
 }
@@ -49,13 +53,16 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound()
 
   const relatedPosts = BLOG_POSTS.filter((p) => p.id !== post.id).slice(0, 3)
+  const fullImageUrl = post.image.startsWith('http')
+    ? post.image
+    : `https://ozzonehair.com${post.image}`
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.summary,
-    image: post.image,
+    image: fullImageUrl,
     datePublished: post.date,
     dateModified: post.date,
     mainEntityOfPage: `https://ozzonehair.com/blog/${post.slug}/`,

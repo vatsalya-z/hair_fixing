@@ -87,7 +87,7 @@ export default function Footer() {
               {SERVICES_DATA.map((service) => (
                 <li key={service.id}>
                   <Link 
-                    href="/services" 
+                    href={`/services/#${service.id}`} 
                     className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors duration-150"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />

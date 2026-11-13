@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     siteName: 'ozzone Hair Thiruvananthapuram',
     images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Contact ozzone Hair Studio Thiruvananthapuram' }],
     type: 'website',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
@@ -27,11 +28,15 @@ export const metadata: Metadata = {
 const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
+  url: 'https://ozzonehair.com/contact/',
+  name: 'Contact ozzone Hair Studio Thiruvananthapuram',
+  description: 'Book your free confidential hair analysis consultation at ozzone Hair in Statue Junction or Pattom, Thiruvananthapuram.',
   mainEntity: {
     '@type': 'HairSalon',
     name: 'ozzone Hair - Hair Fixing & Replacement Studio',
     telephone: SITE_INFO.phone,
     email: SITE_INFO.email,
+    url: 'https://ozzonehair.com/',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '2nd Floor, Capital Centre, Opp. Secretariat, MG Road, Statue Junction',
@@ -45,12 +50,29 @@ const contactSchema = {
       latitude: 8.497555,
       longitude: 76.948294,
     },
+    hasMap: 'https://maps.google.com/?q=Statue+Palayam+Thiruvananthapuram',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         opens: '09:00',
         closes: '19:30',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Sunday'],
+        opens: '10:00',
+        closes: '17:00',
+      },
+    ],
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Thiruvananthapuram',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Kerala',
       },
     ],
   },

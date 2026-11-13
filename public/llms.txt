@@ -78,10 +78,10 @@
 4. Maintenance Accessories: Specialized sulfate-free shampoos, loop brushes, and conditioning mists.
 
 ### Product Descriptions & Usage Information
-- C22 Solvent (`https://ozzonehair.com/products#c22-solvent`):
+- C22 Solvent (`https://ozzonehair.com/products/#c22-solvent`):
   - Fast-acting citrus solvent for removing tape and adhesive from hair systems and scalp.
   - Gentle on skin, rinses clean with water and mild shampoo.
-- ULTRAHOLD Liquid Adhesive (`https://ozzonehair.com/products#ultrahold`):
+- ULTRAHOLD Liquid Adhesive (`https://ozzonehair.com/products/#ultrahold`):
   - Industry-leading acrylic waterproof bonding adhesive with 4+ weeks continuous hold in tropical climates.
 - Hair Patch Maintenance Guidelines:
   - Wash 2–3 times weekly using sulfate-free, alcohol-free shampoo and lukewarm water.

@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     siteName: 'ozzone Hair Thiruvananthapuram',
     images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Hair Fixing Cost in Thiruvananthapuram' }],
     type: 'website',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
@@ -41,7 +42,44 @@ const pricingSchema = {
     priceCurrency: 'INR',
     availability: 'https://schema.org/InStock',
     url: 'https://ozzonehair.com/pricing/',
+    seller: {
+      '@type': 'HairSalon',
+      name: 'ozzone Hair - Hair Fixing & Replacement Studio',
+      url: 'https://ozzonehair.com/',
+      telephone: SITE_INFO.phone,
+    },
   })),
+}
+
+const pricingFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does hair fixing cost in Thiruvananthapuram?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hair fixing at ozzone Hair in Thiruvananthapuram starts at ₹9,999 for the Essential Breathable system, ₹15,999 for the Royal HD Lace system, and ₹22,999 for the Crown Elite Poly-Skin system. Initial consultation and scalp mapping are completely free.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is included in the hair fixing package price?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Every package includes 100% natural virgin human hair, custom scalp template design, dermatological bonding, professional salon haircut, custom styling, anti-bacterial scalp cleansing, and an initial servicing warranty.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does monthly hair patch maintenance cost in Trivandrum?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Routine monthly maintenance servicing at our Statue Junction and Pattom clinics starts at ₹1,200 for standard bonding reset, and ₹1,000 for micro-track weaving adjustments.',
+      },
+    },
+  ],
 }
 
 const breadcrumbSchema = {
@@ -63,6 +101,10 @@ export default function PricingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqSchema) }}
       />
       {/* Hero Banner */}
       <HeroBanner

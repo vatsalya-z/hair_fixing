@@ -53,7 +53,7 @@ export default function ServicesHeroImageWithTilt() {
         <div className="relative rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl aspect-[4/5] bg-[#075078] w-full">
           <Image
             src="/images/services-hero.jpg"
-            alt="Hair Fixing & Non-Surgical Hair Replacement Services at Ozzone Hair Studio Trivandrum & Bangalore"
+            alt="Hair Fixing & Non-Surgical Hair Replacement Services at ozzone Hair Studio Thiruvananthapuram"
             fill
             className="object-cover object-center"
             priority
@@ -76,7 +76,7 @@ export default function ServicesHeroImageWithTilt() {
             </div>
             <div>
               <p className="text-white font-bold text-xs sm:text-sm leading-tight">18+ Years in Hair Replacement</p>
-              <p className="text-white/80 text-[10px] sm:text-xs leading-normal mt-0.5">Trivandrum &amp; Bangalore Studios</p>
+              <p className="text-white/80 text-[10px] sm:text-xs leading-normal mt-0.5">Statue &amp; Pattom Studios, Trivandrum</p>
             </div>
           </div>
         </motion.div>

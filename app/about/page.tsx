@@ -31,13 +31,13 @@ import {
 } from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
-  title: 'About Ozzone Hair | Hair Fixing & Replacement in Trivandrum',
-  description: 'Discover Ozzone Hair, offering premier hair fixing and hair replacement solutions in Thiruvananthapuram. Explore our 14+ years experience, approach, and services.',
+  title: 'About ozzone Hair | Premier Hair Fixing Studio in Thiruvananthapuram',
+  description: 'Learn about ozzone Hair, Thiruvananthapuram’s trusted non-surgical hair fixing & hair replacement studio. Over 14 years experience, 100% human hair & private suites.',
   alternates: {
     canonical: 'https://ozzonehair.com/about/',
   },
   openGraph: {
-    title: 'About Ozzone Hair | Hair Fixing & Replacement in Trivandrum',
+    title: 'About ozzone Hair | Hair Fixing & Replacement Studio Trivandrum',
     description: '14+ years providing natural, undetectable hair fixing and hair replacement in Trivandrum. Certified stylists, 100% human hair systems & private consultation suites.',
     url: 'https://ozzonehair.com/about/',
     siteName: 'ozzone Hair Thiruvananthapuram',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: '/images/about-hero-specialist.jpg',
         width: 1200,
         height: 630,
-        alt: 'About Ozzone Hair Studio Thiruvananthapuram',
+        alt: 'About ozzone Hair Studio Thiruvananthapuram',
       },
     ],
     type: 'website',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Ozzone Hair | Hair Fixing & Replacement in Trivandrum',
+    title: 'About ozzone Hair | Hair Fixing & Replacement Studio Trivandrum',
     description: '14+ years providing natural, undetectable hair fixing and hair replacement in Trivandrum.',
     images: ['/images/about-hero-specialist.jpg'],
   },
@@ -268,9 +268,8 @@ export default function AboutPage() {
 
               <FadeInUp delay={0.15} yOffset={25}>
                 <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center lg:text-left">
-                  About Ozzone Hair – Your{' '}
-                  <span className="text-[#29B6EB]">Hair Fixing &amp; Hair Replacement</span>{' '}
-                  Destination
+                  About ozzone Hair – Premier Hair Fixing &amp; Replacement Studio in{' '}
+                  <span className="text-[#29B6EB]">Thiruvananthapuram</span>
                 </h1>
               </FadeInUp>
 

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     siteName: 'ozzone Hair Thiruvananthapuram',
     images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Hair Fixing Blog Thiruvananthapuram' }],
     type: 'website',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
@@ -30,13 +31,27 @@ const blogSchema = {
   name: 'ozzone Hair Fixing & Care Blog Thiruvananthapuram',
   description: 'Educational articles and expert advice on non-surgical hair replacement, hair patching, bonding & maintenance in Kerala',
   url: 'https://ozzonehair.com/blog/',
+  publisher: {
+    '@type': 'Organization',
+    name: 'ozzone Hair - Hair Fixing & Replacement Studio',
+    url: 'https://ozzonehair.com/',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://ozzonehair.com/images/ozzone-hair-logo-dark.png',
+    },
+  },
   blogPost: BLOG_POSTS.map((post) => ({
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.summary,
     url: `https://ozzonehair.com/blog/${post.slug}/`,
     datePublished: post.date,
-    image: post.image,
+    image: post.image.startsWith('http') ? post.image : `https://ozzonehair.com${post.image}`,
+    author: {
+      '@type': 'Organization',
+      name: 'ozzone Hair Thiruvananthapuram',
+      url: 'https://ozzonehair.com/',
+    },
   })),
 }
 

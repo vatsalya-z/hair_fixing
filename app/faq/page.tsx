@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     siteName: 'ozzone Hair Thiruvananthapuram',
     images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Hair Fixing FAQs Thiruvananthapuram' }],
     type: 'website',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',

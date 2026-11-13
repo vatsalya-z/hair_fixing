@@ -53,7 +53,7 @@ export default function SolutionsHeroImageWithTilt() {
         <div className="relative rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl aspect-[4/5] bg-[#075078] w-full">
           <Image
             src="/images/solutions-hero.jpg"
-            alt="Non-Surgical Hair Solutions at Ozzone Hair Studio Trivandrum and Bangalore"
+            alt="Non-Surgical Hair Replacement Solutions at ozzone Hair Studio Thiruvananthapuram"
             fill
             className="object-cover object-center"
             priority

@@ -3,23 +3,24 @@ import ProductsClient from './ProductsClient'
 import { PRODUCTS_DATA, PRODUCT_FAQS } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Products & Care Solutions in Thiruvananthapuram | ozzone Hair',
-  description: 'Explore authentic Walker Tape C-22 solvent, Ultrahold adhesive and hair system maintenance products in Thiruvananthapuram. Fast delivery and studio pickup.',
+  title: 'Hair Fixing Products in Kerala | Walker C-22 & Ultrahold Adhesive Trivandrum',
+  description: 'Buy authentic hair fixing products in Thiruvananthapuram, Kerala. Certified Walker Tape C-22 solvent remover, Ultrahold waterproof adhesive & maintenance products at ozzone Hair.',
   alternates: {
     canonical: 'https://ozzonehair.com/products/',
   },
   openGraph: {
-    title: 'Hair Fixing Products & Maintenance Solutions | ozzone Hair Thiruvananthapuram',
-    description: 'Certified C-22 solvent, Ultrahold bonding adhesive and professional hair patch maintenance products in Trivandrum.',
+    title: 'Hair Fixing Products & Maintenance Supplies | ozzone Hair Thiruvananthapuram',
+    description: 'Certified Walker Tape C-22 solvent, Ultrahold bonding adhesive and professional hair patch maintenance products in Trivandrum, Kerala.',
     url: 'https://ozzonehair.com/products/',
     siteName: 'ozzone Hair Thiruvananthapuram',
     images: [{ url: '/images/products-hero.jpg', width: 1200, height: 630, alt: 'Hair Fixing Products in Thiruvananthapuram' }],
     type: 'website',
+    locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Products & Maintenance Solutions | ozzone Hair',
-    description: 'Certified Walker Tape C-22 solvent & Ultrahold bonding adhesive in Trivandrum.',
+    title: 'Hair Fixing Products in Kerala | Walker C-22 & Ultrahold Trivandrum',
+    description: 'Certified Walker Tape C-22 solvent & Ultrahold bonding adhesive in Trivandrum, Kerala.',
     images: ['/images/products-hero.jpg'],
   },
 }
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
 const productsSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Hair Systems & Hair Fixing Products in Thiruvananthapuram',
+  name: 'Hair Systems & Hair Fixing Products in Thiruvananthapuram, Kerala',
+  description: 'Certified hair fixing adhesives, solvent removers, and hair system maintenance products available at ozzone Hair Studio Thiruvananthapuram',
   itemListElement: PRODUCTS_DATA.map((product, i) => ({
     '@type': 'Product',
     position: i + 1,
@@ -37,10 +39,14 @@ const productsSchema = {
     category: product.category,
     offers: {
       '@type': 'Offer',
-      price: product.price.replace(/[^\d]/g, '') || '9999',
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
       url: 'https://ozzonehair.com/products/',
+      seller: {
+        '@type': 'HairSalon',
+        name: 'ozzone Hair - Hair Fixing & Replacement Studio',
+        url: 'https://ozzonehair.com/',
+      },
     },
   })),
 }
