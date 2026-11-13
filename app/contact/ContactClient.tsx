@@ -23,6 +23,12 @@ import { FadeInUp, HoverLift3D } from '@/components/MotionWrappers'
 import ContactHeroImageWithTilt from '@/components/ContactHeroImageWithTilt'
 import { SITE_INFO } from '@/data/siteData'
 
+const TIME_SLOTS = [
+  { label: 'Morning', hours: '9 AM – 12 PM', value: 'Morning (9:00 AM - 12:00 PM)' },
+  { label: 'Afternoon', hours: '12 PM – 4 PM', value: 'Afternoon (12:00 PM - 4:00 PM)' },
+  { label: 'Evening', hours: '4 PM – 7:30 PM', value: 'Evening (4:00 PM - 7:30 PM)' },
+]
+
 export default function ContactClient() {
   const [formData, setFormData] = useState({
     name: '',
@@ -194,7 +200,7 @@ export default function ContactClient() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 3 — MAIN BOOKING & CONTACT SECTION
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F3F7FB] py-16 sm:py-24 px-4 sm:px-8">
+      <section className="bg-[#F3F7FB] pt-12 pb-24 sm:py-24 px-3.5 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             {/* Left Column: Direct Contact & Studio Location Cards */}
@@ -388,12 +394,12 @@ export default function ContactClient() {
                     <span>Client Confidentiality</span>
                   </div>
                 </div>
-              </div>
+              </div>              
             </div>
 
             {/* Right Column: High-Conversion Appointment Form */}
-            <div id="booking-form" className="lg:col-span-7 scroll-mt-24">
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#E2E8F0] shadow-xl relative overflow-hidden">
+            <div id="booking-form" className="lg:col-span-7 scroll-mt-28">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#E2E8F0] shadow-xl relative overflow-hidden">
                 {/* Form header */}
                 <div className="mb-8">
                   <div className="flex items-center justify-between mb-2">
@@ -530,10 +536,10 @@ export default function ContactClient() {
                         <select
                           value={formData.branch}
                           onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all"
+                          className="w-full px-3.5 sm:px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-xs sm:text-sm outline-none bg-white transition-all cursor-pointer"
                         >
                           <option value="Statue Junction, MG Road">Statue Junction (Opp. Secretariat, MG Road)</option>
-                          <option value="Pattom, Near Medical College">Pattom Center (Near Medical College &amp; Kesavadasapuram)</option>
+                          <option value="Pattom, Near Medical College">Pattom (Near Medical College &amp; Kesavadasapuram)</option>
                         </select>
                       </div>
                     </div>
@@ -543,25 +549,31 @@ export default function ContactClient() {
                       <label className="block text-xs font-bold text-[#075078] uppercase tracking-wider mb-2">
                         Preferred Time of Day
                       </label>
-                      <div className="grid grid-cols-3 gap-3">
-                        {[
-                          'Morning (9 AM - 12 PM)',
-                          'Afternoon (12 PM - 4 PM)',
-                          'Evening (4 PM - 7:30 PM)',
-                        ].map((slot) => (
-                          <button
-                            key={slot}
-                            type="button"
-                            onClick={() => setFormData({ ...formData, preferredTime: slot })}
-                            className={`py-2 px-2 text-xs font-semibold rounded-lg border text-center transition-all ${
-                              formData.preferredTime === slot
-                                ? 'bg-[#005675] text-white border-[#005675] shadow-xs'
-                                : 'bg-[#F3F7FB] text-[#252B38] border-[#E2E8F0] hover:border-[#29B6EB]'
-                            }`}
-                          >
-                            {slot}
-                          </button>
-                        ))}
+                      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                        {TIME_SLOTS.map((slot) => {
+                          const isSelected = formData.preferredTime === slot.value
+                          return (
+                            <button
+                              key={slot.value}
+                              type="button"
+                              onClick={() => setFormData({ ...formData, preferredTime: slot.value })}
+                              className={`py-2 sm:py-2.5 px-1.5 sm:px-2 rounded-xl border text-center transition-all flex flex-col items-center justify-center min-h-[52px] touch-manipulation cursor-pointer ${
+                                isSelected
+                                  ? 'bg-[#005675] text-white border-[#005675] shadow-xs ring-2 ring-[#005675]/30'
+                                  : 'bg-[#F3F7FB] text-[#252B38] border-[#E2E8F0] hover:border-[#29B6EB] hover:bg-white'
+                              }`}
+                            >
+                              <span className="text-xs font-bold leading-tight">{slot.label}</span>
+                              <span
+                                className={`text-[10px] sm:text-[11px] mt-0.5 leading-tight font-medium ${
+                                  isSelected ? 'text-white/85' : 'text-[#64748B]'
+                                }`}
+                              >
+                                {slot.hours}
+                              </span>
+                            </button>
+                          )
+                        })}
                       </div>
                     </div>
 
@@ -580,28 +592,32 @@ export default function ContactClient() {
                     </div>
 
                     {/* High-Impact Submit Button */}
-                    <HoverLift3D>
+                    <HoverLift3D className="w-full">
                       <button
                         type="submit"
-                        className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-base py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2.5"
+                        className="w-full bg-[#25D366] hover:bg-[#20bd5a] active:bg-[#1ea950] text-white font-bold py-3.5 sm:py-4 px-4 sm:px-6 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2.5 sm:gap-3 text-center touch-manipulation cursor-pointer group"
                       >
-                        <FaWhatsapp className="w-5 h-5 text-white" />
-                        <span>Confirm Consultation &amp; Chat on WhatsApp</span>
+                        <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                          <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-white" aria-hidden="true" />
+                        </span>
+                        <span className="text-sm sm:text-base font-bold leading-tight text-center">
+                          Confirm Consultation &amp; Chat on WhatsApp
+                        </span>
                       </button>
                     </HoverLift3D>
 
                     {/* Security & Privacy Badges below button */}
-                    <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-[#64748B] pt-2">
-                      <span className="flex items-center gap-1.5">
-                        <ShieldCheck className="w-4 h-4 text-[#005675]" />
+                    <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] sm:text-xs text-[#64748B] pt-3 pb-1">
+                      <span className="inline-flex items-center gap-1.5 shrink-0">
+                        <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#005675] shrink-0" />
                         <span>100% Free &amp; Zero-Obligation</span>
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <Lock className="w-4 h-4 text-[#005675]" />
+                      <span className="inline-flex items-center gap-1.5 shrink-0">
+                        <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#005675] shrink-0" />
                         <span>Private Suites Guaranteed</span>
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <Sparkles className="w-4 h-4 text-[#005675]" />
+                      <span className="inline-flex items-center gap-1.5 shrink-0">
+                        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#005675] shrink-0" />
                         <span>Same-Day Confirmation</span>
                       </span>
                     </div>

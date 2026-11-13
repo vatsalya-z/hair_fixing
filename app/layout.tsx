@@ -188,7 +188,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col font-sans bg-white text-[#252B38] antialiased">
         <Header />
-        <main className="flex-1 pt-16">
+        <main className="flex-1 pt-16 pb-20 lg:pb-0">
           {children}
         </main>
         <Footer />
