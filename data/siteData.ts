@@ -71,7 +71,7 @@ export const SITE_INFO = {
   tagline: "Premier Non-Surgical Hair Replacement Center in Trivandrum",
   phone: "+91 94470 28419",
   altPhone: "+91 98460 35782",
-  whatsapp: "+919447028419",
+  whatsapp: "919447028419",
   email: "consult@ozzonehair.com",
   timing: "Mon - Sat: 9:00 AM - 7:30 PM | Sunday: By Appointment",
   address: "2nd Floor, Capital Centre, Opp. Secretariat, MG Road, Statue Junction, Thiruvananthapuram, Kerala 695001",

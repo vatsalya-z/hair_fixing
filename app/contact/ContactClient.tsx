@@ -34,30 +34,78 @@ export default function ContactClient() {
     name: '',
     phone: '',
     email: '',
-    service: 'Hair Patching',
-    branch: 'Statue Junction, MG Road',
+    service: 'Custom Hair Patching System',
+    branch: 'Statue Junction (Opp. Secretariat, MG Road)',
     preferredDate: '',
     preferredTime: 'Morning (9:00 AM - 12:00 PM)',
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [whatsappUrl, setWhatsappUrl] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    const text = `*New Hair Consultation Request - Trivandrum*%0A*Name:* ${encodeURIComponent(
-      formData.name
-    )}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Email:* ${encodeURIComponent(
-      formData.email || 'N/A'
-    )}%0A*Service:* ${encodeURIComponent(formData.service)}%0A*Branch:* ${encodeURIComponent(
-      formData.branch
-    )}%0A*Preferred Date:* ${encodeURIComponent(
-      formData.preferredDate || 'Earliest Available'
-    )}%0A*Time Slot:* ${encodeURIComponent(
-      formData.preferredTime
-    )}%0A*Notes:* ${encodeURIComponent(formData.message || 'None')}`
 
-    window.open(`https://wa.me/${SITE_INFO.whatsapp}?text=${text}`, '_blank')
+    const cleanPhone = SITE_INFO.whatsapp.replace(/\D/g, '')
+
+    // Format appointment date if chosen
+    let formattedDate = 'Earliest Available Slot'
+    if (formData.preferredDate) {
+      try {
+        const d = new Date(formData.preferredDate + 'T00:00:00')
+        if (!isNaN(d.getTime())) {
+          formattedDate = d.toLocaleDateString('en-IN', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+          })
+        } else {
+          formattedDate = formData.preferredDate
+        }
+      } catch {
+        formattedDate = formData.preferredDate
+      }
+    }
+
+    // Build rich, complete WhatsApp consultation message
+    const lines = [
+      '✨ *NEW APPOINTMENT CONSULTATION BOOKING*',
+      '*ozzone Hair Fixing Studio • Trivandrum*',
+      '──────────────────────────────',
+      `👤 *Client Name:* ${formData.name.trim()}`,
+      `📞 *Phone / WhatsApp:* ${formData.phone.trim()}`,
+      formData.email.trim() ? `✉️ *Email:* ${formData.email.trim()}` : null,
+      '',
+      `💇 *Service Requested:* ${formData.service}`,
+      `📍 *Preferred Branch:* ${formData.branch}`,
+      `📅 *Preferred Date:* ${formattedDate}`,
+      `⏰ *Preferred Time:* ${formData.preferredTime}`,
+      '',
+      formData.message.trim()
+        ? `💬 *Client Notes / Hair Concern:*\n"${formData.message.trim()}"`
+        : '💬 *Client Notes:* No specific notes provided.',
+      '──────────────────────────────',
+      '_Sent via ozzonehair.com Online Booking Desk_',
+    ].filter((line) => line !== null)
+
+    const messageText = lines.join('\n')
+    const targetUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(messageText)}`
+
+    setWhatsappUrl(targetUrl)
+    setSubmitted(true)
+
+    // Seamless direct redirect to WhatsApp
+    if (typeof window !== 'undefined') {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+      if (isMobile) {
+        window.location.href = targetUrl
+      } else {
+        const win = window.open(targetUrl, '_blank')
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          window.location.href = targetUrl
+        }
+      }
+    }
   }
 
   return (
@@ -420,18 +468,81 @@ export default function ContactClient() {
                 </div>
 
                 {submitted ? (
-                  <div className="bg-[#F3F7FB] border-2 border-[#29B6EB] rounded-2xl p-8 sm:p-10 text-center space-y-4 animate-fadeIn">
+                  <div className="bg-[#F3F7FB] border-2 border-[#29B6EB] rounded-2xl p-6 sm:p-8 text-center space-y-4 animate-fadeIn">
                     <div className="w-16 h-16 bg-[#005675] rounded-full flex items-center justify-center mx-auto text-white shadow-lg">
                       <CheckCircle className="w-8 h-8 text-[#29B6EB]" />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#075078]">Consultation Details Forwarded!</h3>
-                    <p className="text-sm text-[#64748B] max-w-md mx-auto leading-relaxed">
-                      Thank you, <strong className="text-[#075078]">{formData.name}</strong>. Your consultation request for <strong className="text-[#075078]">{formData.service}</strong> at the <strong className="text-[#075078]">{formData.branch}</strong> studio has been sent. Our team is ready on WhatsApp.
-                    </p>
-                    <div className="pt-3">
+
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#075078]">Consultation Details Forwarded!</h3>
+                      <p className="text-xs sm:text-sm text-[#64748B] mt-1 max-w-md mx-auto leading-relaxed">
+                        Thank you, <strong className="text-[#075078]">{formData.name}</strong>! Your consultation request has been prepared and formatted for WhatsApp.
+                      </p>
+                    </div>
+
+                    {/* Summary of submitted data */}
+                    <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E2E8F0] text-left text-xs space-y-2.5 max-w-lg mx-auto shadow-xs">
+                      <div className="font-bold text-[#075078] pb-2 border-b border-[#E2E8F0] flex items-center justify-between">
+                        <span>Submitted Information</span>
+                        <span className="text-[#059669] bg-green-50 border border-green-200 px-2 py-0.5 rounded-full text-[10px] font-bold">
+                          Ready on WhatsApp
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[#252B38] pt-1">
+                        <div>
+                          <span className="text-[#64748B]">Name:</span>{' '}
+                          <strong className="text-[#075078]">{formData.name}</strong>
+                        </div>
+                        <div>
+                          <span className="text-[#64748B]">Phone:</span>{' '}
+                          <strong className="text-[#075078]">{formData.phone}</strong>
+                        </div>
+                        {formData.email && (
+                          <div className="sm:col-span-2">
+                            <span className="text-[#64748B]">Email:</span>{' '}
+                            <span className="font-semibold">{formData.email}</span>
+                          </div>
+                        )}
+                        <div className="sm:col-span-2">
+                          <span className="text-[#64748B]">Service:</span>{' '}
+                          <strong className="text-[#005675]">{formData.service}</strong>
+                        </div>
+                        <div className="sm:col-span-2">
+                          <span className="text-[#64748B]">Branch:</span>{' '}
+                          <span className="font-semibold">{formData.branch}</span>
+                        </div>
+                        <div>
+                          <span className="text-[#64748B]">Preferred Date:</span>{' '}
+                          <span className="font-semibold">
+                            {formData.preferredDate || 'Earliest Available'}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-[#64748B]">Time Slot:</span>{' '}
+                          <span className="font-semibold">{formData.preferredTime}</span>
+                        </div>
+                        {formData.message && (
+                          <div className="sm:col-span-2 pt-1 border-t border-dashed border-[#E2E8F0]">
+                            <span className="text-[#64748B]">Hair Concern / Notes:</span>{' '}
+                            <span className="italic text-[#252B38]">&ldquo;{formData.message}&rdquo;</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                      <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        <FaWhatsapp className="w-5 h-5 text-white" />
+                        <span>Open WhatsApp Chat Directly</span>
+                      </a>
                       <button
                         onClick={() => setSubmitted(false)}
-                        className="btn-primary text-xs"
+                        className="text-xs text-[#005675] hover:underline font-semibold py-2 px-4 cursor-pointer"
                       >
                         Book Another Slot
                       </button>
@@ -518,14 +629,14 @@ export default function ContactClient() {
                         <select
                           value={formData.service}
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all"
+                          className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all cursor-pointer"
                         >
-                          <option value="Hair Patching">Custom Hair Patching System</option>
-                          <option value="Hair Bonding">Dermatological Hair Bonding</option>
-                          <option value="Hair Weaving">Non-Surgical Hair Weaving</option>
-                          <option value="Full Scalp Replacement">Full Scalp Replacement System</option>
-                          <option value="Womens Crown Topper">Women&apos;s Crown Topper &amp; Parting</option>
-                          <option value="Maintenance & Re-bonding">Routine Hair Patch Servicing</option>
+                          <option value="Custom Hair Patching System">Custom Hair Patching System</option>
+                          <option value="Dermatological Hair Bonding">Dermatological Hair Bonding</option>
+                          <option value="Non-Surgical Hair Weaving">Non-Surgical Hair Weaving</option>
+                          <option value="Full Scalp Replacement System">Full Scalp Replacement System</option>
+                          <option value="Women's Crown Topper & Parting">Women&apos;s Crown Topper &amp; Parting</option>
+                          <option value="Routine Hair Patch Servicing & Re-bonding">Routine Hair Patch Servicing &amp; Re-bonding</option>
                         </select>
                       </div>
 
@@ -538,8 +649,8 @@ export default function ContactClient() {
                           onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
                           className="w-full px-3.5 sm:px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-xs sm:text-sm outline-none bg-white transition-all cursor-pointer"
                         >
-                          <option value="Statue Junction, MG Road">Statue Junction (Opp. Secretariat, MG Road)</option>
-                          <option value="Pattom, Near Medical College">Pattom (Near Medical College &amp; Kesavadasapuram)</option>
+                          <option value="Statue Junction (Opp. Secretariat, MG Road)">Statue Junction (Opp. Secretariat, MG Road)</option>
+                          <option value="Pattom Studio (Near Medical College & Kesavadasapuram)">Pattom Studio (Near Medical College &amp; Kesavadasapuram)</option>
                         </select>
                       </div>
                     </div>
