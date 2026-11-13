@@ -3,9 +3,19 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { X, Calendar, Clock, ArrowRight, Share2, Sparkles } from 'lucide-react'
+import {
+  X,
+  Calendar,
+  Clock,
+  ArrowRight,
+  BookOpen,
+  Sparkles,
+  CheckCircle,
+  TrendingUp,
+} from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
-import HeroBanner from '@/components/HeroBanner'
+import { FadeInUp, HoverLift3D } from '@/components/MotionWrappers'
+import BlogHeroImageWithTilt from '@/components/BlogHeroImageWithTilt'
 import { BLOG_POSTS, BlogPost, SITE_INFO } from '@/data/siteData'
 
 export default function BlogClient() {
@@ -13,21 +23,94 @@ export default function BlogClient() {
 
   return (
     <div className="w-full bg-white">
-      {/* Hero Banner */}
-      <HeroBanner
-        breadcrumbCurrent="Hair Care Blog"
-        title="Hair Fixing Guides &amp; Expert Insights in"
-        highlightText="Thiruvananthapuram"
-        subtitle="Practical advice on non-surgical hair restoration, daily maintenance tips for Kerala's coastal climate, and debunking hair loss myths."
-      />
+      {/* ═══════════════════════════════════════════════════════════
+          HERO SECTION — DYNAMIC 3D WITH UNIQUE GENERATED HERO IMAGE
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="hero-gradient-bg relative overflow-hidden min-h-[75vh] flex items-center">
+        {/* Ambient lighting glows */}
+        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/12 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#174BA5]/30 rounded-full blur-3xl" />
+          <div className="hero-subtle-glow absolute inset-0 opacity-40" />
+        </div>
 
-      {/* Main Blog Listing Section: 
-          - White background
-          - Professional editorial layout
-          - Image and heading only on the blog listing page
-          - Dark navy headings
-      */}
-      <section className="bg-white py-16 sm:py-24 px-4 sm:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative w-full">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            {/* Left Copy */}
+            <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+              <FadeInUp delay={0.05} yOffset={20}>
+                <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Hair Care Blog &amp; Insights
+                </span>
+              </FadeInUp>
+
+              <FadeInUp delay={0.15} yOffset={25}>
+                <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center lg:text-left">
+                  Hair Fixing Guides &amp; Care Insights in{' '}
+                  <span className="text-[#29B6EB]">Thiruvananthapuram</span>
+                </h1>
+              </FadeInUp>
+
+              <FadeInUp delay={0.25} yOffset={25}>
+                <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-7 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+                  Practical trichological advice, daily maintenance routines engineered for Kerala&apos;s coastal humidity, transparent cost breakdowns, and expert answers from certified hair specialists at ozzone Hair Studio.
+                </p>
+              </FadeInUp>
+
+              <FadeInUp delay={0.35} yOffset={20}>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+                  <HoverLift3D>
+                    <a href="#articles-section" className="btn-primary">
+                      Explore All Articles
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </a>
+                  </HoverLift3D>
+
+                  <HoverLift3D>
+                    <a
+                      href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20have%20a%20question%20regarding%20hair%20patch%20care%20and%20fixing.`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-whatsapp"
+                    >
+                      <FaWhatsapp className="w-5 h-5 text-white" />
+                      <span>Ask Our Specialists</span>
+                    </a>
+                  </HoverLift3D>
+                </div>
+              </FadeInUp>
+
+              {/* Trust highlights */}
+              <FadeInUp delay={0.45} yOffset={15}>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm">
+                  {[
+                    '14+ Years Studio Experience',
+                    'Kerala Climate Tested',
+                    '100% Virgin Human Hair',
+                    'Doctor & Specialist Verified',
+                  ].map((t) => (
+                    <div key={t} className="flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
+                      <span>{t}</span>
+                    </div>
+                  ))}
+                </div>
+              </FadeInUp>
+            </div>
+
+            {/* Right Hero Image with 3D Tilt Card */}
+            <div className="flex justify-center lg:justify-end w-full">
+              <BlogHeroImageWithTilt />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          MAIN BLOG LISTING SECTION
+      ═══════════════════════════════════════════════════════════ */}
+      <section id="articles-section" className="bg-white py-16 sm:py-24 px-4 sm:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -38,15 +121,18 @@ export default function BlogClient() {
               Latest Hair Care &amp; Replacement Articles
             </h2>
             <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+            <p className="text-sm sm:text-base text-[#64748B]">
+              In-depth guides on non-surgical hair fixing, adhesive care, and healthy styling for residents in Trivandrum.
+            </p>
           </div>
 
-          {/* Grid: Image and heading ONLY on the listing cards */}
+          {/* Grid of Articles */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {BLOG_POSTS.map((post) => (
               <article
                 key={post.id}
                 onClick={() => setActivePost(post)}
-                className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1.5"
+                className="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1.5"
               >
                 {/* 1. Image */}
                 <div className="relative h-64 w-full overflow-hidden bg-slate-100">
@@ -62,13 +148,26 @@ export default function BlogClient() {
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   </span>
+                  <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-[#075078] text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs">
+                    {post.category}
+                  </span>
                 </div>
 
-                {/* 2. Heading Only (Dark navy headings: #075078) */}
+                {/* 2. Heading & Meta */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <h3 className="text-lg sm:text-xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug">
                     {post.title}
                   </h3>
+                  <div className="mt-4 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-xs text-[#64748B]">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5 text-[#29B6EB]" />
+                      <span>{post.date}</span>
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5 text-[#29B6EB]" />
+                      <span>{post.readTime}</span>
+                    </span>
+                  </div>
                 </div>
               </article>
             ))}
@@ -76,7 +175,9 @@ export default function BlogClient() {
         </div>
       </section>
 
-      {/* Full Article Reader Modal */}
+      {/* ═══════════════════════════════════════════════════════════
+          FULL ARTICLE READER MODAL
+      ═══════════════════════════════════════════════════════════ */}
       {activePost && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#075078]/70 backdrop-blur-sm animate-fadeIn">
           <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-[#E2E8F0] relative">
@@ -105,56 +206,6 @@ export default function BlogClient() {
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              <div className="flex items-center gap-4 text-xs text-[#64748B] border-b border-[#E2E8F0] pb-3">
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-[#29B6EB]" />
-                  <span>{activePost.date}</span>
-                </span>
-                <span className="flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#29B6EB]" />
-                  <span>{activePost.readTime}</span>
-                </span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#075078] leading-tight">
-                {activePost.title}
-              </h2>
-
-              <p className="text-base text-[#005675] font-semibold bg-[#F3F7FB] p-4 rounded-xl border border-[#E2E8F0]">
-                {activePost.summary}
-              </p>
-
-              <div className="space-y-4 text-sm text-[#252B38] leading-relaxed">
-                {activePost.content.map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
-              </div>
-
-              {/* CTAs inside article */}
-              <div className="mt-8 pt-6 border-t border-[#E2E8F0] bg-[#F3F7FB] p-6 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                  <h4 className="text-sm font-bold text-[#075078]">Have Questions About This?</h4>
-                  <p className="text-xs text-[#64748B]">Speak with our senior specialist in Trivandrum.</p>
-                </div>
-                <div className="flex gap-2 w-full sm:w-auto">
-                  <a
-                    href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi,%20I%20read%20your%20blog%20post%20about%20${encodeURIComponent(activePost.title)}%20and%20want%20to%20consult.`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 sm:flex-initial bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-colors text-center flex items-center justify-center gap-1.5 shadow-sm"
-                  >
-                    <FaWhatsapp className="w-4 h-4 text-white" />
-                    <span>WhatsApp Specialist</span>
-                  </a>
-                  <button
-                    onClick={() => setActivePost(null)}
-                    className="border border-[#E2E8F0] bg-white text-[#252B38] text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#F3F7FB]"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -162,4 +213,3 @@ export default function BlogClient() {
     </div>
   )
 }
-

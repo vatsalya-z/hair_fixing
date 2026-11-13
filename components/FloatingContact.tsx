@@ -7,7 +7,8 @@ import { SITE_INFO } from '@/data/siteData'
 
 export default function FloatingContact() {
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+    // Visible strictly on desktop view (lg: >= 1024px); mobile uses the dedicated sticky bottom bar
+    <div className="fixed bottom-6 right-6 z-40 hidden lg:flex flex-col gap-3">
       {/* WhatsApp Floating Button */}
       <a
         href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Fixing%20Trivandrum,%20I%20would%20like%20to%20know%20more%20about%20hair%20patch%20fixing.`}
@@ -36,4 +37,3 @@ export default function FloatingContact() {
     </div>
   )
 }
-

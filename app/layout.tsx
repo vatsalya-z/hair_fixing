@@ -3,11 +3,13 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import FloatingContact from '@/components/FloatingContact'
+import MobileBottomBar from '@/components/MobileBottomBar'
 import { SITE_INFO } from '@/data/siteData'
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
   themeColor: '#005675',
 }
 
@@ -191,6 +193,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingContact />
+        <MobileBottomBar />
       </body>
     </html>
   )
