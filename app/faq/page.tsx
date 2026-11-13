@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Honest answers on hair patch costs, daily maintenance, shower/swimming safety & natural hairlines from ozzone Hair Trivandrum.',
     url: 'https://ozzonehair.com/faq/',
     siteName: 'ozzone Hair Thiruvananthapuram',
-    images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Hair Fixing FAQs Thiruvananthapuram' }],
+    images: [{ url: 'https://ozzonehair.com/hero-section/slide-3-1.webp', width: 1200, height: 630, alt: 'Hair Fixing FAQs Thiruvananthapuram' }],
     type: 'website',
     locale: 'en_IN',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hair Fixing FAQs Thiruvananthapuram | ozzone Hair Studio',
     description: 'Expert answers on hair patch costs, bonding, swimming & lifespan in Trivandrum.',
-    images: ['/images/hero-indian-hair.jpg'],
+    images: ['https://ozzonehair.com/hero-section/slide-3-1.webp'],
   },
 }
 

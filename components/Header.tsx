@@ -32,7 +32,6 @@ const NAV_LINKS = [
   { name: 'Products', href: '/products', icon: ShoppingBag },
   { name: 'Gallery', href: '/gallery', icon: ImageIcon },
   { name: 'Blog', href: '/blog', icon: BookOpen },
-  { name: 'FAQ', href: '/faq', icon: HelpCircle },
   { name: 'Contact', href: '/contact', icon: MapPin },
 ]
 

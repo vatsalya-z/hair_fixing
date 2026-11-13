@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Witness real client transformations from our Statue Junction & Pattom studios. Undetectable hairlines, natural volume & restored confidence.',
     url: 'https://ozzonehair.com/gallery/',
     siteName: 'ozzone Hair Thiruvananthapuram',
-    images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Hair Fixing Before and After Gallery Trivandrum' }],
+    images: [{ url: 'https://ozzonehair.com/hero-section/slide-3-1.webp', width: 1200, height: 630, alt: 'Hair Fixing Before and After Gallery Trivandrum' }],
     type: 'website',
     locale: 'en_IN',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Before & After Hair Fixing Gallery Thiruvananthapuram',
     description: 'Witness real client hair transformations at ozzone Hair Trivandrum.',
-    images: ['/images/hero-indian-hair.jpg'],
+    images: ['https://ozzonehair.com/hero-section/slide-3-1.webp'],
   },
 }
 

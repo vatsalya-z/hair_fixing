@@ -191,14 +191,14 @@ export default function Footer() {
             <div>
               <h4 className="text-base font-bold text-white flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#29B6EB]" />
-                <span>Locate ozzone Hair Thiruvananthapuram on Google Maps</span>
+                <span>Locate Ozzone Farrell on Google Maps</span>
               </h4>
               <p className="text-xs text-white/75 mt-0.5">
-                Conveniently located near Secretariat, MG Road, Statue, Trivandrum (Ample Parking Available)
+                Double Road, HAL 2nd Stage, Indiranagar, Bengaluru (Ample Parking Available)
               </p>
             </div>
             <a
-              href="https://maps.google.com/?q=Statue+Palayam+Thiruvananthapuram"
+              href="https://www.google.com/maps/place/Ozzone+Farrell+bangalore/@12.9660325,77.6380037,849m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae16a25d4a7c99:0xd411d97542f78f0b!8m2!3d12.9660325!4d77.6380037!16s%2Fg%2F1tfxf3nj"
               target="_blank"
               rel="noreferrer"
               className="text-xs text-[#29B6EB] hover:underline flex items-center gap-1 font-semibold"
@@ -217,18 +217,31 @@ export default function Footer() {
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Google Map Location - ozzone Hair Thiruvananthapuram"
+              title="Google Map Location - Ozzone Farrell Bangalore"
               className="w-full h-full grayscale-[20%] contrast-[105%]"
             />
           </div>
         </div>
 
         {/* Bottom Copyright & Disclaimer */}
-        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/70">
-          <p>
-            © {new Date().getFullYear()} ozzone Hair Thiruvananthapuram. All Rights Reserved. Non-Surgical Hair Replacement Studio.
-          </p>
-          <div className="flex items-center gap-6">
+        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center md:items-start justify-between gap-4 text-xs text-white/70">
+          <div className="text-center md:text-left space-y-1">
+            <p className="text-xs sm:text-sm text-white/80">
+              ©{new Date().getFullYear()} ozzone Hair Thiruvananthapuram. All Rights Reserved.
+            </p>
+            <p className="text-xs text-[#29B6EB]">
+              Design And Developed By -{' '}
+              <a
+                href="https://www.zoomdigital.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#29B6EB] hover:text-white hover:underline transition-colors"
+              >
+                Zoom Digital
+              </a>
+            </p>
+          </div>
+          <div className="flex items-center gap-6 self-center md:self-auto">
             <Link href="/faq" className="hover:text-[#29B6EB] transition-colors">Privacy Policy</Link>
             <Link href="/faq" className="hover:text-[#29B6EB] transition-colors">Terms of Service</Link>
             <Link href="/contact" className="hover:text-[#29B6EB] transition-colors">Location &amp; Hours</Link>

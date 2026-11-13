@@ -102,9 +102,9 @@ export default function ProductsClient() {
             </div>
 
             {/* Right Column: 3D Interactive Hero Card */}
-            <div className="flex justify-center lg:justify-end w-full mt-4 lg:mt-0">
+            {/* <div className="flex justify-center lg:justify-end w-full mt-4 lg:mt-0">
               <ProductHeroImageWithTilt />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -129,31 +129,7 @@ export default function ProductsClient() {
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-1.5 sm:gap-3 mb-8 sm:mb-12">
-            {categories.map((cat) => {
-              const count = cat === 'All' 
-                ? PRODUCTS_DATA.length 
-                : PRODUCTS_DATA.filter((p) => p.category === cat).length
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-lg text-[11px] sm:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 sm:gap-2 ${
-                    selectedCategory === cat
-                      ? 'bg-[#005675] text-white shadow-md'
-                      : 'bg-[#F3F7FB] text-[#075078] hover:bg-[#E2E8F0]'
-                  }`}
-                >
-                  <span>{cat}</span>
-                  <span className={`text-[10px] sm:text-[11px] px-1 sm:px-1.5 py-0.2 rounded-full font-bold ${
-                    selectedCategory === cat ? 'bg-white/20 text-white' : 'bg-[#E2E8F0] text-[#075078]'
-                  }`}>
-                    {count}
-                  </span>
-                </button>
-              )
-            })}
-          </div>
+          
 
           {/* Product Cards: 2-Column Grid on Mobile, 2-Column on Desktop */}
           <div className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
@@ -235,12 +211,7 @@ export default function ProductsClient() {
                       <FaWhatsapp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                       <span>Inquire</span>
                     </a>
-                    <Link
-                      href="/contact"
-                      className="bg-[#F3F7FB] hover:bg-[#E2E8F0] text-[#075078] font-bold text-[11px] sm:text-xs lg:text-sm px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-lg transition-colors flex items-center justify-center text-center"
-                    >
-                      Visit
-                    </Link>
+                    
                   </div>
                 </div>
               </div>

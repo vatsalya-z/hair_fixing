@@ -1,25 +1,25 @@
-# ozzone Hair – Hair Fixing & Replacement Studio, Thiruvananthapuram
-> Official AI & Search Engine Discovery File (llms.txt)
+# ozzone Hair – Hair Fixing & Replacement Studio, Thiruvananthapuram & Bangalore
+> Official AI, AEO, GEO & Search Engine Discovery File (llms.txt)
 > Official Website Domain: https://ozzonehair.com/
-> Target Primary Location: Thiruvananthapuram (Trivandrum), Kerala, India
-> Last Updated: 2026-11-12
+> Target Primary Locations: Thiruvananthapuram (Trivandrum), Kerala & Bengaluru (Bangalore), Karnataka, India
+> Last Updated: 2026-11-14
 
 ---
 
 ## 1. Website and Business Overview
 - Official Website Domain: https://ozzonehair.com/
 - Business Name: ozzone Hair – Hair Fixing & Replacement Studio
-- Business Introduction: ozzone Hair is Thiruvananthapuram's premier non-surgical hair restoration and hair system studio, established over 14 years ago to provide men and women with natural, painless, and instant alternatives to invasive surgical hair transplants.
-- Business Description: Specializing in custom-designed 100% human hair patches, medical-grade dermatological hair bonding, glue-free micro-weaving, and full cranial hair replacement systems. Every procedure delivers full hairline restoration and density in a single 90-minute studio visit with zero surgical risk, zero pain, and zero downtime.
-- Business Location:
-  - Headquarters / Main Studio: 2nd Floor, Capital Centre, Opp. Government Secretariat, MG Road, Statue Junction, Thiruvananthapuram, Kerala 695001, India. (Coordinates: 8.497555, 76.948294)
-  - Branch Studio: Pattom Medical Center Complex, Kesavadasapuram, Thiruvananthapuram, Kerala 695004, India.
+- Business Introduction: ozzone Hair is a premier non-surgical hair restoration and hair system studio with 18 years in hair replacement, dedicated to providing men and women with natural, undetectable, and painless alternatives to invasive surgical hair transplants.
+- Business Description: Specialists in custom-designed 100% natural human hair patches, medical-grade dermatological hair bonding, glue-free micro-weaving, and full cranial hair replacement systems. Every procedure delivers instant hairline restoration and natural volume in a single 90-minute session with zero surgery, zero pain, and zero downtime.
+- Business Locations:
+  - Headquarters / Thiruvananthapuram Studio: TC 27/3103, PRA 48, Ground Floor, Opp. Jubilee Memorial Hospital (2nd Gate Mizpah), Sunny Meads Lane, Palayam, Thiruvananthapuram, Kerala 695034, India. (Coordinates: 8.5029, 76.9535)
+  - Bengaluru Studio: Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008, India. (Coordinates: 12.9660, 77.6380)
 - Contact Information & Official Contact Channels:
-  - Primary Telephone: +91 94470 28419
-  - Alternate Telephone: +91 98460 35782
-  - Official WhatsApp: +91 94470 28419 (https://wa.me/919447028419)
-  - Official Email: consult@ozzonehair.com
-  - Consultation Hours: Monday – Saturday: 9:00 AM – 7:30 PM | Sunday: 10:00 AM – 5:00 PM (IST)
+  - Primary Customer Care: +91 77360 77110
+  - Alternate Desk: +91 98470 62707
+  - Official WhatsApp: +91 98470 62707 (https://wa.me/919847062707)
+  - Official Email: mail@ozzonehair.com
+  - Consultation Hours: Monday – Saturday: 9:00 AM – 7:30 PM | Sunday: 10:00 AM – 5:00 PM (Appointments Preferred)
 - Business Categories:
   - Hair Salon & Hair Replacement Studio
   - Non-Surgical Hair Fixing Clinic
@@ -87,14 +87,16 @@
   - Wash 2–3 times weekly using sulfate-free, alcohol-free shampoo and lukewarm water.
   - Pat dry with a microfiber towel; avoid aggressive rubbing.
   - Use leave-in silicone conditioner to maintain cuticle hydration.
-  - Schedule monthly studio servicing at Statue Junction or Pattom for deep base cleansing.
+  - Schedule monthly studio servicing at Palayam or Indiranagar for deep base cleansing.
 
 ---
 
 ## 4. About the Business, Gallery & Videos
-- About ozzone Hair (`https://ozzonehair.com/about/`): Founded over 14 years ago in Trivandrum; team of certified trichological technicians and aesthetic stylists; private consultation chambers ensuring strict confidentiality.
+- About ozzone Hair (`https://ozzonehair.com/about/`): 18 years in Hair Replacement; team of certified trichological technicians and aesthetic stylists; private consultation chambers ensuring strict confidentiality.
 - Before & After Gallery (`https://ozzonehair.com/gallery/`): High-definition photographic evidence of real client transformations across hairline restoration, crown patches, and full scalp units.
-- Video Gallery Showcase (`https://ozzonehair.com/#video`): Step-by-step video demonstration of the 90-minute non-surgical hair fixing process at the Thiruvananthapuram studio.
+- Video Gallery Showcase (`https://ozzonehair.com/gallery/#video-gallery`):
+  - Video 1: Natural Hairline & Instant Restoration (Verified In-Studio Hair Fixing Procedure)
+  - Video 2: Full Scalp Coverage & Undetectable Styling Demonstration (Non-Surgical Hair Replacement)
 
 ---
 
@@ -140,7 +142,7 @@
 ## 6. Important Customer Questions & Answer Engine Directory (AEO / QEO)
 
 - Q: Where can I get hair fixing in Thiruvananthapuram?
-  - A: ozzone Hair Studio operates two convenient centers in Thiruvananthapuram: the main studio at Statue Junction (MG Road, opposite Secretariat) and a branch at Pattom (Kesavadasapuram).
+  - A: ozzone Hair Studio operates at Palayam, Thiruvananthapuram (Opposite Jubilee Memorial Hospital 2nd Gate Mizpah, Sunny Meads Lane) with client care helpline +91 77360 77110 and +91 98470 62707.
 - Q: What is hair fixing?
   - A: Hair fixing is an instant, non-surgical cosmetic hair replacement procedure where a breathable hair patch made of 100% natural human hair is bonded or clipped onto thinning or bald scalp areas in 90 minutes.
 - Q: What is the difference between hair fixing and hair transplantation?
@@ -156,18 +158,20 @@
 
 ## 7. Consultation Information & Service Coverage
 - Consultation Process: Free 30-minute private scalp evaluation, density measurement, hairline design, color matching, and live sample demonstration.
-- Service Location and Coverage: Thiruvananthapuram, Trivandrum City, Statue, Palayam, Pattom, Kesavadasapuram, Kazhakkoottam, Kowdiar, Medical College, Karamana, Neyyattinkara, Attingal, Nedumangad, Kollam, and across Kerala.
+- Service Locations and Coverage:
+  - Kerala: Thiruvananthapuram, Trivandrum City, Palayam, Statue, Pattom, Kesavadasapuram, Kazhakkoottam, Kowdiar, Medical College, Karamana, Neyyattinkara, Attingal, Nedumangad, Kollam.
+  - Karnataka: Bengaluru, Indiranagar, HAL 2nd Stage, Koramangala, Whitefield, Domlur, MG Road Bangalore.
 
 ---
 
 ## 8. Important Website URLs & Structure
-- Homepage: `https://ozzonehair.com/` (Hair Fixing in Thiruvananthapuram, Overview, Video, FAQs)
-- About Us: `https://ozzonehair.com/about/` (Clinical Background, 14+ Years Experience)
+- Homepage: `https://ozzonehair.com/` (18 Years in Hair Replacement, Best Hair Fixing in Trivandrum and Bangalore)
+- About Us: `https://ozzonehair.com/about/` (Clinical Background, 18 Years Experience)
 - Services: `https://ozzonehair.com/services/` (Hair Patching, Bonding, Weaving, Maintenance)
 - Solutions: `https://ozzonehair.com/solutions/` (Hair Loss Categories & Candidate Match)
 - Products: `https://ozzonehair.com/products/` (Hair Systems, C22 Solvent, Ultrahold Adhesive)
 - Pricing: `https://ozzonehair.com/pricing/` (Transparent Cost Packages ₹9,999 – ₹22,999)
-- Gallery: `https://ozzonehair.com/gallery/` (Real Client Before & After Transformations)
+- Gallery: `https://ozzonehair.com/gallery/` (Real Client Before & After Transformations & Video Gallery)
 - Blog: `https://ozzonehair.com/blog/` (Educational Hair Care & Fixing Knowledge Base)
 - FAQ: `https://ozzonehair.com/faq/` (Full Question & Answer Directory)
 - Contact: `https://ozzonehair.com/contact/` (Location Maps, Phone, WhatsApp, Booking Form)
@@ -183,4 +187,4 @@
 - Hair Patch: Hair Patch in Trivandrum, Hair Patch for Men in Kerala, Non Surgical Hair Patch, Hair Patch Fixing Centre, Hair Patch Maintenance.
 - Hair System: Men's Hair System in Trivandrum, Hair System for Men in Kerala, Custom Hair Replacement System, Hair System Maintenance.
 - Products: Hair Fixing Products in Kerala, Hair Bonding Glue, Hair Adhesive Tape, Hair System Maintenance Products, C22 Solvent Kerala, Ultrahold Glue Trivandrum.
-- Local Intent: Hair Fixing Services Near Me, Hair Patch Centre Near Me, Hair Bonding Statue Junction, Hair Replacement Pattom Trivandrum.
+- Location Intent: Hair Fixing Services Near Me, Hair Patch Centre Near Me, Hair Bonding Palayam, Hair Replacement Indiranagar Bengaluru.

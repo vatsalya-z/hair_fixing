@@ -17,6 +17,8 @@ import {
   ExternalLink,
   ChevronRight,
   Eye,
+  Video,
+  Play,
 } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import { FadeInUp, HoverLift3D } from '@/components/MotionWrappers'
@@ -84,6 +86,16 @@ export default function GalleryClient() {
 
                   <HoverLift3D>
                     <a
+                      href="#video-gallery"
+                      className="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm px-5 py-3 rounded-lg transition-all flex items-center gap-2"
+                    >
+                      <Play className="w-4 h-4 text-[#29B6EB] fill-[#29B6EB]" />
+                      <span>Watch Video Demo</span>
+                    </a>
+                  </HoverLift3D>
+
+                  <HoverLift3D>
+                    <a
                       href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20know%20which%20hair%20patch%20system%20suits%20my%20hairloss.`}
                       target="_blank"
                       rel="noreferrer"
@@ -115,9 +127,9 @@ export default function GalleryClient() {
             </div>
 
             {/* Right Hero Image with 3D Tilt Card */}
-            <div className="flex justify-center lg:justify-end w-full">
+            {/* <div className="flex justify-center lg:justify-end w-full">
               <GalleryHeroImageWithTilt />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -170,35 +182,6 @@ export default function GalleryClient() {
           {/* Controls: Filter Tabs & Mobile View Switcher */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 sm:mb-12">
             {/* Filter Tabs */}
-            <div className="flex flex-wrap justify-center sm:justify-start gap-2">
-              {filterTabs.map((tab) => {
-                const count =
-                  tab === 'All'
-                    ? GALLERY_ITEMS.length
-                    : GALLERY_ITEMS.filter((i) => i.category === tab).length
-
-                return (
-                  <button
-                    key={tab}
-                    onClick={() => setFilter(tab)}
-                    className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
-                      filter === tab
-                        ? 'bg-[#005675] text-white shadow-md'
-                        : 'bg-white text-[#075078] border border-[#E2E8F0] hover:bg-[#F3F7FB]'
-                    }`}
-                  >
-                    <span>{tab}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                        filter === tab ? 'bg-white/20 text-white' : 'bg-[#F3F7FB] text-[#64748B]'
-                      }`}
-                    >
-                      {count}
-                    </span>
-                  </button>
-                )
-              })}
-            </div>
 
             {/* Mobile View Toggle (Visible on mobile/tablet) */}
             <div className="flex items-center gap-1.5 bg-white p-1 rounded-xl border border-[#E2E8F0] shadow-xs sm:hidden">
@@ -252,37 +235,17 @@ export default function GalleryClient() {
               >
                 {/* Visual Image Container */}
                 <div className="p-2 sm:p-3 bg-white border-b border-[#E2E8F0]">
-                  {/* On Mobile in 2-Col Grid: Compact Side-by-side or stacked Before/After */}
-                  <div className="grid grid-cols-2 gap-1.5 sm:gap-2 relative">
-                    {/* Before Image */}
-                    <div className="relative h-32 sm:h-52 lg:h-56 rounded-xl overflow-hidden bg-slate-200">
-                      <Image
-                        src={item.beforeImg}
-                        alt={`${item.solutionProvided} - Before`}
-                        fill
-                        className="object-cover grayscale-[35%]"
-                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 25vw"
-                      />
-                      <span className="absolute top-1.5 left-1.5 bg-[#252B38]/90 text-white text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 rounded shadow-sm">
-                        Before
-                      </span>
-                    </div>
-
-                    {/* After Image */}
-                    <div className="relative h-32 sm:h-52 lg:h-56 rounded-xl overflow-hidden bg-[#075078]/20 group-hover:shadow-md transition-all">
-                      <Image
-                        src={item.afterImg}
-                        alt={`${item.solutionProvided} - After`}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 25vw"
-                      />
-                      <span className="absolute top-1.5 left-1.5 bg-[#005675] text-white text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 rounded border border-[#29B6EB] shadow-sm">
-                        After
-                      </span>
-                      {/* Cyan subtle hover overlay */}
-                      <div className="absolute inset-0 bg-[#075078]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    </div>
+                  <div className="relative w-full h-36 sm:h-52 lg:h-56 rounded-xl overflow-hidden bg-slate-200">
+                    <Image
+                      src={item.beforeImg}
+                      alt={`${item.solutionProvided} - Before`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <span className="absolute top-1.5 left-1.5 bg-[#252B38]/90 text-white text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 rounded shadow-sm">
+                      Before
+                    </span>
                   </div>
                 </div>
 
@@ -304,15 +267,7 @@ export default function GalleryClient() {
                     </h3>
 
                     {/* Full details visible on tablet/desktop, compact on mobile grid */}
-                    <div className="text-[11px] sm:text-xs text-[#252B38] bg-[#F3F7FB] p-2 sm:p-3 rounded-lg border border-[#E2E8F0] space-y-0.5 hidden sm:block">
-                      <p>
-                        <strong className="text-[#075078]">System: </strong>
-                        {item.solutionProvided}
-                      </p>
-                      <p className="text-[#64748B]">
-                        <strong>Scalp Finish: </strong> Natural multi-directional hairline
-                      </p>
-                    </div>
+                    
                   </div>
 
                   {/* Actions */}
@@ -360,95 +315,192 @@ export default function GalleryClient() {
 
             {/* Modal Body */}
             <div className="p-4 sm:p-8 space-y-6">
-              {/* Full Before & After Side-by-Side Comparison */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* Before */}
-                <div className="space-y-2">
-                  <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden bg-slate-200 border border-[#E2E8F0]">
-                    <Image
-                      src={activeItem.beforeImg}
-                      alt="Before hair fixing treatment"
-                      fill
-                      className="object-cover grayscale-[30%]"
-                    />
-                    <span className="absolute top-3 left-3 bg-[#252B38]/90 text-white text-xs font-bold px-3 py-1 rounded shadow">
-                      Before Treatment
-                    </span>
-                  </div>
-                  <p className="text-xs text-center text-[#64748B]">Initial Thinning / Bald Area</p>
+              {/* Full Width Image View */}
+              <div className="w-full space-y-2">
+                <div className="relative w-full h-72 sm:h-96 md:h-[440px] rounded-xl overflow-hidden bg-slate-200 border border-[#E2E8F0]">
+                  <Image
+                    src={activeItem.beforeImg}
+                    alt="Before hair fixing treatment"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 768px"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#252B38]/90 text-white text-xs font-bold px-3 py-1 rounded shadow">
+                    Before Treatment
+                  </span>
                 </div>
-
-                {/* After */}
-                <div className="space-y-2">
-                  <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden bg-[#075078]/10 border-2 border-[#29B6EB]">
-                    <Image
-                      src={activeItem.afterImg}
-                      alt="After hair fixing treatment"
-                      fill
-                      className="object-cover"
-                    />
-                    <span className="absolute top-3 left-3 bg-[#005675] text-white text-xs font-bold px-3 py-1 rounded border border-[#29B6EB] shadow">
-                      After Transformation
-                    </span>
-                  </div>
-                  <p className="text-xs text-center text-[#075078] font-bold">100% Undetectable Natural Density</p>
-                </div>
+                <p className="text-xs text-center text-[#64748B]">Initial Thinning / Bald Area</p>
               </div>
 
               {/* Case Specifications */}
-              <div className="bg-[#F3F7FB] p-5 rounded-xl border border-[#E2E8F0] space-y-3">
-                <h3 className="text-lg font-bold text-[#075078]">
-                  {activeItem.clientType}
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#252B38]">
-                  <div>
-                    <span className="text-[#64748B] block">Solution Provided:</span>
-                    <strong className="text-[#075078] text-sm">{activeItem.solutionProvided}</strong>
-                  </div>
-                  <div>
-                    <span className="text-[#64748B] block">Recovery &amp; Session Time:</span>
-                    <strong className="text-[#075078] text-sm">{activeItem.recoveryTime}</strong>
-                  </div>
-                  <div>
-                    <span className="text-[#64748B] block">Base System:</span>
-                    <span className="font-semibold">Breathable Swiss Lace &amp; Micro-Skin Membrane</span>
-                  </div>
-                  <div>
-                    <span className="text-[#64748B] block">Clinic Location:</span>
-                    <span className="font-semibold">Statue Junction / Pattom, Trivandrum</span>
-                  </div>
-                </div>
-              </div>
+              
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                <a
-                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20saw%20transformation%20${activeItem.id}%20(${encodeURIComponent(
-                    activeItem.clientType
-                  )})%20on%20your%20website%20and%20want%20to%20know%20more.`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 btn-whatsapp justify-center text-sm py-3"
-                >
-                  <FaWhatsapp className="w-5 h-5 text-white" />
-                  <span>Request Similar Transformation on WhatsApp</span>
-                </a>
-                <Link
-                  href="/contact"
-                  onClick={() => setActiveItem(null)}
-                  className="btn-primary justify-center text-sm py-3"
-                >
-                  <span>Book Free Consultation</span>
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Link>
-              </div>
+              
             </div>
           </div>
         </div>
       )}
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 4 — VIDEO & VERIFICATION NOTICE
+          SECTION 4 — CLIENT VIDEO TRANSFORMATIONS & LIVE DEMO
+      ═══════════════════════════════════════════════════════════ */}
+      <section id="video-gallery" className="bg-white py-16 sm:py-24 px-4 sm:px-8 border-t border-[#E2E8F0] scroll-mt-20">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+            <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-4 py-1.5 rounded-full border border-[#E2E8F0]">
+              <Video className="w-3.5 h-3.5 text-[#29B6EB]" />
+              Video Gallery
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+              Watch Real Hair Fixing Transformations in Action
+            </h2>
+            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-3" />
+            <p className="text-xs sm:text-base text-[#64748B]">
+              Experience our seamless hair fixing technique, natural hair movement, and 100% undetectable hairline in high-definition video.
+            </p>
+          </div>
+
+          {/* Videos Grid — Both Videos */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+            {/* Video 1 */}
+            <div className="bg-[#F8FAFC] rounded-3xl border border-[#E2E8F0] p-5 sm:p-7 shadow-lg flex flex-col justify-between hover:border-[#29B6EB]/50 transition-colors">
+              <div>
+                <div className="relative rounded-2xl overflow-hidden shadow-md bg-black border border-slate-700 aspect-video mb-5">
+                  <video
+                    src="/videos/hair-fixing-transformation.mp4"
+                    controls
+                    preload="metadata"
+                    playsInline
+                    className="w-full h-full object-contain"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+
+                <div className="inline-flex items-center gap-1 text-[11px] font-bold text-[#005675] bg-[#E0F2FE] px-2.5 py-1 rounded-md uppercase tracking-wider mb-2">
+                  Verified Studio Session 1
+                </div>
+                <h3 className="text-lg sm:text-xl font-extrabold text-[#075078] leading-snug">
+                  Natural Hairline &amp; Instant Restoration
+                </h3>
+                <p className="text-xs sm:text-sm text-[#64748B] mt-2 leading-relaxed">
+                  Watch the live step-by-step hair restoration process. Notice how seamlessly the custom hair system blends with existing natural hair for a completely undetectable finish.
+                </p>
+
+                {/* Highlights */}
+                <div className="space-y-2 text-xs text-[#252B38] my-4 pt-3 border-t border-[#E2E8F0]">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="font-semibold">100% Breathable Swiss Lace Base</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="font-semibold">Natural Density &amp; Seamless Blending</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="font-semibold">Active Lifestyle &amp; Water Resistant</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action CTA Buttons */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                <a
+                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20watched%20your%20hair%20fixing%20transformation%20video%201%20and%20would%20like%20a%20consultation.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:flex-1 btn-whatsapp justify-center text-xs sm:text-sm py-2.5"
+                >
+                  <FaWhatsapp className="w-4 h-4 text-white" />
+                  <span>Consultation</span>
+                </a>
+
+                <a
+                  href="https://youtu.be/wTvV8Rhs5Gc"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-xs font-bold text-[#075078] hover:text-[#29B6EB] border border-[#CBD5E1] hover:border-[#29B6EB] bg-white rounded-lg px-4 py-2.5 transition-colors"
+                >
+                  <span>Watch on YouTube</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Video 2 */}
+            <div className="bg-[#F8FAFC] rounded-3xl border border-[#E2E8F0] p-5 sm:p-7 shadow-lg flex flex-col justify-between hover:border-[#29B6EB]/50 transition-colors">
+              <div>
+                <div className="relative rounded-2xl overflow-hidden shadow-md bg-black border border-slate-700 aspect-video mb-5">
+                  <video
+                    src="/videos/hair-fixing-results-demo.mp4"
+                    controls
+                    preload="metadata"
+                    playsInline
+                    className="w-full h-full object-contain"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+
+                <div className="inline-flex items-center gap-1 text-[11px] font-bold text-[#005675] bg-[#E0F2FE] px-2.5 py-1 rounded-md uppercase tracking-wider mb-2">
+                  Verified Studio Session 2
+                </div>
+                <h3 className="text-lg sm:text-xl font-extrabold text-[#075078] leading-snug">
+                  Full Scalp Coverage &amp; Styling Demonstration
+                </h3>
+                <p className="text-xs sm:text-sm text-[#64748B] mt-2 leading-relaxed">
+                  See the complete transformation showing density, scalp integration, and natural movement. Custom-fitted hair systems tailored to your unique hair pattern and lifestyle.
+                </p>
+
+                {/* Highlights */}
+                <div className="space-y-2 text-xs text-[#252B38] my-4 pt-3 border-t border-[#E2E8F0]">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="font-semibold">Immediate Same-Day Transformation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="font-semibold">Crown &amp; Hairline Perfect Integration</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="font-semibold">Zero Downtime &amp; Non-Surgical</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action CTA Buttons */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                <a
+                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20watched%20your%20hair%20fixing%20transformation%20video%202%20and%20would%20like%20a%20consultation.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:flex-1 btn-whatsapp justify-center text-xs sm:text-sm py-2.5"
+                >
+                  <FaWhatsapp className="w-4 h-4 text-white" />
+                  <span>Consultation</span>
+                </a>
+
+                <a
+                  href="https://youtu.be/HPTfePcIl9I"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-xs font-bold text-[#075078] hover:text-[#29B6EB] border border-[#CBD5E1] hover:border-[#29B6EB] bg-white rounded-lg px-4 py-2.5 transition-colors"
+                >
+                  <span>Watch on YouTube</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 5 — IN-STUDIO CONFIDENTIALITY NOTICE
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-white py-16 px-4 sm:px-8 border-t border-[#E2E8F0]">
         <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#005675] via-[#075078] to-[#104C88] text-white rounded-3xl p-8 sm:p-12 shadow-xl text-center space-y-4 relative overflow-hidden">

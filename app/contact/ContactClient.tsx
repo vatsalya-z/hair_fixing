@@ -35,7 +35,7 @@ export default function ContactClient() {
     phone: '',
     email: '',
     service: 'Custom Hair Patching System',
-    branch: 'Statue Junction (Opp. Secretariat, MG Road)',
+    branch: 'Thiruvananthapuram Studio (Palayam, Opp. Jubilee Hospital)',
     preferredDate: '',
     preferredTime: 'Morning (9:00 AM - 12:00 PM)',
     message: '',
@@ -69,21 +69,21 @@ export default function ContactClient() {
 
     // Build rich, complete WhatsApp consultation message
     const lines = [
-      '✨ *NEW APPOINTMENT CONSULTATION BOOKING*',
-      '*ozzone Hair Fixing Studio • Trivandrum*',
+      '✨ NEW APPOINTMENT CONSULTATION BOOKING',
+      'ozzone Hair Fixing Studio • Trivandrum',
       '──────────────────────────────',
-      `👤 *Client Name:* ${formData.name.trim()}`,
-      `📞 *Phone / WhatsApp:* ${formData.phone.trim()}`,
-      formData.email.trim() ? `✉️ *Email:* ${formData.email.trim()}` : null,
+      `👤 Client Name: ${formData.name.trim()}`,
+      `📞 Phone / WhatsApp: ${formData.phone.trim()}`,
+      formData.email.trim() ? `✉️ Email: ${formData.email.trim()}` : null,
       '',
-      `💇 *Service Requested:* ${formData.service}`,
-      `📍 *Preferred Branch:* ${formData.branch}`,
-      `📅 *Preferred Date:* ${formattedDate}`,
-      `⏰ *Preferred Time:* ${formData.preferredTime}`,
+      `💇 Service Requested: ${formData.service}`,
+      `📍 Preferred Branch: ${formData.branch}`,
+      `📅 Preferred Date: ${formattedDate}`,
+      `⏰ Preferred Time: ${formData.preferredTime}`,
       '',
       formData.message.trim()
-        ? `💬 *Client Notes / Hair Concern:*\n"${formData.message.trim()}"`
-        : '💬 *Client Notes:* No specific notes provided.',
+        ? `💬 Client Notes / Hair Concern:\n"${formData.message.trim()}"`
+        : '💬 Client Notes: No specific notes provided.',
       '──────────────────────────────',
       '_Sent via ozzonehair.com Online Booking Desk_',
     ].filter((line) => line !== null)
@@ -128,7 +128,7 @@ export default function ContactClient() {
               <FadeInUp delay={0.05} yOffset={20}>
                 <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
                   <MapPin className="w-3.5 h-3.5" />
-                  Statue Junction &amp; Pattom • Thiruvananthapuram
+                  Palayam, Thiruvananthapuram &amp; Indiranagar, Bengaluru
                 </span>
               </FadeInUp>
 
@@ -174,7 +174,7 @@ export default function ContactClient() {
                   {[
                     '100% Private Consulting Suites',
                     'Zero-Obligation Scalp Analysis',
-                    'Statue & Pattom Studios',
+                    'Trivandrum & Bengaluru Studios',
                     'Dedicated Client Parking',
                   ].map((t) => (
                     <div key={t} className="flex items-center gap-1.5">
@@ -187,9 +187,9 @@ export default function ContactClient() {
             </div>
 
             {/* Right Hero Image with 3D Tilt Card */}
-            <div className="flex justify-center lg:justify-end w-full">
+            {/* <div className="flex justify-center lg:justify-end w-full">
               <ContactHeroImageWithTilt />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -297,12 +297,12 @@ export default function ContactClient() {
                         WhatsApp Consultation Desk
                       </h4>
                       <a
-                        href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20consult.`}
+                        href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20consult.`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-sm font-bold text-[#1f2937] hover:text-[#25D366] block mt-0.5"
                       >
-                        Chat: +91 94470 28419
+                        Chat: +91 98470 62707
                       </a>
                       <span className="text-[11px] text-[#059669]">
                         Instant response • Photos kept 100% confidential
@@ -354,22 +354,25 @@ export default function ContactClient() {
                         1
                       </div>
                       <h3 className="text-base font-bold text-[#075078]">
-                        Statue Junction Studio (Main Center)
+                        Thiruvananthapuram Flagship Studio
                       </h3>
                     </div>
                     <span className="bg-[#E0F2FE] text-[#0369A1] text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
-                      Central Trivandrum
+                      Palayam, Trivandrum
                     </span>
                   </div>
-                  <p className="text-xs text-[#64748B] leading-relaxed pl-9 mb-3">
+                  <p className="text-xs text-[#64748B] leading-relaxed pl-9 mb-2">
                     {SITE_INFO.address}
+                  </p>
+                  <p className="text-xs font-medium text-[#075078] pl-9 mb-3">
+                    Phone: <a href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.phone}</a> / <a href={`tel:${SITE_INFO.altPhone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.altPhone}</a>
                   </p>
                   <div className="pl-9 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#E2E8F0]">
                     <span className="text-[11px] text-[#075078] font-semibold">
-                      Landmark: Opp. Secretariat, MG Road
+                      Landmark: Opp. Jubilee Memorial Hospital (2nd Gate Mizpah)
                     </span>
                     <a
-                      href="https://maps.google.com/?q=Statue+Palayam+Thiruvananthapuram"
+                      href="https://maps.google.com/?q=PRA+48+Sunny+Meads+Lane+Palayam+Thiruvananthapuram+Kerala+695034"
                       target="_blank"
                       rel="noreferrer"
                       className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
@@ -388,22 +391,25 @@ export default function ContactClient() {
                         2
                       </div>
                       <h3 className="text-base font-bold text-[#075078]">
-                        Pattom Studio (Medical College Side)
+                        Bengaluru Studio
                       </h3>
                     </div>
                     <span className="bg-[#E0F2FE] text-[#0369A1] text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
-                      North Trivandrum
+                      Indiranagar, Bengaluru
                     </span>
                   </div>
-                  <p className="text-xs text-[#64748B] leading-relaxed pl-9 mb-3">
+                  <p className="text-xs text-[#64748B] leading-relaxed pl-9 mb-2">
                     {SITE_INFO.branch2}
+                  </p>
+                  <p className="text-xs font-medium text-[#075078] pl-9 mb-3">
+                    Phone: <a href={`tel:${SITE_INFO.altPhone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.altPhone}</a>
                   </p>
                   <div className="pl-9 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#E2E8F0]">
                     <span className="text-[11px] text-[#075078] font-semibold">
-                      Landmark: Kesavadasapuram Junction
+                      Landmark: Double Road, HAL 2nd Stage, Indiranagar
                     </span>
                     <a
-                      href="https://maps.google.com/?q=Pattom+Thiruvananthapuram"
+                      href="https://www.google.com/maps/place/Ozzone+Farrell+bangalore/@12.9660325,77.6380037,849m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae16a25d4a7c99:0xd411d97542f78f0b!8m2!3d12.9660325!4d77.6380037!16s%2Fg%2F1tfxf3nj"
                       target="_blank"
                       rel="noreferrer"
                       className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
@@ -416,33 +422,6 @@ export default function ContactClient() {
               </div>
 
               {/* Clinic Privacy Guarantee Card */}
-              <div className="bg-gradient-to-br from-[#005675] to-[#075078] text-white p-6 rounded-2xl shadow-sm space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <ShieldCheck className="w-5 h-5 text-[#29B6EB]" />
-                  <h4 className="text-sm font-bold">Privacy &amp; Discretion Pledge</h4>
-                </div>
-                <p className="text-xs text-white/85 leading-relaxed">
-                  We understand hair loss can feel deeply personal. Every consultation and styling session is conducted behind closed doors in sound-insulated private cabins. Female specialists are available for female clients upon request.
-                </p>
-                <div className="grid grid-cols-2 gap-2 text-[11px] text-white/90 pt-1">
-                  <div className="flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5 text-[#29B6EB]" />
-                    <span>Private Cabins</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5 text-[#29B6EB]" />
-                    <span>Female Stylists Available</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5 text-[#29B6EB]" />
-                    <span>Sterilized Equipment</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5 text-[#29B6EB]" />
-                    <span>Client Confidentiality</span>
-                  </div>
-                </div>
-              </div>              
             </div>
 
             {/* Right Column: High-Conversion Appointment Form */}
@@ -649,8 +628,8 @@ export default function ContactClient() {
                           onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
                           className="w-full px-3.5 sm:px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-xs sm:text-sm outline-none bg-white transition-all cursor-pointer"
                         >
-                          <option value="Statue Junction (Opp. Secretariat, MG Road)">Statue Junction (Opp. Secretariat, MG Road)</option>
-                          <option value="Pattom Studio (Near Medical College & Kesavadasapuram)">Pattom Studio (Near Medical College &amp; Kesavadasapuram)</option>
+                          <option value="Thiruvananthapuram Flagship Studio (Palayam, Opp. Jubilee Hospital)">Thiruvananthapuram Flagship Studio (Palayam, Opp. Jubilee Hospital)</option>
+                          <option value="Bengaluru Studio (HAL 2nd Stage, Indiranagar)">Bengaluru Studio (HAL 2nd Stage, Indiranagar)</option>
                         </select>
                       </div>
                     </div>
@@ -748,14 +727,14 @@ export default function ContactClient() {
                   Studio Navigation Map
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#075078] mt-2">
-                  Visit Our Central Statue Junction Studio
+                  Visit Our Studio - Ozzone Farrell Bangalore
                 </h3>
                 <p className="text-xs sm:text-sm text-[#64748B] mt-1">
-                  Opposite Secretariat, MG Road, Statue, Thiruvananthapuram, Kerala 695001 • Dedicated parking available for clients.
+                  Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008 • Dedicated parking available for clients.
                 </p>
               </div>
               <a
-                href="https://maps.google.com/?q=Statue+Palayam+Thiruvananthapuram"
+                href="https://www.google.com/maps/place/Ozzone+Farrell+bangalore/@12.9660325,77.6380037,849m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae16a25d4a7c99:0xd411d97542f78f0b!8m2!3d12.9660325!4d77.6380037!16s%2Fg%2F1tfxf3nj"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-primary text-xs shrink-0"
@@ -774,7 +753,7 @@ export default function ContactClient() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="ozzone Hair Fixing Location Map"
+                title="Ozzone Farrell Bangalore Location Map"
                 className="w-full h-full"
               />
             </div>

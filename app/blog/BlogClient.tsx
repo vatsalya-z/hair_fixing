@@ -100,9 +100,9 @@ export default function BlogClient() {
             </div>
 
             {/* Right Hero Image with 3D Tilt Card */}
-            <div className="flex justify-center lg:justify-end w-full">
+            {/* <div className="flex justify-center lg:justify-end w-full">
               <BlogHeroImageWithTilt />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: 'Transparent hair fixing pricing packages from ₹9,999 to ₹22,999 in Trivandrum. 100% natural human hair systems with zero hidden charges.',
     url: 'https://ozzonehair.com/pricing/',
     siteName: 'ozzone Hair Thiruvananthapuram',
-    images: [{ url: '/images/hero-indian-hair.jpg', width: 1200, height: 630, alt: 'Hair Fixing Cost in Thiruvananthapuram' }],
+    images: [{ url: 'https://ozzonehair.com/hero-section/slide_2-1.webp', width: 1200, height: 630, alt: 'Hair Fixing Cost in Thiruvananthapuram' }],
     type: 'website',
     locale: 'en_IN',
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hair Fixing Cost in Thiruvananthapuram | ozzone Hair Studio',
     description: 'Transparent hair fixing packages in Trivandrum from ₹9,999 with haircut, styling & maintenance warranty.',
-    images: ['/images/hero-indian-hair.jpg'],
+    images: ['https://ozzonehair.com/hero-section/slide_2-1.webp'],
   },
 }
 

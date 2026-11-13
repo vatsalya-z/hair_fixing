@@ -17,36 +17,37 @@ import {
   Eye,
   Scissors,
   Zap,
-  Check
+  Check,
+  ChevronDown,
+  HelpCircle,
+  ExternalLink,
+  Phone
 } from 'lucide-react'
-import { SITE_INFO, SERVICES_DATA, GALLERY_ITEMS } from '@/data/siteData'
+import { SITE_INFO } from '@/data/siteData'
 import AboutHeroImageWithTilt from '@/components/AboutHeroImageWithTilt'
 import {
   FadeInUp,
   FadeInScale,
-  StaggerContainer,
-  StaggerItem,
-  TiltCard3D,
   HoverLift3D,
 } from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
-  title: 'About ozzone Hair | Premier Hair Fixing Studio in Thiruvananthapuram',
-  description: 'Learn about ozzone Hair, Thiruvananthapuram’s trusted non-surgical hair fixing & hair replacement studio. Over 14 years experience, 100% human hair & private suites.',
+  title: 'Our Profile | Best Hair Fixing in Trivandrum | ozzone Hair',
+  description: 'Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations. 18 years in Hair Replacement, 100% human hair systems, signature hair bonding, weaving, and non-surgical hair replacement.',
   alternates: {
     canonical: 'https://ozzonehair.com/about/',
   },
   openGraph: {
-    title: 'About ozzone Hair | Hair Fixing & Replacement Studio Trivandrum',
-    description: '14+ years providing natural, undetectable hair fixing and hair replacement in Trivandrum. Certified stylists, 100% human hair systems & private consultation suites.',
+    title: 'Our Profile | Best Hair Fixing in Trivandrum | ozzone Hair',
+    description: 'World’s leading providers of professional hair fixing in Trivandrum customised to bring assurance and style to each client. 18 years in Hair Replacement.',
     url: 'https://ozzonehair.com/about/',
-    siteName: 'ozzone Hair Thiruvananthapuram',
+    siteName: 'ozzone Hair',
     images: [
       {
-        url: '/images/about-hero-specialist.jpg',
+        url: 'https://ozzonehair.com/wp-content/uploads/2024/06/about.png',
         width: 1200,
         height: 630,
-        alt: 'About ozzone Hair Studio Thiruvananthapuram',
+        alt: 'Our Profile - Best Hair Fixing in Trivandrum - ozzone Hair',
       },
     ],
     type: 'website',
@@ -54,11 +55,75 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About ozzone Hair | Hair Fixing & Replacement Studio Trivandrum',
-    description: '14+ years providing natural, undetectable hair fixing and hair replacement in Trivandrum.',
-    images: ['/images/about-hero-specialist.jpg'],
+    title: 'Our Profile | Best Hair Fixing in Trivandrum | ozzone Hair',
+    description: 'Expert hair fixing and non-surgical hair replacement in Trivandrum & Bangalore. 18 years of excellence.',
+    images: ['https://ozzonehair.com/wp-content/uploads/2024/06/about.png'],
   },
 }
+
+// 10 Detailed FAQs for Hair Fixing in Trivandrum
+const ABOUT_FAQS = [
+  {
+    id: 'faq-1',
+    question: 'What is your hair fixing service different from others in Ozzone hair?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'Our hair fixing solutions are completely non-surgical, pain-free, and adapted to match your natural hair texture, color and style. We use high quality materials for a natural form and long lasting results.',
+  },
+  {
+    id: 'faq-2',
+    question: 'How long does a hair fixing process take?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'The complete hair fixing procedure takes approximately 90 minutes in a single, relaxed session. You walk in for consultation and leave with a complete, natural-looking head of hair on the very same day.',
+  },
+  {
+    id: 'faq-3',
+    question: 'Are hair setting a permanent solution?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'Non-surgical hair fixing provides a long-term, semi-permanent solution. The hair system stays securely attached for 3 to 5 weeks between routine servicing, and each system lasts between 8 to 14 months before needing replacement.',
+  },
+  {
+    id: 'faq-4',
+    question: 'Can I wash and style my hair after curing hair?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'Yes, absolutely. Because our systems are made from 100% natural human hair, you can wash, shampoo, condition, blow dry, apply hair oil, and style your hair using normal hair care products just like your own hair.',
+  },
+  {
+    id: 'faq-5',
+    question: 'Is hair fixing suitable for all types of hair loss?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'Yes. Our personalized hair fixing services are designed for people facing thinning hair, receding hairlines, male or female pattern baldness, alopecia, or hair loss because of scientific or medical conditions, supplying successful treatments for ladies, men, and youngsters.',
+  },
+  {
+    id: 'faq-6',
+    question: 'Will hair fixing damage my natural hair or skull?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'No, not at all. Our procedures are 100% non-invasive, pain-free, and surgery-free. We use safe, skin-friendly, dermatologically approved adhesives and breathable lace materials that protect your scalp and allow your existing natural hair to breathe comfortably.',
+  },
+  {
+    id: 'faq-7',
+    question: 'How long does a hair system last, and how often should it be replaced?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'Depending on the base type (Swiss lace, French lace, or micro-skin) and maintenance care, a premium hair system typically lasts between 8 to 14 months. We recommend a brief monthly maintenance visit (every 3 to 4 weeks) to clean, condition, and re-bond.',
+  },
+  {
+    id: 'faq-8',
+    question: 'Can I swim after fixing hair or play games?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'Yes, 100%! The medical-grade bonding agents we use are completely waterproof and sweat-resistant. You can swim in pools or the ocean, exercise intensely at the gym, play sports, and ride two-wheelers with a helmet without any risk of detachment.',
+  },
+  {
+    id: 'faq-9',
+    question: 'What is the cost of curing hair in ozzone hair?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'At Ozzone Hair, we offer completely transparent and competitive pricing based on the patch size, base selection, and hair density you need. Furthermore, all initial scalp evaluations and private consultations are 100% free with zero pressure or obligation.',
+  },
+  {
+    id: 'faq-10',
+    question: 'Do you provide AFTERCARE services for hair fixing?',
+    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    answer: 'Yes! We provide full ongoing aftercare services including ultrasonic deep cleaning of the system, scalp detox treatments, conditioning therapy, adhesive re-bonding, and fresh styling at both our Trivandrum and Bangalore studios.',
+  },
+]
 
 // JSON-LD Structured Data
 const aboutJsonLd = {
@@ -68,8 +133,8 @@ const aboutJsonLd = {
       '@type': 'AboutPage',
       '@id': 'https://ozzonehair.com/about/#aboutpage',
       url: 'https://ozzonehair.com/about/',
-      name: 'About Ozzone Hair | Hair Fixing & Replacement in Trivandrum',
-      description: 'Learn about Ozzone Hair Studio in Thiruvananthapuram. Over 14 years of excellence in non-surgical hair replacement, 100% human hair systems & private consultation.',
+      name: 'Our Profile | Best Hair Fixing in Trivandrum | ozzone Hair',
+      description: 'Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations. 18 years in Hair Replacement.',
       isPartOf: {
         '@id': 'https://ozzonehair.com/#website',
       },
@@ -96,150 +161,21 @@ const aboutJsonLd = {
     },
     {
       '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'What is Ozzone Hair?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Ozzone Hair is Thiruvananthapuram’s premier non-surgical hair fixing and hair replacement studio, offering 100% natural human hair systems, custom hair patches, and dermatological bonding with over 14 years of trusted experience.',
-          },
+      mainEntity: ABOUT_FAQS.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
         },
-        {
-          '@type': 'Question',
-          name: 'Where is Ozzone Hair located in Thiruvananthapuram?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Ozzone Hair operates two modern studios in Thiruvananthapuram: the main studio at 2nd Floor, Capital Centre, Opp. Secretariat, MG Road, Statue Junction, and a second branch at Pattom Medical Center Complex, Kesavadasapuram.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What hair fixing services does Ozzone Hair offer?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Ozzone Hair specializes in custom hair patching, dermatological hair bonding, glue-free micro-weaving, full scalp cranial replacement systems, women’s silk crown toppers, and professional monthly maintenance servicing.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How can customers contact or visit Ozzone Hair?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Customers can call +91 94470 28419 or WhatsApp +91 94470 28419 to book a free, private scalp analysis consultation at either our Statue Junction or Pattom studio.',
-          },
-        },
-      ],
+      })),
     },
   ],
 }
 
-// Expertise cards data
-const EXPERTISE_ITEMS = [
-  {
-    title: 'Custom Hair Fixing',
-    desc: 'Precision fitting of featherlight hair patches tailored to your scalp contour, restoring receding hairlines and crown thinning in 90 minutes.',
-    image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80',
-    href: '/services',
-  },
-  {
-    title: 'Non-Surgical Hair Replacement',
-    desc: 'Comprehensive cranial coverage for advanced Norwood 5–7 baldness and alopecia using 0.03mm micro-skin and Swiss lace bases.',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
-    href: '/services',
-  },
-  {
-    title: 'Hair Patch Solutions',
-    desc: '100% natural human hair patches hand-tied with invisible knotting, blending seamlessly with your natural hair texture and wave.',
-    image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80',
-    href: '/solutions',
-  },
-  {
-    title: "Men's Hair Systems",
-    desc: 'Custom-designed hair systems with natural graduated hairlines, custom grey percentages, and high density for men across all age groups.',
-    image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80',
-    href: '/solutions',
-  },
-  {
-    title: 'Dermatological Hair Bonding',
-    desc: 'FDA-cleared medical adhesives and waterproof tapes engineered to withstand Kerala’s tropical heat, humidity, workouts, and swimming.',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80',
-    href: '/services',
-  },
-  {
-    title: 'Hair Care & Maintenance',
-    desc: 'Routine monthly servicing including ultrasonic base deep cleaning, tea-tree scalp scrub detox, argan conditioning, and fresh bond reset.',
-    image: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80',
-    href: '/products',
-  },
-]
-
-// Why Choose Us cards data
-const WHY_CHOOSE_ITEMS = [
-  {
-    icon: Sparkles,
-    title: '100% Remy Human Hair',
-    desc: 'We use exclusively 100% cuticle-intact natural human hair with zero synthetic fibers, allowing you to wash, oil, and style naturally.',
-  },
-  {
-    icon: Clock,
-    title: 'Instant 90-Minute Results',
-    desc: 'Walk into our studio and walk out completely transformed in a single 90-minute visit with immediate full hair density.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Zero Surgery & Zero Pain',
-    desc: 'Completely painless and non-invasive. No scalp incisions, no injections, no donor scarring, and no recovery downtime.',
-  },
-  {
-    icon: Users,
-    title: 'Private Consultation Suites',
-    desc: 'Enclosed private consultation and styling suites at both Statue Junction and Pattom to ensure 100% client privacy.',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Kerala Climate-Resistant Hold',
-    desc: 'Medical-grade waterproof bonding adhesives engineered specifically to withstand Kerala’s coastal humidity, rain, and sweat.',
-  },
-  {
-    icon: Award,
-    title: 'Transparent Pricing & Care',
-    desc: 'Clear upfront pricing from ₹9,999 with no hidden charges, accompanied by full ongoing maintenance and styling support.',
-  },
-]
-
-// Process Steps data
-const PROCESS_STEPS = [
-  {
-    step: '01',
-    title: 'Private Consultation',
-    desc: 'A confidential scalp examination to assess hair density, thinning pattern, and your personal styling preferences.',
-  },
-  {
-    step: '02',
-    title: 'Scalp Mapping & Matching',
-    desc: 'Precise cranial contour measurement and matching of hair color, wave pattern, and texture to your existing hair.',
-  },
-  {
-    step: '03',
-    title: 'Custom System Selection',
-    desc: 'Selecting the ideal breathable Swiss lace, French lace, or micro-skin base suited for your scalp and lifestyle.',
-  },
-  {
-    step: '04',
-    title: 'Precision Fitting & Styling',
-    desc: 'Secure dermatological bonding followed by an expert haircut, texturizing, and seamless hairline blending.',
-  },
-  {
-    step: '05',
-    title: 'Maintenance Guidance',
-    desc: 'Comprehensive home-care advice with scheduled monthly studio servicing routines to keep your hair looking fresh.',
-  },
-]
-
 export default function AboutPage() {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white text-slate-800">
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
@@ -247,53 +183,59 @@ export default function AboutPage() {
       />
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — ABOUT HERO (Matches Home Page Hero Language)
+          SECTION 1 — ABOUT HERO (Default Image Enabled in Hero)
       ═══════════════════════════════════════════════════════════ */}
-      <section className="hero-gradient-bg relative overflow-hidden min-h-[75vh] flex items-center">
-        {/* Background ambient glows */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#075078] via-[#0d4f7c] to-[#174BA5] text-white py-14 sm:py-20 lg:py-24">
+        {/* Background ambient lighting accents */}
         <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#174BA5]/30 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#174BA5]/25 rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative w-full">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full z-10">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Copy */}
-            <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
               <FadeInUp delay={0.05} yOffset={20}>
-                <span className="inline-block bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-                  About ozzone Hair Studio
+                <span className="inline-flex items-center gap-2 bg-[#29B6EB]/20 border border-[#29B6EB]/40 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold text-[#29B6EB] tracking-wide mb-4">
+                  <span>Our Profile • 18 Years in Hair Replacement</span>
                 </span>
               </FadeInUp>
 
               <FadeInUp delay={0.15} yOffset={25}>
-                <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center lg:text-left">
-                  About ozzone Hair – Premier Hair Fixing &amp; Replacement Studio in{' '}
-                  <span className="text-[#29B6EB]">Thiruvananthapuram</span>
+                <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 tracking-tight">
+                  Best Hair Fixing in{' '}
+                  <span className="text-[#29B6EB] drop-shadow-sm">Trivandrum</span>
                 </h1>
               </FadeInUp>
 
               <FadeInUp delay={0.25} yOffset={25}>
-                <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-7 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
-                  For over 14 years, ozzone Hair Studio has pioneered non-surgical hair restoration across Thiruvananthapuram. We combine certified trichological expertise with 100% natural human hair systems to give you instant, undetectable density with zero surgery and zero downtime.
+                <p className="text-white/90 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 max-w-2xl font-normal">
+                  Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations, and enjoy a rejuvenated look with an answer tailor-made for your needs.
+                </p>
+                <p className="text-white/80 text-xs sm:text-sm leading-relaxed mb-8 max-w-2xl font-normal">
+                  Ozzone hair is the world’s leading providers of professional hair fixing in Trivandrum customised to bring assurance and style to each client. Founded on principles of quality, precision and client satisfaction, we offer a wide variety of hair fixing services designed for different purposes, potentially from hair thinning to alopecia or subtle personal enhancement.
                 </p>
               </FadeInUp>
 
               <FadeInUp delay={0.35} yOffset={20}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
                   <HoverLift3D>
-                    <Link href="/services" className="btn-primary">
-                      Explore Our Services
-                      <ArrowRight className="w-4 h-4 ml-1" />
+                    <Link
+                      href="/contact"
+                      className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group text-center"
+                    >
+                      <span>Please Contact Us</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </HoverLift3D>
 
                   <HoverLift3D>
                     <a
-                      href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services.`}
+                      href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20know%20more%20about%20your%20profile%20and%20hair%20fixing.`}
                       target="_blank"
                       rel="noreferrer"
-                      className="btn-whatsapp"
+                      className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 text-center"
                     >
                       <FaWhatsapp className="w-5 h-5 text-white" />
                       <span>WhatsApp Consultation</span>
@@ -302,599 +244,414 @@ export default function AboutPage() {
                 </div>
               </FadeInUp>
 
-              {/* Trust highlights */}
+              {/* Trust Badges */}
               <FadeInUp delay={0.45} yOffset={15}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-white/75 text-xs sm:text-sm">
-                  {['14+ Years in Trivandrum', '100% Natural Human Hair', 'Zero Surgery & Painless', 'Private Consultation Suites'].map((t) => (
-                    <div key={t} className="flex items-center gap-1.5">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm pt-6 mt-6 border-t border-white/15 w-full">
+                  {[
+                    '18+ Years Excellence',
+                    'Trivandrum & Bangalore Studios',
+                    '100% Human Hair Systems',
+                    'Zero Surgery & Painless',
+                  ].map((badge) => (
+                    <div key={badge} className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                      <span>{t}</span>
+                      <span>{badge}</span>
                     </div>
                   ))}
                 </div>
               </FadeInUp>
             </div>
 
-            {/* Right Hero Image with 3D Interaction */}
-            <div className="flex justify-center lg:justify-end w-full">
-              <AboutHeroImageWithTilt />
+            {/* Right Column: Hero Image with 3D Tilt (Default image enabled) */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
+              <AboutHeroImageWithTilt
+                imageSrc="/images/gallery/thumb_2.webp"
+                alt="Our Profile - Best Hair Fixing in Trivandrum - Ozzone Hair"
+                badgeTitle="18+ Years of Excellence"
+                badgeSubtitle="Trivandrum & Bangalore Studios"
+                topBadge="100% Human Hair"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 2 — WHO WE ARE (Two-Column Layout with 3D Depth)
+          SECTION 2 — OUR PROFILE & MISSION (Full Narrative)
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 sm:py-24 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Column: Photograph */}
-            <div className="lg:col-span-6 w-full">
-              <FadeInUp delay={0.1} className="w-full">
-                <TiltCard3D maxTilt={6} depth={12} className="w-full">
-                  <div className="relative rounded-2xl overflow-hidden border-2 border-[#E2E8F0] shadow-xl aspect-[4/3] min-h-[300px] sm:min-h-[380px] bg-[#075078] card-3d-interactive w-full">
-                    <Image
-                      src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80"
-                      alt="Hair fixing consultation at Ozzone Hair Studio Thiruvananthapuram"
-                      fill
-                      className="object-cover image-zoom-hover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/70 via-transparent to-transparent pointer-events-none" />
-
-                    {/* Floating badge */}
-                    <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#E2E8F0]">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-[#005675] text-white flex items-center justify-center shrink-0">
-                          <ShieldCheck className="w-5 h-5 text-[#29B6EB]" />
-                        </div>
-                        <div>
-                          <p className="text-[#075078] font-bold text-sm">Certified Trichology Specialists</p>
-                          <p className="text-[#64748B] text-xs">Dermatologically tested medical adhesives</p>
-                        </div>
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#E2E8F0]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Image Showcase */}
+            <div className="lg:col-span-5 flex justify-center">
+              <FadeInScale>
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square w-full max-w-md shadow-xl border border-[#E2E8F0] bg-[#F3F7FB]">
+                  <Image
+                    src="/images/gallery/thumb_2.webp"
+                    alt="Our Profile - Best Hair Fixing in Trivandrum - Ozzone Hair Studio"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 90vw, 40vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/50 via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Overlay badge */}
+                  <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#E2E8F0]">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-[#005675] text-white flex items-center justify-center shrink-0">
+                        <ShieldCheck className="w-5 h-5 text-[#29B6EB]" />
                       </div>
-                    </div>
-                  </div>
-                </TiltCard3D>
-              </FadeInUp>
-            </div>
-
-            {/* Right Column: Business Introduction */}
-            <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <FadeInUp delay={0.15}>
-                <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#29B6EB] mb-2">
-                  Who We Are
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#075078] leading-tight mb-3">
-                  Thiruvananthapuram&apos;s Trusted Hair Restoration Specialists
-                </h2>
-                <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto lg:mx-0 mb-6" />
-              </FadeInUp>
-
-              <FadeInUp delay={0.2}>
-                <p className="text-base text-[#64748B] leading-relaxed">
-                  Founded in Thiruvananthapuram, ozzone Hair Studio was established to provide a safe, dignified, and guaranteed alternative to invasive hair transplants and painful surgical procedures.
-                </p>
-              </FadeInUp>
-
-              <FadeInUp delay={0.25}>
-                <p className="text-base text-[#64748B] leading-relaxed">
-                  We specialize in custom hair patch systems, dermatological hair bonding, glue-free micro-weaving, and full cranial hair replacement. Every system is hand-crafted with 100% genuine virgin human hair, custom-fitted to your scalp contour, and precision-styled in a single 90-minute session.
-                </p>
-              </FadeInUp>
-
-              <FadeInUp delay={0.3}>
-                <div className="grid grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 rounded-xl bg-[#F3F7FB] border border-[#E2E8F0] text-center">
-                    <h4 className="text-2xl font-extrabold text-[#075078]">14+ Years</h4>
-                    <p className="text-xs text-[#64748B] font-medium mt-1">Clinical Practice in Trivandrum</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-[#F3F7FB] border border-[#E2E8F0] text-center">
-                    <h4 className="text-2xl font-extrabold text-[#005675]">12,500+</h4>
-                    <p className="text-xs text-[#64748B] font-medium mt-1">Transformations in Kerala</p>
-                  </div>
-                </div>
-              </FadeInUp>
-            </div>
-          </div>
-
-          {/* Centered CTA Button */}
-          <FadeInUp delay={0.35} className="text-center mt-12 flex justify-center">
-            <HoverLift3D className="inline-block">
-              <Link href="/contact" className="btn-primary">
-                Book a Free Scalp Consultation
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </HoverLift3D>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 3 — OUR STORY (Genuine Background & Milestones)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F3F7FB] py-16 sm:py-24 px-4 sm:px-8 border-t border-b border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <FadeInUp>
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#29B6EB] mb-3">
-                Our Journey
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#075078] mb-3">
-                14+ Years of Restoring Confidence in Kerala
-              </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto mb-4" />
-              <p className="text-[#64748B] text-sm max-w-xl mx-auto">
-                From a single private consultation room in Statue Junction to Thiruvananthapuram’s most trusted non-surgical hair replacement destination.
-              </p>
-            </FadeInUp>
-          </div>
-
-          {/* Story Visual Timeline Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                year: '2012',
-                title: 'The Foundation',
-                desc: 'Established our first studio at Statue Junction, MG Road, addressing the growing demand for non-surgical hair restoration in Trivandrum.',
-              },
-              {
-                year: '2016',
-                title: 'Swiss Lace Technology',
-                desc: 'Introduced breathable, ultra-lightweight European and Swiss lace bases engineered specifically for Kerala’s tropical heat and humidity.',
-              },
-              {
-                year: '2020',
-                title: 'Pattom Branch Opening',
-                desc: 'Expanded with a secondary studio at Pattom Medical Center Complex, featuring dedicated private suites for women’s crown toppers.',
-              },
-              {
-                year: 'Present',
-                title: '12,500+ Transformations',
-                desc: 'Proudly serving thousands of professionals, students, and brides across Kerala with 100% natural human hair solutions.',
-              },
-            ].map((milestone, idx) => (
-              <FadeInUp key={milestone.year} delay={idx * 0.1}>
-                <TiltCard3D maxTilt={6} depth={10}>
-                  <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 card-3d-interactive h-full flex flex-col justify-between">
-                    <div>
-                      <span className="inline-block bg-[#005675] text-[#29B6EB] text-xs font-bold px-3 py-1 rounded-full mb-4">
-                        {milestone.year}
-                      </span>
-                      <h3 className="text-lg font-bold text-[#075078] mb-2">{milestone.title}</h3>
-                      <p className="text-xs text-[#64748B] leading-relaxed">{milestone.desc}</p>
-                    </div>
-                  </div>
-                </TiltCard3D>
-              </FadeInUp>
-            ))}
-          </div>
-
-          {/* Centered CTA */}
-          <FadeInUp delay={0.3} className="text-center mt-12 flex justify-center">
-            <HoverLift3D className="inline-block">
-              <Link href="/gallery" className="btn-primary">
-                View Client Transformations
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </HoverLift3D>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 4 — OUR MISSION AND VISION (3D Interactive Cards)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 sm:py-24 px-4 sm:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <FadeInUp>
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#29B6EB] mb-3">
-                Guiding Principles
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#075078] mb-3">
-                Our Mission &amp; Vision
-              </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto mb-4" />
-              <p className="text-[#64748B] text-sm max-w-xl mx-auto">
-                Driven by trichological precision, patient confidentiality, and world-class aesthetic excellence.
-              </p>
-            </FadeInUp>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Mission Card */}
-            <FadeInUp delay={0.1}>
-              <TiltCard3D maxTilt={7} depth={15}>
-                <div className="bg-[#F3F7FB] border border-[#E2E8F0] p-8 sm:p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 card-3d-interactive h-full flex flex-col justify-between">
-                  <div>
-                    <div className="w-14 h-14 rounded-xl bg-[#005675] text-white flex items-center justify-center mb-6 shadow-md">
-                      <Target className="w-7 h-7 text-[#29B6EB]" />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#29B6EB] block mb-2">
-                      Our Core Purpose
-                    </span>
-                    <h3 className="text-2xl font-bold text-[#075078] mb-4">
-                      Empowering Natural Confidence Without Surgery
-                    </h3>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-6">
-                      Our mission is to eliminate the emotional distress of hair loss by providing safe, 100% natural virgin human hair systems in a comfortable, private setting. We commit to instant results, zero surgical risk, transparent pricing, and complete aftercare support for every client.
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] flex items-center gap-2 text-xs text-[#075078] font-semibold">
-                    <CheckCircle className="w-4 h-4 text-[#29B6EB]" />
-                    <span>Instant Results • Zero Surgery • Honest Care</span>
-                  </div>
-                </div>
-              </TiltCard3D>
-            </FadeInUp>
-
-            {/* Vision Card */}
-            <FadeInUp delay={0.2}>
-              <TiltCard3D maxTilt={7} depth={15}>
-                <div className="bg-[#F3F7FB] border border-[#E2E8F0] p-8 sm:p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 card-3d-interactive h-full flex flex-col justify-between">
-                  <div>
-                    <div className="w-14 h-14 rounded-xl bg-[#005675] text-white flex items-center justify-center mb-6 shadow-md">
-                      <Eye className="w-7 h-7 text-[#29B6EB]" />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#29B6EB] block mb-2">
-                      Our Aspiration
-                    </span>
-                    <h3 className="text-2xl font-bold text-[#075078] mb-4">
-                      Kerala&apos;s Gold Standard in Hair Replacement
-                    </h3>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-6">
-                      Our vision is to remain South India’s most trusted non-surgical hair restoration studio, setting the benchmark for clinical hygiene, custom base engineering, and undetectable hairlines while removing the social stigma surrounding hair loss.
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] flex items-center gap-2 text-xs text-[#075078] font-semibold">
-                    <CheckCircle className="w-4 h-4 text-[#29B6EB]" />
-                    <span>Highest Quality • Complete Confidentiality • Excellence</span>
-                  </div>
-                </div>
-              </TiltCard3D>
-            </FadeInUp>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 5 — OUR EXPERTISE (Grid of Specialized Services)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F3F7FB] py-16 sm:py-24 px-4 sm:px-8 border-t border-b border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <FadeInUp>
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#29B6EB] mb-3">
-                Specialized Capabilities
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#075078] mb-3">
-                Our Areas of Hair Restoration Expertise
-              </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto mb-4" />
-              <p className="text-[#64748B] text-sm max-w-xl mx-auto">
-                Comprehensive non-surgical solutions engineered for Kerala’s climate and customized to your exact degree of hair loss.
-              </p>
-            </FadeInUp>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {EXPERTISE_ITEMS.map((item) => (
-              <StaggerItem key={item.title}>
-                <TiltCard3D maxTilt={6} depth={10}>
-                  <Link
-                    href={item.href}
-                    className="group bg-white rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 card-3d-interactive block h-full flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="relative aspect-[16/10] min-h-[180px] sm:min-h-[200px] overflow-hidden bg-[#075078]">
-                        <Image
-                          src={item.image}
-                          alt={`${item.title} at Ozzone Hair Thiruvananthapuram`}
-                          fill
-                          className="object-cover image-zoom-hover"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                      <div className="p-6">
-                        <h3 className="text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-xs text-[#64748B] leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="px-6 pb-6 pt-0">
-                      <span className="inline-flex items-center text-xs font-bold text-[#005675] group-hover:text-[#29B6EB] transition-colors">
-                        Learn More <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                      </span>
-                    </div>
-                  </Link>
-                </TiltCard3D>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          {/* Centered CTA */}
-          <FadeInUp delay={0.3} className="text-center mt-12 flex justify-center">
-            <HoverLift3D className="inline-block">
-              <Link href="/solutions" className="btn-primary">
-                Explore All Solutions
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </HoverLift3D>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 6 — WHY CHOOSE US (Verified Strengths & Features)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 sm:py-24 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <FadeInUp>
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#29B6EB] mb-3">
-                The ozzone Advantage
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#075078] mb-3">
-                Why Trivandrum Chooses ozzone Hair
-              </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto mb-4" />
-              <p className="text-[#64748B] text-sm max-w-xl mx-auto">
-                Built on clinical hygiene, medical safety, and authentic 100% human hair craftsmanship.
-              </p>
-            </FadeInUp>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {WHY_CHOOSE_ITEMS.map((item) => {
-              const IconComp = item.icon
-              return (
-                <StaggerItem key={item.title}>
-                  <TiltCard3D maxTilt={6} depth={10}>
-                    <div className="bg-[#F3F7FB] p-6 sm:p-8 rounded-2xl border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 card-3d-interactive h-full flex flex-col justify-between">
                       <div>
-                        <div className="w-12 h-12 rounded-xl bg-[#005675] text-white flex items-center justify-center mb-5 shadow-sm">
-                          <IconComp className="w-6 h-6 text-[#29B6EB]" />
-                        </div>
-                        <h3 className="text-lg font-bold text-[#075078] mb-2">{item.title}</h3>
-                        <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">{item.desc}</p>
+                        <p className="text-[#075078] font-bold text-sm">Seasoned Specialists</p>
+                        <p className="text-[#64748B] text-xs">Over 17+ Years of Experience in the Field</p>
                       </div>
-                    </div>
-                  </TiltCard3D>
-                </StaggerItem>
-              )
-            })}
-          </StaggerContainer>
-
-          {/* Centered CTA */}
-          <FadeInUp delay={0.25} className="text-center mt-12 flex justify-center">
-            <HoverLift3D className="inline-block">
-              <Link href="/pricing" className="btn-primary">
-                View Pricing Packages
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </HoverLift3D>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 7 — OUR APPROACH / PROCESS (5-Step Visual Flow)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F3F7FB] py-16 sm:py-24 px-4 sm:px-8 border-t border-b border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <FadeInUp>
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#29B6EB] mb-3">
-                Seamless Experience
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#075078] mb-3">
-                Our 5-Step Hair Transformation Process
-              </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto mb-4" />
-              <p className="text-[#64748B] text-sm max-w-xl mx-auto">
-                How we guide you from your initial private consultation to an undetectable natural hairline in 90 minutes.
-              </p>
-            </FadeInUp>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {PROCESS_STEPS.map((step, idx) => (
-              <FadeInUp key={step.step} delay={idx * 0.1}>
-                <TiltCard3D maxTilt={6} depth={10}>
-                  <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 card-3d-interactive h-full flex flex-col justify-between">
-                    <div>
-                      <div className="w-10 h-10 rounded-full bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4">
-                        {step.step}
-                      </div>
-                      <h3 className="text-base font-bold text-[#075078] mb-2">{step.title}</h3>
-                      <p className="text-xs text-[#64748B] leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
-                </TiltCard3D>
+                </div>
+              </FadeInScale>
+            </div>
+
+            {/* Right Text Copy */}
+            <div className="lg:col-span-7 space-y-5">
+              <FadeInUp>
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                  Our Profile
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] leading-tight mt-3 mb-3">
+                  Leading Providers of Professional Hair Fixing in Trivandrum
+                </h2>
+                <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-5" />
+
+                <div className="space-y-4 text-sm sm:text-base text-[#475569] leading-relaxed">
+                  <p>
+                    Our goal is to give you the look you want while helping you in recovering your confidence. Our goal is to provide each individual with excellent alternatives for hair replacement while also meeting their wonderful needs. Because of our unparalleled experience and current period, we are the worldwide experts in the hair replacement industry.
+                  </p>
+                  <p>
+                    <strong className="text-[#075078]">Skill:</strong> Our achievement is basically due to our group of seasoned professionals. Our team of specialists have over 17 years of experience inside the subject and are nicely-versed inside the most recent hair healing techniques. In order to offer extraordinary outcomes, we take top notch pride in preserving on staying at the leading edge of hair substitute generation.
+                  </p>
+                  <p>
+                    Ensuring your happiness is our top priority. Your needs are recognized and satisfied as soon as you walk in and you will find a warm and inviting environment. See what our clients have to say about us rather than taking our word for it.
+                  </p>
+                  <p>
+                    Ozzone hair creates an experience in every person entering our doors. It brings to one a finer expert and certified hairstylist to ensure that every client leaves with a sure result of his or her choice, at the same time reflecting all factors of lifestyle aesthetic. All this is done comfortably as natural results surface because our experts just apply techniques that draw upon his artistry, compassion, and understanding of one’s unique requirement.
+                  </p>
+                </div>
+
+                <div className="pt-4 flex flex-wrap gap-4 items-center">
+                  <Link
+                    href="/contact"
+                    className="btn-primary inline-flex items-center gap-2"
+                  >
+                    <span>Book Scalp Consultation</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="btn-secondary-light inline-flex items-center gap-2"
+                  >
+                    <span>View Our Signature Services</span>
+                  </Link>
+                </div>
               </FadeInUp>
-            ))}
+            </div>
           </div>
-
-          {/* Centered CTA */}
-          <FadeInUp delay={0.3} className="text-center mt-12 flex justify-center">
-            <HoverLift3D className="inline-block">
-              <Link href="/contact" className="btn-primary">
-                Book Your 90-Minute Session
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </HoverLift3D>
-          </FadeInUp>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 8 — OUR SERVICES PREVIEW (Matching Home Cards)
+          SECTION 3 — SIGNATURE FACILITIES & TECHNIQUES
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 sm:py-24 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <FadeInUp>
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#29B6EB] mb-3">
-                Core Offerings
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#075078] mb-3">
-                Our Hair Fixing &amp; Replacement Services
-              </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto mb-4" />
-              <p className="text-[#64748B] text-sm max-w-xl mx-auto">
-                Select from our proven techniques designed for maximum breathability and undetectable hairlines.
-              </p>
-            </FadeInUp>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5">
-            {SERVICES_DATA.slice(0, 6).map((service) => (
-              <StaggerItem key={service.id}>
-                <TiltCard3D maxTilt={7} depth={10}>
-                  <Link
-                    href={`/services#${service.id}`}
-                    className="group ronex-card overflow-hidden block h-full card-3d-interactive border border-[#E2E8F0]"
-                  >
-                    <div className="relative aspect-[4/3] min-h-[160px] sm:min-h-[180px] bg-[#075078] overflow-hidden">
-                      <Image
-                        src={service.image}
-                        alt={`${service.title} in Thiruvananthapuram`}
-                        fill
-                        className="object-cover image-zoom-hover"
-                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/85 via-[#075078]/25 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-                        <h3 className="text-white font-bold text-xs sm:text-base leading-tight drop-shadow">
-                          {service.title}
-                        </h3>
-                      </div>
-                    </div>
-                  </Link>
-                </TiltCard3D>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          {/* Centered CTA */}
-          <FadeInUp delay={0.2} className="text-center mt-8 sm:mt-10 flex justify-center">
-            <HoverLift3D className="inline-block">
-              <Link href="/services" className="btn-primary">
-                View All Services
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </HoverLift3D>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 9 — OUR GALLERY PREVIEW (Real Results & Zoom)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F3F7FB] py-16 sm:py-24 px-4 sm:px-8 border-t border-b border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <FadeInUp>
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#29B6EB] mb-3">
-                Proven Results
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#075078] mb-3">
-                Real Client Transformations
-              </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto mb-4" />
-              <p className="text-[#64748B] text-sm max-w-xl mx-auto">
-                Witness real before and after results from our Statue Junction and Pattom studios.
-              </p>
-            </FadeInUp>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {GALLERY_ITEMS.slice(0, 4).map((item, i) => (
-              <StaggerItem key={item.id}>
-                <TiltCard3D maxTilt={6} depth={10}>
-                  <Link
-                    href="/gallery"
-                    className="group ronex-card overflow-hidden block h-full card-3d-interactive border border-[#E2E8F0] shadow-md hover:shadow-2xl transition-all duration-300 rounded-2xl"
-                  >
-                    <div className="relative aspect-[4/3] min-h-[180px] sm:min-h-[220px] bg-[#075078] overflow-hidden">
-                      <Image
-                        src={item.afterImg}
-                        alt={`${item.solutionProvided} result ${i + 1} at ozzone Hair Thiruvananthapuram`}
-                        fill
-                        className="object-cover image-zoom-hover"
-                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 45vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5">
-                        <span className="inline-block bg-[#005675] text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded mb-1.5 shadow-sm">
-                          After Result
-                        </span>
-                        <p className="text-white font-bold text-xs sm:text-base drop-shadow line-clamp-1">
-                          {item.solutionProvided}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                </TiltCard3D>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          {/* Centered CTA */}
-          <FadeInUp delay={0.2} className="text-center mt-8 sm:mt-10 flex justify-center">
-            <HoverLift3D className="inline-block">
-              <Link href="/gallery" className="btn-primary">
-                Explore Full Gallery
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </HoverLift3D>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 10 — FINAL CTA BANNER (Full Width Hero Gradient)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="hero-gradient-bg py-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#29B6EB]/10 rounded-full blur-3xl" />
-        </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <FadeInUp>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-5 leading-tight">
-              Let&apos;s Find the{' '}
-              <span className="text-[#29B6EB]">Right Hair Solution</span>{' '}
-              for You
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+              Sophisticated Facilities &amp; Expertise
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+              Signature Services &amp; Skin-Friendly Materials
             </h2>
-            <p className="text-white/85 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              Connect with our team to explore hair fixing and hair replacement options in Thiruvananthapuram. No obligation, no pressure — just honest expert advice in a private suite.
+            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+            <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
+              Its sophisticated facilities offer signature services, including hair bonding, hair weaving, and non-surgical hair replacement. All techniques utilize high-quality material sourced from trusted suppliers, thereby giving an impression and durability after using its services.
+            </p>
+          </div>
+
+          {/* Three Core Signatures Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
+            {/* Card 1: Hair Bonding */}
+            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 hover:border-[#29B6EB] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-[#075078] mb-3">
+                  Hair Bonding
+                </h3>
+                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                  Hair bonding is regarded as the most efficient and safest method for adding volume and covering bald areas, providing seamless adhesion and durability.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-[#E2E8F0]">
+                <span className="text-xs font-semibold text-[#29B6EB] flex items-center gap-1">
+                  <Check className="w-4 h-4" /> Safe &amp; Skin-Friendly
+                </span>
+              </div>
+            </div>
+
+            {/* Card 2: Hair Weaving */}
+            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 hover:border-[#29B6EB] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
+                  <Scissors className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-[#075078] mb-3">
+                  Hair Weaving
+                </h3>
+                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                  Hair weaving allows more flexibility in achieving full hair coverage, seamlessly integrated into your lifestyle aesthetics without surgery.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-[#E2E8F0]">
+                <span className="text-xs font-semibold text-[#29B6EB] flex items-center gap-1">
+                  <Check className="w-4 h-4" /> Maximum Flexibility
+                </span>
+              </div>
+            </div>
+
+            {/* Card 3: Non-Surgical Hair Replacement */}
+            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 hover:border-[#29B6EB] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
+                  <Sparkles className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-[#075078] mb-3">
+                  Non-Surgical Hair Replacement
+                </h3>
+                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                  Done through non-surgical hair replacement, perfectly blending with the existing hair, if comfort and convenience of a hair system are desired but surgery is to be avoided.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-[#E2E8F0]">
+                <span className="text-xs font-semibold text-[#29B6EB] flex items-center gap-1">
+                  <Check className="w-4 h-4" /> 100% Surgery-Free
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Facility & Emotional Care Narrative */}
+          <div className="bg-white rounded-3xl border border-[#E2E8F0] p-6 sm:p-10 shadow-sm grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4 text-sm sm:text-base text-[#475569] leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#075078]">
+                High Hygiene Levels &amp; Stringent Protocols
+              </h3>
+              <p>
+                We pride ourselves on results and commitment to safe, skin-friendly adhesives and material. High hygiene levels with quite stringent protocols in all treatments ensure health and satisfaction of our clients.
+              </p>
+              <p>
+                Our hair–fixing approach encompasses the latest advancements available in the industry and helps us stay not only abreast of the innovation curve but in a position to deliver contemporary effective solutions.
+              </p>
+            </div>
+
+            <div className="space-y-4 text-sm sm:text-base text-[#475569] leading-relaxed border-t md:border-t-0 md:border-l border-[#E2E8F0] pt-6 md:pt-0 md:pl-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#075078]">
+                Emotional Understanding &amp; Free Consultations
+              </h3>
+              <p>
+                To understand the effect of hair loss on the emotional level, we as a team are always trying to make them feel comfortable and understood in such a warm embracing environment.
+              </p>
+              <p>
+                All our consultations are free to our clients so that they can freely express their needs and discuss possible options for them without form of pressure. Give you the best and reliable hair fixing services that will help you feel confident and style at every strand. Let’s help you regain your natural look while making your beauty brighter with specially designed techniques especially for Ozzone hair.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 4 — COMMITMENT TO CUSTOMER CARE (Dedicated Callout)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-gradient-to-r from-[#075078] via-[#104C88] to-[#174BA5] py-14 sm:py-18 px-4 sm:px-8 text-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#29B6EB]/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#174BA5]/40 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left relative z-10">
+          <div>
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#29B6EB] bg-white/10 px-3.5 py-1 rounded-full border border-white/20">
+              Customer First Philosophy
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold mt-3 mb-2">
+              Commitment to Customer Care
+            </h2>
+            <p className="text-xs sm:text-base text-white/90 max-w-2xl leading-relaxed">
+              Ensuring your happiness is our top priority. Your needs are recognized and satisfied as soon as you walk in and you will find a warm and inviting environment. See what our clients have to say about us rather than taking our word for it.
+            </p>
+            <p className="text-xs sm:text-sm font-semibold text-[#29B6EB] mt-3">
+              Customer Care: +91 77360 77110 / 098470 62707 • Trivandrum &amp; Bangalore
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+            <Link
+              href="/contact"
+              className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 w-full sm:w-auto text-center"
+            >
+              Please Contact Us
+            </Link>
+            <a
+              href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20connect%20with%20customer%20care.`}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center"
+            >
+              <FaWhatsapp className="w-4 h-4 text-white" />
+              <span>WhatsApp Us</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 5 — FAQ - HAIR FIXING IN TRIVANDRUM (10 Comprehensive Items)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+              Frequently Asked Questions
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+              Faq- Hair Fixing in Trivandrum
+            </h2>
+            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+            <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
+              Find transparent, honest answers to common questions about hair fixing, maintenance, procedure times, costs, and aftercare services in Trivandrum.
+            </p>
+          </div>
+
+          {/* Interactive Semantic FAQ Accordion List */}
+          <div className="space-y-4">
+            {ABOUT_FAQS.map((faq, index) => (
+              <details
+                key={faq.id}
+                className="group bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-4 sm:p-5 transition-all duration-200 open:bg-white open:border-[#29B6EB] open:shadow-md"
+                open={index === 0}
+              >
+                <summary className="flex items-center justify-between cursor-pointer list-none select-none font-bold text-sm sm:text-base text-[#075078] hover:text-[#005675] transition-colors">
+                  <span className="flex items-start gap-2.5 sm:gap-3 text-left pr-4">
+                    <span className="w-6 h-6 rounded-lg bg-[#005675]/10 text-[#005675] flex items-center justify-center text-xs font-extrabold shrink-0 mt-0.5 group-open:bg-[#29B6EB] group-open:text-[#075078] transition-colors">
+                      {index + 1}
+                    </span>
+                    <span>{faq.question}</span>
+                  </span>
+                  <ChevronDown className="w-5 h-5 text-[#005675] shrink-0 transition-transform duration-300 group-open:rotate-180" />
+                </summary>
+
+                <div className="pt-4 pl-8 sm:pl-9 pr-2 text-xs sm:text-sm text-[#475569] leading-relaxed border-t border-[#E2E8F0] mt-3 space-y-3">
+                  <p>{faq.answer}</p>
+                  <div>
+                    <a
+                      href={faq.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
+                    >
+                      <span>Explore Hair Fixing in Trivandrum Guide</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              </details>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 pt-6 border-t border-[#E2E8F0]">
+            <p className="text-xs sm:text-sm text-[#64748B] mb-4">
+              Have a specific question not answered here? Our hair technicians are here to help.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <HoverLift3D>
-                <a
-                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20free%20hair%20analysis%20consultation.`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-whatsapp text-base px-8 py-3.5"
-                >
-                  <FaWhatsapp className="w-5 h-5 text-white" />
-                  <span>WhatsApp Consultation</span>
-                </a>
-              </HoverLift3D>
-              <HoverLift3D>
-                <Link href="/contact" className="btn-secondary-dark text-base px-8 py-3.5">
-                  Contact Us
-                </Link>
-              </HoverLift3D>
+              <Link
+                href="/contact"
+                className="btn-primary inline-flex items-center gap-2 text-xs sm:text-sm"
+              >
+                <span>Ask Our Specialists</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
+                className="btn-secondary-light inline-flex items-center gap-2 text-xs sm:text-sm"
+              >
+                <Phone className="w-4 h-4 text-[#005675]" />
+                <span>Call {SITE_INFO.phone}</span>
+              </a>
             </div>
-          </FadeInUp>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 6 — FINAL TRANSFORMATION CTA
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="hero-gradient-bg py-16 sm:py-20 relative overflow-hidden text-white">
+        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#29B6EB]/12 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#174BA5]/40 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-[#29B6EB] tracking-wide mb-4">
+            <Sparkles className="w-4 h-4 text-[#29B6EB]" />
+            <span>Begin Your Hair Transformation Today</span>
+          </span>
+
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight tracking-tight">
+            Ready to Regain Your Confidence &amp; Natural Look?
+          </h2>
+
+          <p className="text-white/90 text-sm sm:text-base lg:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+            Schedule a free, 100% confidential scalp evaluation with our experienced specialists in Trivandrum or Bangalore. Zero pressure, clear transparent pricing, and instant results.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
+            <HoverLift3D>
+              <Link
+                href="/contact"
+                className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
+              >
+                <span>Please Contact Us</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </HoverLift3D>
+
+            <HoverLift3D>
+              <a
+                href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20book%20a%20free%20consultation.`}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-8 py-4 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center"
+              >
+                <FaWhatsapp className="w-5 h-5 text-white" />
+                <span>WhatsApp Consultation</span>
+              </a>
+            </HoverLift3D>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-white/75 mt-8 pt-6 border-t border-white/15">
+            <div className="flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-[#29B6EB]" />
+              <span>100% Private Consulting Suites</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle className="w-4 h-4 text-[#29B6EB]" />
+              <span>Zero-Obligation Scalp Analysis</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Phone className="w-4 h-4 text-[#29B6EB]" />
+              <span>Helpline: +91 77360 77110 / 098470 62707</span>
+            </div>
+          </div>
         </div>
       </section>
     </div>

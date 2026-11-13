@@ -4,7 +4,15 @@ import React, { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
-export default function SolutionsHeroImageWithTilt() {
+interface SolutionsHeroImageWithTiltProps {
+  imageSrc?: string
+  alt?: string
+}
+
+export default function SolutionsHeroImageWithTilt({
+  imageSrc = '/hero-section/slide_2-1.png',
+  alt = 'Hair Fixing Solutions in Trivandrum and Bangalore - Ozzone Hair',
+}: SolutionsHeroImageWithTiltProps) {
   const cardRef = useRef<HTMLDivElement>(null)
 
   const x = useMotionValue(0)
@@ -38,7 +46,7 @@ export default function SolutionsHeroImageWithTilt() {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[290px] sm:max-w-md lg:max-w-[460px] xl:max-w-[480px] cursor-pointer mx-auto"
+      className="relative w-full max-w-[320px] sm:max-w-md lg:max-w-[460px] xl:max-w-[480px] cursor-pointer mx-auto"
       style={{ perspective: 1000 }}
     >
       <motion.div
@@ -49,15 +57,15 @@ export default function SolutionsHeroImageWithTilt() {
         }}
         className="relative w-full"
       >
-        {/* Main Image Frame with 4:5 aspect ratio */}
-        <div className="relative rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl aspect-[4/5] bg-[#075078] w-full">
+        {/* Main Image Frame */}
+        <div className="relative rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl aspect-[4/3] sm:aspect-[4/3.5] bg-[#075078] w-full">
           <Image
-            src="/images/solutions-hero.jpg"
-            alt="Non-Surgical Hair Replacement Solutions at ozzone Hair Studio Thiruvananthapuram"
+            src={imageSrc}
+            alt={alt}
             fill
             className="object-cover object-center"
             priority
-            sizes="(max-width: 640px) 290px, (max-width: 1024px) 90vw, 480px"
+            sizes="(max-width: 640px) 320px, (max-width: 1024px) 90vw, 480px"
           />
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/40 via-transparent to-transparent pointer-events-none" />
@@ -66,7 +74,7 @@ export default function SolutionsHeroImageWithTilt() {
         {/* Floating Glassmorphism Badge - Bottom Left */}
         <motion.div
           style={{ transform: 'translateZ(30px)' }}
-          className="absolute bottom-3 left-3 right-3 sm:-bottom-6 sm:-left-6 sm:right-auto bg-[#005675]/95 backdrop-blur-md rounded-xl p-3 sm:px-5 sm:py-4 shadow-2xl border border-white/25 sm:max-w-[270px]"
+          className="absolute bottom-3 left-3 right-3 sm:-bottom-5 sm:-left-5 sm:right-auto bg-[#005675]/95 backdrop-blur-md rounded-xl p-3 sm:px-5 sm:py-3.5 shadow-2xl border border-white/25 sm:max-w-[270px]"
         >
           <div className="flex items-center gap-2.5 sm:gap-3">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#29B6EB]/30 border border-[#29B6EB]/50 flex items-center justify-center shrink-0 shadow-sm">
@@ -76,7 +84,7 @@ export default function SolutionsHeroImageWithTilt() {
             </div>
             <div>
               <p className="text-white font-bold text-xs sm:text-sm leading-tight">18+ Years of Excellence</p>
-              <p className="text-white/80 text-[10px] sm:text-xs leading-normal mt-0.5">Custom Hair Loss Solutions</p>
+              <p className="text-white/80 text-[10px] sm:text-xs leading-normal mt-0.5">Trivandrum &amp; Bangalore</p>
             </div>
           </div>
         </motion.div>
@@ -84,9 +92,9 @@ export default function SolutionsHeroImageWithTilt() {
         {/* Top-Right Badge */}
         <motion.div
           style={{ transform: 'translateZ(25px)' }}
-          className="absolute -top-2.5 -right-2.5 sm:-top-4 sm:-right-4 bg-[#29B6EB] text-white rounded-lg sm:rounded-xl px-2.5 py-1.5 sm:px-4 sm:py-3 shadow-lg text-center"
+          className="absolute -top-2.5 -right-2.5 sm:-top-4 sm:-right-4 bg-[#29B6EB] text-[#075078] font-extrabold rounded-lg sm:rounded-xl px-2.5 py-1.5 sm:px-4 sm:py-2.5 shadow-lg text-center border border-white/30"
         >
-          <p className="text-base sm:text-2xl font-extrabold leading-none">100%</p>
+          <p className="text-sm sm:text-xl font-extrabold leading-none">100%</p>
           <p className="text-[10px] sm:text-xs font-semibold tracking-wide">Natural Hair</p>
         </motion.div>
       </motion.div>

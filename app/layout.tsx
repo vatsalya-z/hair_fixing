@@ -54,18 +54,18 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/hero-indian-hair.jpg',
+        url: 'https://ozzonehair.com/hero-section/slide_2-1.webp',
         width: 1200,
         height: 630,
-        alt: 'ozzone Hair Fixing & Replacement Studio Thiruvananthapuram',
+        alt: 'ozzone Hair Fixing & Replacement Studio Thiruvananthapuram and Bangalore',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hair Fixing in Thiruvananthapuram | ozzone Hair Studio',
-    description: 'Premier non-surgical hair fixing & hair replacement in Trivandrum. 100% natural human hair, zero surgery, instant results.',
-    images: ['/images/hero-indian-hair.jpg'],
+    description: 'Premier non-surgical hair fixing & hair replacement in Trivandrum & Bangalore. 100% natural human hair, zero surgery, instant results.',
+    images: ['https://ozzonehair.com/hero-section/slide_2-1.webp'],
   },
   robots: {
     index: true,
@@ -110,8 +110,8 @@ const globalSchema = {
         url: 'https://ozzonehair.com/images/ozzone-hair-logo-dark.png',
         caption: 'ozzone Hair Logo',
       },
-      image: 'https://ozzonehair.com/images/hero-indian-hair.jpg',
-      description: 'Specialist non-surgical hair fixing, custom hair patch, dermatological hair bonding, and hair replacement studio located in Statue Junction, MG Road, and Pattom, Thiruvananthapuram, Kerala.',
+      image: 'https://ozzonehair.com/hero-section/slide_2-1.webp',
+      description: 'Specialist non-surgical hair fixing, custom hair patch, dermatological hair bonding, and hair replacement studio located in Palayam, Thiruvananthapuram, Kerala and Indiranagar, Bengaluru, Karnataka.',
       telephone: SITE_INFO.phone,
       email: SITE_INFO.email,
       priceRange: '₹₹',
@@ -119,18 +119,39 @@ const globalSchema = {
       paymentAccepted: 'Cash, Credit Card, UPI, Net Banking',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: '2nd Floor, Capital Centre, Opp. Secretariat, MG Road, Statue Junction',
+        streetAddress: 'TC 27/3103, PRA 48, Ground Floor, Opp. Jubilee Memorial Hospital (2nd Gate Mizpah), Sunny Meads Lane, Palayam',
         addressLocality: 'Thiruvananthapuram',
         addressRegion: 'Kerala',
-        postalCode: '695001',
+        postalCode: '695034',
         addressCountry: 'IN',
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 8.497555,
-        longitude: 76.948294,
+        latitude: 8.5029,
+        longitude: 76.9535,
       },
-      hasMap: 'https://maps.google.com/?q=Statue+Junction+Thiruvananthapuram',
+      hasMap: 'https://maps.google.com/maps?q=Palayam+Thiruvananthapuram',
+      department: [
+        {
+          '@type': 'HairSalon',
+          name: 'ozzone Hair Bangalore Studio',
+          telephone: '+91 98470 62707',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar',
+            addressLocality: 'Bengaluru',
+            addressRegion: 'Karnataka',
+            postalCode: '560008',
+            addressCountry: 'IN',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 12.9660325,
+            longitude: 77.6380037,
+          },
+          hasMap: 'https://www.google.com/maps/place/Ozzone+Farrell+bangalore/@12.9660325,77.6380037,849m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae16a25d4a7c99:0xd411d97542f78f0b!8m2!3d12.9660325!4d77.6380037!16s%2Fg%2F1tfxf3nj',
+        },
+      ],
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',
@@ -151,8 +172,16 @@ const globalSchema = {
           name: 'Thiruvananthapuram',
         },
         {
+          '@type': 'City',
+          name: 'Bengaluru',
+        },
+        {
           '@type': 'AdministrativeArea',
           name: 'Kerala',
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Karnataka',
         },
       ],
       sameAs: [
