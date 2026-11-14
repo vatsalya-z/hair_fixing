@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   CheckCircle2,
   ExternalLink,
+  HelpCircle,
 } from 'lucide-react'
 import { SITE_INFO } from '@/data/siteData'
 import HomeBlogSection from '@/components/HomeBlogSection'
@@ -17,29 +18,28 @@ import AnnouncementBar from '@/components/AnnouncementBar'
 import HeroCarousel from '@/components/HeroCarousel'
 import {
   FadeInUp,
-  FadeInScale,
   HoverLift3D,
 } from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing in Thiruvananthapuram | Best Hair Replacement Studio - ozzone Hair',
+  title: 'Best Hair Fixing in Trivandrum & Bangalore | ozzone Hair',
   description:
-    'Premier non-surgical hair fixing, hair patching, bonding & hair replacement in Thiruvananthapuram & Bangalore. 100% human hair, zero surgery, instant 90-min transformation & private suites.',
+    'Non-surgical hair fixing, custom hair patching & bonding in Trivandrum & Bangalore. 18+ years experience, 100% natural hair. Book a free scalp consultation!',
   alternates: {
     canonical: 'https://ozzonehair.com/',
   },
   openGraph: {
-    title: 'Hair Fixing in Thiruvananthapuram | ozzone Hair Studio',
+    title: 'Best Hair Fixing in Trivandrum & Bangalore | ozzone Hair',
     description:
-      'Premier non-surgical hair fixing and hair replacement in Thiruvananthapuram & Bangalore. 100% natural human hair, instant 90-min transformation & private suites.',
+      'Non-surgical hair fixing, custom hair patching & bonding in Trivandrum & Bangalore. 18+ years experience, 100% natural hair. Book a free scalp consultation!',
     url: 'https://ozzonehair.com/',
-    siteName: 'ozzone Hair Thiruvananthapuram',
+    siteName: 'ozzone Hair',
     images: [
       {
         url: 'https://ozzonehair.com/hero-section/slide_1-1.png',
         width: 1200,
         height: 630,
-        alt: 'Hair Fixing in Thiruvananthapuram - ozzone Hair Studio',
+        alt: 'Best Hair Fixing in Trivandrum & Bangalore - ozzone Hair Studio',
       },
     ],
     type: 'website',
@@ -47,12 +47,40 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing in Thiruvananthapuram | ozzone Hair Studio',
+    title: 'Best Hair Fixing in Trivandrum & Bangalore | ozzone Hair',
     description:
-      'Expert non-surgical hair fixing and replacement in Trivandrum & Bangalore. 100% natural human hair.',
+      'Non-surgical hair fixing, custom hair patching & bonding in Trivandrum & Bangalore. 18+ years experience. Free scalp consultation.',
     images: ['https://ozzonehair.com/hero-section/slide_1-1.png'],
   },
 }
+
+const HOME_FAQS = [
+  {
+    question: 'Which is the best hair fixing studio in Trivandrum?',
+    answer:
+      'ozzone Hair Studio is widely recognized as one of the best hair fixing centers in Trivandrum and Bangalore, with over 18 years of clinical expertise. Located conveniently at Palayam (Opp. Jubilee Memorial Hospital) in Thiruvananthapuram and Indiranagar in Bengaluru, we offer 100% natural human hair systems, undetectable hairlines, dermatological medical-grade adhesives, and private consultation rooms for both men and women.',
+  },
+  {
+    question: 'Is hair fixing permanent?',
+    answer:
+      'Non-surgical hair fixing is a semi-permanent hair restoration solution. The custom hair patch remains securely attached to your scalp 24/7 for 3 to 5 weeks using waterproof dermatological bonding polymers. After 3 to 5 weeks, a quick 45-minute routine servicing and re-bonding session is performed at our studio to clean the scalp and refresh the attachment.',
+  },
+  {
+    question: 'Can I swim, shower, or workout with a hair patch?',
+    answer:
+      'Yes, absolutely! Our hair systems are bonded using FDA-approved, waterproof and sweat-resistant medical adhesives. You can take daily hot showers, swim in chlorinated pools or the sea at Kovalam, ride motorbikes with helmets, and engage in high-intensity gym workouts with zero fear of detachment.',
+  },
+  {
+    question: 'Is a hair patch suitable for young men with early baldness?',
+    answer:
+      'Yes, over 65% of our clients in Trivandrum and Bangalore are young professionals and college students aged 21 to 38 facing male pattern baldness or receding hairlines. Modern micro-skin and ultra-thin Swiss lace systems replicate natural root growth and permit trending modern hairstyles, fades, and undercut stylings.',
+  },
+  {
+    question: 'How do I get a free scalp consultation in Trivandrum or Bangalore?',
+    answer:
+      'You can book a 100% free, confidential scalp analysis and consultation by calling +91 77360 77110, messaging our specialists on WhatsApp at +91 98470 62707, or filling out the appointment form on our Contact page. Consultations are conducted in complete privacy with zero purchase obligation.',
+  },
+]
 
 const homeJsonLd = {
   '@context': 'https://schema.org',
@@ -110,12 +138,24 @@ const homeJsonLd = {
       '@type': 'WebPage',
       '@id': 'https://ozzonehair.com/#webpage',
       url: 'https://ozzonehair.com/',
-      name: 'Hair Fixing in Thiruvananthapuram | Best Hair Replacement Studio - ozzone Hair',
+      name: 'Best Hair Fixing in Trivandrum & Bangalore | ozzone Hair',
       description:
-        'Premier non-surgical hair fixing, hair patching, bonding & hair replacement in Thiruvananthapuram & Bangalore.',
+        'Non-surgical hair fixing, custom hair patching & bonding in Trivandrum & Bangalore. 18+ years experience, 100% natural hair. Book a free scalp consultation!',
       isPartOf: {
         '@id': 'https://ozzonehair.com/#website',
       },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://ozzonehair.com/#faq',
+      mainEntity: HOME_FAQS.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
     },
   ],
 }
@@ -134,7 +174,7 @@ export default function HomePage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hero Image Slider">
         <h1 className="sr-only">
-          Hair Fixing in Thiruvananthapuram | Best Non-Surgical Hair Replacement Studio
+          Best Hair Fixing in Trivandrum &amp; Bangalore - Non-Surgical Hair Replacement by ozzone Hair
         </h1>
         <HeroCarousel />
       </section>
@@ -151,19 +191,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Image */}
-            <div className="lg:col-span-5 order-2 lg:order-1 flex justify-center">
-              <FadeInScale>
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square w-full max-w-md shadow-xl border border-[#E2E8F0] bg-[#F3F7FB]">
-                  <Image
-                    src="https://ozzonehair.com/wp-content/uploads/2024/06/about.png"
-                    alt="Are You Tired of Hair Loss Controlling Your Life - ozzone Hair"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 90vw, 40vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/40 via-transparent to-transparent pointer-events-none" />
-                </div>
-              </FadeInScale>
+            <div className="lg:col-span-5 flex justify-center items-center w-full">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square w-full max-w-md min-h-[260px] sm:min-h-[380px] shadow-xl border border-[#E2E8F0] bg-[#F3F7FB]">
+                <Image
+                  src="/images/gallery/thumb_2.webp"
+                  alt="Hair Restoration &amp; Renovation - Are You Tired of Hair Loss Controlling Your Life - ozzone Hair"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 90vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/25 via-transparent to-transparent pointer-events-none" />
+              </div>
             </div>
 
             {/* Right Text */}
@@ -523,6 +562,55 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 7.5 — FREQUENTLY ASKED QUESTIONS (FAQ)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+              Got Questions?
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+              Frequently Asked Questions About Hair Fixing
+            </h2>
+            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+            <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
+              Clear, transparent answers about non-surgical hair fixing, custom hair patches, daily care, and booking your consultation in Trivandrum and Bangalore.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {HOME_FAQS.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-colors shadow-xs"
+              >
+                <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2 flex items-start gap-2.5">
+                  <span className="w-6 h-6 rounded-full bg-[#005675] text-[#29B6EB] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                    Q
+                  </span>
+                  <span>{faq.question}</span>
+                </h3>
+                <p className="text-xs sm:text-sm sm:leading-relaxed text-[#475569] pl-8.5">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/faq/"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
+            >
+              <span>View All 20+ Frequently Asked Questions</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

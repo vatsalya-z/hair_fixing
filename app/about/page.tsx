@@ -31,14 +31,14 @@ import {
 } from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
-  title: 'About ozzone Hair Studio | Trusted Hair Fixing Centre in Trivandrum',
-  description: 'Learn about ozzone Hair Studio: 18+ years of excellence in non-surgical hair fixing, custom hair patches & hair replacement in Thiruvananthapuram & Bengaluru.',
+  title: 'About ozzone Hair | Trusted Hair Fixing Experts, 18+ Years',
+  description: 'Learn about ozzone Hair: 18+ years of trusted expertise in non-surgical hair fixing, custom hair patches & hair replacement in Trivandrum & Bangalore.',
   alternates: {
     canonical: 'https://ozzonehair.com/about/',
   },
   openGraph: {
-    title: 'About ozzone Hair Studio | Trusted Hair Fixing Centre in Trivandrum',
-    description: '18+ years of excellence in non-surgical hair fixing, custom hair patches and hair replacement in Thiruvananthapuram and Bangalore.',
+    title: 'About ozzone Hair | Trusted Hair Fixing Experts, 18+ Years',
+    description: '18+ years of trusted expertise in non-surgical hair fixing, custom hair patches and hair replacement in Trivandrum and Bangalore.',
     url: 'https://ozzonehair.com/about/',
     siteName: 'ozzone Hair',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: '/images/about/About_Hero_Section_Banner.png',
         width: 2048,
         height: 768,
-        alt: 'About Ozzone Hair - Trusted Hair Fixing Experts for Over 18 Years',
+        alt: 'About ozzone Hair - Trusted Hair Fixing Experts, 18+ Years',
       },
     ],
     type: 'website',
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About ozzone Hair Studio | Trusted Hair Fixing Centre in Trivandrum',
-    description: 'Expert hair fixing and non-surgical hair replacement in Trivandrum & Bangalore. 18 years of excellence.',
+    title: 'About ozzone Hair | Trusted Hair Fixing Experts, 18+ Years',
+    description: 'Expert hair fixing and non-surgical hair replacement in Trivandrum & Bangalore. 18+ years of excellence.',
     images: ['/images/about/About_Hero_Section_Banner.png'],
   },
 }
@@ -203,7 +203,7 @@ export default function AboutPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="About Ozzone Hair Hero Banner">
         <h1 className="sr-only">
-          About Ozzone Hair | Trusted Hair Fixing Experts for Over 18 Years
+          About ozzone Hair | Trusted Hair Fixing Experts, 18+ Years in Trivandrum &amp; Bangalore
         </h1>
         <div className="relative w-full aspect-[2048/768]">
           <Image
@@ -224,46 +224,47 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Image Showcase */}
-            <div className="lg:col-span-5 flex justify-center">
-              <FadeInScale>
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square w-full max-w-md shadow-xl border border-[#E2E8F0] bg-[#F3F7FB]">
-                  <Image
-                    src="/images/gallery/thumb_2.webp"
-                    alt="Our Profile - Best Hair Fixing in Trivandrum - Ozzone Hair Studio"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 90vw, 40vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/50 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Overlay badge */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#E2E8F0]">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-[#005675] text-white flex items-center justify-center shrink-0">
-                        <ShieldCheck className="w-5 h-5 text-[#29B6EB]" />
-                      </div>
-                      <div>
-                        <p className="text-[#075078] font-bold text-sm">Seasoned Specialists</p>
-                        <p className="text-[#64748B] text-xs">Over 17+ Years of Experience in the Field</p>
-                      </div>
+            <div className="lg:col-span-5 order-2 lg:order-1 flex justify-center items-center w-full">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square w-full max-w-md min-h-[260px] sm:min-h-[380px] shadow-xl border border-[#E2E8F0] bg-[#F3F7FB]">
+                <Image
+                  src="/images/gallery/client_1-1.jpg"
+                  alt="Client Transformation - Leading Providers of Professional Hair Fixing in Trivandrum - Ozzone Hair"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 90vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/40 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Overlay badge */}
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#E2E8F0]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#005675] text-white flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-5 h-5 text-[#29B6EB]" />
+                    </div>
+                    <div>
+                      <p className="text-[#075078] font-bold text-sm">Seasoned Specialists</p>
+                      <p className="text-[#64748B] text-xs">Over 17+ Years of Experience in the Field</p>
                     </div>
                   </div>
                 </div>
-              </FadeInScale>
+              </div>
             </div>
 
             {/* Right Text Copy */}
-            <div className="lg:col-span-7 space-y-5">
+            <div className="lg:col-span-7 order-1 lg:order-2 space-y-5">
               <FadeInUp>
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-                  Our Profile
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] leading-tight mt-3 mb-3">
-                  Leading Providers of Professional Hair Fixing in Trivandrum
-                </h2>
-                <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-5" />
+                <div className="text-center lg:text-left">
+                  <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                    Our Profile
+                  </span>
+                  <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] leading-tight mt-3 mb-3 text-center lg:text-left">
+                    Leading Providers of Professional Hair Fixing in Trivandrum
+                  </h2>
+                  <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-5 mx-auto lg:mx-0" />
+                </div>
 
-                <div className="space-y-4 text-sm sm:text-base text-[#475569] leading-relaxed">
+                <div className="space-y-4 text-sm sm:text-base text-[#475569] leading-relaxed text-left">
                   <p>
                     Our goal is to give you the look you want while helping you in recovering your confidence. Our goal is to provide each individual with excellent alternatives for hair replacement while also meeting their wonderful needs. Because of our unparalleled experience and current period, we are the worldwide experts in the hair replacement industry.
                   </p>
@@ -278,17 +279,17 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <div className="pt-4 flex flex-wrap gap-4 items-center">
+                <div className="pt-4 flex flex-wrap gap-4 items-center justify-center lg:justify-start">
                   <Link
                     href="/contact/"
-                    className="btn-primary inline-flex items-center gap-2"
+                    className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto text-center"
                   >
                     <span>Book Scalp Consultation</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/services/"
-                    className="btn-secondary-light inline-flex items-center gap-2"
+                    className="btn-secondary-light inline-flex items-center justify-center gap-2 w-full sm:w-auto text-center"
                   >
                     <span>View Our Signature Services</span>
                   </Link>

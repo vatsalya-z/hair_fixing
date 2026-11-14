@@ -23,14 +23,16 @@ import {
 import { SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: "Hair Replacement Solutions in Trivandrum | Custom Men's Hair Systems | ozzone Hair",
-  description: 'Discover custom non-surgical hair replacement solutions in Trivandrum. Breathable Swiss lace, ultra-thin poly skin systems & undetectable hairlines for men & women.',
+  title: 'Hair Solutions in Trivandrum & Bangalore | ozzone Hair',
+  description:
+    'Explore custom hair replacement solutions in Trivandrum & Bangalore. Ultra-thin poly skin & Swiss lace systems for men & women. Free consultation!',
   alternates: {
     canonical: 'https://ozzonehair.com/solutions/',
   },
   openGraph: {
-    title: "Hair Replacement Solutions in Trivandrum | Custom Men's Hair Systems | ozzone Hair",
-    description: 'Custom non-surgical hair replacement solutions in Trivandrum & Bangalore. Undetectable Swiss lace & ultra-thin skin hair systems for men & women.',
+    title: 'Hair Solutions in Trivandrum & Bangalore | ozzone Hair',
+    description:
+      'Custom non-surgical hair replacement solutions in Trivandrum & Bangalore. Undetectable Swiss lace & ultra-thin skin hair systems for men & women.',
     url: 'https://ozzonehair.com/solutions/',
     siteName: 'ozzone Hair',
     images: [{ url: '/images/solution/solution-hero-section.png', width: 2048, height: 768, alt: 'Hair Replacement Solutions in Trivandrum and Bangalore' }],
@@ -39,8 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Hair Replacement Solutions in Trivandrum | Custom Men's Hair Systems | ozzone Hair",
-    description: 'Customized hair replacement solutions in Trivandrum & Bangalore. Instant results without surgery.',
+    title: 'Hair Solutions in Trivandrum & Bangalore | ozzone Hair',
+    description:
+      'Customized hair replacement solutions in Trivandrum & Bangalore. Instant results without surgery.',
     images: ['/images/solution/solution-hero-section.png'],
   },
 }
@@ -171,7 +174,7 @@ export default function SolutionsPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hair Fixing Solutions Hero Banner">
         <h1 className="sr-only">
-          Advanced Non-Surgical Hair Fixing &amp; Replacement Solutions in Thiruvananthapuram
+          Hair Replacement Solutions in Trivandrum &amp; Bangalore - ozzone Hair Studio
         </h1>
         <div className="relative w-full aspect-[2048/768]">
           <Image

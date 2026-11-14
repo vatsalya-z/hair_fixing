@@ -149,8 +149,7 @@ export default function ContactClient() {
 
           <FadeInUp delay={0.15} yOffset={25}>
             <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center max-w-3xl mx-auto">
-              Contact ozzone Hair Studio &amp; Book Free Consultation in{' '}
-              <span className="text-[#29B6EB]">Thiruvananthapuram</span>
+              Contact ozzone Hair | Free Scalp Consultation Trivandrum
             </h1>
           </FadeInUp>
 
@@ -726,44 +725,109 @@ export default function ContactClient() {
           </div>
 
           {/* ═══════════════════════════════════════════════════════════
-              SECTION 4 — INTERACTIVE GOOGLE MAP
+              SECTION 4 — INTERACTIVE GOOGLE MAPS (TRIVANDRUM & BANGALORE)
           ═══════════════════════════════════════════════════════════ */}
-          <div className="mt-16 bg-white rounded-3xl p-6 sm:p-10 border border-[#E2E8F0] shadow-sm">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3 py-1 rounded-full border border-[#E2E8F0]">
-                  Studio Navigation Map
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#075078] mt-2">
-                  Visit Our Studio - Ozzone Farrell Bangalore
-                </h3>
-                <p className="text-xs sm:text-sm text-[#64748B] mt-1">
-                  Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008 • Dedicated parking available for clients.
-                </p>
-              </div>
-              <a
-                href="https://www.google.com/maps/place/Ozzone+Farrell+bangalore/@12.9660325,77.6380037,849m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae16a25d4a7c99:0xd411d97542f78f0b!8m2!3d12.9660325!4d77.6380037!16s%2Fg%2F1tfxf3nj"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary text-xs shrink-0"
-              >
-                <span>Open in Google Maps App</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+          <div className="mt-16 space-y-8">
+            <div className="text-center max-w-2xl mx-auto mb-6">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Studio Navigation &amp; Maps
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#075078] mt-2 mb-2">
+                Visit Our Hair Fixing Studios in Trivandrum &amp; Bangalore
+              </h2>
+              <p className="text-xs sm:text-sm text-[#64748B]">
+                Private suites, dedicated client parking, and discrete consultation facilities at both locations.
+              </p>
             </div>
 
-            <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-inner">
-              <iframe
-                src={SITE_INFO.mapEmbedUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ozzone Farrell Bangalore Location Map"
-                className="w-full h-full"
-              />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Trivandrum Studio Map */}
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm flex flex-col justify-between">
+                <div className="mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full">
+                      <MapPin className="w-3.5 h-3.5 text-[#29B6EB]" />
+                      <span>Flagship Trivandrum Studio</span>
+                    </span>
+                    <a
+                      href="https://maps.google.com/maps?q=Palayam+Thiruvananthapuram"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs font-bold text-[#005675] hover:text-[#29B6EB] flex items-center gap-1"
+                    >
+                      <span>Directions</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#075078]">
+                    ozzone Hair - Palayam, Thiruvananthapuram
+                  </h3>
+                  <p className="text-xs text-[#64748B] mt-1 leading-relaxed">
+                    TC 27/3103, PRA 48, Ground Floor, Opp. Jubilee Memorial Hospital (2nd Gate Mizpah), Sunny Meads Lane, Palayam, Trivandrum, Kerala 695034
+                  </p>
+                  <div className="mt-2 text-xs font-semibold text-[#005675]">
+                    <a href="tel:+917736077110" className="hover:underline">Phone: +91 77360 77110</a>
+                  </div>
+                </div>
+
+                <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-inner">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Palayam+Thiruvananthapuram&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="ozzone Hair Trivandrum Studio Location Map"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+
+              {/* Bangalore Studio Map */}
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm flex flex-col justify-between">
+                <div className="mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full">
+                      <MapPin className="w-3.5 h-3.5 text-[#29B6EB]" />
+                      <span>Bangalore Studio</span>
+                    </span>
+                    <a
+                      href={SITE_INFO.mapUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs font-bold text-[#005675] hover:text-[#29B6EB] flex items-center gap-1"
+                    >
+                      <span>Directions</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#075078]">
+                    ozzone Farrell - Indiranagar, Bengaluru
+                  </h3>
+                  <p className="text-xs text-[#64748B] mt-1 leading-relaxed">
+                    Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008
+                  </p>
+                  <div className="mt-2 text-xs font-semibold text-[#005675]">
+                    <a href="tel:+919847062707" className="hover:underline">Phone: +91 98470 62707</a>
+                  </div>
+                </div>
+
+                <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-inner">
+                  <iframe
+                    src={SITE_INFO.mapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="ozzone Farrell Bangalore Location Map"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

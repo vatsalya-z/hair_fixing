@@ -3,14 +3,16 @@ import ContactClient from './ContactClient'
 import { SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Contact ozzone Hair Fixing Studio | Thiruvananthapuram & Bengaluru',
-  description: 'Book a free, private hair consultation at ozzone Hair. Studios at Palayam, Thiruvananthapuram (Opp. Jubilee Memorial Hospital) & Indiranagar, Bengaluru. Call +91 77360 77110 or +91 98470 62707.',
+  title: 'Contact ozzone Hair | Free Scalp Consultation Trivandrum',
+  description:
+    'Contact ozzone Hair studios in Trivandrum & Bangalore. Book your free, private scalp consultation for non-surgical hair fixing and custom hair patches.',
   alternates: {
     canonical: 'https://ozzonehair.com/contact/',
   },
   openGraph: {
-    title: 'Contact ozzone Hair Studio | Thiruvananthapuram & Bengaluru Free Consultation',
-    description: 'Visit our studios at Palayam, Thiruvananthapuram and Indiranagar, Bengaluru for free hair analysis. Transparent pricing & 100% private suites.',
+    title: 'Contact ozzone Hair | Free Scalp Consultation Trivandrum',
+    description:
+      'Contact ozzone Hair studios in Trivandrum & Bangalore. Book your free, private scalp consultation for non-surgical hair fixing and custom hair patches.',
     url: 'https://ozzonehair.com/contact/',
     siteName: 'ozzone Hair',
     images: [{ url: 'https://ozzonehair.com/hero-section/slide_2-1.webp', width: 1200, height: 630, alt: 'Contact ozzone Hair Studio' }],
@@ -19,8 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact ozzone Hair Studio | Book Consultation',
-    description: 'Book free hair consultation in Palayam, Trivandrum & Indiranagar, Bengaluru.',
+    title: 'Contact ozzone Hair | Free Scalp Consultation Trivandrum',
+    description:
+      'Contact ozzone Hair studios in Trivandrum & Bangalore. Book your free, private scalp consultation for non-surgical hair fixing and custom hair patches.',
     images: ['https://ozzonehair.com/hero-section/slide_2-1.webp'],
   },
 }

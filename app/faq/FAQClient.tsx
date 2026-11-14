@@ -98,7 +98,7 @@ export default function FAQClient() {
               <FadeInUp delay={0.15} yOffset={25}>
                 <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center lg:text-left">
                   Frequently Asked Questions on Hair Fixing in{' '}
-                  <span className="text-[#29B6EB]">Thiruvananthapuram</span>
+                  <span className="text-[#29B6EB]">Trivandrum &amp; Bangalore</span>
                 </h1>
               </FadeInUp>
 

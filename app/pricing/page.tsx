@@ -7,24 +7,27 @@ import HeroBanner from '@/components/HeroBanner'
 import { PRICING_PLANS, SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Cost in Thiruvananthapuram | Transparent Pricing Packages',
-  description: 'Understand hair fixing and hair replacement prices in Thiruvananthapuram. Transparent packages from ₹9,999 to ₹22,999 with haircut, styling & warranty included.',
+  title: 'Hair Fixing Cost in Trivandrum & Packages | ozzone Hair',
+  description:
+    'Understand hair fixing and hair replacement prices in Trivandrum. Transparent packages from ₹9,999 to ₹22,999 with haircut, styling & consultation.',
   alternates: {
     canonical: 'https://ozzonehair.com/pricing/',
   },
   openGraph: {
-    title: 'Hair Fixing Cost in Thiruvananthapuram | ozzone Hair Studio',
-    description: 'Transparent hair fixing pricing packages from ₹9,999 to ₹22,999 in Trivandrum. 100% natural human hair systems with zero hidden charges.',
+    title: 'Hair Fixing Cost in Trivandrum & Packages | ozzone Hair',
+    description:
+      'Transparent hair fixing pricing packages from ₹9,999 to ₹22,999 in Trivandrum. 100% natural human hair systems with zero hidden charges.',
     url: 'https://ozzonehair.com/pricing/',
-    siteName: 'ozzone Hair Thiruvananthapuram',
-    images: [{ url: 'https://ozzonehair.com/hero-section/slide_2-1.webp', width: 1200, height: 630, alt: 'Hair Fixing Cost in Thiruvananthapuram' }],
+    siteName: 'ozzone Hair',
+    images: [{ url: 'https://ozzonehair.com/hero-section/slide_2-1.webp', width: 1200, height: 630, alt: 'Hair Fixing Cost in Trivandrum' }],
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Cost in Thiruvananthapuram | ozzone Hair Studio',
-    description: 'Transparent hair fixing packages in Trivandrum from ₹9,999 with haircut, styling & maintenance warranty.',
+    title: 'Hair Fixing Cost in Trivandrum & Packages | ozzone Hair',
+    description:
+      'Transparent hair fixing packages in Trivandrum from ₹9,999 with haircut, styling & maintenance warranty.',
     images: ['https://ozzonehair.com/hero-section/slide_2-1.webp'],
   },
 }

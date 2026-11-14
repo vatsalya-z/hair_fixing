@@ -45,6 +45,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://ozzonehair.com/',
   },
+  verification: {
+    google: 'TODO_GOOGLE_SEARCH_CONSOLE_VERIFICATION_ID',
+  },
   openGraph: {
     title: 'Hair Fixing in Thiruvananthapuram | ozzone Hair Studio',
     description: 'Premier non-surgical hair fixing, hair patch, bonding & hair replacement in Thiruvananthapuram. 100% human hair, instant 90-min transformation & private suites.',
@@ -185,9 +188,9 @@ const globalSchema = {
         },
       ],
       sameAs: [
-        'https://www.facebook.com/',
-        'https://www.instagram.com/',
-        'https://www.youtube.com/',
+        'https://www.facebook.com/ozzonehair', // TODO: Replace with official Facebook profile URL
+        'https://www.instagram.com/ozzonehair', // TODO: Replace with official Instagram profile URL
+        'https://www.youtube.com/@ozzonehair', // TODO: Replace with official YouTube channel URL
       ],
     },
   ],
@@ -199,7 +202,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -210,6 +213,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* Google Analytics 4 Placeholder (TODO: Insert your GA4 measurement ID e.g. G-XXXXXXXXXX) */}
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=TODO_GA4_MEASUREMENT_ID"></script> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}

@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
+process.env.NEXT_PRIVATE_WORKER_CORES = "1";
+process.env.NEXT_CPU_NUM = "1";
+
 const nextConfig: NextConfig = {
+  experimental: {
+    cpus: 1,
+  },
   trailingSlash: true,
   images: {
     unoptimized: true,
@@ -33,18 +39,43 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/hair-fixing-trivandrum/',
-        destination: '/solutions/',
+        source: '/hair-fixing-in-trivandrum/',
+        destination: '/hair-fixing-trivandrum/',
         permanent: true,
       },
       {
-        source: '/hair-fixing-in-trivandrum/',
-        destination: '/solutions/',
+        source: '/hair-fixing-in-bangalore/',
+        destination: '/hair-fixing-bangalore/',
+        permanent: true,
+      },
+      {
+        source: '/hair-fixing-bengaluru/',
+        destination: '/hair-fixing-bangalore/',
         permanent: true,
       },
       {
         source: '/hair-fixing/',
         destination: '/solutions/',
+        permanent: true,
+      },
+      {
+        source: '/hair-patch-trivandrum/',
+        destination: '/hair-fixing-trivandrum/',
+        permanent: true,
+      },
+      {
+        source: '/hair-patch-bangalore/',
+        destination: '/hair-fixing-bangalore/',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-hair-patch-pricing-in-kerala/',
+        destination: '/blog/hair-fixing-cost-in-trivandrum/',
+        permanent: true,
+      },
+      {
+        source: '/blog/how-to-care-for-hair-patch-kerala-climate/',
+        destination: '/blog/hair-patch-care-in-humid-climate/',
         permanent: true,
       },
       {

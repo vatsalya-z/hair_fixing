@@ -3,24 +3,27 @@ import FAQClient from './FAQClient'
 import { FAQS_DATA } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing FAQs Thiruvananthapuram | Cost, Pain & Care Questions',
-  description: 'Got questions about hair fixing in Thiruvananthapuram? Find expert answers on hair patch costs, pain-free bonding, swimming, lifespan & maintenance in Trivandrum.',
+  title: 'Hair Fixing FAQs & Care Guide | ozzone Hair Studio',
+  description:
+    'Common questions on hair fixing in Trivandrum & Bangalore: hair patch costs, pain-free bonding, swimming, lifespan & maintenance answered honestly.',
   alternates: {
     canonical: 'https://ozzonehair.com/faq/',
   },
   openGraph: {
-    title: 'Hair Fixing FAQs Thiruvananthapuram | ozzone Hair Studio',
-    description: 'Honest answers on hair patch costs, daily maintenance, shower/swimming safety & natural hairlines from ozzone Hair Trivandrum.',
+    title: 'Hair Fixing FAQs & Care Guide | ozzone Hair Studio',
+    description:
+      'Honest answers on hair patch costs, daily maintenance, shower/swimming safety & natural hairlines from ozzone Hair Trivandrum & Bangalore.',
     url: 'https://ozzonehair.com/faq/',
-    siteName: 'ozzone Hair Thiruvananthapuram',
-    images: [{ url: 'https://ozzonehair.com/hero-section/slide-3-1.webp', width: 1200, height: 630, alt: 'Hair Fixing FAQs Thiruvananthapuram' }],
+    siteName: 'ozzone Hair',
+    images: [{ url: 'https://ozzonehair.com/hero-section/slide-3-1.webp', width: 1200, height: 630, alt: 'Hair Fixing FAQs' }],
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing FAQs Thiruvananthapuram | ozzone Hair Studio',
-    description: 'Expert answers on hair patch costs, bonding, swimming & lifespan in Trivandrum.',
+    title: 'Hair Fixing FAQs & Care Guide | ozzone Hair Studio',
+    description:
+      'Expert answers on hair patch costs, bonding, swimming & lifespan in Trivandrum & Bangalore.',
     images: ['https://ozzonehair.com/hero-section/slide-3-1.webp'],
   },
 }

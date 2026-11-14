@@ -3,24 +3,27 @@ import ProductsClient from './ProductsClient'
 import { PRODUCTS_DATA, PRODUCT_FAQS } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Products in Kerala | Walker C-22 & Ultrahold Adhesive Trivandrum',
-  description: 'Buy authentic hair fixing products in Thiruvananthapuram, Kerala. Certified Walker Tape C-22 solvent remover, Ultrahold waterproof adhesive & maintenance products at ozzone Hair.',
+  title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair',
+  description:
+    'Buy authentic hair fixing products in Kerala & Trivandrum: Walker C-22 solvent, Ultrahold adhesive & hair patch maintenance supplies. Inquire now!',
   alternates: {
     canonical: 'https://ozzonehair.com/products/',
   },
   openGraph: {
-    title: 'Hair Fixing Products & Maintenance Supplies | ozzone Hair Thiruvananthapuram',
-    description: 'Certified Walker Tape C-22 solvent, Ultrahold bonding adhesive and professional hair patch maintenance products in Trivandrum, Kerala.',
+    title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair',
+    description:
+      'Certified Walker Tape C-22 solvent, Ultrahold bonding adhesive and professional hair patch maintenance products in Trivandrum, Kerala.',
     url: 'https://ozzonehair.com/products/',
-    siteName: 'ozzone Hair Thiruvananthapuram',
+    siteName: 'ozzone Hair',
     images: [{ url: '/images/products/product-hero-section.png', width: 2048, height: 768, alt: 'Hair Fixing Products in Thiruvananthapuram' }],
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Products in Kerala | Walker C-22 & Ultrahold Trivandrum',
-    description: 'Certified Walker Tape C-22 solvent & Ultrahold bonding adhesive in Trivandrum, Kerala.',
+    title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair',
+    description:
+      'Certified Walker Tape C-22 solvent & Ultrahold bonding adhesive in Trivandrum, Kerala.',
     images: ['/images/products/product-hero-section.png'],
   },
 }

@@ -7,10 +7,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     { route: '', priority: 1.0, changeFrequency: 'daily' as const },
-    { route: '/about', priority: 0.85, changeFrequency: 'monthly' as const },
+    { route: '/hair-fixing-trivandrum', priority: 0.95, changeFrequency: 'weekly' as const },
+    { route: '/hair-fixing-bangalore', priority: 0.95, changeFrequency: 'weekly' as const },
     { route: '/services', priority: 0.95, changeFrequency: 'weekly' as const },
     { route: '/solutions', priority: 0.95, changeFrequency: 'weekly' as const },
     { route: '/products', priority: 0.9, changeFrequency: 'weekly' as const },
+    { route: '/about', priority: 0.85, changeFrequency: 'monthly' as const },
     { route: '/pricing', priority: 0.85, changeFrequency: 'monthly' as const },
     { route: '/gallery', priority: 0.8, changeFrequency: 'weekly' as const },
     { route: '/blog', priority: 0.85, changeFrequency: 'daily' as const },

@@ -3,24 +3,27 @@ import BlogClient from './BlogClient'
 import { BLOG_POSTS } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing & Hair Care Blog Thiruvananthapuram | ozzone Hair',
-  description: 'Expert guides on hair fixing, hair patch care, bonding, pricing & non-surgical hair replacement in Kerala. Tips from certified specialists in Trivandrum.',
+  title: 'Hair Care & Fixing Guides | ozzone Hair Blog',
+  description:
+    'Expert guides on hair fixing, hair patch care, bonding, pricing & non-surgical hair replacement in Trivandrum & Kerala. Tips from certified specialists.',
   alternates: {
     canonical: 'https://ozzonehair.com/blog/',
   },
   openGraph: {
-    title: 'Hair Care & Hair Fixing Blog Thiruvananthapuram | ozzone Hair',
-    description: 'Expert advice on hair fixing, climate maintenance tips for Kerala, and non-surgical hair restoration insights from Trivandrum.',
+    title: 'Hair Care & Fixing Guides | ozzone Hair Blog',
+    description:
+      'Expert guides on hair fixing, hair patch care, bonding, pricing & non-surgical hair replacement in Trivandrum & Kerala. Tips from certified specialists.',
     url: 'https://ozzonehair.com/blog/',
-    siteName: 'ozzone Hair Thiruvananthapuram',
-    images: [{ url: '/images/blog/Blog_Hero_Section_Banner_Before_After.png', width: 2048, height: 768, alt: 'Hair Fixing Blog Thiruvananthapuram' }],
+    siteName: 'ozzone Hair',
+    images: [{ url: '/images/blog/Blog_Hero_Section_Banner_Before_After.png', width: 2048, height: 768, alt: 'Hair Care & Fixing Guides - ozzone Hair Blog' }],
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Care & Hair Fixing Blog Thiruvananthapuram | ozzone Hair',
-    description: 'Expert advice on hair fixing and non-surgical hair replacement in Trivandrum.',
+    title: 'Hair Care & Fixing Guides | ozzone Hair Blog',
+    description:
+      'Expert guides on hair fixing, hair patch care, bonding, pricing & non-surgical hair replacement in Trivandrum & Kerala.',
     images: ['/images/blog/Blog_Hero_Section_Banner_Before_After.png'],
   },
 }

@@ -105,15 +105,21 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-white/85">
               <li>
-                <Link href="/about/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/hair-fixing-trivandrum/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
-                  <span>About Our Trivandrum Clinic</span>
+                  <span>Hair Fixing in Trivandrum</span>
                 </Link>
               </li>
               <li>
-                <Link href="/products/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/hair-fixing-bangalore/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
-                  <span>Hair Systems &amp; Toupees</span>
+                  <span>Hair Fixing in Bangalore</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                  <span>About ozzone Hair</span>
                 </Link>
               </li>
               <li>
@@ -131,19 +137,13 @@ export default function Footer() {
               <li>
                 <Link href="/blog/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
-                  <span>Hair Loss &amp; Care Articles</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
-                  <span>Frequently Asked Questions</span>
+                  <span>Hair Care Guides &amp; Blog</span>
                 </Link>
               </li>
               <li>
                 <Link href="/contact/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
-                  <span>Contact &amp; Book Consultation</span>
+                  <span>Contact &amp; Free Scalp Analysis</span>
                 </Link>
               </li>
             </ul>
@@ -152,33 +152,36 @@ export default function Footer() {
           {/* Col 4: Clinic Info & Hours */}
           <div className="space-y-3.5 text-sm text-white/85">
             <h4 className="text-base font-bold text-white uppercase tracking-wider mb-4 pb-2 border-b border-[#29B6EB]/40 inline-block">
-              Clinic Locations
+              Studio Locations (NAP)
             </h4>
             
             <div className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-[#29B6EB] shrink-0 mt-1" />
               <div>
-                <strong className="text-white block font-semibold">Statue Junction Clinic:</strong>
-                <p className="text-xs text-white/80">{SITE_INFO.address}</p>
+                <strong className="text-white block font-semibold">Trivandrum Studio (Palayam):</strong>
+                <p className="text-xs text-white/80 leading-relaxed">{SITE_INFO.address}</p>
+                <div className="mt-1">
+                  <a href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`} className="text-xs text-[#29B6EB] hover:underline font-semibold">
+                    📞 {SITE_INFO.phone}
+                  </a>
+                </div>
               </div>
             </div>
 
             <div className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-[#29B6EB] shrink-0 mt-1" />
               <div>
-                <strong className="text-white block font-semibold">Pattom Center:</strong>
-                <p className="text-xs text-white/80">{SITE_INFO.branch2}</p>
+                <strong className="text-white block font-semibold">Bangalore Studio (Indiranagar):</strong>
+                <p className="text-xs text-white/80 leading-relaxed">{SITE_INFO.branch2}</p>
+                <div className="mt-1">
+                  <a href={`tel:${SITE_INFO.altPhone.replace(/\s+/g, '')}`} className="text-xs text-[#29B6EB] hover:underline font-semibold">
+                    📞 {SITE_INFO.altPhone}
+                  </a>
+                </div>
               </div>
             </div>
 
             <div className="flex items-center gap-2.5 pt-1">
-              <Phone className="w-4 h-4 text-[#29B6EB] shrink-0" />
-              <a href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`} className="hover:text-[#29B6EB] font-medium transition-colors">
-                {SITE_INFO.phone}
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2.5">
               <Clock className="w-4 h-4 text-[#29B6EB] shrink-0" />
               <span className="text-xs text-white/90">{SITE_INFO.timing}</span>
             </div>

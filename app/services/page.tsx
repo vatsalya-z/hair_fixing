@@ -18,16 +18,16 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Services in Thiruvananthapuram | Hair Bonding & Weaving | ozzone Hair',
+  title: 'Hair Fixing Services in Trivandrum & Bangalore | ozzone Hair',
   description:
-    'Explore expert hair fixing services in Thiruvananthapuram: custom hair patches, dermatological bonding, micro-ring weaving & monthly maintenance at ozzone Hair.',
+    'Explore non-surgical hair fixing services in Trivandrum & Bangalore: hair bonding, weaving, custom hair patches & scalp spa. Book your free consultation.',
   alternates: {
     canonical: 'https://ozzonehair.com/services/',
   },
   openGraph: {
-    title: 'Hair Fixing Services in Thiruvananthapuram | Hair Bonding & Weaving | ozzone Hair',
+    title: 'Hair Fixing Services in Trivandrum & Bangalore | ozzone Hair',
     description:
-      'Professional non-surgical hair fixing, hair patching, bonding & weaving in Thiruvananthapuram. 100% natural human hair, instant 90-min results.',
+      'Explore non-surgical hair fixing services in Trivandrum & Bangalore: hair bonding, weaving, custom hair patches & scalp spa. Book your free consultation.',
     url: 'https://ozzonehair.com/services/',
     siteName: 'ozzone Hair',
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: '/images/service/Services_Hero_Section_Banner.png',
         width: 2048,
         height: 768,
-        alt: 'Hair Fixing Services in Thiruvananthapuram - ozzone Hair',
+        alt: 'Hair Fixing Services in Trivandrum & Bangalore - ozzone Hair',
       },
     ],
     type: 'website',
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Services in Thiruvananthapuram | Hair Bonding & Weaving | ozzone Hair',
+    title: 'Hair Fixing Services in Trivandrum & Bangalore | ozzone Hair',
     description:
-      'Expert non-surgical hair fixing, hair bonding, and hair patching services in Thiruvananthapuram & Bangalore.',
+      'Explore non-surgical hair fixing services in Trivandrum & Bangalore: hair bonding, weaving, custom hair patches & scalp spa. Book your free consultation.',
     images: ['/images/service/Services_Hero_Section_Banner.png'],
   },
 }
@@ -122,6 +122,47 @@ const breadcrumbSchema = {
   ],
 }
 
+const SERVICES_FAQS = [
+  {
+    question: 'Which is the best hair fixing studio in Trivandrum?',
+    answer:
+      'ozzone Hair is recognized as one of the best hair fixing studios in Trivandrum with over 18 years of clinical expertise. Conveniently located at Palayam in Thiruvananthapuram and Indiranagar in Bengaluru, we offer 100% natural human hair systems, undetectable hairlines, and private consultation rooms for both men and women.',
+  },
+  {
+    question: 'Is hair fixing permanent?',
+    answer:
+      'Non-surgical hair fixing is a semi-permanent solution. The custom hair patch remains firmly bonded to your scalp for 3 to 5 weeks using waterproof dermatological bonding polymers. A quick monthly servicing cleans the scalp and re-bonds the patch for continuous, long-term use.',
+  },
+  {
+    question: 'Can I swim or shower with a hair patch?',
+    answer:
+      'Yes, absolutely. Our hair bonding adhesives are completely waterproof and sweat-resistant. You can shower daily, swim in chlorinated or sea water, workout at the gym, and style your hair naturally with zero fear of detachment.',
+  },
+  {
+    question: 'Is a hair patch suitable for young men with early baldness?',
+    answer:
+      'Yes, custom hair patches are ideal for young men with early male pattern baldness or receding hairlines. They provide instant density and an undetectable, age-appropriate hairline without surgical risks, scarring, or daily medications.',
+  },
+  {
+    question: 'How do I book a free scalp consultation in Trivandrum or Bangalore?',
+    answer:
+      'You can schedule a free, confidential scalp analysis by calling our Trivandrum studio at +91 77360 77110, our Bangalore studio at +91 98470 62707, or messaging us on WhatsApp. Consultations are private with zero obligation.',
+  },
+]
+
+const servicesFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: SERVICES_FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+}
+
 export default function ServicesPage() {
   return (
     <div className="w-full text-slate-800 bg-white">
@@ -133,6 +174,10 @@ export default function ServicesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesFaqSchema) }}
       />
 
       {/* Breadcrumb Navigation Bar (Above Hero Section) */}
@@ -157,7 +202,7 @@ export default function ServicesPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hair Fixing Services Hero Banner">
         <h1 className="sr-only">
-          Hair Fixing Services in Thiruvananthapuram | Professional Hair Replacement Studio
+          Hair Fixing Services in Trivandrum &amp; Bangalore - ozzone Hair Studio
         </h1>
         <div className="relative w-full aspect-[2048/768]">
           <Image
@@ -433,6 +478,45 @@ export default function ServicesPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          SECTION 6.5 — FREQUENTLY ASKED QUESTIONS (FAQ)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="py-14 sm:py-20 bg-white border-t border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+              Got Questions?
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+              Frequently Asked Questions About Our Services
+            </h2>
+            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+            <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
+              Transparent answers regarding hair fixing procedures, custom hair patches, maintenance routines, and consultations in Trivandrum and Bangalore.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {SERVICES_FAQS.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-colors shadow-xs"
+              >
+                <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2 flex items-start gap-2.5">
+                  <span className="w-6 h-6 rounded-full bg-[#005675] text-[#29B6EB] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                    Q
+                  </span>
+                  <span>{faq.question}</span>
+                </h3>
+                <p className="text-xs sm:text-sm sm:leading-relaxed text-[#475569] pl-8.5">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
           SECTION 7 — 12. Contact Today CTA
       ═══════════════════════════════════════════════════════════ */}
       <section className="hero-gradient-bg py-14 sm:py-20 relative overflow-hidden text-white">
@@ -449,7 +533,7 @@ export default function ServicesPage() {
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
             <Link
-              href="https://ozzonehair.com/contact/"
+              href="/contact"
               className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
             >
               <span>Please Contact Today</span>

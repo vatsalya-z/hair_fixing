@@ -3,24 +3,26 @@ import GalleryClient from './GalleryClient'
 import { GALLERY_ITEMS } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Before & After Hair Fixing Gallery Thiruvananthapuram | ozzone Hair',
-  description: 'View real before and after hair fixing, hair patching, bonding & toupee results at ozzone Hair Thiruvananthapuram. Undetectable hairlines & 100% natural density.',
+  title: 'Hair Fixing Before & After Gallery | ozzone Hair',
+  description:
+    'View real before and after hair fixing, hair patch & bonding results in Trivandrum & Bangalore. Undetectable hairlines & 100% natural density.',
   alternates: {
     canonical: 'https://ozzonehair.com/gallery/',
   },
   openGraph: {
-    title: 'Before & After Hair Fixing Gallery Thiruvananthapuram | ozzone Hair',
-    description: 'Witness real client transformations from our Statue Junction & Pattom studios. Undetectable hairlines, natural volume & restored confidence.',
+    title: 'Hair Fixing Before & After Gallery | ozzone Hair',
+    description:
+      'Witness real client transformations from our Trivandrum & Bangalore studios. Undetectable hairlines, natural volume & restored confidence.',
     url: 'https://ozzonehair.com/gallery/',
-    siteName: 'ozzone Hair Thiruvananthapuram',
+    siteName: 'ozzone Hair',
     images: [{ url: '/images/gallery/gallery_Hero_Section_Banner_Before_After.png', width: 2048, height: 768, alt: 'Hair Fixing Before and After Gallery Trivandrum' }],
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Before & After Hair Fixing Gallery Thiruvananthapuram',
-    description: 'Witness real client hair transformations at ozzone Hair Trivandrum.',
+    title: 'Hair Fixing Before & After Gallery | ozzone Hair',
+    description: 'Witness real client hair transformations at ozzone Hair Trivandrum & Bangalore.',
     images: ['/images/gallery/gallery_Hero_Section_Banner_Before_After.png'],
   },
 }

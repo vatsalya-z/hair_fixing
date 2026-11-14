@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -15,6 +15,7 @@ import {
   Columns2,
   X,
   ExternalLink,
+  ChevronLeft,
   ChevronRight,
   Eye,
   Video,
@@ -24,10 +25,103 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { HoverLift3D } from '@/components/MotionWrappers'
 import { GALLERY_ITEMS, GalleryItem, SITE_INFO } from '@/data/siteData'
 
+export interface GalleryHeroSlide {
+  id: string
+  src: string
+  alt: string
+  contain?: boolean
+}
+
+const GALLERY_HERO_SLIDES: GalleryHeroSlide[] = [
+  {
+    id: 'slide-1',
+    src: '/images/gallery/gallery_Hero_Section_Banner_Before_After.png',
+    alt: 'Real Hair Fixing Before & After Results - ozzone Hair Studio',
+    contain: false,
+  },
+  {
+    id: 'slide-2',
+    src: '/images/gallery/client_1-1.jpg',
+    alt: 'Real Client 1 Hair Fixing Result - ozzone Hair Studio Trivandrum',
+    contain: true,
+  },
+  {
+    id: 'slide-3',
+    src: '/images/gallery/client_2-1.jpg',
+    alt: 'Real Client 2 Non Surgical Hair Replacement Result - Trivandrum',
+    contain: true,
+  },
+  {
+    id: 'slide-4',
+    src: '/images/gallery/Gemini_Generated_Image_mlb2ramlb2ramlb2.png',
+    alt: 'Real Client Hair Patch Transformation Before and After - ozzone Hair Studio Trivandrum',
+    contain: true,
+  },
+  {
+    id: 'slide-5',
+    src: '/images/gallery/Gemini_Generated_Image_uj96liuj96liuj96.png',
+    alt: 'Non Surgical Hair Fixing Before and After Result - Natural Looking Hair Patch in Kerala',
+    contain: true,
+  },
+]
+
 export default function GalleryClient() {
   const [filter, setFilter] = useState('All')
   const [mobileLayout, setMobileLayout] = useState<'grid' | 'detailed'>('grid')
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isHeroHovered, setIsHeroHovered] = useState(false)
+  const heroTouchStartX = useRef<number | null>(null)
+  const heroTouchEndX = useRef<number | null>(null)
+  const totalHeroSlides = GALLERY_HERO_SLIDES.length
+
+  const nextHeroSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % totalHeroSlides)
+  }, [totalHeroSlides])
+
+  const prevHeroSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + totalHeroSlides) % totalHeroSlides)
+  }, [totalHeroSlides])
+
+  const goToHeroSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
+  // Automatic slide movement every 4.5 seconds; pauses on hover
+  useEffect(() => {
+    if (isHeroHovered) return
+
+    const timer = setInterval(() => {
+      nextHeroSlide()
+    }, 4500)
+
+    return () => clearInterval(timer)
+  }, [isHeroHovered, nextHeroSlide])
+
+  // Touch Swipe Support for mobile and tablet devices
+  const handleHeroTouchStart = (e: React.TouchEvent) => {
+    heroTouchStartX.current = e.touches[0].clientX
+    heroTouchEndX.current = null
+  }
+
+  const handleHeroTouchMove = (e: React.TouchEvent) => {
+    heroTouchEndX.current = e.touches[0].clientX
+  }
+
+  const handleHeroTouchEnd = () => {
+    if (heroTouchStartX.current === null || heroTouchEndX.current === null) return
+    const diff = heroTouchStartX.current - heroTouchEndX.current
+    const minSwipeDistance = 40
+
+    if (diff > minSwipeDistance) {
+      nextHeroSlide()
+    } else if (diff < -minSwipeDistance) {
+      prevHeroSlide()
+    }
+
+    heroTouchStartX.current = null
+    heroTouchEndX.current = null
+  }
 
   const filterTabs = ['All', 'Hair Patching', 'Hair Bonding', 'Hair Weaving', "Women's Topper"]
 
@@ -57,21 +151,116 @@ export default function GalleryClient() {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE BANNER)
+          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE SLIDER)
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Gallery Hero Banner">
+      <section
+        className="relative w-full bg-[#075078] overflow-hidden select-none group"
+        aria-label="Gallery Hero Banner Slider"
+        onMouseEnter={() => setIsHeroHovered(true)}
+        onMouseLeave={() => setIsHeroHovered(false)}
+        onTouchStart={handleHeroTouchStart}
+        onTouchMove={handleHeroTouchMove}
+        onTouchEnd={handleHeroTouchEnd}
+      >
         <h1 className="sr-only">
-          Real Hair Fixing Before &amp; After Results in Thiruvananthapuram | ozzone Hair
+          Hair Fixing Before &amp; After Gallery | ozzone Hair Studio
         </h1>
-        <div className="relative w-full aspect-[2048/768]">
-          <Image
-            src="/images/gallery/gallery_Hero_Section_Banner_Before_After.png"
-            alt="Real Hair Fixing Before & After Results - ozzone Hair Studio"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+        <div className="relative w-full aspect-[2048/768] min-h-[220px] sm:min-h-[340px] md:min-h-[420px] lg:min-h-[480px]">
+          {/* Horizontal Slide Track */}
+          <div
+            className="flex w-full h-full transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
+            style={{ transform: `translate3d(-${currentSlide * 100}%, 0, 0)` }}
+          >
+            {GALLERY_HERO_SLIDES.map((slide, index) => (
+              <div
+                key={slide.id}
+                className="w-full h-full shrink-0 relative overflow-hidden bg-[#075078]"
+                aria-hidden={currentSlide !== index}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`Slide ${index + 1} of ${totalHeroSlides}`}
+              >
+                {slide.contain ? (
+                  <>
+                    {/* Ambient backdrop to prevent side borders */}
+                    <div className="absolute inset-0 select-none pointer-events-none">
+                      <Image
+                        src={slide.src}
+                        alt=""
+                        fill
+                        priority={index === 0}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        className="object-cover object-center blur-xl scale-110 opacity-30"
+                        sizes="100vw"
+                      />
+                    </div>
+                    {/* Main crisp full image */}
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      priority={index === 0}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      className="object-contain object-center relative z-10"
+                      sizes="100vw"
+                    />
+                  </>
+                ) : (
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    className="object-cover object-center"
+                    sizes="100vw"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            type="button"
+            onClick={prevHeroSlide}
+            aria-label="Previous Slide"
+            className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/25 flex items-center justify-center opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-200 cursor-pointer shadow-lg hover:scale-105 active:scale-95 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#29B6EB]"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <button
+            type="button"
+            onClick={nextHeroSlide}
+            aria-label="Next Slide"
+            className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/25 flex items-center justify-center opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-200 cursor-pointer shadow-lg hover:scale-105 active:scale-95 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#29B6EB]"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          {/* Navigation Dots */}
+          <div
+            className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20"
+            role="tablist"
+            aria-label="Gallery Hero Carousel Dots"
+          >
+            {GALLERY_HERO_SLIDES.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                role="tab"
+                aria-selected={currentSlide === index}
+                aria-label={`Go to slide ${index + 1}`}
+                onClick={() => goToHeroSlide(index)}
+                className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#29B6EB] ${
+                  currentSlide === index
+                    ? 'w-6 sm:w-7 bg-[#29B6EB]'
+                    : 'w-2 sm:w-2.5 bg-white/60 hover:bg-white'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -185,7 +374,7 @@ export default function GalleryClient() {
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <span className="absolute top-1.5 left-1.5 bg-[#252B38]/90 text-white text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 rounded shadow-sm">
-                      Before
+                      {item.beforeImg.includes('Gemini') ? 'Before & After' : 'Before'}
                     </span>
                   </div>
                 </div>
@@ -201,14 +390,7 @@ export default function GalleryClient() {
                         <Clock className="w-3.5 h-3.5 text-[#29B6EB]" />
                         <span>{item.recoveryTime}</span>
                       </span>
-                    </div>
-
-                    <h3 className="text-xs sm:text-base font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2">
-                      {item.clientType}
-                    </h3>
-
-                    {/* Full details visible on tablet/desktop, compact on mobile grid */}
-                    
+                    </div>                    
                   </div>
 
                   {/* Actions */}
@@ -263,14 +445,16 @@ export default function GalleryClient() {
                     src={activeItem.beforeImg}
                     alt="Before hair fixing treatment"
                     fill
-                    className="object-cover"
+                    className={activeItem.beforeImg.includes('Gemini') ? "object-contain" : "object-cover"}
                     sizes="(max-width: 1024px) 100vw, 768px"
                   />
                   <span className="absolute top-3 left-3 bg-[#252B38]/90 text-white text-xs font-bold px-3 py-1 rounded shadow">
-                    Before Treatment
+                    {activeItem.beforeImg.includes('Gemini') ? 'Real Before & After Result' : 'Before Treatment'}
                   </span>
                 </div>
-                <p className="text-xs text-center text-[#64748B]">Initial Thinning / Bald Area</p>
+                <p className="text-xs text-center text-[#64748B]">
+                  {activeItem.beforeImg.includes('Gemini') ? 'Complete Before & After Hair Transformation' : 'Initial Thinning / Bald Area'}
+                </p>
               </div>
 
               {/* Case Specifications */}

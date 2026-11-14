@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -8,11 +8,83 @@ import {
   Calendar,
   Clock,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react'
 import { BLOG_POSTS, BlogPost } from '@/data/siteData'
 
+export interface BlogHeroSlide {
+  id: string
+  src: string
+  alt: string
+  contain?: boolean
+}
+
+const BLOG_HERO_SLIDES: BlogHeroSlide[] = [
+  {
+    id: 'slide-1',
+    src: '/images/blog/Blog_Hero_Section_Banner_Man.png',
+    alt: 'Hair Care & Fixing Guides by ozzone Hair Experts - Before and After Hair Transformation',
+    contain: false,
+  },
+  
+]
+
 export default function BlogClient() {
   const [activePost, setActivePost] = useState<BlogPost | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const touchStartX = useRef<number | null>(null)
+  const touchEndX = useRef<number | null>(null)
+  const totalSlides = BLOG_HERO_SLIDES.length
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % totalSlides)
+  }, [totalSlides])
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides)
+  }, [totalSlides])
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  // Automatic slide movement every 4.5 seconds; pauses on hover
+  useEffect(() => {
+    if (isHovered) return
+
+    const timer = setInterval(() => {
+      nextSlide()
+    }, 4500)
+
+    return () => clearInterval(timer)
+  }, [isHovered, nextSlide])
+
+  // Touch Swipe Support for mobile and tablet devices
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+    touchEndX.current = null
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return
+    const diff = touchStartX.current - touchEndX.current
+    const minSwipeDistance = 40
+
+    if (diff > minSwipeDistance) {
+      nextSlide()
+    } else if (diff < -minSwipeDistance) {
+      prevSlide()
+    }
+
+    touchStartX.current = null
+    touchEndX.current = null
+  }
 
   return (
     <div className="w-full bg-white">
@@ -34,21 +106,100 @@ export default function BlogClient() {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE BANNER)
+          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE SLIDER)
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Blog Hero Banner">
+      <section
+        className="relative w-full bg-[#075078] overflow-hidden select-none group"
+        aria-label="Blog Hero Banner Slider"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <h1 className="sr-only">
-          Hair Fixing &amp; Hair Replacement Educational Blog - Thiruvananthapuram
+          Hair Care &amp; Fixing Guides | ozzone Hair Blog
         </h1>
-        <div className="relative w-full aspect-[2048/768]">
-          <Image
-            src="/images/blog/Blog_Hero_Section_Banner_Man.png"
-            alt="Hair Care & Fixing Guides by ozzone Hair Experts - Before and After Hair Transformation"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+        <div className="relative w-full aspect-[2048/768] min-h-[220px] sm:min-h-[340px] md:min-h-[420px] lg:min-h-[480px]">
+          {/* Horizontal Slide Track */}
+          <div
+            className="flex w-full h-full transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
+            style={{ transform: `translate3d(-${currentIndex * 100}%, 0, 0)` }}
+          >
+            {BLOG_HERO_SLIDES.map((slide, index) => (
+              <div
+                key={slide.id}
+                className="w-full h-full shrink-0 relative overflow-hidden bg-[#075078]"
+                aria-hidden={currentIndex !== index}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`Slide ${index + 1} of ${totalSlides}`}
+              >
+                {slide.contain ? (
+                  <>
+                    {/* Ambient backdrop to prevent side borders */}
+                    <div className="absolute inset-0 select-none pointer-events-none">
+                      <Image
+                        src={slide.src}
+                        alt=""
+                        fill
+                        priority={index === 0}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        className="object-cover object-center blur-xl scale-110 opacity-30"
+                        sizes="100vw"
+                      />
+                    </div>
+                    {/* Main crisp full image */}
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      priority={index === 0}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      className="object-contain object-center relative z-10"
+                      sizes="100vw"
+                    />
+                  </>
+                ) : (
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    className="object-cover object-center"
+                    sizes="100vw"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          
+
+          {/* Navigation Dots */}
+          <div
+            className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20"
+            role="tablist"
+            aria-label="Blog Hero Carousel Dots"
+          >
+            {BLOG_HERO_SLIDES.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                role="tab"
+                aria-selected={currentIndex === index}
+                aria-label={`Go to slide ${index + 1}`}
+                onClick={() => goToSlide(index)}
+                className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#29B6EB] ${
+                  currentIndex === index
+                    ? 'w-6 sm:w-7 bg-[#29B6EB]'
+                    : 'w-2 sm:w-2.5 bg-white/60 hover:bg-white'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

@@ -42,6 +42,9 @@ export interface BlogPost {
   title: string;
   category: string;
   date: string;
+  updatedDate?: string;
+  author?: string;
+  isDraft?: boolean;
   readTime: string;
   image: string;
   summary: string;
@@ -291,6 +294,26 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     solutionProvided: "Dermatological Scalp Bonding Result",
     recoveryTime: "90 minutes studio session",
   },
+  {
+    id: "gal-5",
+    clientType: "Male - 31 Yrs, Crown & Frontal Restoration (Statue)",
+    category: "Hair Patching",
+    ageGroup: "30-35",
+    beforeImg: "/images/gallery/Gemini_Generated_Image_mlb2ramlb2ramlb2.png",
+    afterImg: "/images/gallery/Gemini_Generated_Image_mlb2ramlb2ramlb2.png",
+    solutionProvided: "Full Natural Hair Patch Fixing",
+    recoveryTime: "Instant 90-min transformation",
+  },
+  {
+    id: "gal-6",
+    clientType: "Male - 42 Yrs, Receding Hairline & Crown Density (Pattom)",
+    category: "Hair Bonding",
+    ageGroup: "40-45",
+    beforeImg: "/images/gallery/Gemini_Generated_Image_uj96liuj96liuj96.png",
+    afterImg: "/images/gallery/Gemini_Generated_Image_uj96liuj96liuj96.png",
+    solutionProvided: "HD Lace Hair Replacement System",
+    recoveryTime: "Immediate same-day wear",
+  },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -299,104 +322,146 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "hair-fixing-in-thiruvananthapuram",
     title: "Hair Fixing in Thiruvananthapuram: The Complete Non-Surgical Hair Replacement Guide",
     category: "Hair Fixing",
+    author: "ozzone Hair Specialist Team",
     date: "November 10, 2026",
+    updatedDate: "November 14, 2026",
+    isDraft: false,
     readTime: "6 min read",
     image: "/images/blog/hair-fixing-in-thiruvananthapuram.jpg",
     summary: "Complete 2026 guide to professional hair fixing in Thiruvananthapuram. Learn how non-surgical hair systems, custom hair patches, and medical bonding deliver 100% natural, undetectable results in just 90 minutes at our Trivandrum studios.",
     content: [
       "Hair loss and thinning affect thousands of men and women across Kerala every year. For residents in Thiruvananthapuram seeking a guaranteed, painless, and instant solution, hair fixing has emerged as the premier non-surgical alternative to invasive surgical transplants.",
       "What is Hair Fixing? Hair fixing in Thiruvananthapuram is an advanced cosmetic hair restoration technique where a custom-crafted hair system — made exclusively with 100% natural human hair — is seamlessly integrated with your existing hair and scalp. Whether you suffer from crown baldness, receding hairlines, or diffuse thinning, hair fixing restores complete volume and a natural graduated hairline without incisions, stitches, or medication.",
-      "How Does the 90-Minute Procedure Work? At ozzone Hair Studio in Statue Junction and Pattom, the hair fixing process begins with a confidential scalp analysis. Our certified specialists create an exact mold of your thinning area, match your hair texture, density, curl pattern, and color tone, and securely bond the featherlight lace or micro-skin base using FDA-approved dermatological polymers. Finally, our senior stylists cut and style your new hair to blend flawlessly with your natural hair.",
+      "How Does the 90-Minute Procedure Work? At ozzone Hair Studio in Palayam, the hair fixing process begins with a confidential scalp analysis. Our certified specialists create an exact mold of your thinning area, match your hair texture, density, curl pattern, and color tone, and securely bond the featherlight lace or micro-skin base using FDA-approved dermatological polymers. Finally, our senior stylists cut and style your new hair to blend flawlessly with your natural hair.",
       "Why Hair Fixing Outperforms Hair Transplants in Kerala: Traditional hair transplant surgery requires 9 to 12 months for uncertain growth, costs upwards of ₹1 Lakh, and often leaves visible donor area scarring. In contrast, non-surgical hair fixing delivers guaranteed 100% hair density immediately in a single 90-minute session with zero downtime, zero pain, and complete styling flexibility.",
       "Engineered for Kerala's Humid Coastal Climate: One of the most frequent questions Trivandrum clients ask is whether sweating, swimming, or humid weather will dislodge a hair patch. Modern hair systems utilize breathable Swiss and French lace bases paired with waterproof medical adhesives like Ultra Hold and Ghost Bond. You can shower daily, ride your two-wheeler through MG Road traffic, work out at the gym, and swim at Kovalam beach with 100% confidence.",
       "Cost of Hair Fixing in Thiruvananthapuram: Professional hair fixing in Trivandrum starts from ₹8,500 for targeted crown patches, with premium custom lace systems ranging between ₹16,000 and ₹24,000. With affordable monthly maintenance averaging ₹1,000 to ₹1,500, it remains one of the most accessible aesthetic investments for your personal and professional confidence.",
-      "Book Your Free Consultation in Trivandrum: Ready to restore your natural look? Visit ozzone Hair Studio at Capital Centre, Statue Junction (Opposite Secretariat) or our Pattom branch for a free, confidential hair analysis with our certified technicians."
+      "Book Your Free Consultation in Trivandrum: Ready to restore your natural look? Visit ozzone Hair Studio at Palayam (Opp. Jubilee Memorial Hospital) for a free, confidential hair analysis with our certified technicians."
     ]
   },
   {
     id: "blog-1",
     slug: "hair-patch-vs-hair-transplant-trivandrum",
-    title: "Hair Patch vs Hair Transplant: Why Non-Surgical Fixing Wins in Kerala",
+    title: "Hair Patch vs Hair Transplant: Non-Surgical Fixing in Kerala [Draft]",
     category: "Hair Restoration",
+    author: "ozzone Hair Specialist Team",
     date: "November 5, 2026",
+    updatedDate: "November 14, 2026",
+    isDraft: true,
     readTime: "5 min read",
     image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80",
-    summary: "A transparent comparison of cost, surgical risks, recovery time, and guaranteed density for hair loss sufferers in Thiruvananthapuram.",
+    summary: "A transparent comparison of cost, surgical risks, recovery time, and guaranteed density between hair patches and surgical transplants for hair loss in Thiruvananthapuram.",
     content: [
       "When confronted with male pattern baldness or thinning hair, most individuals in Thiruvananthapuram weigh two major options: surgical hair transplant and non-surgical hair fixing.",
-      "Surgical hair transplants require surgical incisions, long healing periods of 9-12 months, substantial financial investment (often upwards of ₹80,000 to ₹1.5 Lakhs), and rely heavily on existing donor hair density. If donor hair is sparse, surgical results can look thin and disappointing.",
-      "Non-surgical hair patching, on the other hand, delivers instant 100% hair density within a single 90-minute session. There are zero needles, zero scars, and zero downtime. You walk into our Thiruvananthapuram clinic and walk out with your youthful look restored completely.",
-      "Moreover, Kerala's humid climate is uniquely accommodated by our breathable Swiss and French lace systems, ensuring complete scalp comfort throughout monsoon and summer."
+      "Surgical Risks and Recovery Times: Surgical hair transplants require micro-incisions, follicle extraction from the donor area, long healing periods of 9 to 12 months, and rely heavily on existing donor hair density. If donor hair is sparse or if androgenetic alopecia continues, surgical results can look thin and unnatural. Potential risks include folliculitis, scarring, and surgical infection.",
+      "Instant Density and Painless Restoration: Non-surgical hair patching, on the other hand, delivers instant 100% hair density within a single 90-minute session. There are zero needles, zero scars, and zero downtime. You walk into our Thiruvananthapuram clinic and walk out with your youthful look restored completely.",
+      "Financial Comparison and Value: Surgical transplants in Kerala range from ₹70,000 to over ₹1,80,000 without guaranteed density. A custom hair patch in Trivandrum starts at ₹8,500 to ₹22,000 with complete density control and style versatility.",
+      "Scalp Comfort in Kerala Humidity: Kerala's tropical humid climate is uniquely accommodated by our breathable Swiss and French lace systems, ensuring natural perspiration escape and total scalp comfort throughout monsoon and summer."
     ]
   },
   {
     id: "blog-2",
-    slug: "how-to-care-for-hair-patch-kerala-climate",
-    title: "Essential Care Guide for Hair Systems in Kerala's Humid Climate",
+    slug: "how-long-does-a-hair-patch-last",
+    title: "How Long Does a Hair Patch Last? Durability & Care Guide [Draft]",
     category: "Maintenance Tips",
-    date: "October 28, 2026",
-    readTime: "4 min read",
+    author: "Senior Hair Technician, ozzone Hair",
+    date: "November 12, 2026",
+    updatedDate: "November 14, 2026",
+    isDraft: true,
+    readTime: "5 min read",
     image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80",
-    summary: "Practical tips to protect your hair patch adhesive and base from coastal moisture, sweat, and sea salt in Trivandrum.",
+    summary: "Discover the true lifespan of custom hair patches, factors affecting longevity, and how regular monthly servicing extends system life in Kerala.",
     content: [
-      "Thiruvananthapuram's coastal location brings high humidity and tropical warmth. Clients often ask if sweating or rainfall will affect their hair patch.",
-      "With medical-grade waterproof polymers like Ultra Hold and Ghost Bond, sweat does not dissolve the adhesive bond. However, regular scalp care is essential to maintain optimal hygiene.",
-      "Key maintenance habits include using sulfate-free shampoos, applying leave-in argan serum to hair ends to prevent dryness, and scheduling professional servicing every 3 to 4 weeks.",
-      "Always pat dry with a soft microfiber towel after swimming in Kovalam or working out in the gym, rather than rubbing vigorously."
+      "How Long Does a Hair System Really Last? On average, a high-quality 100% natural human hair patch lasts between 6 to 12 months, with ultra-durable monofilament units lasting up to 14 months and ultra-thin skin units designed for 4 to 6 months of peak undetectable realism.",
+      "Key Factors Affecting Durability: Three primary factors govern system lifespan: base material thickness, hair knotting type, and daily home maintenance habits. Breathable Swiss lace bases offer supreme realism but require gentler brushing, whereas hybrid polyurethane bases offer longer resilience.",
+      "The Role of Monthly Servicing: In Trivandrum and Bangalore, scheduling a routine 45-minute re-bonding and conditioning service every 3 to 4 weeks ensures that adhesive residue is safely dissolved, natural hair underneath is neatly trimmed, and deep hydration treatments preserve the virgin hair follicles.",
+      "Daily Best Practices for Longevity: Use wide-tooth detangling combs, wash with sulfate-free organic shampoos, apply leave-in silicone or argan serum to hair ends, and pat dry with microfiber towels rather than rough friction drying."
     ]
   },
   {
     id: "blog-3",
-    slug: "top-5-misconceptions-about-hair-fixing",
-    title: "5 Common Myths About Non-Surgical Hair Fixing Debunked",
-    category: "Hair Myths",
-    date: "October 14, 2026",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
-    summary: "Discover why modern hair systems are completely indistinguishable from real hair, debunking outdated wig stereotypes.",
+    slug: "hair-patch-care-in-humid-climate",
+    title: "Hair Patch Care in Humid Climate: Kerala Scalp & Maintenance Guide [Draft]",
+    category: "Maintenance Tips",
+    author: "Scalp Care Specialist, ozzone Hair",
+    date: "October 28, 2026",
+    updatedDate: "November 14, 2026",
+    isDraft: true,
+    readTime: "4 min read",
+    image: "/images/blog/hair-patch-lifestyle-swimming-gym.jpg",
+    summary: "Practical tips to protect your hair patch adhesive and base from coastal moisture, sweat, and sea salt in Trivandrum and coastal Kerala.",
     content: [
-      "Myth 1: 'Hair patches look fake like traditional wigs.' Fact: Modern lace bases use single hair knotting that mimics real hair follicles emerging from your scalp.",
-      "Myth 2: 'It can fall off during wind or sports.' Fact: Dermatological bonding withstands up to 25 kg of direct tensile pull, keeping it secure while running, swimming, or riding two-wheelers.",
-      "Myth 3: 'It causes damage to remaining hair.' Fact: Breathable bases allow natural hair under the perimeter to grow normally without follicle damage.",
-      "Myth 4: 'Only elderly men use hair patches.' Fact: Over 60% of our clients in Trivandrum are young professionals aged 22-38 looking for confidence at work and weddings."
+      "Thiruvananthapuram's coastal location brings high humidity, monsoons, and tropical warmth. Clients often ask whether sweating, rain, or humidity will weaken their hair patch.",
+      "Waterproof Medical Bonding Explained: With dermatologically tested, medical-grade polymers such as Ultra Hold and Ghost Bond, perspiration does not break down the chemical bond. The adhesive remains water-impermeable even during strenuous exercise or heavy sweating.",
+      "Combating Scalp Moisture and Odor: High humidity requires disciplined scalp hygiene. We recommend washing the hair system twice a week with pH-balanced, tea-tree or antimicrobial cleansers that keep the scalp fresh, prevent bacterial buildup, and eliminate itching.",
+      "Post-Swim and Workout Routine: Always rinse thoroughly with fresh tap water after swimming in Kovalam or Varkala beaches to remove salt crystals. Pat dry gently and allow airflow through the breathable lace perimeter."
     ]
   },
   {
     id: "blog-4",
+    slug: "hair-fixing-cost-in-trivandrum",
+    title: "Hair Fixing Cost in Trivandrum: 2026 Price Breakdown & Packages [Draft]",
+    category: "Pricing Guide",
+    author: "ozzone Hair Consultation Desk",
+    date: "September 18, 2026",
+    updatedDate: "November 14, 2026",
+    isDraft: true,
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    summary: "Complete transparency on hair fixing costs in Thiruvananthapuram: starting prices, base materials, custom hair grades, and monthly servicing fees.",
+    content: [
+      "Transparent Pricing for Non-Surgical Hair Fixing: Hair patch prices in Thiruvananthapuram vary based on the base construction (Swiss Lace, French Lace, Silk Top, or Poly Skin), hair quality grade, and custom scalp area coverage.",
+      "Detailed Price Tiers: Standard clip-on crown units start from ₹8,500 to ₹12,000. Premium medical bonding systems with undetectable front Swiss lace range from ₹14,000 to ₹22,000. Full scalp replacement units for extensive Norwood scale 6-7 loss range from ₹22,000 to ₹32,000.",
+      "Monthly Maintenance and Servicing Costs: Routine monthly servicing in Trivandrum costs between ₹1,000 and ₹1,500. This includes adhesive removal, scalp detox, natural hair haircut, deep conditioning, and fresh waterproof bonding.",
+      "Cost vs Surgical Transplant: A surgical hair transplant in Kerala costs between ₹80,000 and ₹2,00,000 with uncertain results. Hair fixing provides immediate guaranteed density at a fraction of the initial cost with zero downtime."
+    ]
+  },
+  {
+    id: "blog-5",
+    slug: "is-hair-fixing-safe",
+    title: "Is Hair Fixing Safe? Dermatological Facts & Scalp Health Guide [Draft]",
+    category: "Safety & Health",
+    author: "ozzone Hair Clinical Advisor",
+    date: "November 13, 2026",
+    updatedDate: "November 14, 2026",
+    isDraft: true,
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    summary: "A medical and dermatological assessment of non-surgical hair fixing safety: hypoallergenic adhesives, scalp breathing, and biological impact on natural hair.",
+    content: [
+      "Is Non-Surgical Hair Fixing Safe for Your Scalp? Yes, hair fixing is 100% safe, non-invasive, and dermatologically approved when performed with medical-grade adhesives and breathable hair systems.",
+      "Hypoallergenic Adhesives and Skin Testing: Modern hair bonding utilizes water-based and medical-grade acrylic polymers that are non-toxic, latex-free, and hypoallergenic. At ozzone Hair Studio, we conduct a preliminary skin patch test for sensitive clients to eliminate any risk of contact dermatitis.",
+      "Does a Hair Patch Stop Remaining Hair Growth? No. Hair patches are attached only to the bald crown region or perimeter tracks. The micro-pores in Swiss lace and breathable poly bases allow natural oxygenation and sebum flow, permitting existing hair follicles to continue their natural growth cycle unimpeded.",
+      "Zero Surgical Complications: Unlike surgical hair transplants which carry risks of scarring, nerve numbness, shock loss, and infection, non-surgical hair replacement is completely reversible, painless, and carries zero health risks."
+    ]
+  },
+  {
+    id: "blog-6",
     slug: "womens-hair-loss-solutions-thiruvananthapuram",
     title: "Discreet Hair Restoration Solutions for Women in Trivandrum",
     category: "Women's Health",
+    author: "Senior Female Stylist, ozzone Hair",
     date: "September 30, 2026",
+    updatedDate: "November 14, 2026",
+    isDraft: false,
     readTime: "5 min read",
     image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80",
     summary: "How silk crown toppers provide natural volume and partition coverage for women experiencing hormonal or stress-related hair thinning.",
     content: [
       "Hair loss in women is often accompanied by emotional stress and hesitance to seek help. Unlike men who experience receding hairlines, women typically experience diffuse thinning across the crown and widened parting lines.",
       "Our specialized Women's Silk Toppers clip effortlessly into your natural hair or are secured with semi-permanent micro-rings, blending invisibly with your hair color and texture.",
-      "We provide private, confidential consulting rooms staffed by experienced female hair stylists at our Statue Junction and Pattom clinics."
+      "We provide private, confidential consulting rooms staffed by experienced female hair stylists at our Palayam studio in Thiruvananthapuram."
     ]
   },
   {
-    id: "blog-5",
-    slug: "understanding-hair-patch-pricing-in-kerala",
-    title: "How Much Does Hair Fixing Cost in Thiruvananthapuram? Complete Pricing Breakdown",
-    category: "Pricing Guide",
-    date: "September 18, 2026",
-    readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-    summary: "Everything you need to know about hair patch costs, base materials, customization levels, and ongoing servicing charges.",
-    content: [
-      "Hair patch costs in Thiruvananthapuram depend on three factors: base construction (Lace, Silk, or Thin-Skin PU), hair grade (Standard Remy vs 100% Virgin Cuticle Hair), and custom size.",
-      "Basic systems range from ₹8,500 to ₹12,000, while premium Swiss Lace and European Hair Systems range between ₹16,000 and ₹26,000.",
-      "Monthly maintenance averages ₹1,000 to ₹1,500, making hair fixing one of the most cost-effective aesthetic investments compared to repeated PRP sessions or expensive surgeries."
-    ]
-  },
-  {
-    id: "blog-6",
+    id: "blog-7",
     slug: "swimming-gym-shower-with-hair-patch",
     title: "Can You Swim, Gym, and Shower with a Hair Patch? The Ultimate Lifestyle Guide",
     category: "Lifestyle",
+    author: "ozzone Hair Specialist Team",
     date: "September 02, 2026",
+    updatedDate: "November 14, 2026",
+    isDraft: false,
     readTime: "4 min read",
     image: "/images/blog/hair-patch-lifestyle-swimming-gym.jpg",
     summary: "Live an unrestricted life: ride your bike without a helmet cap, dive into the pool, and wash your hair normally.",
