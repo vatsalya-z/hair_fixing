@@ -105,43 +105,43 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-white/85">
               <li>
-                <Link href="/about" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/about/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>About Our Trivandrum Clinic</span>
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/products/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>Hair Systems &amp; Toupees</span>
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/gallery/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>Before &amp; After Results</span>
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/pricing/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>Packages &amp; Cost Breakdown</span>
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/blog/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>Hair Loss &amp; Care Articles</span>
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/faq/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>Frequently Asked Questions</span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
+                <Link href="/contact/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>Contact &amp; Book Consultation</span>
                 </Link>
@@ -242,9 +242,9 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex items-center gap-6 self-center md:self-auto">
-            <Link href="/faq" className="hover:text-[#29B6EB] transition-colors">Privacy Policy</Link>
-            <Link href="/faq" className="hover:text-[#29B6EB] transition-colors">Terms of Service</Link>
-            <Link href="/contact" className="hover:text-[#29B6EB] transition-colors">Location &amp; Hours</Link>
+            <Link href="/faq/" className="hover:text-[#29B6EB] transition-colors">Privacy Policy</Link>
+            <Link href="/faq/" className="hover:text-[#29B6EB] transition-colors">Terms of Service</Link>
+            <Link href="/contact/" className="hover:text-[#29B6EB] transition-colors">Location &amp; Hours</Link>
           </div>
         </div>
       </div>

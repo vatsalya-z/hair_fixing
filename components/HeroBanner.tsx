@@ -61,7 +61,7 @@ export default function HeroBanner({
             {showCta && (
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-6 py-3 rounded-lg shadow-md transition-all duration-200"
                 >
                   Book Free Hair Analysis

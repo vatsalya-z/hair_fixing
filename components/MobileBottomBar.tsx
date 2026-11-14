@@ -60,7 +60,7 @@ export default function MobileBottomBar() {
 
         {/* Right Action: BOOK NOW */}
         <Link
-          href="/contact#booking-form"
+          href="/contact/#booking-form"
           className="flex flex-col items-center justify-center gap-1 py-1 active:scale-95 transition-transform min-h-[44px] touch-manipulation group"
           aria-label="Book Now Free Consultation"
         >

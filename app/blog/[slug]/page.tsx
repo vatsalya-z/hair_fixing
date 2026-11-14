@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: Props) {
           <nav className="flex items-center gap-2 text-xs text-white/70 mb-5" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#29B6EB] transition-colors">Home</Link>
             <span className="text-[#29B6EB]">›</span>
-            <Link href="/blog" className="hover:text-[#29B6EB] transition-colors">Blog</Link>
+            <Link href="/blog/" className="hover:text-[#29B6EB] transition-colors">Blog</Link>
             <span className="text-[#29B6EB]">›</span>
             <span className="text-[#29B6EB] line-clamp-1">{post.title}</span>
           </nav>
@@ -197,7 +197,7 @@ export default async function BlogPostPage({ params }: Props) {
                     <FaWhatsapp className="w-5 h-5 text-white" />
                     <span>Book Free Consultation</span>
                   </a>
-                  <Link href="/services" className="btn-secondary-light">
+                  <Link href="/services/" className="btn-secondary-light">
                     Our Services
                   </Link>
                 </div>
@@ -226,7 +226,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <h4 className="text-[#075078] font-bold text-base mb-4">Related Articles</h4>
                   <div className="space-y-4">
                     {relatedPosts.map((related) => (
-                      <Link key={related.id} href={`/blog/${related.slug}`} className="group flex gap-3 ronex-card p-3 overflow-hidden">
+                      <Link key={related.id} href={`/blog/${related.slug}/`} className="group flex gap-3 ronex-card p-3 overflow-hidden">
                         <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                           <Image
                             src={related.image}

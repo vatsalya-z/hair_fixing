@@ -21,33 +21,27 @@ import {
   Droplets
 } from 'lucide-react'
 import { SITE_INFO } from '@/data/siteData'
-import SolutionsHeroImageWithTilt from '@/components/SolutionsHeroImageWithTilt'
-import {
-  FadeInUp,
-  FadeInScale,
-  HoverLift3D,
-} from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Solutions in Trivandrum and Bangalore | ozzone Hair',
-  description: 'Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations, and enjoy a rejuvenated look with an answer tailor-made for your needs.',
+  title: "Hair Replacement Solutions in Trivandrum | Custom Men's Hair Systems | ozzone Hair",
+  description: 'Discover custom non-surgical hair replacement solutions in Trivandrum. Breathable Swiss lace, ultra-thin poly skin systems & undetectable hairlines for men & women.',
   alternates: {
     canonical: 'https://ozzonehair.com/solutions/',
   },
   openGraph: {
-    title: 'Hair Fixing Solutions in Trivandrum and Bangalore | ozzone Hair',
-    description: 'We offer customized answers that blend seamlessly along with your present hair. Consolation, durability, and a glance that’s definitely you.',
+    title: "Hair Replacement Solutions in Trivandrum | Custom Men's Hair Systems | ozzone Hair",
+    description: 'Custom non-surgical hair replacement solutions in Trivandrum & Bangalore. Undetectable Swiss lace & ultra-thin skin hair systems for men & women.',
     url: 'https://ozzonehair.com/solutions/',
     siteName: 'ozzone Hair',
-    images: [{ url: '/hero-section/slide_2-1.png', width: 1200, height: 450, alt: 'Hair Fixing Solutions in Trivandrum and Bangalore' }],
+    images: [{ url: '/images/solution/solution-hero-section.png', width: 2048, height: 768, alt: 'Hair Replacement Solutions in Trivandrum and Bangalore' }],
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Solutions in Trivandrum and Bangalore | ozzone Hair',
-    description: 'Customized hair fixing solutions in Trivandrum & Bangalore. Instant results without surgery.',
-    images: ['/hero-section/slide_2-1.png'],
+    title: "Hair Replacement Solutions in Trivandrum | Custom Men's Hair Systems | ozzone Hair",
+    description: 'Customized hair replacement solutions in Trivandrum & Bangalore. Instant results without surgery.',
+    images: ['/images/solution/solution-hero-section.png'],
   },
 }
 
@@ -55,63 +49,63 @@ export const metadata: Metadata = {
 const SOLUTIONS_FAQS = [
   {
     id: 'faq-1',
-    question: 'What is your hair fixing service different from others in Ozzone hair?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
-    answer: 'Our hair fixing solutions are completely non-surgical, pain-free, and adapted to match your natural hair texture, color and style. We use high quality materials for a natural form and long lasting results.',
+    question: 'How is your hair fixing service different from others at ozzone Hair?',
+    href: '/services/',
+    answer: 'Our hair fixing solutions are completely non-surgical, pain-free, and adapted to match your natural hair texture, color and style. We use high quality materials for a natural hairline and long lasting results.',
   },
   {
     id: 'faq-2',
     question: 'How long does a hair fixing process take?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
+    href: '/services/',
     answer: 'The entire hair fixing process takes approximately 90 minutes in a single session. Unlike typical hair restoration surgeries that take months to produce results, hair fixing gives immediate, instant results.',
   },
   {
     id: 'faq-3',
-    question: 'Are hair setting a permanent solution?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
+    question: 'Is hair fixing a permanent solution?',
+    href: '/solutions/',
     answer: 'Non-surgical hair fixing provides a long-term, semi-permanent solution. The systems stay fixed for weeks between routine servicing and are durable for months with proper care.',
   },
   {
     id: 'faq-4',
-    question: 'Can I wash and style my hair after curing hair?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
-    answer: 'Yes, absolutely. The solutions are designed to resemble and feel like natural hair. You can wash, style, and care for your hair naturally.',
+    question: 'Can I wash and style my hair after hair fixing?',
+    href: '/products/',
+    answer: 'Yes, absolutely. The solutions are designed to resemble and feel like natural hair. You can wash, shampoo, style, and care for your hair naturally.',
   },
   {
     id: 'faq-5',
     question: 'Is hair fixing suitable for all types of hair loss?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
-    answer: 'Yes. Whether you have bald patches, thinning areas, or losing hair, our specialized services are abundant and tailored to meet whatever needs you may require.',
+    href: '/solutions/',
+    answer: 'Yes. Whether you have crown bald patches, thinning areas, or receding hairlines, our specialized services are tailored to meet your unique scalp requirements.',
   },
   {
     id: 'faq-6',
-    question: 'Will hair fixing damage my natural hair or skull?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
+    question: 'Will hair fixing damage my natural hair or scalp?',
+    href: '/faq/',
     answer: 'No. Hair fixing is a non-invasive, safe, and discreet procedure that avoids prolonged recovery periods and surgical hassle, leaving your natural hair and scalp protected.',
   },
   {
     id: 'faq-7',
     question: 'How long does a hair system last, and how often should it be replaced?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
-    answer: 'With proper care and maintenance, the solutions are durable and last for months, offering a worry-free and long-lasting hair solution.',
+    href: '/services/',
+    answer: 'With proper care and maintenance, the solutions are durable and last for 8 to 14 months, offering a worry-free and long-lasting hair restoration solution.',
   },
   {
     id: 'faq-8',
-    question: 'Can I swim after fixing hair or play games?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
-    answer: 'Yes! Most of the solutions are water-resistant, wind-resistant, and resistant to perspiration and weather changes, ensuring your hair stays flawless all day long during activities.',
+    question: 'Can I swim after fixing hair or play sports?',
+    href: '/faq/',
+    answer: 'Yes! Our solutions are water-resistant, wind-resistant, and sweat-resistant, ensuring your hair stays securely bonded all day long during swimming, gym, and outdoor sports.',
   },
   {
     id: 'faq-9',
-    question: 'What is the cost of curing hair in ozzone hair?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
-    answer: 'We offer individualized consultations so you can select the best hair-fixing solution that suits your lifestyle, needs, and style at competitive, transparent pricing.',
+    question: 'What is the cost of hair fixing at ozzone Hair?',
+    href: '/pricing/',
+    answer: 'We offer individualized consultations so you can select the best hair-fixing solution that suits your lifestyle, needs, and style at competitive, transparent pricing starting from ₹9,999.',
   },
   {
     id: 'faq-10',
-    question: 'Do you provide AFTERCARE services for hair fixing?',
-    href: 'https://ozzonehair.com/hair-fixing-trivandrum/',
-    answer: 'Yes, we provide complete aftercare, guidance, and maintenance support at our Trivandrum and Bangalore locations to ensure durable and comfortable long-term wear.',
+    question: 'Do you provide aftercare services for hair fixing?',
+    href: '/services/',
+    answer: 'Yes, we provide complete aftercare, guidance, and routine monthly maintenance support at our Trivandrum and Bangalore locations to ensure durable and comfortable long-term wear.',
   },
 ]
 
@@ -130,8 +124,8 @@ export default function SolutionsPage() {
         '@type': 'WebPage',
         '@id': 'https://ozzonehair.com/solutions/#webpage',
         url: 'https://ozzonehair.com/solutions/',
-        name: 'Hair Fixing Solutions in Trivandrum and Bangalore | ozzone Hair',
-        description: 'Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations, and enjoy a rejuvenated look with an answer tailor-made for your needs.',
+        name: "Hair Replacement Solutions in Trivandrum | Custom Men's Hair Systems | ozzone Hair",
+        description: 'Discover custom non-surgical hair replacement solutions in Trivandrum. Breathable Swiss lace, ultra-thin poly skin systems & undetectable hairlines for men & women.',
       },
       {
         '@type': 'FAQPage',
@@ -155,101 +149,39 @@ export default function SolutionsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(solutionsJsonLd) }}
       />
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO BANNER (Intro & Overview)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[#075078] via-[#0d4f7c] to-[#174BA5] text-white py-14 sm:py-20 lg:py-24">
-        {/* Ambient lighting accents */}
-        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#174BA5]/25 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full z-10">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* Left Copy */}
-            <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
-              {/* Breadcrumb Navigation */}
-              <nav className="flex items-center gap-2 text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium" aria-label="Breadcrumb">
-                <Link href="/" className="hover:text-[#29B6EB] transition-colors">Home</Link>
-                <span className="text-white/40" aria-hidden="true">/</span>
-                <span className="text-[#29B6EB] font-semibold">Solutions</span>
-              </nav>
-
-              <FadeInUp delay={0.05} yOffset={20}>
-                <span className="inline-flex items-center gap-2 bg-[#29B6EB]/20 border border-[#29B6EB]/40 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold text-[#29B6EB] tracking-wide mb-4">
-                  <span>Trivandrum &amp; Bangalore Locations</span>
-                </span>
-              </FadeInUp>
-
-              <FadeInUp delay={0.15} yOffset={25}>
-                <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 tracking-tight">
-                  Hair Fixing Solutions in{' '}
-                  <span className="text-[#29B6EB] drop-shadow-sm">Trivandrum &amp; Bangalore</span>
-                </h1>
-              </FadeInUp>
-
-              <FadeInUp delay={0.25} yOffset={25}>
-                <p className="text-white/95 text-base sm:text-lg leading-relaxed mb-4 max-w-2xl font-normal">
-                  Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations, and enjoy a rejuvenated look with an answer tailor-made for your needs.
-                </p>
-                <p className="text-white/85 text-xs sm:text-sm leading-relaxed mb-8 max-w-2xl font-normal">
-                  We offer customized answers that blend seamlessly along with your present hair. Whether you are coping with thinning hair or looking for a complete transformation, our group guarantees consolation, durability, and a glance that’s definitely you.
-                </p>
-              </FadeInUp>
-
-              <FadeInUp delay={0.35} yOffset={20}>
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
-                  <HoverLift3D>
-                    <Link
-                      href="https://ozzonehair.com/contact/"
-                      className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group text-center"
-                    >
-                      <span>Please Contact Today</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </HoverLift3D>
-
-                  <HoverLift3D>
-                    <a
-                      href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20inquire%20about%20your%20hair%20fixing%20solutions.`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 text-center"
-                    >
-                      <FaWhatsapp className="w-5 h-5 text-white" />
-                      <span>WhatsApp Consultation</span>
-                    </a>
-                  </HoverLift3D>
-                </div>
-              </FadeInUp>
-
-              {/* Trust highlights */}
-              <FadeInUp delay={0.45} yOffset={15}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm pt-6 mt-6 border-t border-white/15 w-full">
-                  {[
-                    'Natural & Undetectable',
-                    'Consolation & Durability',
-                    'Water & Wind Resistant',
-                    'Zero Surgical Hassle',
-                  ].map((badge) => (
-                    <div key={badge} className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                      <span>{badge}</span>
-                    </div>
-                  ))}
-                </div>
-              </FadeInUp>
-            </div>
-
-            {/* Right Hero Image with 3D Tilt */}
-            {/* <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
-              <SolutionsHeroImageWithTilt
-                imageSrc="/hero-section/slide_2-1.png"
-                alt="Hair Fixing Solutions in Trivandrum and Bangalore"
-              />
-            </div> */}
+      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
+      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
+            <span className="text-slate-400" aria-hidden="true">/</span>
+            <span className="text-[#075078] font-bold">Solutions</span>
+          </nav>
+          <div className="hidden sm:flex items-center gap-3 text-xs text-slate-500">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[#005675]">
+              <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
+              Trivandrum &amp; Bangalore Studios
+            </span>
           </div>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE BANNER)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hair Fixing Solutions Hero Banner">
+        <h1 className="sr-only">
+          Advanced Non-Surgical Hair Fixing &amp; Replacement Solutions in Thiruvananthapuram
+        </h1>
+        <div className="relative w-full aspect-[2048/768]">
+          <Image
+            src="/images/solution/solution-hero-section.png"
+            alt="Hair Fixing Solutions in Trivandrum and Bangalore"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
         </div>
       </section>
 

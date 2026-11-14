@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import {
   Phone,
   Mail,
@@ -110,10 +111,27 @@ export default function ContactClient() {
 
   return (
     <div className="w-full bg-[#F3F7FB]">
+      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
+      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
+            <span className="text-slate-400" aria-hidden="true">/</span>
+            <span className="text-[#075078] font-bold">Contact</span>
+          </nav>
+          <div className="hidden sm:flex items-center gap-3 text-xs text-slate-500">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[#005675]">
+              <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
+              Free Scalp Consultation
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO SECTION (3D TILT WITH CUSTOM CLINIC IMAGE)
+          SECTION 1 — HERO SECTION
       ═══════════════════════════════════════════════════════════ */}
-      <section className="hero-gradient-bg relative overflow-hidden min-h-[75vh] flex items-center">
+      <section className="hero-gradient-bg relative overflow-hidden min-h-[60vh] flex items-center justify-center py-16 sm:py-20 lg:py-24">
         {/* Ambient lighting glows */}
         <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/12 rounded-full blur-3xl" />
@@ -121,76 +139,66 @@ export default function ContactClient() {
           <div className="hero-subtle-glow absolute inset-0 opacity-40" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative w-full">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            {/* Left Copy */}
-            <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-              <FadeInUp delay={0.05} yOffset={20}>
-                <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
-                  <MapPin className="w-3.5 h-3.5" />
-                  Palayam, Thiruvananthapuram &amp; Indiranagar, Bengaluru
-                </span>
-              </FadeInUp>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full text-center flex flex-col items-center">
+          <FadeInUp delay={0.05} yOffset={20}>
+            <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
+              <MapPin className="w-3.5 h-3.5" />
+              Palayam, Thiruvananthapuram &amp; Indiranagar, Bengaluru
+            </span>
+          </FadeInUp>
 
-              <FadeInUp delay={0.15} yOffset={25}>
-                <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center lg:text-left">
-                  Contact ozzone Hair Studio &amp; Book Free Consultation in{' '}
-                  <span className="text-[#29B6EB]">Thiruvananthapuram</span>
-                </h1>
-              </FadeInUp>
+          <FadeInUp delay={0.15} yOffset={25}>
+            <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center max-w-3xl mx-auto">
+              Contact ozzone Hair Studio &amp; Book Free Consultation in{' '}
+              <span className="text-[#29B6EB]">Thiruvananthapuram</span>
+            </h1>
+          </FadeInUp>
 
-              <FadeInUp delay={0.25} yOffset={25}>
-                <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-7 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-                  Visit our 100% private consultation suites for a personalized scalp inspection, custom human hair trial, and transparent price quotation with zero pressure.
-                </p>
-              </FadeInUp>
+          <FadeInUp delay={0.25} yOffset={25}>
+            <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-7 max-w-2xl mx-auto text-center">
+              Visit our 100% private consultation suites for a personalized scalp inspection, custom human hair trial, and transparent price quotation with zero pressure.
+            </p>
+          </FadeInUp>
 
-              <FadeInUp delay={0.35} yOffset={20}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
-                  <HoverLift3D>
-                    <a href="#booking-form" className="btn-primary">
-                      Book Free Consultation
-                      <ArrowRight className="w-4 h-4 ml-1" />
-                    </a>
-                  </HoverLift3D>
+          <FadeInUp delay={0.35} yOffset={20}>
+            <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
+              <HoverLift3D>
+                <a href="#booking-form" className="btn-primary">
+                  Book Free Consultation
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </a>
+              </HoverLift3D>
 
-                  <HoverLift3D>
-                    <a
-                      href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20free%20consultation.`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn-whatsapp"
-                    >
-                      <FaWhatsapp className="w-5 h-5 text-white" />
-                      <span>WhatsApp Specialist</span>
-                    </a>
-                  </HoverLift3D>
-                </div>
-              </FadeInUp>
-
-              {/* Trust highlights */}
-              <FadeInUp delay={0.45} yOffset={15}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm">
-                  {[
-                    '100% Private Consulting Suites',
-                    'Zero-Obligation Scalp Analysis',
-                    'Trivandrum & Bengaluru Studios',
-                    'Dedicated Client Parking',
-                  ].map((t) => (
-                    <div key={t} className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                      <span>{t}</span>
-                    </div>
-                  ))}
-                </div>
-              </FadeInUp>
+              <HoverLift3D>
+                <a
+                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20free%20consultation.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-whatsapp"
+                >
+                  <FaWhatsapp className="w-5 h-5 text-white" />
+                  <span>WhatsApp Specialist</span>
+                </a>
+              </HoverLift3D>
             </div>
+          </FadeInUp>
 
-            {/* Right Hero Image with 3D Tilt Card */}
-            {/* <div className="flex justify-center lg:justify-end w-full">
-              <ContactHeroImageWithTilt />
-            </div> */}
-          </div>
+          {/* Trust highlights */}
+          <FadeInUp delay={0.45} yOffset={15}>
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm">
+              {[
+                '100% Private Consulting Suites',
+                'Zero-Obligation Scalp Analysis',
+                'Trivandrum & Bengaluru Studios',
+                'Dedicated Client Parking',
+              ].map((t) => (
+                <div key={t} className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
+                  <span>{t}</span>
+                </div>
+              ))}
+            </div>
+          </FadeInUp>
         </div>
       </section>
 

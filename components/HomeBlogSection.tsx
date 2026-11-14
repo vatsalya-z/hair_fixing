@@ -107,7 +107,7 @@ export default function HomeBlogSection() {
           {/* Centered Button Below Section - Mobile Responsive */}
           <div className="mt-10 sm:mt-14 flex justify-center">
             <Link
-              href="/blog"
+              href="/blog/"
               className="inline-flex items-center justify-center gap-2 bg-[#075078] hover:bg-[#005675] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group w-full sm:w-auto text-center"
             >
               <span>View All Articles</span>

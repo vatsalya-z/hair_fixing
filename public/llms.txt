@@ -179,6 +179,14 @@
 - Sitemap Index: `https://ozzonehair.com/sitemap_index.xml`
 - Robots Directives: `https://ozzonehair.com/robots.txt`
 
+- Privacy Policy: `https://ozzonehair.com/faq/`
+- Terms and Conditions: `https://ozzonehair.com/faq/`
+- Official Social Channels:
+  - WhatsApp: `https://wa.me/919847062707`
+  - YouTube: `https://www.youtube.com/`
+  - Instagram: `https://www.instagram.com/`
+  - Facebook: `https://www.facebook.com/`
+
 ---
 
 ## 9. Relevant Search Queries & Topics

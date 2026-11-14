@@ -18,24 +18,24 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Best Hair Fixing in Trivandrum and Bangalore | ozzone Hair Services',
+  title: 'Hair Fixing Services in Thiruvananthapuram | Hair Bonding & Weaving | ozzone Hair',
   description:
-    'Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations. Natural, undetectable solutions tailored for your needs.',
+    'Explore expert hair fixing services in Thiruvananthapuram: custom hair patches, dermatological bonding, micro-ring weaving & monthly maintenance at ozzone Hair.',
   alternates: {
     canonical: 'https://ozzonehair.com/services/',
   },
   openGraph: {
-    title: 'Best Hair Fixing in Trivandrum and Bangalore | ozzone Hair Services',
+    title: 'Hair Fixing Services in Thiruvananthapuram | Hair Bonding & Weaving | ozzone Hair',
     description:
-      'Professional hair solving services in Trivandrum and Bangalore. Natural, undetectable effects that repair confidence and style.',
+      'Professional non-surgical hair fixing, hair patching, bonding & weaving in Thiruvananthapuram. 100% natural human hair, instant 90-min results.',
     url: 'https://ozzonehair.com/services/',
     siteName: 'ozzone Hair',
     images: [
       {
-        url: 'https://ozzonehair.com/wp-content/uploads/2024/06/thumb_1.png',
-        width: 1200,
-        height: 630,
-        alt: 'Best Hair Fixing in Trivandrum and Bangalore',
+        url: '/images/service/Services_Hero_Section_Banner.png',
+        width: 2048,
+        height: 768,
+        alt: 'Hair Fixing Services in Thiruvananthapuram - ozzone Hair',
       },
     ],
     type: 'website',
@@ -43,27 +43,27 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Hair Fixing in Trivandrum and Bangalore | ozzone Hair Services',
+    title: 'Hair Fixing Services in Thiruvananthapuram | Hair Bonding & Weaving | ozzone Hair',
     description:
-      'Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations.',
-    images: ['https://ozzonehair.com/wp-content/uploads/2024/06/thumb_1.png'],
+      'Expert non-surgical hair fixing, hair bonding, and hair patching services in Thiruvananthapuram & Bangalore.',
+    images: ['/images/service/Services_Hero_Section_Banner.png'],
   },
 }
 
 const servicesSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Hair Fixing Services in Trivandrum and Bangalore',
+  name: 'Hair Fixing & Hair Replacement Services in Thiruvananthapuram and Bangalore',
   description:
-    'Best Hair Fixing in Trivandrum and Bangalore - Professional hair fixing services offering natural, undetectable effects.',
+    'Professional non-surgical hair fixing, custom hair patching, dermatological bonding, and micro-track weaving services in Thiruvananthapuram and Bangalore.',
   url: 'https://ozzonehair.com/services/',
   itemListElement: [
     {
       '@type': 'Service',
       position: 1,
-      name: 'Trivandrum-based Our Hair Fixing Services',
+      name: 'Custom Hair Patching System in Thiruvananthapuram',
       description:
-        'In Trivandrum, each client is assured of experiencing years of the staff delivering sets to them for you. Our use of top-class materials ensures that hair systems match the color blend of your natural hair perfectly.',
+        'Tailored 100% natural human hair patch systems seamlessly matched to your scalp contours with undetectable front hairlines and instant density.',
       provider: {
         '@type': 'HairSalon',
         name: 'ozzone Hair - Hair Fixing & Replacement Studio',
@@ -87,9 +87,9 @@ const servicesSchema = {
     {
       '@type': 'Service',
       position: 2,
-      name: 'Bangalore Service of Hair Fixing',
+      name: 'Dermatological Hair Bonding & Replacement in Bangalore',
       description:
-        'We bring the same level of expertise, quality, and commitment to our services in hair fixing in Bangalore, catering to the most diverse needs of a metropolitan clientele.',
+        'Long-lasting medical-grade waterproof hair bonding and cranial prosthetics for active professionals and individuals with advanced hair loss.',
       provider: {
         '@type': 'HairSalon',
         name: 'ozzone Hair - Hair Fixing & Replacement Studio',
@@ -135,94 +135,39 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO BANNER (1. Our Services & 2. Best Hair Fixing in Trivandrum and Bangalore)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="hero-gradient-bg relative overflow-hidden min-h-[90vh] flex items-center py-12 sm:py-16 lg:py-20 text-white">
-        {/* Background Ambient Glows */}
-       
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full z-10">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Copy */}
-            <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
-              {/* Breadcrumb Navigation */}
-              <nav
-                className="flex items-center gap-2 text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium"
-                aria-label="Breadcrumb"
-              >
-                <Link href="/" className="hover:text-[#29B6EB] transition-colors">
-                  Home
-                </Link>
-                <span className="text-white/40" aria-hidden="true">
-                  /
-                </span>
-                <span className="text-[#29B6EB] font-semibold">Our Services</span>
-              </nav>
-
-              {/* Tag / Badge */}
-              <div className="inline-flex items-center gap-2 bg-[#29B6EB]/20 border border-[#29B6EB]/40 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-[#29B6EB] tracking-wide mb-4">
-                <span>Our Services</span>
-              </div>
-
-              {/* Main Headline (H1) */}
-              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.18] mb-4 tracking-tight">
-                Best Hair Fixing in{' '}
-                <span className="text-[#29B6EB] drop-shadow-sm">Trivandrum and Bangalore</span>
-              </h1>
-
-              {/* Supplied Content Paragraphs */}
-              <div className="space-y-3.5 text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed font-normal max-w-2xl mb-7">
-                <p>
-                  Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations, and enjoy a rejuvenated look with an answer tailor-made for your needs.
-                </p>
-              </div>
-
-              {/* Contact Today CTA Button */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto">
-                <Link
-                  href="https://ozzonehair.com/contact/"
-                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 group"
-                >
-                  <span>Please Contact Today</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a
-                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20arrange%20a%20consultation.`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
-                >
-                  <FaWhatsapp className="w-5 h-5 text-white" />
-                  <span>WhatsApp Chat</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Right Hero Image Column (Supplied Image) */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end w-full mt-4 lg:mt-0">
-              <div className="relative w-full max-w-md lg:max-w-none rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-[#075078]/50 aspect-[4/3] sm:aspect-[16/11]">
-                <Image
-                  src="https://ozzonehair.com/wp-content/uploads/2024/06/thumb_1.png"
-                  alt="Best Hair Fixing in Trivandrum and Bangalore - ozzone Hair"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-md rounded-xl p-3 sm:p-3.5 border border-white/40 shadow-lg text-[#075078]">
-                  <div className="flex items-center gap-2 text-xs sm:text-sm font-bold">
-                    <MapPin className="w-4 h-4 text-[#29B6EB]" />
-                    <span>Trivandrum &amp; Bangalore Centers</span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-[#64748B] mt-0.5">
-                    Natural, undetectable effects &amp; personalized solutions
-                  </p>
-                </div>
-              </div>
-            </div>
+      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
+      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
+            <span className="text-slate-400" aria-hidden="true">/</span>
+            <span className="text-[#075078] font-bold">Services</span>
+          </nav>
+          <div className="hidden sm:flex items-center gap-3 text-xs text-slate-500">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[#005675]">
+              <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
+              Trivandrum &amp; Bangalore Centers
+            </span>
           </div>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE BANNER)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hair Fixing Services Hero Banner">
+        <h1 className="sr-only">
+          Hair Fixing Services in Thiruvananthapuram | Professional Hair Replacement Studio
+        </h1>
+        <div className="relative w-full aspect-[2048/768]">
+          <Image
+            src="/images/service/Services_Hero_Section_Banner.png"
+            alt="Hair Fixing Services in Trivandrum and Bangalore"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
         </div>
       </section>
 

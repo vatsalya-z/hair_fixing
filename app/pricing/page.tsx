@@ -178,7 +178,7 @@ export default function PricingPage() {
 
                 <div className="mt-8 pt-4 border-t border-[#E2E8F0] space-y-3">
                   <Link
-                    href={`/contact?plan=${encodeURIComponent(plan.name)}`}
+                    href={`/contact/?plan=${encodeURIComponent(plan.name)}`}
                     className={`w-full py-3.5 px-4 rounded-lg font-bold text-sm text-center block transition-all duration-200 shadow-md ${
                       plan.popular
                         ? 'bg-[#29B6EB] hover:bg-[#174BA5] text-white'

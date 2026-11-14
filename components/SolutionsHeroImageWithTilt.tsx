@@ -7,11 +7,13 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 interface SolutionsHeroImageWithTiltProps {
   imageSrc?: string
   alt?: string
+  objectPosition?: string
 }
 
 export default function SolutionsHeroImageWithTilt({
-  imageSrc = '/hero-section/slide_2-1.png',
+  imageSrc = '/images/solution/solution-hero-section.png',
   alt = 'Hair Fixing Solutions in Trivandrum and Bangalore - Ozzone Hair',
+  objectPosition = 'object-[82%_center]',
 }: SolutionsHeroImageWithTiltProps) {
   const cardRef = useRef<HTMLDivElement>(null)
 
@@ -63,7 +65,7 @@ export default function SolutionsHeroImageWithTilt({
             src={imageSrc}
             alt={alt}
             fill
-            className="object-cover object-center"
+            className={`object-cover ${objectPosition}`}
             priority
             sizes="(max-width: 640px) 320px, (max-width: 1024px) 90vw, 480px"
           />

@@ -27,6 +27,64 @@ const nextConfig: NextConfig = {
         destination: '/solutions/',
         permanent: true,
       },
+      {
+        source: '/product/',
+        destination: '/products/',
+        permanent: true,
+      },
+      {
+        source: '/hair-fixing-trivandrum/',
+        destination: '/solutions/',
+        permanent: true,
+      },
+      {
+        source: '/hair-fixing-in-trivandrum/',
+        destination: '/solutions/',
+        permanent: true,
+      },
+      {
+        source: '/hair-fixing/',
+        destination: '/solutions/',
+        permanent: true,
+      },
+      {
+        source: '/hair-patch/',
+        destination: '/services/',
+        permanent: true,
+      },
+      {
+        source: '/hair-replacement/',
+        destination: '/services/',
+        permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap_index.xml',
+        destination: '/sitemap_index.xml',
+      },
+      {
+        source: '/image/product/:path*',
+        destination: '/images/products/:path*',
+      },
+      {
+        source: '/images/product/:path*',
+        destination: '/images/products/:path*',
+      },
+      {
+        source: '/image/services/:path*',
+        destination: '/images/service/:path*',
+      },
+      {
+        source: '/images/services/:path*',
+        destination: '/images/service/:path*',
+      },
+      {
+        source: '/image/:path*',
+        destination: '/images/:path*',
+      },
     ];
   },
   async headers() {

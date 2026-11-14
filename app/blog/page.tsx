@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Expert advice on hair fixing, climate maintenance tips for Kerala, and non-surgical hair restoration insights from Trivandrum.',
     url: 'https://ozzonehair.com/blog/',
     siteName: 'ozzone Hair Thiruvananthapuram',
-    images: [{ url: 'https://ozzonehair.com/images/blog/hair-fixing-in-thiruvananthapuram.jpg', width: 1200, height: 630, alt: 'Hair Fixing Blog Thiruvananthapuram' }],
+    images: [{ url: '/images/blog/Blog_Hero_Section_Banner_Before_After.png', width: 2048, height: 768, alt: 'Hair Fixing Blog Thiruvananthapuram' }],
     type: 'website',
     locale: 'en_IN',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hair Care & Hair Fixing Blog Thiruvananthapuram | ozzone Hair',
     description: 'Expert advice on hair fixing and non-surgical hair replacement in Trivandrum.',
-    images: ['https://ozzonehair.com/images/blog/hair-fixing-in-thiruvananthapuram.jpg'],
+    images: ['/images/blog/Blog_Hero_Section_Banner_Before_After.png'],
   },
 }
 

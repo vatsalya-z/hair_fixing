@@ -22,24 +22,24 @@ import {
 } from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
-  title: 'Best Hair Fixing Service in Trivandrum and Bangalore | ozzone Hair',
+  title: 'Hair Fixing in Thiruvananthapuram | Best Hair Replacement Studio - ozzone Hair',
   description:
-    '18 years in Hair Replacement. Expert hair fixing and non-surgical hair replacement services in Trivandrum and Bangalore. Natural, undetectable solutions.',
+    'Premier non-surgical hair fixing, hair patching, bonding & hair replacement in Thiruvananthapuram & Bangalore. 100% human hair, zero surgery, instant 90-min transformation & private suites.',
   alternates: {
     canonical: 'https://ozzonehair.com/',
   },
   openGraph: {
-    title: 'Best Hair Fixing Service in Trivandrum and Bangalore | ozzone Hair',
+    title: 'Hair Fixing in Thiruvananthapuram | ozzone Hair Studio',
     description:
-      'We are leaders in hair fixing and hair replacement in Trivandrum and Bangalore. 18 years of excellence in restoring natural hair.',
+      'Premier non-surgical hair fixing and hair replacement in Thiruvananthapuram & Bangalore. 100% natural human hair, instant 90-min transformation & private suites.',
     url: 'https://ozzonehair.com/',
-    siteName: 'ozzone Hair',
+    siteName: 'ozzone Hair Thiruvananthapuram',
     images: [
       {
-        url: 'https://ozzonehair.com/wp-content/uploads/2024/06/slide_1-1.png',
+        url: 'https://ozzonehair.com/hero-section/slide_1-1.png',
         width: 1200,
         height: 630,
-        alt: 'Best Hair Fixing Service in Trivandrum and Bangalore',
+        alt: 'Hair Fixing in Thiruvananthapuram - ozzone Hair Studio',
       },
     ],
     type: 'website',
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Hair Fixing Service in Trivandrum and Bangalore | ozzone Hair',
+    title: 'Hair Fixing in Thiruvananthapuram | ozzone Hair Studio',
     description:
-      'Expert non-surgical hair fixing and replacement in Trivandrum & Bangalore.',
-    images: ['https://ozzonehair.com/wp-content/uploads/2024/06/slide_1-1.png'],
+      'Expert non-surgical hair fixing and replacement in Trivandrum & Bangalore. 100% natural human hair.',
+    images: ['https://ozzonehair.com/hero-section/slide_1-1.png'],
   },
 }
 
@@ -64,10 +64,10 @@ const homeJsonLd = {
       url: 'https://ozzonehair.com/',
       telephone: SITE_INFO.phone,
       email: SITE_INFO.email,
-      logo: 'https://ozzonehair.com/wp-content/uploads/2022/09/cropped-logo_orginal-154x47.png',
-      image: 'https://ozzonehair.com/wp-content/uploads/2024/06/slide_1-1.png',
+      logo: 'https://ozzonehair.com/images/ozzone-hair-logo-dark.png',
+      image: 'https://ozzonehair.com/hero-section/slide_1-1.png',
       description:
-        'Employer leaders in hair Fixing and hair Replacement with 18 years in Hair Replacement. Studios in Trivandrum and Bangalore.',
+        'Premier non-surgical hair fixing, custom hair patch, bonding, and hair replacement studio with 18 years in Hair Replacement. Flagship studio in Palayam, Thiruvananthapuram and Indiranagar, Bengaluru.',
       address: {
         '@type': 'PostalAddress',
         streetAddress:
@@ -110,9 +110,9 @@ const homeJsonLd = {
       '@type': 'WebPage',
       '@id': 'https://ozzonehair.com/#webpage',
       url: 'https://ozzonehair.com/',
-      name: 'Best Hair Fixing Service in Trivandrum and Bangalore | ozzone Hair',
+      name: 'Hair Fixing in Thiruvananthapuram | Best Hair Replacement Studio - ozzone Hair',
       description:
-        'Employer leaders in hair fixing and hair replacement with 18 years in Hair Replacement.',
+        'Premier non-surgical hair fixing, hair patching, bonding & hair replacement in Thiruvananthapuram & Bangalore.',
       isPartOf: {
         '@id': 'https://ozzonehair.com/#website',
       },
@@ -134,7 +134,7 @@ export default function HomePage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hero Image Slider">
         <h1 className="sr-only">
-          Best Hair Fixing Service in Trivandrum and Bangalore | ozzone Hair
+          Hair Fixing in Thiruvananthapuram | Best Non-Surgical Hair Replacement Studio
         </h1>
         <HeroCarousel />
       </section>

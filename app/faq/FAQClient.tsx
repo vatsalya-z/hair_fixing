@@ -507,7 +507,7 @@ export default function FAQClient() {
 
             <HoverLift3D>
               <Link
-                href="/contact"
+                href="/contact/"
                 className="bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-bold text-sm px-6 py-3 rounded-xl transition-colors flex items-center gap-1.5"
               >
                 <span>Book Free Analysis</span>

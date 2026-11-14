@@ -5,7 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
 import { PRODUCTS_DATA, PRODUCT_FAQS, SITE_INFO } from '@/data/siteData'
-import ProductHeroImageWithTilt from '@/components/ProductHeroImageWithTilt'
 
 export default function ProductsClient() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
@@ -23,89 +22,39 @@ export default function ProductsClient() {
 
   return (
     <div className="w-full text-slate-800">
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO BANNER WITH 3D REALISTIC IMAGE
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="hero-gradient-bg relative overflow-hidden min-h-[75vh] flex items-center py-10 sm:py-12 lg:py-16 text-white">
-        {/* Ambient Lighting Accents */}
-        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#174BA5]/30 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Text & Call to Actions */}
-            <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-              {/* Breadcrumb Navigation */}
-              <nav className="flex items-center gap-2 text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium" aria-label="Breadcrumb">
-                <Link href="/" className="hover:text-[#29B6EB] transition-colors">Home</Link>
-                <span className="text-white/40" aria-hidden="true">/</span>
-                <span className="text-[#29B6EB] font-semibold">Hair Products</span>
-              </nav>
-
-              {/* Verified Tag */}
-              <div className="inline-flex items-center gap-2 bg-[#29B6EB]/20 border border-[#29B6EB]/40 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold text-[#29B6EB] tracking-wide mb-3 sm:mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
-                <span>100% Authentic Hair System Care</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-3 sm:mb-4 leading-[1.18]">
-                Hair Fixing Products &amp; Care in{' '}
-                <span className="text-[#29B6EB] drop-shadow-sm">Thiruvananthapuram</span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-sm sm:text-base lg:text-lg text-white/90 max-w-xl leading-relaxed mb-6 font-normal">
-                Official hair fixing and replacement care essentials. Featuring certified Walker Tape C-22 fast-acting solvent remover and Ultrahold maximum wear adhesive, formulated for secure bonding and gentle maintenance in Kerala&apos;s humid weather.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-7 sm:mb-8 w-full sm:w-auto">
-                <a
-                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Fixing%2C%20I%20want%20to%20inquire%20about%20C-22%20Solvent%20and%20Ultrahold%20Adhesive.`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-xs sm:text-sm lg:text-base px-5 py-3 rounded-lg shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
-                >
-                  <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  <span>WhatsApp Inquire / Order</span>
-                </a>
-                <a
-                  href={`tel:${SITE_INFO.phone}`}
-                  className="bg-transparent hover:bg-white/10 text-white font-semibold text-xs sm:text-sm lg:text-base px-5 py-3 rounded-lg border border-white/60 hover:border-white transition-all duration-200 flex items-center justify-center gap-2"
-                >
-                  <span>Call {SITE_INFO.phone}</span>
-                </a>
-              </div>
-
-              {/* Key Trust Highlights */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-4 text-[11px] sm:text-xs lg:text-sm text-white/85 w-full pt-4 sm:pt-5 border-t border-white/15">
-                <div className="flex items-center gap-1.5 sm:gap-2 text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB] shrink-0" />
-                  <span>100% Genuine Imported Products</span>
-                </div>
-                <div className="flex items-center gap-1.5 sm:gap-2 text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB] shrink-0" />
-                  <span>Safe for Sensitive Scalps</span>
-                </div>
-                <div className="flex items-center gap-1.5 sm:gap-2 text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB] shrink-0" />
-                  <span>4+ Weeks Maximum Wear Hold</span>
-                </div>
-                <div className="flex items-center gap-1.5 sm:gap-2 text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB] shrink-0" />
-                  <span>Fast Studio Pickup &amp; Delivery</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: 3D Interactive Hero Card */}
-            {/* <div className="flex justify-center lg:justify-end w-full mt-4 lg:mt-0">
-              <ProductHeroImageWithTilt />
-            </div> */}
+      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
+      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
+            <span className="text-slate-400" aria-hidden="true">/</span>
+            <span className="text-[#075078] font-bold">Products</span>
+          </nav>
+          <div className="hidden sm:flex items-center gap-3 text-xs text-slate-500">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[#005675]">
+              <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
+              100% Authentic Hair System Care
+            </span>
           </div>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE BANNER)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hair Fixing Products Hero Banner">
+        <h1 className="sr-only">
+          Authentic Hair Fixing Products &amp; Hair System Maintenance Supplies in Kerala
+        </h1>
+        <div className="relative w-full aspect-[2048/768]">
+          <Image
+            src="/images/products/product-hero-section.png"
+            alt="Hair Fixing Products & Care in Thiruvananthapuram - Walker Tape C-22 & Ultrahold"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
         </div>
       </section>
 

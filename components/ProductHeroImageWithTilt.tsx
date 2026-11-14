@@ -4,7 +4,17 @@ import React, { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
-export default function ProductHeroImageWithTilt() {
+interface ProductHeroImageWithTiltProps {
+  imageSrc?: string
+  alt?: string
+  objectPosition?: string
+}
+
+export default function ProductHeroImageWithTilt({
+  imageSrc = '/images/products/product-hero-section.png',
+  alt = 'Authentic Hair Fixing & Replacement Care Products at Ozzone Hair Studio',
+  objectPosition = 'object-[81%_center]',
+}: ProductHeroImageWithTiltProps) {
   const cardRef = useRef<HTMLDivElement>(null)
 
   const x = useMotionValue(0)
@@ -49,13 +59,13 @@ export default function ProductHeroImageWithTilt() {
         }}
         className="relative w-full"
       >
-        {/* Main Image Frame with 4:5 Aspect Ratio */}
-        <div className="relative rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl aspect-[4/5] bg-[#075078] w-full">
+        {/* Main Image Frame */}
+        <div className="relative rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl aspect-[4/3] sm:aspect-[4/3.5] bg-[#075078] w-full">
           <Image
-            src="/images/products-hero.jpg"
-            alt="Authentic Hair Fixing & Replacement Care Products at Ozzone Hair Studio"
+            src={imageSrc}
+            alt={alt}
             fill
-            className="object-cover object-center"
+            className={`object-cover ${objectPosition}`}
             priority
             sizes="(max-width: 640px) 290px, (max-width: 1024px) 90vw, 480px"
           />

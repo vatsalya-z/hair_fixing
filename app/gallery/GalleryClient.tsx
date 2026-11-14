@@ -21,8 +21,7 @@ import {
   Play,
 } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
-import { FadeInUp, HoverLift3D } from '@/components/MotionWrappers'
-import GalleryHeroImageWithTilt from '@/components/GalleryHeroImageWithTilt'
+import { HoverLift3D } from '@/components/MotionWrappers'
 import { GALLERY_ITEMS, GalleryItem, SITE_INFO } from '@/data/siteData'
 
 export default function GalleryClient() {
@@ -40,97 +39,39 @@ export default function GalleryClient() {
 
   return (
     <div className="w-full bg-white">
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO SECTION (3D TILT WITH CUSTOM GALLERY IMAGE)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="hero-gradient-bg relative overflow-hidden min-h-[75vh] flex items-center">
-        {/* Ambient lighting glows */}
-        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/12 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#174BA5]/30 rounded-full blur-3xl" />
-          <div className="hero-subtle-glow absolute inset-0 opacity-40" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative w-full">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            {/* Left Copy */}
-            <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-              <FadeInUp delay={0.05} yOffset={20}>
-                <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  Verified Studio Transformations
-                </span>
-              </FadeInUp>
-
-              <FadeInUp delay={0.15} yOffset={25}>
-                <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center lg:text-left">
-                  Real Hair Fixing Before &amp; After Results in{' '}
-                  <span className="text-[#29B6EB]">Thiruvananthapuram</span>
-                </h1>
-              </FadeInUp>
-
-              <FadeInUp delay={0.25} yOffset={25}>
-                <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-7 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-                  Browse authentic, unretouched before-and-after results showing natural human hair density, seamless scalp blending, and undetectable hairlines from our Statue Junction and Pattom clinics.
-                </p>
-              </FadeInUp>
-
-              <FadeInUp delay={0.35} yOffset={20}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
-                  <HoverLift3D>
-                    <a href="#gallery-grid" className="btn-primary">
-                      Explore Results Grid
-                      <ArrowRight className="w-4 h-4 ml-1" />
-                    </a>
-                  </HoverLift3D>
-
-                  <HoverLift3D>
-                    <a
-                      href="#video-gallery"
-                      className="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm px-5 py-3 rounded-lg transition-all flex items-center gap-2"
-                    >
-                      <Play className="w-4 h-4 text-[#29B6EB] fill-[#29B6EB]" />
-                      <span>Watch Video Demo</span>
-                    </a>
-                  </HoverLift3D>
-
-                  <HoverLift3D>
-                    <a
-                      href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20know%20which%20hair%20patch%20system%20suits%20my%20hairloss.`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn-whatsapp"
-                    >
-                      <FaWhatsapp className="w-5 h-5 text-white" />
-                      <span>Consultation on WhatsApp</span>
-                    </a>
-                  </HoverLift3D>
-                </div>
-              </FadeInUp>
-
-              {/* Trust highlights */}
-              <FadeInUp delay={0.45} yOffset={15}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm">
-                  {[
-                    '100% Virgin Human Hair',
-                    'Undetectable Hairlines',
-                    'Instant 90-Min Session',
-                    'Zero Pain & Non-Surgical',
-                  ].map((t) => (
-                    <div key={t} className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                      <span>{t}</span>
-                    </div>
-                  ))}
-                </div>
-              </FadeInUp>
-            </div>
-
-            {/* Right Hero Image with 3D Tilt Card */}
-            {/* <div className="flex justify-center lg:justify-end w-full">
-              <GalleryHeroImageWithTilt />
-            </div> */}
+      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
+      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
+            <span className="text-slate-400" aria-hidden="true">/</span>
+            <span className="text-[#075078] font-bold">Gallery</span>
+          </nav>
+          <div className="hidden sm:flex items-center gap-3 text-xs text-slate-500">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[#005675]">
+              <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
+              Verified Studio Transformations
+            </span>
           </div>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE BANNER)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Gallery Hero Banner">
+        <h1 className="sr-only">
+          Real Hair Fixing Before &amp; After Results in Thiruvananthapuram | ozzone Hair
+        </h1>
+        <div className="relative w-full aspect-[2048/768]">
+          <Image
+            src="/images/gallery/gallery_Hero_Section_Banner_Before_After.png"
+            alt="Real Hair Fixing Before & After Results - ozzone Hair Studio"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
         </div>
       </section>
 
@@ -533,7 +474,7 @@ export default function GalleryClient() {
 
             <HoverLift3D>
               <Link
-                href="/contact"
+                href="/contact/"
                 className="bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-bold text-sm px-6 py-3 rounded-xl transition-colors flex items-center gap-1.5"
               >
                 <span>Book In-Person Viewing</span>

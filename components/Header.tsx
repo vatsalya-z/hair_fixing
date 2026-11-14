@@ -26,13 +26,13 @@ import { SITE_INFO } from '@/data/siteData'
 
 const NAV_LINKS = [
   { name: 'Home', href: '/', icon: Home },
-  { name: 'About', href: '/about', icon: Users },
-  { name: 'Services', href: '/services', icon: Scissors },
-  { name: 'Solutions', href: '/solutions', icon: Sparkles },
-  { name: 'Products', href: '/products', icon: ShoppingBag },
-  { name: 'Gallery', href: '/gallery', icon: ImageIcon },
-  { name: 'Blog', href: '/blog', icon: BookOpen },
-  { name: 'Contact', href: '/contact', icon: MapPin },
+  { name: 'About', href: '/about/', icon: Users },
+  { name: 'Services', href: '/services/', icon: Scissors },
+  { name: 'Solutions', href: '/solutions/', icon: Sparkles },
+  { name: 'Products', href: '/products/', icon: ShoppingBag },
+  { name: 'Gallery', href: '/gallery/', icon: ImageIcon },
+  { name: 'Blog', href: '/blog/', icon: BookOpen },
+  { name: 'Contact', href: '/contact/', icon: MapPin },
 ]
 
 export default function Header() {

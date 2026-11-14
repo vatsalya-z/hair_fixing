@@ -24,7 +24,6 @@ import {
   Phone
 } from 'lucide-react'
 import { SITE_INFO } from '@/data/siteData'
-import AboutHeroImageWithTilt from '@/components/AboutHeroImageWithTilt'
 import {
   FadeInUp,
   FadeInScale,
@@ -32,22 +31,22 @@ import {
 } from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
-  title: 'Our Profile | Best Hair Fixing in Trivandrum | ozzone Hair',
-  description: 'Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations. 18 years in Hair Replacement, 100% human hair systems, signature hair bonding, weaving, and non-surgical hair replacement.',
+  title: 'About ozzone Hair Studio | Trusted Hair Fixing Centre in Trivandrum',
+  description: 'Learn about ozzone Hair Studio: 18+ years of excellence in non-surgical hair fixing, custom hair patches & hair replacement in Thiruvananthapuram & Bengaluru.',
   alternates: {
     canonical: 'https://ozzonehair.com/about/',
   },
   openGraph: {
-    title: 'Our Profile | Best Hair Fixing in Trivandrum | ozzone Hair',
-    description: 'World’s leading providers of professional hair fixing in Trivandrum customised to bring assurance and style to each client. 18 years in Hair Replacement.',
+    title: 'About ozzone Hair Studio | Trusted Hair Fixing Centre in Trivandrum',
+    description: '18+ years of excellence in non-surgical hair fixing, custom hair patches and hair replacement in Thiruvananthapuram and Bangalore.',
     url: 'https://ozzonehair.com/about/',
     siteName: 'ozzone Hair',
     images: [
       {
-        url: 'https://ozzonehair.com/wp-content/uploads/2024/06/about.png',
-        width: 1200,
-        height: 630,
-        alt: 'Our Profile - Best Hair Fixing in Trivandrum - ozzone Hair',
+        url: '/images/about/About_Hero_Section_Banner.png',
+        width: 2048,
+        height: 768,
+        alt: 'About Ozzone Hair - Trusted Hair Fixing Experts for Over 18 Years',
       },
     ],
     type: 'website',
@@ -55,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Our Profile | Best Hair Fixing in Trivandrum | ozzone Hair',
+    title: 'About ozzone Hair Studio | Trusted Hair Fixing Centre in Trivandrum',
     description: 'Expert hair fixing and non-surgical hair replacement in Trivandrum & Bangalore. 18 years of excellence.',
-    images: ['https://ozzonehair.com/wp-content/uploads/2024/06/about.png'],
+    images: ['/images/about/About_Hero_Section_Banner.png'],
   },
 }
 
@@ -65,62 +64,62 @@ export const metadata: Metadata = {
 const ABOUT_FAQS = [
   {
     id: 'faq-1',
-    question: 'What is your hair fixing service different from others in Ozzone hair?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
-    answer: 'Our hair fixing solutions are completely non-surgical, pain-free, and adapted to match your natural hair texture, color and style. We use high quality materials for a natural form and long lasting results.',
+    question: 'How is hair fixing at ozzone Hair different from other clinics?',
+    href: '/services/',
+    answer: 'Our hair fixing solutions are completely non-surgical, pain-free, and adapted to match your natural hair texture, color and style. We use high quality breathable Swiss lace and 100% natural human hair for an undetectable hairline and long-lasting results.',
   },
   {
     id: 'faq-2',
     question: 'How long does a hair fixing process take?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    href: '/services/',
     answer: 'The complete hair fixing procedure takes approximately 90 minutes in a single, relaxed session. You walk in for consultation and leave with a complete, natural-looking head of hair on the very same day.',
   },
   {
     id: 'faq-3',
-    question: 'Are hair setting a permanent solution?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    question: 'Is non-surgical hair fixing a permanent solution?',
+    href: '/solutions/',
     answer: 'Non-surgical hair fixing provides a long-term, semi-permanent solution. The hair system stays securely attached for 3 to 5 weeks between routine servicing, and each system lasts between 8 to 14 months before needing replacement.',
   },
   {
     id: 'faq-4',
-    question: 'Can I wash and style my hair after curing hair?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    question: 'Can I wash, shampoo, and style my hair after hair fixing?',
+    href: '/products/',
     answer: 'Yes, absolutely. Because our systems are made from 100% natural human hair, you can wash, shampoo, condition, blow dry, apply hair oil, and style your hair using normal hair care products just like your own hair.',
   },
   {
     id: 'faq-5',
     question: 'Is hair fixing suitable for all types of hair loss?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
-    answer: 'Yes. Our personalized hair fixing services are designed for people facing thinning hair, receding hairlines, male or female pattern baldness, alopecia, or hair loss because of scientific or medical conditions, supplying successful treatments for ladies, men, and youngsters.',
+    href: '/solutions/',
+    answer: 'Yes. Our personalized hair fixing services are designed for people facing thinning hair, receding hairlines, male or female pattern baldness, alopecia, or medical hair loss, supplying successful treatments for men and women.',
   },
   {
     id: 'faq-6',
-    question: 'Will hair fixing damage my natural hair or skull?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    question: 'Will hair fixing damage my natural hair or scalp?',
+    href: '/faq/',
     answer: 'No, not at all. Our procedures are 100% non-invasive, pain-free, and surgery-free. We use safe, skin-friendly, dermatologically approved adhesives and breathable lace materials that protect your scalp and allow your existing natural hair to breathe comfortably.',
   },
   {
     id: 'faq-7',
     question: 'How long does a hair system last, and how often should it be replaced?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    href: '/services/',
     answer: 'Depending on the base type (Swiss lace, French lace, or micro-skin) and maintenance care, a premium hair system typically lasts between 8 to 14 months. We recommend a brief monthly maintenance visit (every 3 to 4 weeks) to clean, condition, and re-bond.',
   },
   {
     id: 'faq-8',
-    question: 'Can I swim after fixing hair or play games?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    question: 'Can I swim, workout, and play sports with a hair patch?',
+    href: '/faq/',
     answer: 'Yes, 100%! The medical-grade bonding agents we use are completely waterproof and sweat-resistant. You can swim in pools or the ocean, exercise intensely at the gym, play sports, and ride two-wheelers with a helmet without any risk of detachment.',
   },
   {
     id: 'faq-9',
-    question: 'What is the cost of curing hair in ozzone hair?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
-    answer: 'At Ozzone Hair, we offer completely transparent and competitive pricing based on the patch size, base selection, and hair density you need. Furthermore, all initial scalp evaluations and private consultations are 100% free with zero pressure or obligation.',
+    question: 'What is the cost of hair fixing at ozzone Hair?',
+    href: '/pricing/',
+    answer: 'At ozzone Hair, we offer completely transparent and competitive pricing based on the patch size, base selection, and hair density you need. Furthermore, all initial scalp evaluations and private consultations are 100% free with zero pressure or obligation.',
   },
   {
     id: 'faq-10',
-    question: 'Do you provide AFTERCARE services for hair fixing?',
-    href: 'https://ozzonehair.com/hair-fixing-in-trivandrum/',
+    question: 'Do you provide aftercare and routine maintenance services?',
+    href: '/services/',
     answer: 'Yes! We provide full ongoing aftercare services including ultrasonic deep cleaning of the system, scalp detox treatments, conditioning therapy, adhesive re-bonding, and fresh styling at both our Trivandrum and Bangalore studios.',
   },
 ]
@@ -133,8 +132,8 @@ const aboutJsonLd = {
       '@type': 'AboutPage',
       '@id': 'https://ozzonehair.com/about/#aboutpage',
       url: 'https://ozzonehair.com/about/',
-      name: 'Our Profile | Best Hair Fixing in Trivandrum | ozzone Hair',
-      description: 'Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations. 18 years in Hair Replacement.',
+      name: 'About ozzone Hair Studio | Trusted Hair Fixing Centre in Trivandrum',
+      description: 'Learn about ozzone Hair Studio: 18+ years of excellence in non-surgical hair fixing, custom hair patches & hair replacement in Thiruvananthapuram & Bengaluru.',
       isPartOf: {
         '@id': 'https://ozzonehair.com/#website',
       },
@@ -182,97 +181,39 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
       />
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — ABOUT HERO (Default Image Enabled in Hero)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[#075078] via-[#0d4f7c] to-[#174BA5] text-white py-14 sm:py-20 lg:py-24">
-        {/* Background ambient lighting accents */}
-        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#174BA5]/25 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full z-10">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* Left Copy */}
-            <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
-              <FadeInUp delay={0.05} yOffset={20}>
-                <span className="inline-flex items-center gap-2 bg-[#29B6EB]/20 border border-[#29B6EB]/40 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold text-[#29B6EB] tracking-wide mb-4">
-                  <span>Our Profile • 18 Years in Hair Replacement</span>
-                </span>
-              </FadeInUp>
-
-              <FadeInUp delay={0.15} yOffset={25}>
-                <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 tracking-tight">
-                  Best Hair Fixing in{' '}
-                  <span className="text-[#29B6EB] drop-shadow-sm">Trivandrum</span>
-                </h1>
-              </FadeInUp>
-
-              <FadeInUp delay={0.25} yOffset={25}>
-                <p className="text-white/90 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 max-w-2xl font-normal">
-                  Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations, and enjoy a rejuvenated look with an answer tailor-made for your needs.
-                </p>
-                <p className="text-white/80 text-xs sm:text-sm leading-relaxed mb-8 max-w-2xl font-normal">
-                  Ozzone hair is the world’s leading providers of professional hair fixing in Trivandrum customised to bring assurance and style to each client. Founded on principles of quality, precision and client satisfaction, we offer a wide variety of hair fixing services designed for different purposes, potentially from hair thinning to alopecia or subtle personal enhancement.
-                </p>
-              </FadeInUp>
-
-              <FadeInUp delay={0.35} yOffset={20}>
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
-                  <HoverLift3D>
-                    <Link
-                      href="/contact"
-                      className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group text-center"
-                    >
-                      <span>Please Contact Us</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </HoverLift3D>
-
-                  <HoverLift3D>
-                    <a
-                      href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20know%20more%20about%20your%20profile%20and%20hair%20fixing.`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 text-center"
-                    >
-                      <FaWhatsapp className="w-5 h-5 text-white" />
-                      <span>WhatsApp Consultation</span>
-                    </a>
-                  </HoverLift3D>
-                </div>
-              </FadeInUp>
-
-              {/* Trust Badges */}
-              <FadeInUp delay={0.45} yOffset={15}>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm pt-6 mt-6 border-t border-white/15 w-full">
-                  {[
-                    '18+ Years Excellence',
-                    'Trivandrum & Bangalore Studios',
-                    '100% Human Hair Systems',
-                    'Zero Surgery & Painless',
-                  ].map((badge) => (
-                    <div key={badge} className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                      <span>{badge}</span>
-                    </div>
-                  ))}
-                </div>
-              </FadeInUp>
-            </div>
-
-            {/* Right Column: Hero Image with 3D Tilt (Default image enabled) */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
-              <AboutHeroImageWithTilt
-                imageSrc="/images/gallery/thumb_2.webp"
-                alt="Our Profile - Best Hair Fixing in Trivandrum - Ozzone Hair"
-                badgeTitle="18+ Years of Excellence"
-                badgeSubtitle="Trivandrum & Bangalore Studios"
-                topBadge="100% Human Hair"
-              />
-            </div>
+      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
+      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
+            <span className="text-slate-400" aria-hidden="true">/</span>
+            <span className="text-[#075078] font-bold">About Us</span>
+          </nav>
+          <div className="hidden sm:flex items-center gap-3 text-xs text-slate-500">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[#005675]">
+              <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
+              18+ Years in Hair Replacement
+            </span>
           </div>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE BANNER)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="About Ozzone Hair Hero Banner">
+        <h1 className="sr-only">
+          About Ozzone Hair | Trusted Hair Fixing Experts for Over 18 Years
+        </h1>
+        <div className="relative w-full aspect-[2048/768]">
+          <Image
+            src="/images/about/About_Hero_Section_Banner.png"
+            alt="About Ozzone Hair - Trusted Hair Fixing Experts for Over 18 Years"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
         </div>
       </section>
 
@@ -339,14 +280,14 @@ export default function AboutPage() {
 
                 <div className="pt-4 flex flex-wrap gap-4 items-center">
                   <Link
-                    href="/contact"
+                    href="/contact/"
                     className="btn-primary inline-flex items-center gap-2"
                   >
                     <span>Book Scalp Consultation</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    href="/services"
+                    href="/services/"
                     className="btn-secondary-light inline-flex items-center gap-2"
                   >
                     <span>View Our Signature Services</span>
@@ -495,7 +436,7 @@ export default function AboutPage() {
 
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
             <Link
-              href="/contact"
+              href="/contact/"
               className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 w-full sm:w-auto text-center"
             >
               Please Contact Us
@@ -573,7 +514,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/contact"
+                href="/contact/"
                 className="btn-primary inline-flex items-center gap-2 text-xs sm:text-sm"
               >
                 <span>Ask Our Specialists</span>
@@ -617,7 +558,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
             <HoverLift3D>
               <Link
-                href="/contact"
+                href="/contact/"
                 className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
               >
                 <span>Please Contact Us</span>
