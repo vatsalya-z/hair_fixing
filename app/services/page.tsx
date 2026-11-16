@@ -303,9 +303,9 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 4 — 6. Advantages of our hair styling service hire
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-14 sm:py-18 lg:py-22 border-b border-[#E2E8F0]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+      <section className="bg-white py-10 sm:py-18 lg:py-22 border-b border-[#E2E8F0]">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
               Key Benefits
             </span>
@@ -315,77 +315,77 @@ export default function ServicesPage() {
             <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             {/* Instant Result */}
-            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
+            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                  <Clock className="w-5 h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2">
+                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Instant Result
                 </h3>
-                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
                   Unlike most other hair restoration techniques, hair fixing provides instant results as you can walk right out of our centers with a full head of hair.
                 </p>
               </div>
             </div>
 
             {/* Non-Surgical Solution */}
-            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
+            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                  <ShieldCheck className="w-5 h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
+                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2">
+                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Non-Surgical Solution
                 </h3>
-                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
                   Hair fixing doesn’t involve any surgical procedures or downtime, making it a convenient option for those who prefer non-invasive treatments.
                 </p>
               </div>
             </div>
 
             {/* Natural Look */}
-            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
+            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                  <CheckCircle2 className="w-5 h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2">
+                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Natural Look
                 </h3>
-                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
                   Each hair system meticulously designs itself to integrate flawlessly with your existing hair, so the total effect is absolutely natural.
                 </p>
               </div>
             </div>
 
             {/* Affordable */}
-            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
+            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                  <BadgePercent className="w-5 h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
+                  <BadgePercent className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2">
+                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Affordable
                 </h3>
-                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
                   Hair fixing services by our team in Trivandrum and Bangalore offered within a low range of costs, saving money without affecting quality.
                 </p>
               </div>
             </div>
 
             {/* Customizable */}
-            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 hover:border-[#29B6EB] transition-all hover:shadow-md sm:col-span-2 lg:col-span-2 flex flex-col justify-between">
+            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md col-span-2 sm:col-span-2 lg:col-span-2 flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                  <Scissors className="w-5 h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
+                  <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2">
+                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Customizable
                 </h3>
-                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
                   Any special length, texture, or color you may have is something our team will consider carefully with regards to making a hair system just exactly like what you prefer.
                 </p>
               </div>

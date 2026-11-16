@@ -182,9 +182,9 @@ export default function ContactClient() {
             </div>
           </FadeInUp>
 
-          {/* Trust highlights */}
-          <FadeInUp delay={0.45} yOffset={15}>
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm">
+          {/* Trust highlights - Hidden on mobile view, visible on desktop/tablet */}
+          <FadeInUp delay={0.45} yOffset={15} className="hidden sm:block">
+            <div className="hidden sm:flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm">
               {[
                 '100% Private Consulting Suites',
                 'Zero-Obligation Scalp Analysis',

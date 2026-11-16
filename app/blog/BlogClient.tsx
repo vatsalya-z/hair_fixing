@@ -206,10 +206,10 @@ export default function BlogClient() {
       {/* ═══════════════════════════════════════════════════════════
           MAIN BLOG LISTING SECTION
       ═══════════════════════════════════════════════════════════ */}
-      <section id="articles-section" className="bg-white py-16 sm:py-24 px-4 sm:px-8 scroll-mt-20">
+      <section id="articles-section" className="bg-white py-12 sm:py-24 px-3 sm:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
               Editorial &amp; Insights
             </span>
@@ -222,16 +222,16 @@ export default function BlogClient() {
             </p>
           </div>
 
-          {/* Grid of Articles */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Grid of Articles: 2 columns on mobile, 2 on md, 3 on lg */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
             {BLOG_POSTS.map((post) => (
               <article
                 key={post.id}
                 onClick={() => setActivePost(post)}
-                className="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1.5"
+                className="group cursor-pointer bg-white rounded-xl md:rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1.5"
               >
                 {/* 1. Image */}
-                <div className="relative h-64 w-full overflow-hidden bg-slate-100">
+                <div className="relative h-32 sm:h-48 md:h-64 w-full overflow-hidden bg-slate-100">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -244,23 +244,23 @@ export default function BlogClient() {
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
                   </span>
-                  <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-[#075078] text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs">
+                  <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-white/90 backdrop-blur-xs text-[#075078] text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded sm:rounded-md shadow-xs">
                     {post.category}
                   </span>
                 </div>
 
                 {/* 2. Heading & Meta */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <h3 className="text-lg sm:text-xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug">
+                <div className="p-3 sm:p-5 md:p-6 flex-1 flex flex-col justify-between">
+                  <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2 md:line-clamp-none">
                     {post.title}
                   </h3>
-                  <div className="mt-4 pt-3 border-t border-[#E2E8F0] flex items-center justify-between text-xs text-[#64748B]">
+                  <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0 text-[10px] sm:text-xs text-[#64748B]">
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-[#29B6EB]" />
-                      <span>{post.date}</span>
+                      <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#29B6EB] shrink-0" />
+                      <span className="line-clamp-1">{post.date}</span>
                     </span>
                     <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-[#29B6EB]" />
+                      <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#29B6EB] shrink-0" />
                       <span>{post.readTime}</span>
                     </span>
                   </div>

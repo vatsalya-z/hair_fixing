@@ -39,30 +39,7 @@ const GALLERY_HERO_SLIDES: GalleryHeroSlide[] = [
     alt: 'Real Hair Fixing Before & After Results - ozzone Hair Studio',
     contain: false,
   },
-  {
-    id: 'slide-2',
-    src: '/images/gallery/client_1-1.jpg',
-    alt: 'Real Client 1 Hair Fixing Result - ozzone Hair Studio Trivandrum',
-    contain: true,
-  },
-  {
-    id: 'slide-3',
-    src: '/images/gallery/client_2-1.jpg',
-    alt: 'Real Client 2 Non Surgical Hair Replacement Result - Trivandrum',
-    contain: true,
-  },
-  {
-    id: 'slide-4',
-    src: '/images/gallery/Gemini_Generated_Image_mlb2ramlb2ramlb2.png',
-    alt: 'Real Client Hair Patch Transformation Before and After - ozzone Hair Studio Trivandrum',
-    contain: true,
-  },
-  {
-    id: 'slide-5',
-    src: '/images/gallery/Gemini_Generated_Image_uj96liuj96liuj96.png',
-    alt: 'Non Surgical Hair Fixing Before and After Result - Natural Looking Hair Patch in Kerala',
-    contain: true,
-  },
+  
 ]
 
 export default function GalleryClient() {
@@ -221,23 +198,7 @@ export default function GalleryClient() {
           </div>
 
           {/* Navigation Arrows */}
-          <button
-            type="button"
-            onClick={prevHeroSlide}
-            aria-label="Previous Slide"
-            className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/25 flex items-center justify-center opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-200 cursor-pointer shadow-lg hover:scale-105 active:scale-95 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#29B6EB]"
-          >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
-
-          <button
-            type="button"
-            onClick={nextHeroSlide}
-            aria-label="Next Slide"
-            className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/25 flex items-center justify-center opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-200 cursor-pointer shadow-lg hover:scale-105 active:scale-95 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-[#29B6EB]"
-          >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
+          
 
           {/* Navigation Dots */}
           <div
@@ -643,23 +604,23 @@ export default function GalleryClient() {
             We hold client privacy in the highest regard. For clients who have consented to video releases, we share full high-definition hairline close-ups, comb-through demos, and water tests during your confidential in-studio consultation.
           </p>
 
-          <div className="pt-3 flex flex-wrap justify-center gap-4">
-            <HoverLift3D>
+          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
+            <HoverLift3D className="w-full sm:w-auto">
               <a
-                href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20see%20video%20results.`}
+                href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20consultation.`}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-whatsapp"
+                className="btn-whatsapp w-full sm:w-auto rounded-xl px-6 py-3 text-sm font-bold flex items-center justify-center gap-2"
               >
                 <FaWhatsapp className="w-5 h-5 text-white" />
-                <span>Request Video Case Studies on WhatsApp</span>
+                <span>Consultation</span>
               </a>
             </HoverLift3D>
 
-            <HoverLift3D>
+            <HoverLift3D className="w-full sm:w-auto">
               <Link
                 href="/contact/"
-                className="bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-bold text-sm px-6 py-3 rounded-xl transition-colors flex items-center gap-1.5"
+                className="w-full sm:w-auto bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-bold text-sm px-6 py-3 rounded-xl transition-colors flex items-center justify-center gap-2"
               >
                 <span>Book In-Person Viewing</span>
                 <ArrowRight className="w-4 h-4" />

@@ -268,9 +268,9 @@ export default function SolutionsPage() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 3 — HAIR FIXING BRINGS A LOT OF BENEFITS
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] border-b border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <section className="py-12 sm:py-20 lg:py-24 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
               Key Advantages
             </span>
@@ -283,76 +283,80 @@ export default function SolutionsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8">
             {/* Benefit 1 */}
-            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+            <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 md:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
-                  <Zap className="w-6 h-6" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
+                  <Zap className="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#075078] mb-3">
+                <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] mb-1.5 sm:mb-3 leading-snug">
                   Immediate Change &amp; Instant Results
                 </h3>
-                <p className="text-sm text-[#475569] leading-relaxed mb-4">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed mb-3 sm:mb-4">
                   It will immediately change. Unlike most typical hair restoration surgeries, this would only take months to start producing, unlike hair fixing that gives instant results. It’s quick and efficient for those who want to regain their hair without the hassle of surgery.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#E2E8F0] text-xs font-semibold text-[#005675] flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-[#29B6EB]" /> Instant results without months of waiting
+              <div className="pt-2.5 sm:pt-4 border-t border-[#E2E8F0] text-[10px] sm:text-xs font-semibold text-[#005675] flex items-start sm:items-center gap-1 sm:gap-1.5">
+                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#29B6EB] shrink-0 mt-0.5 sm:mt-0" />
+                <span>Instant results without months of waiting</span>
               </div>
             </div>
 
             {/* Benefit 2 */}
-            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+            <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 md:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
-                  <Sparkles className="w-6 h-6" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
+                  <Sparkles className="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#075078] mb-3">
+                <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] mb-1.5 sm:mb-3 leading-snug">
                   Highly Customized &amp; Perfectly Matched
                 </h3>
-                <p className="text-sm text-[#475569] leading-relaxed mb-4">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed mb-3 sm:mb-4">
                   The best thing about these alternatives is that they can be very customized too, as they could all come in varying textures, lengths, and volumes, and every client has a perfectly matched match in natural hair.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#E2E8F0] text-xs font-semibold text-[#005675] flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-[#29B6EB]" /> Varying textures, lengths &amp; volumes
+              <div className="pt-2.5 sm:pt-4 border-t border-[#E2E8F0] text-[10px] sm:text-xs font-semibold text-[#005675] flex items-start sm:items-center gap-1 sm:gap-1.5">
+                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#29B6EB] shrink-0 mt-0.5 sm:mt-0" />
+                <span>Varying textures, lengths &amp; volumes</span>
               </div>
             </div>
 
             {/* Benefit 3 */}
-            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+            <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 md:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
-                  <Clock className="w-6 h-6" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
+                  <Clock className="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#075078] mb-3">
+                <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] mb-1.5 sm:mb-3 leading-snug">
                   Low-Maintenance &amp; Resembles Natural Hair
                 </h3>
-                <p className="text-sm text-[#475569] leading-relaxed mb-4">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed mb-3 sm:mb-4">
                   The hair fixing services help to give low-maintenance hair solutions. They are designed to resemble and feel like natural hair. They are good for months with proper care.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#E2E8F0] text-xs font-semibold text-[#005675] flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-[#29B6EB]" /> Good for months with proper care
+              <div className="pt-2.5 sm:pt-4 border-t border-[#E2E8F0] text-[10px] sm:text-xs font-semibold text-[#005675] flex items-start sm:items-center gap-1 sm:gap-1.5">
+                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#29B6EB] shrink-0 mt-0.5 sm:mt-0" />
+                <span>Good for months with proper care</span>
               </div>
             </div>
 
             {/* Benefit 4 */}
-            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+            <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 md:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
-                  <Droplets className="w-6 h-6" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
+                  <Droplets className="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#075078] mb-3">
+                <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] mb-1.5 sm:mb-3 leading-snug">
                   Water &amp; Wind Resistant Hold
                 </h3>
-                <p className="text-sm text-[#475569] leading-relaxed mb-4">
+                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed mb-3 sm:mb-4">
                   Most of the solutions are water-resistant, wind-resistant, and other environmental factors. This implies that your hair will stay flawless all day long.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#E2E8F0] text-xs font-semibold text-[#005675] flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-[#29B6EB]" /> Hair stays flawless all day long
+              <div className="pt-2.5 sm:pt-4 border-t border-[#E2E8F0] text-[10px] sm:text-xs font-semibold text-[#005675] flex items-start sm:items-center gap-1 sm:gap-1.5">
+                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#29B6EB] shrink-0 mt-0.5 sm:mt-0" />
+                <span>Hair stays flawless all day long</span>
               </div>
             </div>
           </div>
@@ -437,14 +441,14 @@ export default function SolutionsPage() {
       <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl border border-[#E2E8F0] p-6 sm:p-10 lg:p-14 shadow-sm">
-            <div className="max-w-3xl mb-10">
+            <div className="max-w-3xl mb-10 text-center sm:text-left mx-auto sm:mx-0">
               <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
                 Dual-City Excellence
               </span>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-4">
                 Why Choose Hair Fixing in Trivandrum and Bangalore?
               </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-6" />
+              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-6 mx-auto sm:mx-0" />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 text-sm sm:text-base text-[#475569] leading-relaxed">
@@ -467,17 +471,17 @@ export default function SolutionsPage() {
               </div>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-[#E2E8F0] flex flex-wrap gap-4 items-center">
+            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#E2E8F0] flex flex-wrap gap-4 items-center justify-center sm:justify-start">
               <Link
                 href="https://ozzonehair.com/contact/"
-                className="btn-primary inline-flex items-center gap-2"
+                className="btn-primary inline-flex items-center justify-center gap-2"
               >
                 <span>Please Contact Today</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
-                className="btn-secondary-light inline-flex items-center gap-2"
+                className="btn-secondary-light inline-flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4 text-[#005675]" />
                 <span>Call {SITE_INFO.phone}</span>
