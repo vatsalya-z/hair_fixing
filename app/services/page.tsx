@@ -2,32 +2,31 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  Sparkles,
-  ShieldCheck,
-  Clock,
-  Scissors,
-  CheckCircle2,
-  MapPin,
-  ArrowRight,
-  BadgePercent,
-  Layers,
-  Award,
-} from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
-import { SITE_INFO } from '@/data/siteData'
+import { SITE_INFO, SERVICES_DATA } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Services in Trivandrum & Bangalore | ozzone Hair',
+  title: 'Hair Fixing Services in Trivandrum & Kerala | ozzone Hair Studio',
   description:
-    'Explore non-surgical hair fixing services in Trivandrum & Bangalore: hair bonding, weaving, custom hair patches & scalp spa. Book your free consultation.',
+    'Explore expert non-surgical hair fixing services in Trivandrum: custom hair patches, dermatological hair bonding, micro-track weaving & scalp servicing. Free consultation.',
+  keywords: [
+    'Hair Fixing Services in Kerala',
+    'Hair Fixing in Trivandrum',
+    'Hair Fixing in Thiruvananthapuram',
+    'Hair Patch in Trivandrum',
+    'Hair Bonding in Trivandrum',
+    'Hair Weaving in Trivandrum',
+    'Hair Replacement in Thiruvananthapuram',
+    'Non Surgical Hair Replacement in Kerala',
+    'Custom Hair Replacement Systems',
+  ],
   alternates: {
     canonical: 'https://ozzonehair.com/services/',
   },
   openGraph: {
-    title: 'Hair Fixing Services in Trivandrum & Bangalore | ozzone Hair',
+    title: 'Hair Fixing Services in Trivandrum & Kerala | ozzone Hair Studio',
     description:
-      'Explore non-surgical hair fixing services in Trivandrum & Bangalore: hair bonding, weaving, custom hair patches & scalp spa. Book your free consultation.',
+      'Explore expert non-surgical hair fixing services in Trivandrum: custom hair patches, dermatological hair bonding, micro-track weaving & scalp servicing.',
     url: 'https://ozzonehair.com/services/',
     siteName: 'ozzone Hair',
     images: [
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
         url: '/images/service/Services_Hero_Section_Banner.png',
         width: 2048,
         height: 768,
-        alt: 'Hair Fixing Services in Trivandrum & Bangalore - ozzone Hair',
+        alt: 'Hair Fixing Services in Trivandrum & Kerala - ozzone Hair Studio',
       },
     ],
     type: 'website',
@@ -43,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Services in Trivandrum & Bangalore | ozzone Hair',
+    title: 'Hair Fixing Services in Trivandrum & Kerala | ozzone Hair Studio',
     description:
-      'Explore non-surgical hair fixing services in Trivandrum & Bangalore: hair bonding, weaving, custom hair patches & scalp spa. Book your free consultation.',
+      'Explore non-surgical hair fixing services in Trivandrum & Bangalore: custom hair patches, medical bonding, weaving & scalp spa.',
     images: ['/images/service/Services_Hero_Section_Banner.png'],
   },
 }
@@ -57,60 +56,19 @@ const servicesSchema = {
   description:
     'Professional non-surgical hair fixing, custom hair patching, dermatological bonding, and micro-track weaving services in Thiruvananthapuram and Bangalore.',
   url: 'https://ozzonehair.com/services/',
-  itemListElement: [
-    {
-      '@type': 'Service',
-      position: 1,
-      name: 'Custom Hair Patching System in Thiruvananthapuram',
-      description:
-        'Tailored 100% natural human hair patch systems seamlessly matched to your scalp contours with undetectable front hairlines and instant density.',
-      provider: {
-        '@type': 'HairSalon',
-        name: 'ozzone Hair - Hair Fixing & Replacement Studio',
-        url: 'https://ozzonehair.com/',
-        telephone: SITE_INFO.phone,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress:
-            'TC 27/3103, PRA 48, Ground Floor, Opp. Jubilee Memorial Hospital (2nd Gate Mizpah), Sunny Meads Lane, Palayam',
-          addressLocality: 'Thiruvananthapuram',
-          addressRegion: 'Kerala',
-          postalCode: '695034',
-          addressCountry: 'IN',
-        },
-      },
-      areaServed: [
-        { '@type': 'City', name: 'Thiruvananthapuram' },
-        { '@type': 'AdministrativeArea', name: 'Kerala' },
-      ],
+  itemListElement: SERVICES_DATA.map((service, index) => ({
+    '@type': 'Service',
+    position: index + 1,
+    name: `${service.title} in Trivandrum & Bangalore`,
+    description: service.shortDesc,
+    url: `https://ozzonehair.com${service.href}`,
+    provider: {
+      '@type': 'HairSalon',
+      name: 'ozzone Hair - Hair Fixing & Replacement Studio',
+      url: 'https://ozzonehair.com/',
+      telephone: SITE_INFO.phone,
     },
-    {
-      '@type': 'Service',
-      position: 2,
-      name: 'Dermatological Hair Bonding & Replacement in Bangalore',
-      description:
-        'Long-lasting medical-grade waterproof hair bonding and cranial prosthetics for active professionals and individuals with advanced hair loss.',
-      provider: {
-        '@type': 'HairSalon',
-        name: 'ozzone Hair - Hair Fixing & Replacement Studio',
-        url: 'https://ozzonehair.com/',
-        telephone: SITE_INFO.altPhone,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress:
-            'Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar',
-          addressLocality: 'Bengaluru',
-          addressRegion: 'Karnataka',
-          postalCode: '560008',
-          addressCountry: 'IN',
-        },
-      },
-      areaServed: [
-        { '@type': 'City', name: 'Bengaluru' },
-        { '@type': 'AdministrativeArea', name: 'Karnataka' },
-      ],
-    },
-  ],
+  })),
 }
 
 const breadcrumbSchema = {
@@ -180,8 +138,8 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesFaqSchema) }}
       />
 
-      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
-      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumb Navigation Bar (Above Hero Section - Mobile Only) */}
+      <div className="lg:hidden bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
           <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
@@ -202,12 +160,12 @@ export default function ServicesPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hair Fixing Services Hero Banner">
         <h1 className="sr-only">
-          Hair Fixing Services in Trivandrum &amp; Bangalore - ozzone Hair Studio
+          Hair Fixing Services in Trivandrum, Thiruvananthapuram &amp; Kerala | ozzone Hair Studio
         </h1>
         <div className="relative w-full aspect-[2048/768]">
           <Image
             src="/images/service/Services_Hero_Section_Banner.png"
-            alt="Hair Fixing Services in Trivandrum and Bangalore"
+            alt="Hair Fixing Services in Trivandrum, Thiruvananthapuram and Kerala - ozzone Hair"
             fill
             priority
             sizes="100vw"
@@ -249,6 +207,82 @@ export default function ServicesPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          OUR 6 SPECIALIZED HAIR FIXING SERVICES (DEDICATED PAGES)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-white py-14 sm:py-20 lg:py-24 border-b border-[#E2E8F0]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+              Our Core Specializations
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+              Explore Our Specialized Hair Fixing Services
+            </h2>
+            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+            <p className="text-sm sm:text-base lg:text-lg text-[#64748B] leading-relaxed">
+              Select an individual service below to explore detailed procedures, customization options, transparent care guidelines, and verified studio locations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {SERVICES_DATA.map((service) => (
+              <div
+                key={service.id}
+                id={service.id}
+                className="scroll-mt-24 bg-white rounded-2xl border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:-translate-y-1.5"
+              >
+                <div>
+                  <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src={service.image}
+                      alt={`${service.title} - Professional Hair Fixing Service by ozzone Hair`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-xs text-[#075078] text-xs font-bold px-3 py-1 rounded-md shadow-xs">
+                      {service.duration}
+                    </span>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors mb-2.5 leading-snug">
+                      <Link href={service.href} className="hover:underline">
+                        {service.title}
+                      </Link>
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
+                      {service.shortDesc}
+                    </p>
+
+                    <div className="space-y-2 pt-2 border-t border-[#F1F5F9] mb-4">
+                      {service.benefits.slice(0, 3).map((benefit, bIdx) => (
+                        <div key={bIdx} className="flex items-start gap-2 text-xs text-[#64748B]">
+                          <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
+                          <span>{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6 pt-0">
+                  <Link
+                    href={service.href}
+                    className="w-full btn-primary text-xs sm:text-sm flex items-center justify-center gap-2 group-hover:bg-[#174BA5] transition-colors py-3"
+                  >
+                    <span>View Service Details</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
           SECTION 3 — 4. Trivandrum-based Services & 5. Bangalore Service
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#F3F7FB] py-14 sm:py-18 lg:py-22 border-b border-[#E2E8F0]">
@@ -258,7 +292,6 @@ export default function ServicesPage() {
             <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 lg:p-9 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4">
-                  <MapPin className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>Trivandrum Center</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-[#075078] mb-3">
@@ -277,7 +310,6 @@ export default function ServicesPage() {
             <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 lg:p-9 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4">
-                  <MapPin className="w-3.5 h-3.5 text-[#29B6EB]" />
                   <span>Bangalore Center</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-[#075078] mb-3">
@@ -319,8 +351,8 @@ export default function ServicesPage() {
             {/* Instant Result */}
             <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
               <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                  01
                 </div>
                 <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Instant Result
@@ -334,8 +366,8 @@ export default function ServicesPage() {
             {/* Non-Surgical Solution */}
             <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
               <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
-                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                  02
                 </div>
                 <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Non-Surgical Solution
@@ -349,8 +381,8 @@ export default function ServicesPage() {
             {/* Natural Look */}
             <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
               <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                  03
                 </div>
                 <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Natural Look
@@ -364,8 +396,8 @@ export default function ServicesPage() {
             {/* Affordable */}
             <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
               <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
-                  <BadgePercent className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                  04
                 </div>
                 <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Affordable
@@ -379,8 +411,8 @@ export default function ServicesPage() {
             {/* Customizable */}
             <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md col-span-2 sm:col-span-2 lg:col-span-2 flex flex-col justify-between">
               <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-2.5 sm:mb-4">
-                  <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-[#29B6EB]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                  05
                 </div>
                 <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
                   Customizable
@@ -437,8 +469,8 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* 9. Advanced Technology */}
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 sm:p-7 hover:border-[#29B6EB] transition-all hover:shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <Layers className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4">
+                01
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 Advanced Technology
@@ -450,8 +482,8 @@ export default function ServicesPage() {
 
             {/* 10. Natural Results */}
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 sm:p-7 hover:border-[#29B6EB] transition-all hover:shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4">
+                02
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 Natural Results
@@ -463,8 +495,8 @@ export default function ServicesPage() {
 
             {/* 11. Knowledge and Quality */}
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 sm:p-7 hover:border-[#29B6EB] transition-all hover:shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <Award className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4">
+                03
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 Knowledge and Quality
@@ -537,7 +569,7 @@ export default function ServicesPage() {
               className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
             >
               <span>Please Contact Today</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
             <a
               href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20arrange%20a%20consultation.`}

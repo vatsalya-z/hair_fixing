@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronRight } from 'lucide-react'
 import { SITE_INFO } from '@/data/siteData'
 
 interface HeroBannerProps {
@@ -35,10 +34,10 @@ export default function HeroBanner({
       <div className="relative max-w-7xl mx-auto z-10">
         <div className={`grid ${imageSrc ? 'lg:grid-cols-12 gap-8 items-center' : 'grid-cols-1'}`}>
           <div className={imageSrc ? 'lg:col-span-7' : 'w-full'}>
-            {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-xs sm:text-sm text-white/75 mb-4 font-medium" aria-label="Breadcrumb">
+            {/* Breadcrumb (Mobile Only) */}
+            <nav className="lg:hidden flex items-center gap-2 text-xs sm:text-sm text-white/75 mb-4 font-medium" aria-label="Breadcrumb">
               <Link href="/" className="hover:text-[#29B6EB] transition-colors">Home</Link>
-              <ChevronRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+              <span className="text-[#29B6EB]/70">/</span>
               <span className="text-[#29B6EB] font-semibold">{breadcrumbCurrent}</span>
             </nav>
 

@@ -3,45 +3,37 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaWhatsapp } from 'react-icons/fa'
-import { 
-  Sparkles, 
-  ShieldCheck, 
-  Clock, 
-  CheckCircle, 
-  ArrowRight, 
-  MapPin, 
-  Phone, 
-  Check, 
-  ChevronDown, 
-  ExternalLink,
-  Layers,
-  Award,
-  Zap,
-  Wind,
-  Droplets
-} from 'lucide-react'
 import { SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Solutions in Trivandrum & Bangalore | ozzone Hair',
+  title: 'Non-Surgical Hair Replacement Solutions in Trivandrum | ozzone Hair',
   description:
-    'Explore custom hair replacement solutions in Trivandrum & Bangalore. Ultra-thin poly skin & Swiss lace systems for men & women. Free consultation!',
+    'Tailored non-surgical hair replacement in Trivandrum for male pattern baldness, receding hairlines & crown thinning. Breathable Swiss lace & skin hair systems.',
+  keywords: [
+    'Hair Replacement in Thiruvananthapuram',
+    'Hair Replacement in Trivandrum',
+    'Non Surgical Hair Replacement in Kerala',
+    'Hair System for Men in Trivandrum',
+    'Custom Hair Replacement Systems',
+    'Non Surgical Hair Restoration',
+    'Hair Fixing in Trivandrum',
+  ],
   alternates: {
     canonical: 'https://ozzonehair.com/solutions/',
   },
   openGraph: {
-    title: 'Hair Solutions in Trivandrum & Bangalore | ozzone Hair',
+    title: 'Non-Surgical Hair Replacement Solutions in Trivandrum | ozzone Hair',
     description:
       'Custom non-surgical hair replacement solutions in Trivandrum & Bangalore. Undetectable Swiss lace & ultra-thin skin hair systems for men & women.',
     url: 'https://ozzonehair.com/solutions/',
     siteName: 'ozzone Hair',
-    images: [{ url: '/images/solution/solution-hero-section.png', width: 2048, height: 768, alt: 'Hair Replacement Solutions in Trivandrum and Bangalore' }],
+    images: [{ url: '/images/solution/solution-hero-section.png', width: 2048, height: 768, alt: 'Non-Surgical Hair Replacement Solutions in Trivandrum' }],
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Solutions in Trivandrum & Bangalore | ozzone Hair',
+    title: 'Non-Surgical Hair Replacement Solutions in Trivandrum | ozzone Hair',
     description:
       'Customized hair replacement solutions in Trivandrum & Bangalore. Instant results without surgery.',
     images: ['/images/solution/solution-hero-section.png'],
@@ -83,7 +75,7 @@ const SOLUTIONS_FAQS = [
   {
     id: 'faq-6',
     question: 'Will hair fixing damage my natural hair or scalp?',
-    href: '/faq/',
+    href: '/services/',
     answer: 'No. Hair fixing is a non-invasive, safe, and discreet procedure that avoids prolonged recovery periods and surgical hassle, leaving your natural hair and scalp protected.',
   },
   {
@@ -95,14 +87,14 @@ const SOLUTIONS_FAQS = [
   {
     id: 'faq-8',
     question: 'Can I swim after fixing hair or play sports?',
-    href: '/faq/',
+    href: '/services/',
     answer: 'Yes! Our solutions are water-resistant, wind-resistant, and sweat-resistant, ensuring your hair stays securely bonded all day long during swimming, gym, and outdoor sports.',
   },
   {
     id: 'faq-9',
-    question: 'What is the cost of hair fixing at ozzone Hair?',
-    href: '/pricing/',
-    answer: 'We offer individualized consultations so you can select the best hair-fixing solution that suits your lifestyle, needs, and style at competitive, transparent pricing starting from ₹9,999.',
+    question: 'How is the cost of hair fixing determined at ozzone Hair?',
+    href: '/contact/',
+    answer: 'We offer individualized consultations so you can select the best hair-fixing solution that suits your lifestyle, needs, and scalp area. The investment depends on base material, hair length, and customization requirements.',
   },
   {
     id: 'faq-10',
@@ -152,8 +144,8 @@ export default function SolutionsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(solutionsJsonLd) }}
       />
 
-      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
-      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumb Navigation Bar (Above Hero Section - Mobile Only) */}
+      <div className="lg:hidden bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
           <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
@@ -174,12 +166,12 @@ export default function SolutionsPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hair Fixing Solutions Hero Banner">
         <h1 className="sr-only">
-          Hair Replacement Solutions in Trivandrum &amp; Bangalore - ozzone Hair Studio
+          Non-Surgical Hair Replacement Solutions in Trivandrum &amp; Kerala | ozzone Hair Studio
         </h1>
         <div className="relative w-full aspect-[2048/768]">
           <Image
             src="/images/solution/solution-hero-section.png"
-            alt="Hair Fixing Solutions in Trivandrum and Bangalore"
+            alt="Non-Surgical Hair Replacement Solutions in Trivandrum and Bangalore - ozzone Hair"
             fill
             priority
             sizes="100vw"
@@ -211,8 +203,8 @@ export default function SolutionsPage() {
             {/* Non-Invasive Hair Extensions */}
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 hover:border-[#29B6EB] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
-                  <Layers className="w-6 h-6" />
+                <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-5 shadow-sm">
+                  01
                 </div>
                 <h3 className="text-xl font-bold text-[#075078] mb-3">
                   Non-Invasive Hair Extensions
@@ -222,15 +214,15 @@ export default function SolutionsPage() {
                 </p>
               </div>
               <div className="pt-4 border-t border-[#E2E8F0] text-xs font-semibold text-[#005675] flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-[#29B6EB]" /> Minimal Stress &amp; Natural Feel
+                <span className="text-[#29B6EB] font-bold">✓</span> Minimal Stress &amp; Natural Feel
               </div>
             </div>
 
             {/* Hair Weaving */}
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 hover:border-[#29B6EB] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
-                  <ShieldCheck className="w-6 h-6" />
+                <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-5 shadow-sm">
+                  02
                 </div>
                 <h3 className="text-xl font-bold text-[#075078] mb-3">
                   Hair Weaving
@@ -240,15 +232,15 @@ export default function SolutionsPage() {
                 </p>
               </div>
               <div className="pt-4 border-t border-[#E2E8F0] text-xs font-semibold text-[#005675] flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-[#29B6EB]" /> Blends with Present Hair
+                <span className="text-[#29B6EB] font-bold">✓</span> Blends with Present Hair
               </div>
             </div>
 
             {/* Advanced Wigs & Systems */}
             <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 hover:border-[#29B6EB] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-5 shadow-sm">
-                  <Sparkles className="w-6 h-6" />
+                <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-5 shadow-sm">
+                  03
                 </div>
                 <h3 className="text-xl font-bold text-[#075078] mb-3">
                   Advanced Wigs &amp; Systems
@@ -258,7 +250,7 @@ export default function SolutionsPage() {
                 </p>
               </div>
               <div className="pt-4 border-t border-[#E2E8F0] text-xs font-semibold text-[#005675] flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-[#29B6EB]" /> Best Outcome with Minimal Stress
+                <span className="text-[#29B6EB] font-bold">✓</span> Best Outcome with Minimal Stress
               </div>
             </div>
           </div>
@@ -287,8 +279,8 @@ export default function SolutionsPage() {
             {/* Benefit 1 */}
             <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 md:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
-                  <Zap className="w-4 h-4 sm:w-6 sm:h-6" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
+                  01
                 </div>
                 <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] mb-1.5 sm:mb-3 leading-snug">
                   Immediate Change &amp; Instant Results
@@ -298,7 +290,7 @@ export default function SolutionsPage() {
                 </p>
               </div>
               <div className="pt-2.5 sm:pt-4 border-t border-[#E2E8F0] text-[10px] sm:text-xs font-semibold text-[#005675] flex items-start sm:items-center gap-1 sm:gap-1.5">
-                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#29B6EB] shrink-0 mt-0.5 sm:mt-0" />
+                <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                 <span>Instant results without months of waiting</span>
               </div>
             </div>
@@ -306,8 +298,8 @@ export default function SolutionsPage() {
             {/* Benefit 2 */}
             <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 md:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
-                  <Sparkles className="w-4 h-4 sm:w-6 sm:h-6" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
+                  02
                 </div>
                 <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] mb-1.5 sm:mb-3 leading-snug">
                   Highly Customized &amp; Perfectly Matched
@@ -317,7 +309,7 @@ export default function SolutionsPage() {
                 </p>
               </div>
               <div className="pt-2.5 sm:pt-4 border-t border-[#E2E8F0] text-[10px] sm:text-xs font-semibold text-[#005675] flex items-start sm:items-center gap-1 sm:gap-1.5">
-                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#29B6EB] shrink-0 mt-0.5 sm:mt-0" />
+                <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                 <span>Varying textures, lengths &amp; volumes</span>
               </div>
             </div>
@@ -325,8 +317,8 @@ export default function SolutionsPage() {
             {/* Benefit 3 */}
             <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 md:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
-                  <Clock className="w-4 h-4 sm:w-6 sm:h-6" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
+                  03
                 </div>
                 <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] mb-1.5 sm:mb-3 leading-snug">
                   Low-Maintenance &amp; Resembles Natural Hair
@@ -336,7 +328,7 @@ export default function SolutionsPage() {
                 </p>
               </div>
               <div className="pt-2.5 sm:pt-4 border-t border-[#E2E8F0] text-[10px] sm:text-xs font-semibold text-[#005675] flex items-start sm:items-center gap-1 sm:gap-1.5">
-                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#29B6EB] shrink-0 mt-0.5 sm:mt-0" />
+                <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                 <span>Good for months with proper care</span>
               </div>
             </div>
@@ -344,8 +336,8 @@ export default function SolutionsPage() {
             {/* Benefit 4 */}
             <div className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 md:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
-                  <Droplets className="w-4 h-4 sm:w-6 sm:h-6" />
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-3 sm:mb-5 shadow-sm">
+                  04
                 </div>
                 <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] mb-1.5 sm:mb-3 leading-snug">
                   Water &amp; Wind Resistant Hold
@@ -355,7 +347,7 @@ export default function SolutionsPage() {
                 </p>
               </div>
               <div className="pt-2.5 sm:pt-4 border-t border-[#E2E8F0] text-[10px] sm:text-xs font-semibold text-[#005675] flex items-start sm:items-center gap-1 sm:gap-1.5">
-                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#29B6EB] shrink-0 mt-0.5 sm:mt-0" />
+                <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                 <span>Hair stays flawless all day long</span>
               </div>
             </div>
@@ -402,7 +394,7 @@ export default function SolutionsPage() {
               </div>
 
               <div className="pt-6 mt-6 border-t border-[#E2E8F0] flex items-center gap-2 text-xs font-semibold text-[#005675]">
-                <CheckCircle className="w-4 h-4 text-[#29B6EB]" />
+                <span className="text-[#29B6EB] font-bold">✓</span>
                 <span>Zero discernible difference from natural hair</span>
               </div>
             </div>
@@ -427,7 +419,7 @@ export default function SolutionsPage() {
               </div>
 
               <div className="pt-6 mt-6 border-t border-[#E2E8F0] flex items-center gap-2 text-xs font-semibold text-[#005675]">
-                <CheckCircle className="w-4 h-4 text-[#29B6EB]" />
+                <span className="text-[#29B6EB] font-bold">✓</span>
                 <span>Resistant to perspiration &amp; weather changes</span>
               </div>
             </div>
@@ -477,13 +469,12 @@ export default function SolutionsPage() {
                 className="btn-primary inline-flex items-center justify-center gap-2"
               >
                 <span>Please Contact Today</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
               <a
                 href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
                 className="btn-secondary-light inline-flex items-center justify-center gap-2"
               >
-                <Phone className="w-4 h-4 text-[#005675]" />
                 <span>Call {SITE_INFO.phone}</span>
               </a>
             </div>
@@ -569,7 +560,9 @@ export default function SolutionsPage() {
                     </span>
                     <span>{faq.question}</span>
                   </span>
-                  <ChevronDown className="w-5 h-5 text-[#005675] shrink-0 transition-transform duration-300 group-open:rotate-180" />
+                  <svg className="w-5 h-5 text-[#005675] shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </summary>
 
                 <div className="pt-4 pl-8 sm:pl-9 pr-2 text-xs sm:text-sm text-[#475569] leading-relaxed border-t border-[#E2E8F0] mt-3 space-y-3">
@@ -582,7 +575,7 @@ export default function SolutionsPage() {
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
                     >
                       <span>Hair Fixing in Trivandrum Details</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span className="text-[11px]">↗</span>
                     </a>
                   </div>
                 </div>
@@ -600,13 +593,12 @@ export default function SolutionsPage() {
                 className="btn-primary inline-flex items-center gap-2 text-xs sm:text-sm"
               >
                 <span>Please Contact Today</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
               <a
                 href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
                 className="btn-secondary-light inline-flex items-center gap-2 text-xs sm:text-sm"
               >
-                <Phone className="w-4 h-4 text-[#005675]" />
                 <span>Call {SITE_INFO.phone}</span>
               </a>
             </div>

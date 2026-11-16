@@ -3,14 +3,23 @@ import ProductsClient from './ProductsClient'
 import { PRODUCTS_DATA, PRODUCT_FAQS } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair',
+  title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair Studio',
   description:
-    'Buy authentic hair fixing products in Kerala & Trivandrum: Walker C-22 solvent, Ultrahold adhesive & hair patch maintenance supplies. Inquire now!',
+    'Buy authentic hair fixing products in Kerala & Trivandrum: Walker C-22 solvent, Ultrahold waterproof adhesive, tapes & hair patch care supplies. Inquire now!',
+  keywords: [
+    'Hair Fixing Products in Kerala',
+    'Hair Bonding Glue Trivandrum',
+    'C22 Solvent Kerala',
+    'Ultrahold Adhesive Trivandrum',
+    'Hair Patch Tape Kerala',
+    'Hair System Maintenance Products',
+    'Hair Fixing in Trivandrum',
+  ],
   alternates: {
     canonical: 'https://ozzonehair.com/products/',
   },
   openGraph: {
-    title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair',
+    title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair Studio',
     description:
       'Certified Walker Tape C-22 solvent, Ultrahold bonding adhesive and professional hair patch maintenance products in Trivandrum, Kerala.',
     url: 'https://ozzonehair.com/products/',
@@ -21,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair',
+    title: 'Hair Fixing Products in Kerala & Trivandrum | ozzone Hair Studio',
     description:
       'Certified Walker Tape C-22 solvent & Ultrahold bonding adhesive in Trivandrum, Kerala.',
     images: ['/images/products/product-hero-section.png'],

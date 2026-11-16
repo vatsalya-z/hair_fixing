@@ -20,9 +20,45 @@
   </url>
   <url>
     <loc>https://ozzonehair.com/services/</loc>
-    <lastmod>2026-11-14T14:25:00+05:30</lastmod>
+    <lastmod>2026-11-17T01:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ozzonehair.com/services/custom-hair-patching/</loc>
+    <lastmod>2026-11-17T01:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ozzonehair.com/services/dermatological-hair-bonding/</loc>
+    <lastmod>2026-11-17T01:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ozzonehair.com/services/non-surgical-hair-weaving/</loc>
+    <lastmod>2026-11-17T01:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ozzonehair.com/services/full-scalp-non-surgical-replacement/</loc>
+    <lastmod>2026-11-17T01:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ozzonehair.com/services/womens-crown-toppers-extensions/</loc>
+    <lastmod>2026-11-17T01:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ozzonehair.com/services/hair-patch-servicing-scalp-spa/</loc>
+    <lastmod>2026-11-17T01:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://ozzonehair.com/solutions/</loc>
@@ -49,12 +85,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ozzonehair.com/pricing/</loc>
-    <lastmod>2026-11-14T14:25:00+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://ozzonehair.com/blog/</loc>
     <lastmod>2026-11-14T14:25:00+05:30</lastmod>
     <changefreq>daily</changefreq>
@@ -64,12 +94,6 @@
     <loc>https://ozzonehair.com/gallery/</loc>
     <lastmod>2026-11-14T14:25:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://ozzonehair.com/faq/</loc>
-    <lastmod>2026-11-14T14:25:00+05:30</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
@@ -92,12 +116,6 @@
   </url>
   <url>
     <loc>https://ozzonehair.com/blog/hair-patch-care-in-humid-climate/</loc>
-    <lastmod>2026-11-14T16:30:00+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://ozzonehair.com/blog/hair-fixing-cost-in-trivandrum/</loc>
     <lastmod>2026-11-14T16:30:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

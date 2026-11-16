@@ -3,7 +3,6 @@
 import React, { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { BookOpen, Sparkles } from 'lucide-react'
 
 export default function BlogHeroImageWithTilt() {
   const cardRef = useRef<HTMLDivElement>(null)
@@ -72,8 +71,8 @@ export default function BlogHeroImageWithTilt() {
           className="absolute bottom-4 left-4 right-4 sm:-bottom-6 sm:-left-6 sm:right-auto bg-[#005675]/95 backdrop-blur-md rounded-xl px-5 py-4 shadow-2xl border border-white/25 sm:max-w-[270px]"
         >
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#29B6EB]/30 border border-[#29B6EB]/50 flex items-center justify-center flex-shrink-0 shadow-sm">
-              <BookOpen className="w-5 h-5 text-[#29B6EB]" />
+            <div className="w-10 h-10 rounded-full bg-[#29B6EB]/30 border border-[#29B6EB]/50 flex items-center justify-center flex-shrink-0 shadow-sm text-[#29B6EB] font-bold text-sm">
+              ✦
             </div>
             <div>
               <p className="text-white font-bold text-sm">Trichology Insights &amp; Care</p>
@@ -87,9 +86,8 @@ export default function BlogHeroImageWithTilt() {
           style={{
             transform: 'translateZ(25px)',
           }}
-          className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-gradient-to-r from-[#005675] to-[#29B6EB] text-white rounded-xl px-4 py-2.5 shadow-lg border border-white/20 text-center flex items-center gap-1.5"
+          className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-gradient-to-r from-[#005675] to-[#29B6EB] text-white rounded-xl px-4 py-2.5 shadow-lg border border-white/20 text-center"
         >
-          <Sparkles className="w-4 h-4 text-white" />
           <span className="text-xs font-bold tracking-wide">Expert Verified</span>
         </motion.div>
       </motion.div>

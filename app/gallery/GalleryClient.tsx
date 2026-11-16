@@ -3,24 +3,6 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  Sparkles,
-  Clock,
-  CheckCircle,
-  ArrowRight,
-  ShieldCheck,
-  Award,
-  Layers,
-  LayoutGrid,
-  Columns2,
-  X,
-  ExternalLink,
-  ChevronLeft,
-  ChevronRight,
-  Eye,
-  Video,
-  Play,
-} from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import { HoverLift3D } from '@/components/MotionWrappers'
 import { GALLERY_ITEMS, GalleryItem, SITE_INFO } from '@/data/siteData'
@@ -110,8 +92,8 @@ export default function GalleryClient() {
 
   return (
     <div className="w-full bg-white">
-      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
-      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumb Navigation Bar (Above Hero Section - Mobile Only) */}
+      <div className="lg:hidden bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
           <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
@@ -140,7 +122,7 @@ export default function GalleryClient() {
         onTouchEnd={handleHeroTouchEnd}
       >
         <h1 className="sr-only">
-          Hair Fixing Before &amp; After Gallery | ozzone Hair Studio
+          Hair Patch &amp; Hair Fixing Before and After Results in Trivandrum | ozzone Hair Studio
         </h1>
         <div className="relative w-full aspect-[2048/768] min-h-[220px] sm:min-h-[340px] md:min-h-[420px] lg:min-h-[480px]">
           {/* Horizontal Slide Track */}
@@ -287,7 +269,6 @@ export default function GalleryClient() {
                 }`}
                 aria-label="Switch to 2-column mobile grid view"
               >
-                <LayoutGrid className="w-3.5 h-3.5" />
                 <span>Grid</span>
               </button>
               <button
@@ -300,7 +281,6 @@ export default function GalleryClient() {
                 }`}
                 aria-label="Switch to detailed split view"
               >
-                <Columns2 className="w-3.5 h-3.5" />
                 <span>Detailed</span>
               </button>
             </div>
@@ -348,7 +328,6 @@ export default function GalleryClient() {
                         {item.category}
                       </span>
                       <span className="text-[#64748B] hidden sm:flex items-center gap-1 font-medium">
-                        <Clock className="w-3.5 h-3.5 text-[#29B6EB]" />
                         <span>{item.recoveryTime}</span>
                       </span>
                     </div>                    
@@ -361,7 +340,6 @@ export default function GalleryClient() {
                       onClick={() => setActiveItem(item)}
                       className="w-full bg-[#005675] hover:bg-[#174BA5] text-white text-[11px] sm:text-xs font-bold py-2 sm:py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-xs"
                     >
-                      <Eye className="w-3.5 h-3.5 text-[#29B6EB]" />
                       <span className="hidden sm:inline">Inspect Transformation</span>
                       <span className="sm:hidden">View Details</span>
                     </button>
@@ -393,7 +371,9 @@ export default function GalleryClient() {
                 className="w-8 h-8 rounded-full bg-[#F3F7FB] hover:bg-[#E2E8F0] text-[#075078] flex items-center justify-center transition-colors"
                 aria-label="Close transformation lightbox"
               >
-                <X className="w-5 h-5" />
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
 
@@ -436,7 +416,6 @@ export default function GalleryClient() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-4 py-1.5 rounded-full border border-[#E2E8F0]">
-              <Video className="w-3.5 h-3.5 text-[#29B6EB]" />
               Video Gallery
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
@@ -478,15 +457,15 @@ export default function GalleryClient() {
                 {/* Highlights */}
                 <div className="space-y-2 text-xs text-[#252B38] my-4 pt-3 border-t border-[#E2E8F0]">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                     <span className="font-semibold">100% Breathable Swiss Lace Base</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                     <span className="font-semibold">Natural Density &amp; Seamless Blending</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                     <span className="font-semibold">Active Lifestyle &amp; Water Resistant</span>
                   </div>
                 </div>
@@ -511,7 +490,7 @@ export default function GalleryClient() {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-xs font-bold text-[#075078] hover:text-[#29B6EB] border border-[#CBD5E1] hover:border-[#29B6EB] bg-white rounded-lg px-4 py-2.5 transition-colors"
                 >
                   <span>Watch on YouTube</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span className="text-[11px]">↗</span>
                 </a>
               </div>
             </div>
@@ -544,15 +523,15 @@ export default function GalleryClient() {
                 {/* Highlights */}
                 <div className="space-y-2 text-xs text-[#252B38] my-4 pt-3 border-t border-[#E2E8F0]">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                     <span className="font-semibold">Immediate Same-Day Transformation</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                     <span className="font-semibold">Crown &amp; Hairline Perfect Integration</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#29B6EB] shrink-0" />
+                    <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
                     <span className="font-semibold">Zero Downtime &amp; Non-Surgical</span>
                   </div>
                 </div>
@@ -577,7 +556,7 @@ export default function GalleryClient() {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-xs font-bold text-[#075078] hover:text-[#29B6EB] border border-[#CBD5E1] hover:border-[#29B6EB] bg-white rounded-lg px-4 py-2.5 transition-colors"
                 >
                   <span>Watch on YouTube</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span className="text-[11px]">↗</span>
                 </a>
               </div>
             </div>
@@ -593,8 +572,8 @@ export default function GalleryClient() {
           {/* Subtle glow */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#29B6EB]/20 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 text-[#29B6EB] flex items-center justify-center mx-auto shadow-inner">
-            <ShieldCheck className="w-7 h-7 text-[#29B6EB]" />
+          <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 text-[#29B6EB] font-bold text-xl flex items-center justify-center mx-auto shadow-inner">
+            ✓
           </div>
 
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -623,7 +602,7 @@ export default function GalleryClient() {
                 className="w-full sm:w-auto bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-bold text-sm px-6 py-3 rounded-xl transition-colors flex items-center justify-center gap-2"
               >
                 <span>Book In-Person Viewing</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </HoverLift3D>
           </div>

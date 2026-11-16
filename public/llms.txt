@@ -31,41 +31,35 @@
 ## 2. Main Services & Detailed Service Descriptions
 
 ### Hair Fixing Solutions
-- Custom Hair Patching System (`https://ozzonehair.com/services/#hair-patching`):
+- Custom Hair Patching System (`https://ozzonehair.com/services/custom-hair-patching/`):
   - Ultra-breathable Swiss and French micro-lace base tailored to exact cranial shape and bald area contours.
   - 100% Remy virgin human hair hand-tied to simulate natural follicle growth.
   - Designed for receding hairlines, vertex thinning, and partial bald spots.
-  - Starting from ₹9,999.
 
 ### Hair Replacement Solutions
-- Full Scalp Non-Surgical Hair Replacement (`https://ozzonehair.com/services/#non-surgical-replacement`):
+- Full Scalp Non-Surgical Hair Replacement (`https://ozzonehair.com/services/full-scalp-non-surgical-replacement/`):
   - Complete cranial hair restoration for Norwood Scale 5–7 severe baldness, alopecia areata, and medical hair loss.
   - Seamless transitional perimeter with 0.03mm micro-skin polyurethane membrane.
-  - Starting from ₹18,500.
 
 ### Hair Patch Solutions & Hair Bonding
-- Dermatological Hair Bonding (`https://ozzonehair.com/services/#hair-bonding`):
+- Dermatological Hair Bonding (`https://ozzonehair.com/services/dermatological-hair-bonding/`):
   - Medical-grade hypoallergenic liquid adhesive (Ultra Hold / Ghost Bond) tested for Kerala's coastal heat and humidity.
   - 100% waterproof and sweat-resistant hold for active professionals, gym-goers, and swimmers. Lasts 4–6 weeks per session.
-  - Starting from ₹12,499.
 
 ### Hair Weaving (Glue-Free Micro-Tracking)
-- Non-Surgical Hair Weaving (`https://ozzonehair.com/services/#hair-weaving`):
+- Non-Surgical Hair Weaving (`https://ozzonehair.com/services/non-surgical-hair-weaving/`):
   - Mechanical track anchoring using micro-silicone rings connected to natural hair perimeter.
   - 100% chemical-free and adhesive-free for hypersensitive scalp skin.
-  - Starting from ₹11,999.
 
 ### Hair Systems for Men & Women
 - Men's Custom Hair Systems (`https://ozzonehair.com/solutions/`):
   - Ultra-thin skin and mono-filament bases with custom grey hair blending, parting direction, and density matching.
-- Women's Silk Crown Toppers & Integration (`https://ozzonehair.com/services/#womens-hair-extensions`):
+- Women's Silk Crown Toppers & Integration (`https://ozzonehair.com/services/womens-crown-toppers-extensions/`):
   - Silk-base crown toppers for female diffuse thinning and widened partings. Private female styling suites.
-  - Starting from ₹14,000.
 
 ### Scalp Care & Maintenance Servicing
-- Studio Servicing & Scalp Spa (`https://ozzonehair.com/services/#maintenance-servicing`):
+- Hair Patch Servicing & Scalp Spa (`https://ozzonehair.com/services/hair-patch-servicing-scalp-spa/`):
   - 4-step monthly maintenance: citrus solvent de-bonding, tea-tree scalp scrub exfoliation, ultrasonic acoustic hair conditioning, and fresh waterproof re-bonding with hairline haircut.
-  - Starting from ₹1,200.
 
 ---
 
@@ -127,12 +121,7 @@
    - Main Topic: Non-surgical solutions for female pattern thinning and diffuse alopecia.
    - Summary: Explores silk-base crown toppers, integration methods, and private female consultation suites at ozzone Hair Studio.
 
-6. Understanding Hair Patch Pricing in Kerala: What Determines the Cost?
-   - Canonical URL: `https://ozzonehair.com/blog/understanding-hair-patch-pricing-in-kerala/`
-   - Main Topic: Transparent breakdown of hair system costs in Trivandrum and Kerala.
-   - Summary: Explains how human hair grade, base construction (Swiss lace vs polyurethane), custom fitting, and routine servicing shape overall pricing.
-
-7. Can You Swim, Gym, and Shower with a Hair Patch? The Ultimate Lifestyle Guide
+6. Can You Swim, Gym, and Shower with a Hair Patch? The Ultimate Lifestyle Guide
    - Canonical URL: `https://ozzonehair.com/blog/swimming-gym-shower-with-hair-patch/`
    - Main Topic: Active lifestyle compatibility with waterproof hair bonding.
    - Summary: Reassures active clients that medical-grade adhesives withstand daily swimming at Kovalam, strenuous gym workouts, showering, and motorbike riding.
@@ -149,8 +138,8 @@
   - A: Hair fixing requires zero surgery, zero scalp incisions, zero donor follicles, and delivers guaranteed 100% full density immediately. Transplants involve surgical excision, significant pain, donor scars, and 9–12 months of uncertain regrowth.
 - Q: How long does a hair patch last?
   - A: The physical hair system lasts 6 to 12 months depending on daily care. The waterproof adhesive hold lasts 4 to 6 weeks, requiring a 45-minute monthly studio service.
-- Q: How much does hair fixing cost in Thiruvananthapuram?
-  - A: Standard hair patch packages start at ₹9,999. Premium Swiss lace systems range from ₹15,999 to ₹22,999. Routine monthly servicing is ₹1,200.
+- Q: How is hair fixing customized in Thiruvananthapuram?
+  - A: Hair fixing systems are tailored based on your individual scalp measurements, base material choice (Swiss lace, French lace, or micro-skin), hair density, and styling preference following a free private consultation.
 - Q: Which hair replacement solution is suitable for men?
   - A: Men experiencing frontal hairline recession or crown thinning benefit most from custom Swiss lace or micro-skin hair patches. For advanced Norwood 6–7 baldness, full scalp systems provide complete coverage.
 
@@ -166,21 +155,21 @@
 
 ## 8. Important Website URLs & Structure
 - Homepage: `https://ozzonehair.com/` (18 Years in Hair Replacement, Best Hair Fixing in Trivandrum and Bangalore)
+- Hair Fixing in Trivandrum: `https://ozzonehair.com/hair-fixing-trivandrum/` (Flagship Palayam Studio, Thiruvananthapuram)
+- Hair Fixing in Bangalore: `https://ozzonehair.com/hair-fixing-bangalore/` (Indiranagar Studio, Bengaluru)
 - About Us: `https://ozzonehair.com/about/` (Clinical Background, 18 Years Experience)
 - Services: `https://ozzonehair.com/services/` (Hair Patching, Bonding, Weaving, Maintenance)
 - Solutions: `https://ozzonehair.com/solutions/` (Hair Loss Categories & Candidate Match)
 - Products: `https://ozzonehair.com/products/` (Hair Systems, C22 Solvent, Ultrahold Adhesive)
-- Pricing: `https://ozzonehair.com/pricing/` (Transparent Cost Packages ₹9,999 – ₹22,999)
 - Gallery: `https://ozzonehair.com/gallery/` (Real Client Before & After Transformations & Video Gallery)
 - Blog: `https://ozzonehair.com/blog/` (Educational Hair Care & Fixing Knowledge Base)
-- FAQ: `https://ozzonehair.com/faq/` (Full Question & Answer Directory)
 - Contact: `https://ozzonehair.com/contact/` (Location Maps, Phone, WhatsApp, Booking Form)
 - XML Sitemap: `https://ozzonehair.com/sitemap.xml`
 - Sitemap Index: `https://ozzonehair.com/sitemap_index.xml`
 - Robots Directives: `https://ozzonehair.com/robots.txt`
 
-- Privacy Policy: `https://ozzonehair.com/faq/`
-- Terms and Conditions: `https://ozzonehair.com/faq/`
+- Privacy Policy: `https://ozzonehair.com/about/`
+- Terms and Conditions: `https://ozzonehair.com/about/`
 - Official Social Channels:
   - WhatsApp: `https://wa.me/919847062707`
   - YouTube: `https://www.youtube.com/`

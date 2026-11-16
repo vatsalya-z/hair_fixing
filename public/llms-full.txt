@@ -40,50 +40,44 @@
 ## 2. DETAILED CLINICAL SERVICES & PROCEDURES
 
 ### 2.1 Custom Hair Patching System
-- Canonical Route: `https://ozzonehair.com/services/#hair-patching`
+- Canonical Route: `https://ozzonehair.com/services/custom-hair-patching/`
 - Clinical Description: Non-surgical hair restoration addressing Norwood stage 2 to 5 alopecia. A custom template of the client's bald area is taken using contour film. The unit is constructed with human hair hand-knotted to an ultralight lace or skin base.
 - Base Materials:
   - *Swiss Lace:* Thinnest, most breathable mesh, undetectable front edge, ideal for hot tropical climates.
   - *French Lace:* Slightly thicker perimeter with reinforced durability, excellent for moderate sweat.
   - *Polyurethane Thin Skin (0.03mm - 0.08mm):* Vacuum suction adherence feel, zero knots visible.
 - Time Required: 90 minutes from arrival to styled completion.
-- Cost: Packages starting at ₹9,999.
 
 ### 2.2 Dermatological Hair Bonding
-- Canonical Route: `https://ozzonehair.com/services/#hair-bonding`
+- Canonical Route: `https://ozzonehair.com/services/dermatological-hair-bonding/`
 - Clinical Description: The hair system is anchored to the scalp using FDA-cleared, dermatologically tested hypoallergenic liquid copolymer adhesives (such as Walker Ultra Hold or Ghost Bond).
 - Waterproof & Sweatproof Rating: 100% moisture barrier. Formulated to withstand Kerala's heavy monsoons, coastal sea breezes, helmet sweat, and daily gym workouts.
 - Hold Duration: 4 to 6 weeks between routine salon maintenance cycles.
-- Cost: Packages starting at ₹12,499.
 
 ### 2.3 Non-Surgical Hair Weaving (Micro-Tracking)
-- Canonical Route: `https://ozzonehair.com/services/#hair-weaving`
+- Canonical Route: `https://ozzonehair.com/services/non-surgical-hair-weaving/`
 - Clinical Description: Completely adhesive-free, mechanical hair replacement method. The perimeter of the hair unit is woven into client's existing side and back hair using micro-silicone coated links or surgical thread tracks.
 - Best Suited For: Clients with hyper-sensitive scalp dermatosis, psoriasis, or adhesive allergies.
-- Cost: Packages starting at ₹11,999.
 
 ### 2.4 Full Cranial Prosthesis & Replacement
-- Canonical Route: `https://ozzonehair.com/services/#non-surgical-replacement`
+- Canonical Route: `https://ozzonehair.com/services/full-scalp-non-surgical-replacement/`
 - Clinical Description: Total scalp hair restoration system for Norwood scale 6–7, Alopecia Totalis, Alopecia Universalis, or chemotherapy hair loss.
 - Coverage: Full perimeter ear-to-ear and forehead-to-nape.
-- Cost: Packages starting at ₹18,500.
 
 ### 2.5 Women's Silk Crown Toppers & Extensions
-- Canonical Route: `https://ozzonehair.com/services/#womens-hair-extensions`
+- Canonical Route: `https://ozzonehair.com/services/womens-crown-toppers-extensions/`
 - Clinical Description: Discreet, volumizing hairpieces designed specifically for female pattern hair loss (Ludwig Scale), crown thinning, and postpartum diffuse alopecia.
 - Technology: Triple-layer Silk Top that mimics genuine skin with hair emerging without visible knots. Fastened via micro-clips or integration tracks.
 - Privacy: Handled in 100% private, female-dedicated consultation rooms by trained female stylists.
-- Cost: Packages starting at ₹14,000.
 
 ### 2.6 Routine Monthly Studio Maintenance (Scalp Spa & Servicing)
-- Canonical Route: `https://ozzonehair.com/services/#maintenance-servicing`
+- Canonical Route: `https://ozzonehair.com/services/hair-patch-servicing-scalp-spa/`
 - 4-Step Servicing Protocol:
   1. *De-bonding:* Organic citrus solvent dissolves adhesive painlessly without pulling natural hair.
   2. *Scalp Exfoliation:* Anti-fungal, tea-tree scrub removes sebum, dead skin cells, and sweat crystals.
   3. *Unit Rejuvenation:* Ultrasonic acoustic bath removes micro-debris, followed by Moroccan argan keratin conditioning.
   4. *Re-bonding & Styling:* Application of fresh medical adhesive or waterproof tape, hairline alignment, and haircut blending.
 - Duration: 45 minutes.
-- Fee: Starting from ₹1,200.
 
 ---
 
@@ -98,7 +92,7 @@
 | Scarring | Completely scar-free | Permanent dot scars (FUE) or linear donor strip scar (FUT) |
 | Hair Density | 100% Full density customized to preference | Limited by donor follicle reserve (often thin or patchy) |
 | Downtime | Zero; resume normal routine immediately | 7 to 14 days swelling, scabbing, and restricted movement |
-| Total Cost in Kerala | ₹9,999 – ₹22,999 | ₹80,000 – ₹2,50,000+ |
+| Cost Structure | Accessible & customizable without surgery | High surgical expense with ongoing medication |
 | Suitability | Any stage of hair loss (Norwood 1–7) | Only clients with strong occipital donor hair bank |
 
 ---
@@ -133,8 +127,8 @@ ozzone Hair Studio provides certified non-surgical hair fixing at our central lo
 ### What is hair fixing and how is it done?
 Hair fixing is an instant, non-surgical cosmetic procedure in which a customized hair system made of 100% genuine human hair is matched to your scalp contour, hair density, texture, and wave. It is securely anchored using dermatological copolymer adhesives, waterproof tape, or micro-track weaving in a 90-minute session.
 
-### How much does hair fixing cost in Thiruvananthapuram?
-At ozzone Hair Studio, starter hair patch systems start at ₹9,999. Premium breathable Swiss lace and French lace systems range from ₹14,999 to ₹22,999. Routine monthly servicing is priced transparently at ₹1,200.
+### How is hair fixing customized in Thiruvananthapuram?
+Hair systems at ozzone Hair Studio are custom-designed based on individual scalp contours, base material (Swiss lace, French lace, or micro-skin), hair density, and styling preferences. We offer a complimentary, confidential scalp consultation.
 
 ### Can you swim, gym, and shower with a hair patch in Kerala?
 Yes. Our medical adhesives (such as Ultrahold) create an impermeable, waterproof seal that does not loosen during swimming, ocean bathing at Kovalam or Varkala, heavy sweat during gym workouts, or daily warm showers.
@@ -151,27 +145,34 @@ A high-quality virgin human hair patch typically lasts between 6 to 12 months wi
 
 | Page Name | Canonical URL | Primary Keyword | Search Intent |
 | :--- | :--- | :--- | :--- |
-| Homepage | `https://ozzonehair.com/` | Hair Fixing in Thiruvananthapuram | Commercial / Local |
-| About Us | `https://ozzonehair.com/about/` | Professional Hair Fixing Centre Trivandrum | Informational / Navigational |
-| Services | `https://ozzonehair.com/services/` | Hair Fixing Services in Kerala | Commercial / Transactional |
-| Solutions | `https://ozzonehair.com/solutions/` | Hair Replacement Solutions in Trivandrum | Commercial Investigation |
-| Products | `https://ozzonehair.com/products/` | Hair Fixing Products in Kerala | Commercial / Transactional |
-| Pricing | `https://ozzonehair.com/pricing/` | Hair Fixing Cost in Thiruvananthapuram | Commercial Investigation / Pricing |
+| Homepage | `https://ozzonehair.com/` | Best Hair Fixing in Trivandrum & Thiruvananthapuram | Commercial / Local |
+| About Us | `https://ozzonehair.com/about/` | Leading Hair Fixing Centre in Trivandrum | Informational / Navigational |
+| Services Overview | `https://ozzonehair.com/services/` | Hair Fixing Services in Trivandrum & Kerala | Commercial / Transactional |
+| Service: Custom Hair Patching | `https://ozzonehair.com/services/custom-hair-patching/` | Custom Hair Patching System Trivandrum | Commercial / Transactional |
+| Service: Hair Bonding | `https://ozzonehair.com/services/dermatological-hair-bonding/` | Dermatological Hair Bonding Trivandrum | Commercial / Transactional |
+| Service: Hair Weaving | `https://ozzonehair.com/services/non-surgical-hair-weaving/` | Non-Surgical Hair Weaving Kerala | Commercial / Transactional |
+| Service: Full Scalp Replacement | `https://ozzonehair.com/services/full-scalp-non-surgical-replacement/` | Full Scalp Non-Surgical Replacement Trivandrum | Commercial / Transactional |
+| Service: Women's Crown Toppers | `https://ozzonehair.com/services/womens-crown-toppers-extensions/` | Women's Crown Toppers & Extensions Kerala | Commercial / Transactional |
+| Service: Patch Servicing & Spa | `https://ozzonehair.com/services/hair-patch-servicing-scalp-spa/` | Hair Patch Servicing & Scalp Spa Trivandrum | Commercial / Maintenance |
+| Solutions | `https://ozzonehair.com/solutions/` | Non-Surgical Hair Replacement Solutions Trivandrum | Commercial Investigation |
+| Products | `https://ozzonehair.com/products/` | Hair Fixing Products in Kerala & Trivandrum | Commercial / Transactional |
 | Gallery | `https://ozzonehair.com/gallery/` | Hair Patch Before and After Trivandrum | Commercial Investigation |
 | Video Gallery | `https://ozzonehair.com/gallery/#video-gallery` | Live Hair Fixing Video Transformations | Commercial Investigation |
+| Location: Trivandrum | `https://ozzonehair.com/hair-fixing-trivandrum/` | Hair Fixing in Thiruvananthapuram | Local / Transactional |
+| Location: Bangalore | `https://ozzonehair.com/hair-fixing-bangalore/` | Hair Fixing in Bangalore Indiranagar | Local / Transactional |
 | Blog Index | `https://ozzonehair.com/blog/` | Hair Care & Hair Fixing Guides Kerala | Informational |
 | Blog 1 | `https://ozzonehair.com/blog/hair-fixing-in-thiruvananthapuram/` | Hair Fixing in Thiruvananthapuram | Informational Guide |
 | Blog 2 | `https://ozzonehair.com/blog/hair-patch-vs-hair-transplant-trivandrum/` | Hair Patch vs Hair Transplant | Commercial Comparison |
 | Blog 3 | `https://ozzonehair.com/blog/how-to-care-for-hair-patch-kerala-climate/` | Hair Patch Maintenance Kerala | Informational How-To |
 | Blog 4 | `https://ozzonehair.com/blog/top-5-misconceptions-about-hair-fixing/` | Hair Fixing Myths Debunked | Informational |
 | Blog 5 | `https://ozzonehair.com/blog/womens-hair-loss-solutions-thiruvananthapuram/` | Women's Hair Loss Solutions Thiruvananthapuram | Commercial / Informational |
-| Blog 6 | `https://ozzonehair.com/blog/understanding-hair-patch-pricing-in-kerala/` | Hair Patch Price in Kerala | Pricing Guide |
-| Blog 7 | `https://ozzonehair.com/blog/swimming-gym-shower-with-hair-patch/` | Swimming and Gym with Hair Patch | Lifestyle Guide |
-| FAQ | `https://ozzonehair.com/faq/` | Hair Fixing FAQs Thiruvananthapuram | Informational / AEO |
+| Blog 6 | `https://ozzonehair.com/blog/swimming-gym-shower-with-hair-patch/` | Swimming and Gym with Hair Patch | Lifestyle Guide |
 | Contact | `https://ozzonehair.com/contact/` | Hair Patch Centre Near Me / Trivandrum | Local / Transactional |
-| Sitemap | `https://ozzonehair.com/sitemap.xml` | XML Crawler Index | Technical Indexing |
-| Sitemap Index| `https://ozzonehair.com/sitemap_index.xml`| Child Sitemap Index | Technical Indexing |
+| Dynamic Sitemap | `https://ozzonehair.com/sitemap.xml` | XML Crawler Index | Technical Indexing |
+| Sitemap Index | `https://ozzonehair.com/sitemap_index.xml` | Child Sitemap Index | Technical Indexing |
 | Robots.txt | `https://ozzonehair.com/robots.txt` | Crawler Directives | Technical Crawling |
+| LLMs Summary | `https://ozzonehair.com/llms.txt` | LLM Context Index | AI / LLM Grounding |
+| LLMs Full | `https://ozzonehair.com/llms-full.txt` | Complete Knowledge Base | AI / LLM Grounding |
 
 ---
 
@@ -180,7 +181,7 @@ A high-quality virgin human hair patch typically lasts between 6 to 12 months wi
 ### 7.1 Google Search Console Verification
 1. Verify domain ownership using DNS TXT record or HTML tag method.
 2. Submit primary sitemap index: `https://ozzonehair.com/sitemap_index.xml` and `https://ozzonehair.com/sitemap.xml`.
-3. Inspect and request indexing for core URLs: `/`, `/services/`, `/solutions/`, `/pricing/`, `/contact/`, and all `/blog/[slug]/` URLs.
+3. Inspect and request indexing for core URLs: `/`, `/services/`, `/solutions/`, `/contact/`, and all `/blog/[slug]/` URLs.
 4. Verify rich results eligibility for `HairSalon`, `Service`, `Product`, `BlogPosting`, and `FAQPage` schemas via Google Rich Results Test.
 
 ### 7.2 Bing Webmaster Tools Integration

@@ -3,7 +3,6 @@
 import React, { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { Sparkles } from 'lucide-react'
 
 export default function HeroImageWithTilt() {
   const cardRef = useRef<HTMLDivElement>(null)
@@ -68,8 +67,7 @@ export default function HeroImageWithTilt() {
             <div className="absolute top-3 left-3 z-10 bg-black/60 backdrop-blur-md text-white/90 border border-white/20 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-md tracking-wider uppercase shadow-md pointer-events-none">
               Before
             </div>
-            <div className="absolute top-3 right-3 z-10 bg-[#005675]/80 backdrop-blur-md text-[#29B6EB] border border-[#29B6EB]/40 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-md tracking-wider uppercase shadow-md pointer-events-none flex items-center gap-1">
-              <Sparkles className="w-3 h-3" />
+            <div className="absolute top-3 right-3 z-10 bg-[#005675]/80 backdrop-blur-md text-[#29B6EB] border border-[#29B6EB]/40 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-md tracking-wider uppercase shadow-md pointer-events-none">
               After
             </div>
 

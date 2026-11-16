@@ -3,14 +3,22 @@ import GalleryClient from './GalleryClient'
 import { GALLERY_ITEMS } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing Before & After Gallery | ozzone Hair',
+  title: 'Hair Patch Before & After Results in Trivandrum | ozzone Hair Gallery',
   description:
-    'View real before and after hair fixing, hair patch & bonding results in Trivandrum & Bangalore. Undetectable hairlines & 100% natural density.',
+    'Real before and after hair fixing transformations in Trivandrum & Bangalore. See natural graduated hairlines, crown density restoration & genuine client results.',
+  keywords: [
+    'Hair Patch in Trivandrum',
+    'Hair Fixing Before and After Trivandrum',
+    'Hair Fixing in Trivandrum',
+    'Hair Fixing in Thiruvananthapuram',
+    'Hair Replacement Results Kerala',
+    'Hair Patch Results Trivandrum',
+  ],
   alternates: {
     canonical: 'https://ozzonehair.com/gallery/',
   },
   openGraph: {
-    title: 'Hair Fixing Before & After Gallery | ozzone Hair',
+    title: 'Hair Patch Before & After Results in Trivandrum | ozzone Hair Gallery',
     description:
       'Witness real client transformations from our Trivandrum & Bangalore studios. Undetectable hairlines, natural volume & restored confidence.',
     url: 'https://ozzonehair.com/gallery/',
@@ -21,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing Before & After Gallery | ozzone Hair',
+    title: 'Hair Patch Before & After Results in Trivandrum | ozzone Hair Gallery',
     description: 'Witness real client hair transformations at ozzone Hair Trivandrum & Bangalore.',
     images: ['/images/gallery/gallery_Hero_Section_Banner_Before_After.png'],
   },

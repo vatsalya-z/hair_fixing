@@ -1,5 +1,4 @@
 import React from 'react'
-import { Sparkles, HeartHandshake } from 'lucide-react'
 
 export default function AnnouncementBar() {
   const announcementSegments = [

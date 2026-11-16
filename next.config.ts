@@ -69,8 +69,38 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/pricing/',
+        destination: '/services/',
+        permanent: true,
+      },
+      {
+        source: '/pricing',
+        destination: '/services/',
+        permanent: true,
+      },
+      {
+        source: '/faq/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/faq',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blog/hair-fixing-cost-in-trivandrum/',
+        destination: '/services/',
+        permanent: true,
+      },
+      {
+        source: '/blog/hair-fixing-cost-in-trivandrum',
+        destination: '/services/',
+        permanent: true,
+      },
+      {
         source: '/blog/understanding-hair-patch-pricing-in-kerala/',
-        destination: '/blog/hair-fixing-cost-in-trivandrum/',
+        destination: '/services/',
         permanent: true,
       },
       {
@@ -103,14 +133,6 @@ const nextConfig: NextConfig = {
       {
         source: '/images/product/:path*',
         destination: '/images/products/:path*',
-      },
-      {
-        source: '/image/services/:path*',
-        destination: '/images/service/:path*',
-      },
-      {
-        source: '/images/services/:path*',
-        destination: '/images/service/:path*',
       },
       {
         source: '/image/:path*',

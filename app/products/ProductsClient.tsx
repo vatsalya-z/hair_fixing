@@ -22,8 +22,8 @@ export default function ProductsClient() {
 
   return (
     <div className="w-full text-slate-800">
-      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
-      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumb Navigation Bar (Above Hero Section - Mobile Only) */}
+      <div className="lg:hidden bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
           <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>

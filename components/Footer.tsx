@@ -1,13 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { 
-  Phone, 
-  MapPin, 
-  Clock, 
-  ArrowRight,
-  ExternalLink
-} from 'lucide-react'
 import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO, SERVICES_DATA } from '@/data/siteData'
 
@@ -87,10 +80,10 @@ export default function Footer() {
               {SERVICES_DATA.map((service) => (
                 <li key={service.id}>
                   <Link 
-                    href={`/services/#${service.id}`} 
-                    className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors duration-150"
+                    href={service.href || `/services/${service.slug}/`} 
+                    className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors duration-150"
                   >
-                    <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                    <span className="text-[#29B6EB] text-xs">›</span>
                     <span>{service.title}</span>
                   </Link>
                 </li>
@@ -105,44 +98,38 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-white/85">
               <li>
-                <Link href="/hair-fixing-trivandrum/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                <Link href="/hair-fixing-trivandrum/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
+                  <span className="text-[#29B6EB] text-xs">›</span>
                   <span>Hair Fixing in Trivandrum</span>
                 </Link>
               </li>
               <li>
-                <Link href="/hair-fixing-bangalore/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                <Link href="/hair-fixing-bangalore/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
+                  <span className="text-[#29B6EB] text-xs">›</span>
                   <span>Hair Fixing in Bangalore</span>
                 </Link>
               </li>
               <li>
-                <Link href="/about/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                <Link href="/about/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
+                  <span className="text-[#29B6EB] text-xs">›</span>
                   <span>About ozzone Hair</span>
                 </Link>
               </li>
               <li>
-                <Link href="/gallery/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                <Link href="/gallery/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
+                  <span className="text-[#29B6EB] text-xs">›</span>
                   <span>Before &amp; After Results</span>
                 </Link>
               </li>
               <li>
-                <Link href="/pricing/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
-                  <span>Packages &amp; Cost Breakdown</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                <Link href="/blog/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
+                  <span className="text-[#29B6EB] text-xs">›</span>
                   <span>Hair Care Guides &amp; Blog</span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact/" className="hover:text-[#29B6EB] flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                <Link href="/contact/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
+                  <span className="text-[#29B6EB] text-xs">›</span>
                   <span>Contact &amp; Free Scalp Analysis</span>
                 </Link>
               </li>
@@ -155,8 +142,7 @@ export default function Footer() {
               Studio Locations (NAP)
             </h4>
             
-            <div className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 text-[#29B6EB] shrink-0 mt-1" />
+            <div className="space-y-1">
               <div>
                 <strong className="text-white block font-semibold">Trivandrum Studio (Palayam):</strong>
                 <p className="text-xs text-white/80 leading-relaxed">{SITE_INFO.address}</p>
@@ -168,8 +154,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 text-[#29B6EB] shrink-0 mt-1" />
+            <div className="space-y-1 pt-2">
               <div>
                 <strong className="text-white block font-semibold">Bangalore Studio (Indiranagar):</strong>
                 <p className="text-xs text-white/80 leading-relaxed">{SITE_INFO.branch2}</p>
@@ -181,9 +166,9 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2.5 pt-1">
-              <Clock className="w-4 h-4 text-[#29B6EB] shrink-0" />
-              <span className="text-xs text-white/90">{SITE_INFO.timing}</span>
+            <div className="pt-2 border-t border-white/10 text-xs text-white/90">
+              <strong className="text-white block font-semibold mb-0.5">Hours:</strong>
+              <span>{SITE_INFO.timing}</span>
             </div>
           </div>
         </div>
@@ -192,9 +177,8 @@ export default function Footer() {
         <div className="mt-10 pt-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
             <div>
-              <h4 className="text-base font-bold text-white flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#29B6EB]" />
-                <span>Locate Ozzone Farrell on Google Maps</span>
+              <h4 className="text-base font-bold text-white">
+                Locate Ozzone Farrell on Google Maps
               </h4>
               <p className="text-xs text-white/75 mt-0.5">
                 Double Road, HAL 2nd Stage, Indiranagar, Bengaluru (Ample Parking Available)
@@ -206,8 +190,7 @@ export default function Footer() {
               rel="noreferrer"
               className="text-xs text-[#29B6EB] hover:underline flex items-center gap-1 font-semibold"
             >
-              <span>Open in Google Maps App</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Open in Google Maps App →</span>
             </a>
           </div>
 
@@ -245,8 +228,8 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex items-center gap-6 self-center md:self-auto">
-            <Link href="/faq/" className="hover:text-[#29B6EB] transition-colors">Privacy Policy</Link>
-            <Link href="/faq/" className="hover:text-[#29B6EB] transition-colors">Terms of Service</Link>
+            <Link href="/about/" className="hover:text-[#29B6EB] transition-colors">Privacy Policy</Link>
+            <Link href="/about/" className="hover:text-[#29B6EB] transition-colors">Terms of Service</Link>
             <Link href="/contact/" className="hover:text-[#29B6EB] transition-colors">Location &amp; Hours</Link>
           </div>
         </div>

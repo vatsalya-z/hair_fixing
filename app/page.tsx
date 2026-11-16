@@ -2,16 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaWhatsapp } from 'react-icons/fa'
-import {
-  Sparkles,
-  MapPin,
-  Phone,
-  ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
-  ExternalLink,
-  HelpCircle,
-} from 'lucide-react'
 import { SITE_INFO } from '@/data/siteData'
 import HomeBlogSection from '@/components/HomeBlogSection'
 import AnnouncementBar from '@/components/AnnouncementBar'
@@ -22,16 +12,31 @@ import {
 } from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
-  title: 'Best Hair Fixing in Trivandrum & Bangalore | ozzone Hair',
+  title: 'Best Hair Fixing in Trivandrum & Thiruvananthapuram | ozzone Hair Studio',
   description:
-    'Non-surgical hair fixing, custom hair patching & bonding in Trivandrum & Bangalore. 18+ years experience, 100% natural hair. Book a free scalp consultation!',
+    'Top-rated hair fixing centre in Trivandrum & Thiruvananthapuram, Kerala. 18+ years experience in non-surgical hair replacement, custom hair patches & hair bonding. Free consultation!',
+  keywords: [
+    'Hair Fixing in Thiruvananthapuram',
+    'Hair Fixing in Trivandrum',
+    'Hair Fixing Centre in Trivandrum',
+    'Best Hair Fixing in Trivandrum',
+    'Hair Replacement in Thiruvananthapuram',
+    'Hair Replacement in Trivandrum',
+    'Non Surgical Hair Replacement in Kerala',
+    'Hair Patch in Trivandrum',
+    'Hair Bonding in Trivandrum',
+    'Hair Weaving in Trivandrum',
+    'Hair System for Men in Trivandrum',
+    'Custom Hair Replacement Systems',
+    'Hair Fixing Services Near Me',
+  ],
   alternates: {
     canonical: 'https://ozzonehair.com/',
   },
   openGraph: {
-    title: 'Best Hair Fixing in Trivandrum & Bangalore | ozzone Hair',
+    title: 'Best Hair Fixing in Trivandrum & Thiruvananthapuram | ozzone Hair Studio',
     description:
-      'Non-surgical hair fixing, custom hair patching & bonding in Trivandrum & Bangalore. 18+ years experience, 100% natural hair. Book a free scalp consultation!',
+      'Top-rated hair fixing centre in Trivandrum & Thiruvananthapuram, Kerala. 18+ years experience in non-surgical hair replacement, custom hair patches & hair bonding.',
     url: 'https://ozzonehair.com/',
     siteName: 'ozzone Hair',
     images: [
@@ -39,7 +44,7 @@ export const metadata: Metadata = {
         url: 'https://ozzonehair.com/hero-section/slide_1-1.png',
         width: 1200,
         height: 630,
-        alt: 'Best Hair Fixing in Trivandrum & Bangalore - ozzone Hair Studio',
+        alt: 'Best Hair Fixing in Trivandrum & Thiruvananthapuram - ozzone Hair Studio',
       },
     ],
     type: 'website',
@@ -47,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Hair Fixing in Trivandrum & Bangalore | ozzone Hair',
+    title: 'Best Hair Fixing in Trivandrum & Thiruvananthapuram | ozzone Hair Studio',
     description:
-      'Non-surgical hair fixing, custom hair patching & bonding in Trivandrum & Bangalore. 18+ years experience. Free scalp consultation.',
+      'Premier non-surgical hair fixing and hair replacement in Trivandrum & Thiruvananthapuram. 100% natural human hair, instant results. Free scalp consultation.',
     images: ['https://ozzonehair.com/hero-section/slide_1-1.png'],
   },
 }
@@ -174,7 +179,7 @@ export default function HomePage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#075078] overflow-hidden" aria-label="Hero Image Slider">
         <h1 className="sr-only">
-          Best Hair Fixing in Trivandrum &amp; Bangalore - Non-Surgical Hair Replacement by ozzone Hair
+          Best Hair Fixing in Trivandrum &amp; Thiruvananthapuram - Non-Surgical Hair Replacement Centre | ozzone Hair
         </h1>
         <HeroCarousel />
       </section>
@@ -208,13 +213,15 @@ export default function HomePage() {
             {/* Right Text */}
             <div className="lg:col-span-7 order-1 lg:order-2">
               <FadeInUp>
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-                  Hair Restoration &amp; Renovation
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] leading-tight mt-3 mb-5">
-                  Are You Tired of Hair Loss Controlling Your Life?
-                </h2>
-                <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-6" />
+                <div className="text-center lg:text-left">
+                  <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                    Hair Restoration &amp; Renovation
+                  </span>
+                  <h2 className="text-2xl sm:text-4xl font-extrabold text-[#075078] leading-tight mt-3 mb-5 text-center lg:text-left">
+                    Are You Tired of Hair Loss Controlling Your Life?
+                  </h2>
+                  <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-6 mx-auto lg:mx-0" />
+                </div>
 
                 <div className="space-y-4 text-sm sm:text-base text-[#475569] leading-relaxed">
                   <p>
@@ -231,7 +238,7 @@ export default function HomePage() {
                     className="btn-primary inline-flex items-center gap-2"
                   >
                     <span>Read More</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span>→</span>
                   </Link>
                   <Link
                     href="/contact"
@@ -254,13 +261,15 @@ export default function HomePage() {
           <div className="bg-white rounded-3xl border border-[#E2E8F0] p-6 sm:p-10 lg:p-12 shadow-sm grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Copy */}
             <div className="lg:col-span-8">
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-                Expert Hair Solving
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] leading-tight mt-3 mb-4">
-                Best Hair Fixing Service in Trivandrum and Banglore
-              </h2>
-              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-5" />
+              <div className="text-center lg:text-left">
+                <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                  Expert Hair Solving
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] leading-tight mt-3 mb-4 text-center lg:text-left">
+                  Best Hair Fixing Service in Trivandrum and Bangalore
+                </h2>
+                <div className="w-16 h-1 bg-[#29B6EB] rounded-full mb-5 mx-auto lg:mx-0" />
+              </div>
 
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed mb-6">
                 Our expert hair solving services offer natural, undetectable effects that repair self assurance and style. With advanced strategies and top rate substances, we offer customized answers that blend seamlessly along with your present hair. Whether you are coping with thinning hair or looking for a complete transformation, our group guarantees consolation, durability, and a glance that’s definitely you. Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations, and enjoy a rejuvenated look with an answer tailor-made for your needs.
@@ -272,7 +281,7 @@ export default function HomePage() {
                   className="btn-primary inline-flex items-center gap-2 text-xs sm:text-sm"
                 >
                   <span>Explore Our Services</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>→</span>
                 </Link>
                 <Link
                   href="/contact"
@@ -330,7 +339,7 @@ export default function HomePage() {
                     sizes="80px"
                   />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#075078] mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#075078] mb-3 text-center md:text-left">
                   Our Services
                 </h3>
                 <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-6">
@@ -343,7 +352,7 @@ export default function HomePage() {
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
                 >
                   <span>Read more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
               </div>
             </div>
@@ -360,7 +369,7 @@ export default function HomePage() {
                     sizes="80px"
                   />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#075078] mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#075078] mb-3 text-center md:text-left">
                   Our Solutions
                 </h3>
                 <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-6">
@@ -373,7 +382,7 @@ export default function HomePage() {
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
                 >
                   <span>Read more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
               </div>
             </div>
@@ -390,7 +399,7 @@ export default function HomePage() {
                     sizes="80px"
                   />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#075078] mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#075078] mb-3 text-center md:text-left">
                   Our Products
                 </h3>
                 <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-6">
@@ -403,7 +412,7 @@ export default function HomePage() {
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
                 >
                   <span>Read more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
               </div>
             </div>
@@ -428,7 +437,7 @@ export default function HomePage() {
             <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#29B6EB] bg-white/10 px-3.5 py-1 rounded-full border border-white/20">
               18 years in HAIR REPLACEMENT
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold mt-3 mb-2">
+            <h2 className="text-2xl sm:text-4xl font-extrabold mt-3 mb-2 text-center md:text-left">
               Perfect Solution for Your Hair Loss
             </h2>
             <p className="text-xs sm:text-base text-white/85 max-w-xl">
@@ -533,9 +542,8 @@ export default function HomePage() {
             <div className="lg:col-span-6">
               <div className="bg-[#F8FAFC] rounded-2xl p-4 sm:p-5 border border-[#E2E8F0] shadow-sm h-full flex flex-col justify-between">
                 <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-xs sm:text-sm font-bold text-[#075078] flex items-center gap-1.5">
-                    <MapPin className="w-4 h-4 text-[#29B6EB]" />
-                    <span>Ozzone Farrell Bangalore Map</span>
+                  <h4 className="text-xs sm:text-sm font-bold text-[#075078]">
+                    Ozzone Farrell Bangalore Map
                   </h4>
                   <a
                     href={SITE_INFO.mapUrl}
@@ -544,7 +552,7 @@ export default function HomePage() {
                     className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
                   >
                     <span>Open in Maps</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span className="text-[11px]">↗</span>
                   </a>
                 </div>
                 <div className="rounded-xl overflow-hidden border border-[#E2E8F0] flex-1 min-h-[280px]">
@@ -605,11 +613,11 @@ export default function HomePage() {
 
           <div className="text-center mt-10">
             <Link
-              href="/faq/"
+              href="/contact/"
               className="inline-flex items-center gap-2 text-sm font-bold text-[#005675] hover:text-[#29B6EB] transition-colors"
             >
-              <span>View All 20+ Frequently Asked Questions</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Have More Questions? Speak With Our Specialists</span>
+              <span>→</span>
             </Link>
           </div>
         </div>
@@ -626,7 +634,6 @@ export default function HomePage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-[#29B6EB] tracking-wide mb-4">
-            <Sparkles className="w-4 h-4 text-[#29B6EB]" />
             <span>Begin Your Hair Transformation Today</span>
           </span>
 
@@ -635,7 +642,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-white/90 text-sm sm:text-base lg:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-            Schedule a free, 100% confidential scalp evaluation with our experienced specialists in Trivandrum or Bangalore. Zero pressure, clear transparent pricing, and instant results.
+            Schedule a free, 100% confidential scalp evaluation with our experienced specialists in Trivandrum or Bangalore. Zero pressure, clear expert guidance, and instant results.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
@@ -645,7 +652,7 @@ export default function HomePage() {
                 className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
               >
                 <span>Please Contact Now</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </HoverLift3D>
 
@@ -664,15 +671,15 @@ export default function HomePage() {
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-white/75 mt-8 pt-6 border-t border-white/15">
             <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#29B6EB]" />
+              <span className="text-[#29B6EB] font-bold">✓</span>
               <span>100% Private Consulting Suites</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#29B6EB]" />
+              <span className="text-[#29B6EB] font-bold">✓</span>
               <span>Zero-Obligation Scalp Analysis</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Phone className="w-4 h-4 text-[#29B6EB]" />
+              <span className="text-[#29B6EB] font-bold">•</span>
               <span>Helpline: +91 77360 77110 / 9847062707</span>
             </div>
           </div>

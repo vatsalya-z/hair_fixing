@@ -2,30 +2,31 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import {
-  MapPin,
-  Phone,
-  Clock,
-  ShieldCheck,
-  CheckCircle2,
-  Sparkles,
-  Scissors,
-  ArrowRight,
-  ExternalLink,
-  Award,
-} from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing in Trivandrum | Non-Surgical Hair Patch Studio',
+  title: 'Hair Fixing in Thiruvananthapuram | Best Hair Fixing Centre Trivandrum',
   description:
-    'Leading non-surgical hair fixing in Trivandrum & Thiruvananthapuram: custom hair patches, medical bonding & weaving. Palayam studio. Free scalp consultation!',
+    'Leading hair fixing centre in Trivandrum & Thiruvananthapuram, Kerala. Custom 100% human hair patches, medical hair bonding & micro-track weaving at Palayam studio.',
+  keywords: [
+    'Hair Fixing in Thiruvananthapuram',
+    'Hair Fixing in Trivandrum',
+    'Best Hair Fixing in Trivandrum',
+    'Hair Fixing Centre in Trivandrum',
+    'Hair Replacement in Thiruvananthapuram',
+    'Hair Replacement in Trivandrum',
+    'Hair Patch in Trivandrum',
+    'Hair Bonding in Trivandrum',
+    'Hair Weaving in Trivandrum',
+    'Non Surgical Hair Replacement in Kerala',
+    'Palayam Thiruvananthapuram Hair Studio',
+  ],
   alternates: {
     canonical: 'https://ozzonehair.com/hair-fixing-trivandrum/',
   },
   openGraph: {
-    title: 'Hair Fixing in Trivandrum | Non-Surgical Hair Patch Studio',
+    title: 'Hair Fixing in Thiruvananthapuram | Best Hair Fixing Centre Trivandrum',
     description:
       'Premier non-surgical hair fixing and custom hair patches in Trivandrum & Thiruvananthapuram. 100% natural human hair, instant 90-min transformation.',
     url: 'https://ozzonehair.com/hair-fixing-trivandrum/',
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
         url: 'https://ozzonehair.com/hero-section/slide_1-1.png',
         width: 1200,
         height: 630,
-        alt: 'Hair Fixing in Trivandrum - ozzone Hair Studio',
+        alt: 'Hair Fixing in Thiruvananthapuram - ozzone Hair Studio',
       },
     ],
     type: 'website',
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing in Trivandrum | Non-Surgical Hair Patch Studio',
+    title: 'Hair Fixing in Thiruvananthapuram | Best Hair Fixing Centre Trivandrum',
     description:
-      'Leading non-surgical hair fixing in Trivandrum & Thiruvananthapuram: custom hair patches, medical bonding & weaving.',
+      'Leading hair fixing centre in Trivandrum & Thiruvananthapuram: custom hair patches, medical bonding & weaving.',
     images: ['https://ozzonehair.com/hero-section/slide_1-1.png'],
   },
 }
@@ -57,9 +58,9 @@ const TRIVANDRUM_FAQS = [
       'Our flagship Trivandrum hair fixing studio is situated at TC 27/3103, PRA 48, Ground Floor, Opp. Jubilee Memorial Hospital (2nd Gate Mizpah), Sunny Meads Lane, Palayam, Thiruvananthapuram, Kerala 695034. We provide private client suites and convenient parking.',
   },
   {
-    question: 'How much does a hair patch cost in Trivandrum?',
+    question: 'How is hair patch customization done in Trivandrum?',
     answer:
-      'Hair patch pricing at our Trivandrum studio typically starts from ₹8,500 for standard crown units and ₹14,000 to ₹22,000 for ultra-realistic custom Swiss lace systems. Monthly servicing and re-bonding averages ₹1,000 to ₹1,500.',
+      'At our Trivandrum studio, each hair patch is personalized according to your individual scalp measurements, base material choice (such as breathable Swiss lace or ultra-thin skin), hair density, and styling preference. We offer a complimentary, confidential scalp consultation to assess your exact needs.',
   },
   {
     question: 'Will sweating or Kerala humid weather loosen my hair patch?',
@@ -164,7 +165,6 @@ export default function HairFixingTrivandrumPage() {
             <span className="text-[#075078] font-bold">Hair Fixing Trivandrum</span>
           </nav>
           <span className="hidden sm:inline-flex items-center gap-1.5 font-semibold text-[#005675] text-xs">
-            <MapPin className="w-3.5 h-3.5 text-[#29B6EB]" />
             Palayam, Thiruvananthapuram
           </span>
         </div>
@@ -181,7 +181,6 @@ export default function HairFixingTrivandrumPage() {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
-            <MapPin className="w-3.5 h-3.5" />
             Palayam Flagship Studio • Thiruvananthapuram
           </span>
 
@@ -199,7 +198,7 @@ export default function HairFixingTrivandrumPage() {
               className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <span>Book Free Scalp Consultation</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>→</span>
             </Link>
             <a
               href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20know%20more%20about%20hair%20fixing.`}
@@ -234,8 +233,8 @@ export default function HairFixingTrivandrumPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <Sparkles className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                01
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 100% Natural Human Hair
@@ -246,8 +245,20 @@ export default function HairFixingTrivandrumPage() {
             </div>
 
             <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <ShieldCheck className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                01
+              </div>
+              <h3 className="text-lg font-bold text-[#075078] mb-2">
+                100% Natural Human Hair
+              </h3>
+              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                Every custom hair patch in Trivandrum is crafted with Remy natural virgin hair, matched to your hair color, wave, and follicle thickness for a seamless look.
+              </p>
+            </div>
+
+            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                02
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 Sweat &amp; Waterproof Bonding
@@ -258,8 +269,8 @@ export default function HairFixingTrivandrumPage() {
             </div>
 
             <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <Award className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                03
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 18+ Years Trusted Experience
@@ -297,7 +308,7 @@ export default function HairFixingTrivandrumPage() {
               </p>
               <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
                 <span>Learn more about Hair Patching</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </div>
 
@@ -310,7 +321,7 @@ export default function HairFixingTrivandrumPage() {
               </p>
               <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
                 <span>Learn more about Hair Bonding</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </div>
 
@@ -323,7 +334,7 @@ export default function HairFixingTrivandrumPage() {
               </p>
               <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
                 <span>Learn more about Hair Weaving</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </div>
 
@@ -336,7 +347,7 @@ export default function HairFixingTrivandrumPage() {
               </p>
               <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
                 <span>Learn more about Women&apos;s Toppers</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </div>
           </div>
@@ -387,7 +398,7 @@ export default function HairFixingTrivandrumPage() {
                   className="btn-primary text-xs sm:text-sm"
                 >
                   <span>Open in Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span className="text-[11px]">↗</span>
                 </a>
                 <Link href="/contact/" className="btn-secondary-light text-xs sm:text-sm">
                   <span>Contact Page</span>

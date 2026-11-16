@@ -4,35 +4,18 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import {
-  Phone,
-  Menu,
-  X,
-  ChevronRight,
-  Home,
-  Users,
-  Scissors,
-  Sparkles,
-  ShoppingBag,
-  Image as ImageIcon,
-  BookOpen,
-  HelpCircle,
-  MapPin,
-  Clock,
-  CalendarCheck,
-} from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO } from '@/data/siteData'
 
 const NAV_LINKS = [
-  { name: 'Home', href: '/', icon: Home },
-  { name: 'About', href: '/about/', icon: Users },
-  { name: 'Services', href: '/services/', icon: Scissors },
-  { name: 'Solutions', href: '/solutions/', icon: Sparkles },
-  { name: 'Products', href: '/products/', icon: ShoppingBag },
-  { name: 'Gallery', href: '/gallery/', icon: ImageIcon },
-  { name: 'Blog', href: '/blog/', icon: BookOpen },
-  { name: 'Contact', href: '/contact/', icon: MapPin },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about/' },
+  { name: 'Services', href: '/services/' },
+  { name: 'Solutions', href: '/solutions/' },
+  { name: 'Products', href: '/products/' },
+  { name: 'Gallery', href: '/gallery/' },
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Contact', href: '/contact/' },
 ]
 
 export default function Header() {
@@ -173,17 +156,7 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile view only: WhatsApp quick button + Hamburger button (< lg: strictly hidden on desktop) */}
           <div className="flex lg:hidden items-center gap-2">
-            <a
-              href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20want%20to%20book%20a%20consultation.`}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-[#25D366] text-white p-2.5 rounded-lg hover:bg-[#20bd5a] transition-colors shadow-xs flex items-center justify-center min-w-[44px] min-h-[44px] touch-manipulation"
-              aria-label="WhatsApp Consultation"
-            >
-              <FaWhatsapp className="w-4 h-4 text-white" aria-hidden="true" />
-            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -193,9 +166,16 @@ export default function Header() {
               aria-controls="mobile-navigation-drawer"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" aria-hidden="true" />
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               ) : (
-                <Menu className="w-6 h-6" aria-hidden="true" />
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="4" y1="6" x2="20" y2="6" />
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <line x1="4" y1="18" x2="20" y2="18" />
+                </svg>
               )}
             </button>
           </div>
@@ -244,7 +224,10 @@ export default function Header() {
             className="p-2 text-[#64748B] hover:text-[#075078] hover:bg-[#F3F7FB] rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
             aria-label="Close navigation menu"
           >
-            <X className="w-5 h-5" aria-hidden="true" />
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
         </div>
 
@@ -257,30 +240,20 @@ export default function Header() {
           <nav aria-label="Mobile menu links" className="space-y-1">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
-              const Icon = link.icon
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`flex items-center justify-between px-3 py-3 text-sm font-semibold rounded-xl transition-colors min-h-[44px] touch-manipulation ${
+                  className={`flex items-center justify-between px-3.5 py-3 text-sm font-semibold rounded-xl transition-colors min-h-[44px] touch-manipulation ${
                     isActive
                       ? 'bg-[#075078] text-white shadow-sm'
                       : 'text-[#252B38] hover:bg-[#F3F7FB] hover:text-[#075078]'
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <Icon
-                      className={`w-4 h-4 ${isActive ? 'text-[#29B6EB]' : 'text-[#075078]'}`}
-                      aria-hidden="true"
-                    />
-                    <span>{link.name}</span>
-                  </div>
-                  <ChevronRight
-                    className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#94A3B8]'}`}
-                    aria-hidden="true"
-                  />
+                  <span>{link.name}</span>
+                  <span className={`text-xs ${isActive ? 'text-white' : 'text-[#94A3B8]'}`}>→</span>
                 </Link>
               )
             })}

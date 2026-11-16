@@ -3,13 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  Calendar,
-  Clock,
-  ArrowRight,
-  X,
-  Maximize2,
-} from 'lucide-react'
 import { BLOG_POSTS, BlogPost } from '@/data/siteData'
 
 export default function HomeBlogSection() {
@@ -67,9 +60,8 @@ export default function HomeBlogSection() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="bg-[#075078]/90 text-white text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-lg border border-white/20">
-                      <Maximize2 className="w-3.5 h-3.5 text-[#29B6EB]" />
-                      <span>Click to View Image</span>
+                    <span className="bg-[#075078]/90 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg border border-white/20">
+                      Click to View Image
                     </span>
                   </div>
                   <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[#075078] text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs">
@@ -81,17 +73,12 @@ export default function HomeBlogSection() {
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-3 text-xs text-[#64748B] mb-2.5">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5 text-[#29B6EB]" />
-                        <span>{post.date}</span>
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-[#29B6EB]" />
-                        <span>{post.readTime}</span>
-                      </span>
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span>{post.readTime}</span>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2 mb-2">
+                    <h3 className="text-base sm:text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2 mb-2 text-center md:text-left">
                       {post.title}
                     </h3>
 
@@ -111,7 +98,7 @@ export default function HomeBlogSection() {
               className="inline-flex items-center justify-center gap-2 bg-[#075078] hover:bg-[#005675] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group w-full sm:w-auto text-center"
             >
               <span>View All Articles</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
         </div>
@@ -146,7 +133,9 @@ export default function HomeBlogSection() {
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center shrink-0 transition-colors cursor-pointer"
                 aria-label="Close image preview"
               >
-                <X className="w-5 h-5" />
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
 

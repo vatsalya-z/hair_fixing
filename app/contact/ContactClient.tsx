@@ -2,23 +2,6 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  CheckCircle,
-  ShieldCheck,
-  ArrowRight,
-  ExternalLink,
-  Sparkles,
-  Calendar,
-  User,
-  Building2,
-  Lock,
-  Coffee,
-  Check,
-} from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import { FadeInUp, HoverLift3D } from '@/components/MotionWrappers'
 import ContactHeroImageWithTilt from '@/components/ContactHeroImageWithTilt'
@@ -111,8 +94,8 @@ export default function ContactClient() {
 
   return (
     <div className="w-full bg-[#F3F7FB]">
-      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
-      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumb Navigation Bar (Above Hero Section - Mobile Only) */}
+      <div className="lg:hidden bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
           <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
@@ -142,7 +125,6 @@ export default function ContactClient() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full text-center flex flex-col items-center">
           <FadeInUp delay={0.05} yOffset={20}>
             <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
-              <MapPin className="w-3.5 h-3.5" />
               Palayam, Thiruvananthapuram &amp; Indiranagar, Bengaluru
             </span>
           </FadeInUp>
@@ -163,8 +145,8 @@ export default function ContactClient() {
             <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
               <HoverLift3D>
                 <a href="#booking-form" className="btn-primary">
-                  Book Free Consultation
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <span>Book Free Consultation</span>
+                  <span className="ml-1">→</span>
                 </a>
               </HoverLift3D>
 
@@ -278,7 +260,9 @@ export default function ContactClient() {
                   {/* Phone Support */}
                   <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
                     <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
-                      <Phone className="w-5 h-5" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
                     </div>
                     <div className="flex-1">
                       <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
@@ -320,7 +304,9 @@ export default function ContactClient() {
                   {/* Email Support */}
                   <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
                     <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
-                      <Mail className="w-5 h-5" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
                     </div>
                     <div className="flex-1">
                       <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
@@ -339,7 +325,9 @@ export default function ContactClient() {
                   {/* Hours */}
                   <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
                     <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
-                      <Clock className="w-5 h-5" />
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                     </div>
                     <div className="flex-1">
                       <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
@@ -385,7 +373,7 @@ export default function ContactClient() {
                       className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
                     >
                       <span>Directions</span>
-                      <ExternalLink className="w-3 h-3" />
+                      <span className="text-[11px]">↗</span>
                     </a>
                   </div>
                 </div>
@@ -422,7 +410,7 @@ export default function ContactClient() {
                       className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
                     >
                       <span>Directions</span>
-                      <ExternalLink className="w-3 h-3" />
+                      <span className="text-[11px]">↗</span>
                     </a>
                   </div>
                 </div>
@@ -455,8 +443,8 @@ export default function ContactClient() {
 
                 {submitted ? (
                   <div className="bg-[#F3F7FB] border-2 border-[#29B6EB] rounded-2xl p-6 sm:p-8 text-center space-y-4 animate-fadeIn">
-                    <div className="w-16 h-16 bg-[#005675] rounded-full flex items-center justify-center mx-auto text-white shadow-lg">
-                      <CheckCircle className="w-8 h-8 text-[#29B6EB]" />
+                    <div className="w-16 h-16 bg-[#005675] rounded-full flex items-center justify-center mx-auto text-[#29B6EB] text-2xl font-bold shadow-lg">
+                      ✓
                     </div>
 
                     <div>
@@ -542,15 +530,14 @@ export default function ContactClient() {
                         <label className="block text-xs font-bold text-[#075078] uppercase tracking-wider mb-2">
                           Your Full Name *
                         </label>
-                        <div className="relative">
-                          <User className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-3.5" />
+                        <div>
                           <input
                             type="text"
                             required
                             placeholder="e.g. Suresh Kumar"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all"
+                            className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -559,15 +546,14 @@ export default function ContactClient() {
                         <label className="block text-xs font-bold text-[#075078] uppercase tracking-wider mb-2">
                           WhatsApp / Phone Number *
                         </label>
-                        <div className="relative">
-                          <Phone className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-3.5" />
+                        <div>
                           <input
                             type="tel"
                             required
                             placeholder="e.g. +91 94470 12345"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all"
+                            className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -579,14 +565,13 @@ export default function ContactClient() {
                         <label className="block text-xs font-bold text-[#075078] uppercase tracking-wider mb-2">
                           Email Address (Optional)
                         </label>
-                        <div className="relative">
-                          <Mail className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-3.5" />
+                        <div>
                           <input
                             type="email"
                             placeholder="e.g. suresh@example.com"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all"
+                            className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] focus:border-[#29B6EB] focus:ring-2 focus:ring-[#29B6EB]/20 text-sm outline-none bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -595,7 +580,7 @@ export default function ContactClient() {
                         <label className="block text-xs font-bold text-[#075078] uppercase tracking-wider mb-2">
                           Preferred Appointment Date
                         </label>
-                        <div className="relative">
+                        <div>
                           <input
                             type="date"
                             value={formData.preferredDate}
@@ -706,15 +691,15 @@ export default function ContactClient() {
                     {/* Security & Privacy Badges below button */}
                     <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] sm:text-xs text-[#64748B] pt-3 pb-1">
                       <span className="inline-flex items-center gap-1.5 shrink-0">
-                        <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#005675] shrink-0" />
+                        <span className="text-[#005675] font-bold">✓</span>
                         <span>100% Free &amp; Zero-Obligation</span>
                       </span>
                       <span className="inline-flex items-center gap-1.5 shrink-0">
-                        <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#005675] shrink-0" />
+                        <span className="text-[#005675] font-bold">✓</span>
                         <span>Private Suites Guaranteed</span>
                       </span>
                       <span className="inline-flex items-center gap-1.5 shrink-0">
-                        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#005675] shrink-0" />
+                        <span className="text-[#005675] font-bold">✓</span>
                         <span>Same-Day Confirmation</span>
                       </span>
                     </div>
@@ -746,7 +731,6 @@ export default function ContactClient() {
                 <div className="mb-4">
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full">
-                      <MapPin className="w-3.5 h-3.5 text-[#29B6EB]" />
                       <span>Flagship Trivandrum Studio</span>
                     </span>
                     <a
@@ -756,7 +740,7 @@ export default function ContactClient() {
                       className="text-xs font-bold text-[#005675] hover:text-[#29B6EB] flex items-center gap-1"
                     >
                       <span>Directions</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span className="text-[11px]">↗</span>
                     </a>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-[#075078]">
@@ -790,7 +774,6 @@ export default function ContactClient() {
                 <div className="mb-4">
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full">
-                      <MapPin className="w-3.5 h-3.5 text-[#29B6EB]" />
                       <span>Bangalore Studio</span>
                     </span>
                     <a
@@ -800,7 +783,7 @@ export default function ContactClient() {
                       className="text-xs font-bold text-[#005675] hover:text-[#29B6EB] flex items-center gap-1"
                     >
                       <span>Directions</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span className="text-[11px]">↗</span>
                     </a>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-[#075078]">

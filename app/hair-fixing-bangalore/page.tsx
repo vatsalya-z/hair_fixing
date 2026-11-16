@@ -2,30 +2,27 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import {
-  MapPin,
-  Phone,
-  Clock,
-  ShieldCheck,
-  CheckCircle2,
-  Sparkles,
-  Scissors,
-  ArrowRight,
-  ExternalLink,
-  Award,
-} from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Hair Fixing in Bangalore | Non-Surgical Hair Patch Studio',
+  title: 'Hair Fixing in Bangalore | Non-Surgical Hair Replacement Indiranagar',
   description:
-    'Leading hair fixing in Bangalore: custom hair patch, medical bonding & non-surgical hair replacement in Indiranagar. Book your free scalp consultation!',
+    'Premier non-surgical hair fixing & hair patch studio in Indiranagar, Bangalore. Custom hair replacement systems for men & women with 18+ years of expertise.',
+  keywords: [
+    'Hair Fixing in Bangalore',
+    'Hair Fixing Indiranagar Bangalore',
+    'Hair Patch in Bangalore',
+    'Non Surgical Hair Replacement Bangalore',
+    'Hair Bonding Bangalore',
+    'Hair Weaving in Bangalore',
+    'Custom Hair Replacement Systems',
+  ],
   alternates: {
     canonical: 'https://ozzonehair.com/hair-fixing-bangalore/',
   },
   openGraph: {
-    title: 'Hair Fixing in Bangalore | Non-Surgical Hair Patch Studio',
+    title: 'Hair Fixing in Bangalore | Non-Surgical Hair Replacement Indiranagar',
     description:
       'Premier non-surgical hair fixing and custom hair patches in Bangalore (Bengaluru). 100% natural human hair, instant 90-min transformation in Indiranagar.',
     url: 'https://ozzonehair.com/hair-fixing-bangalore/',
@@ -43,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hair Fixing in Bangalore | Non-Surgical Hair Patch Studio',
+    title: 'Hair Fixing in Bangalore | Non-Surgical Hair Replacement Indiranagar',
     description:
       'Leading non-surgical hair fixing in Bangalore: custom hair patches, medical bonding & hair replacement in Indiranagar.',
     images: ['https://ozzonehair.com/hero-section/slide_1-1.png'],
@@ -164,7 +161,6 @@ export default function HairFixingBangalorePage() {
             <span className="text-[#075078] font-bold">Hair Fixing Bangalore</span>
           </nav>
           <span className="hidden sm:inline-flex items-center gap-1.5 font-semibold text-[#005675] text-xs">
-            <MapPin className="w-3.5 h-3.5 text-[#29B6EB]" />
             Indiranagar, Bengaluru
           </span>
         </div>
@@ -181,7 +177,6 @@ export default function HairFixingBangalorePage() {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
-            <MapPin className="w-3.5 h-3.5" />
             Indiranagar Studio • Bengaluru
           </span>
 
@@ -199,7 +194,7 @@ export default function HairFixingBangalorePage() {
               className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <span>Book Free Scalp Consultation</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>→</span>
             </Link>
             <a
               href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Bangalore%2C%20I%20would%20like%20to%20know%20more%20about%20hair%20fixing.`}
@@ -234,8 +229,8 @@ export default function HairFixingBangalorePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <Sparkles className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                01
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 Instant 90-Minute Results
@@ -246,8 +241,8 @@ export default function HairFixingBangalorePage() {
             </div>
 
             <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <ShieldCheck className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                02
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 Zero Medical Risks
@@ -258,8 +253,8 @@ export default function HairFixingBangalorePage() {
             </div>
 
             <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF5FB] text-[#005675] flex items-center justify-center mb-4">
-                <Award className="w-6 h-6 text-[#29B6EB]" />
+              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                03
               </div>
               <h3 className="text-lg font-bold text-[#075078] mb-2">
                 Undetectable Natural Hairline
@@ -297,7 +292,7 @@ export default function HairFixingBangalorePage() {
               </p>
               <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
                 <span>Explore Hair Patch Systems</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </div>
 
@@ -310,7 +305,7 @@ export default function HairFixingBangalorePage() {
               </p>
               <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
                 <span>Explore Hair Bonding</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </div>
 
@@ -323,7 +318,7 @@ export default function HairFixingBangalorePage() {
               </p>
               <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
                 <span>Explore Hair Weaving</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </div>
 
@@ -336,7 +331,7 @@ export default function HairFixingBangalorePage() {
               </p>
               <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
                 <span>Explore Servicing &amp; Spa</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>→</span>
               </Link>
             </div>
           </div>
@@ -387,7 +382,7 @@ export default function HairFixingBangalorePage() {
                   className="btn-primary text-xs sm:text-sm"
                 >
                   <span>Open in Google Maps App</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span className="text-[11px]">↗</span>
                 </a>
                 <Link href="/contact/" className="btn-secondary-light text-xs sm:text-sm">
                   <span>Contact Page</span>

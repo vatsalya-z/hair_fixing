@@ -3,7 +3,6 @@
 import React, { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { Award, Sparkles } from 'lucide-react'
 
 interface AboutHeroImageWithTiltProps {
   imageSrc?: string
@@ -86,8 +85,8 @@ export default function AboutHeroImageWithTilt({
           className="absolute bottom-3 left-3 right-3 sm:-bottom-5 sm:-left-5 sm:right-auto bg-[#075078]/95 backdrop-blur-md rounded-xl px-4 sm:px-5 py-3.5 shadow-2xl border border-white/25 sm:max-w-[280px]"
         >
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#29B6EB]/25 border border-[#29B6EB]/50 flex items-center justify-center shrink-0 shadow-sm">
-              <Award className="w-5 h-5 text-[#29B6EB]" />
+            <div className="w-10 h-10 rounded-full bg-[#29B6EB]/25 border border-[#29B6EB]/50 flex items-center justify-center shrink-0 shadow-sm text-[#29B6EB] font-bold text-sm">
+              ★
             </div>
             <div>
               <p className="text-white font-bold text-xs sm:text-sm">{badgeTitle}</p>
@@ -103,8 +102,7 @@ export default function AboutHeroImageWithTilt({
           }}
           className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-[#29B6EB] text-[#075078] font-extrabold rounded-xl px-3.5 py-2.5 shadow-lg text-center border border-white/30"
         >
-          <div className="flex items-center gap-1.5 text-xs tracking-wide">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="text-xs tracking-wide">
             <span>{topBadge}</span>
           </div>
         </motion.div>

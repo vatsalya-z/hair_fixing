@@ -3,14 +3,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  X,
-  Calendar,
-  Clock,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-} from 'lucide-react'
 import { BLOG_POSTS, BlogPost } from '@/data/siteData'
 
 export interface BlogHeroSlide {
@@ -31,7 +23,6 @@ const BLOG_HERO_SLIDES: BlogHeroSlide[] = [
 ]
 
 export default function BlogClient() {
-  const [activePost, setActivePost] = useState<BlogPost | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
   const touchStartX = useRef<number | null>(null)
@@ -88,8 +79,8 @@ export default function BlogClient() {
 
   return (
     <div className="w-full bg-white">
-      {/* Breadcrumb Navigation Bar (Above Hero Section) */}
-      <div className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumb Navigation Bar (Above Hero Section - Mobile Only) */}
+      <div className="lg:hidden bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
           <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
@@ -225,9 +216,9 @@ export default function BlogClient() {
           {/* Grid of Articles: 2 columns on mobile, 2 on md, 3 on lg */}
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
             {BLOG_POSTS.map((post) => (
-              <article
+              <Link
                 key={post.id}
-                onClick={() => setActivePost(post)}
+                href={`/blog/${post.slug}/`}
                 className="group cursor-pointer bg-white rounded-xl md:rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1.5"
               >
                 {/* 1. Image */}
@@ -242,7 +233,7 @@ export default function BlogClient() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="absolute bottom-3 right-3 bg-[#075078] text-white text-xs font-semibold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1">
                     <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#29B6EB]" />
+                    <span className="text-[#29B6EB]">→</span>
                   </span>
                   <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-white/90 backdrop-blur-xs text-[#075078] text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded sm:rounded-md shadow-xs">
                     {post.category}
@@ -255,57 +246,15 @@ export default function BlogClient() {
                     {post.title}
                   </h3>
                   <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0 text-[10px] sm:text-xs text-[#64748B]">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#29B6EB] shrink-0" />
-                      <span className="line-clamp-1">{post.date}</span>
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#29B6EB] shrink-0" />
-                      <span>{post.readTime}</span>
-                    </span>
+                    <span className="line-clamp-1">{post.date}</span>
+                    <span className="font-medium text-[#075078]">{post.readTime}</span>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
       </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          FULL ARTICLE READER MODAL
-      ═══════════════════════════════════════════════════════════ */}
-      {activePost && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#075078]/70 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-[#E2E8F0] relative">
-            {/* Modal Header */}
-            <div className="sticky top-0 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between z-20">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#005675]">
-                {activePost.category}
-              </span>
-              <button
-                onClick={() => setActivePost(null)}
-                className="w-8 h-8 rounded-full bg-[#F3F7FB] hover:bg-[#E2E8F0] text-[#075078] flex items-center justify-center transition-colors"
-                aria-label="Close Article"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Modal Article Body */}
-            <div className="p-6 sm:p-8 space-y-6">
-              <div className="relative h-72 w-full rounded-xl overflow-hidden shadow-md">
-                <Image
-                  src={activePost.image}
-                  alt={activePost.title}
-                  width={800}
-                  height={450}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

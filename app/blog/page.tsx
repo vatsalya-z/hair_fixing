@@ -5,14 +5,14 @@ import { BLOG_POSTS } from '@/data/siteData'
 export const metadata: Metadata = {
   title: 'Hair Care & Fixing Guides | ozzone Hair Blog',
   description:
-    'Expert guides on hair fixing, hair patch care, bonding, pricing & non-surgical hair replacement in Trivandrum & Kerala. Tips from certified specialists.',
+    'Expert guides on hair fixing, hair patch care, bonding, maintenance & non-surgical hair replacement in Trivandrum & Kerala. Tips from certified specialists.',
   alternates: {
     canonical: 'https://ozzonehair.com/blog/',
   },
   openGraph: {
     title: 'Hair Care & Fixing Guides | ozzone Hair Blog',
     description:
-      'Expert guides on hair fixing, hair patch care, bonding, pricing & non-surgical hair replacement in Trivandrum & Kerala. Tips from certified specialists.',
+      'Expert guides on hair fixing, hair patch care, bonding, maintenance & non-surgical hair replacement in Trivandrum & Kerala. Tips from certified specialists.',
     url: 'https://ozzonehair.com/blog/',
     siteName: 'ozzone Hair',
     images: [{ url: '/images/blog/Blog_Hero_Section_Banner_Before_After.png', width: 2048, height: 768, alt: 'Hair Care & Fixing Guides - ozzone Hair Blog' }],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hair Care & Fixing Guides | ozzone Hair Blog',
     description:
-      'Expert guides on hair fixing, hair patch care, bonding, pricing & non-surgical hair replacement in Trivandrum & Kerala.',
+      'Expert guides on hair fixing, hair patch care, bonding, maintenance & non-surgical hair replacement in Trivandrum & Kerala.',
     images: ['/images/blog/Blog_Hero_Section_Banner_Before_After.png'],
   },
 }

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { BLOG_POSTS } from '@/data/siteData'
+import { SERVICE_DETAILS } from '@/data/serviceDetailData'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ozzonehair.com'
@@ -13,12 +14,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/solutions', priority: 0.95, changeFrequency: 'weekly' as const },
     { route: '/products', priority: 0.9, changeFrequency: 'weekly' as const },
     { route: '/about', priority: 0.85, changeFrequency: 'monthly' as const },
-    { route: '/pricing', priority: 0.85, changeFrequency: 'monthly' as const },
     { route: '/gallery', priority: 0.8, changeFrequency: 'weekly' as const },
     { route: '/blog', priority: 0.85, changeFrequency: 'daily' as const },
-    { route: '/faq', priority: 0.8, changeFrequency: 'monthly' as const },
     { route: '/contact', priority: 0.9, changeFrequency: 'monthly' as const },
   ]
+
+  const serviceRoutes = Object.values(SERVICE_DETAILS).map((service) => ({
+    url: service.canonicalUrl,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }))
 
   const blogRoutes = BLOG_POSTS.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}/`,
@@ -34,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency,
       priority,
     })),
+    ...serviceRoutes,
     ...blogRoutes,
   ]
 }

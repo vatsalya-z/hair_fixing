@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { Home, ArrowLeft, Phone, Search, HelpCircle } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO } from '@/data/siteData'
 
@@ -73,7 +72,6 @@ export default function NotFound() {
             href="/"
             className="btn-primary w-full sm:w-auto text-sm justify-center"
           >
-            <Home className="w-4 h-4 mr-1.5" />
             <span>Return to Homepage</span>
           </Link>
           <Link

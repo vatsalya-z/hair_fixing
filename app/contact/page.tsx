@@ -3,25 +3,34 @@ import ContactClient from './ContactClient'
 import { SITE_INFO } from '@/data/siteData'
 
 export const metadata: Metadata = {
-  title: 'Contact ozzone Hair | Free Scalp Consultation Trivandrum',
+  title: 'Contact ozzone Hair Trivandrum | Book Free Scalp Consultation',
   description:
-    'Contact ozzone Hair studios in Trivandrum & Bangalore. Book your free, private scalp consultation for non-surgical hair fixing and custom hair patches.',
+    'Visit ozzone Hair studio at Palayam, Thiruvananthapuram (Opp. Jubilee Hospital) or Indiranagar, Bangalore. Book your free confidential scalp analysis today.',
+  keywords: [
+    'Contact ozzone Hair',
+    'Hair Fixing in Thiruvananthapuram',
+    'Hair Fixing in Trivandrum',
+    'Hair Fixing Centre in Trivandrum',
+    'Hair Patch in Trivandrum',
+    'Palayam Thiruvananthapuram Hair Studio',
+    'Hair Fixing Indiranagar Bangalore',
+  ],
   alternates: {
     canonical: 'https://ozzonehair.com/contact/',
   },
   openGraph: {
-    title: 'Contact ozzone Hair | Free Scalp Consultation Trivandrum',
+    title: 'Contact ozzone Hair Trivandrum | Book Free Scalp Consultation',
     description:
-      'Contact ozzone Hair studios in Trivandrum & Bangalore. Book your free, private scalp consultation for non-surgical hair fixing and custom hair patches.',
+      'Visit ozzone Hair studio at Palayam, Thiruvananthapuram or Indiranagar, Bangalore. Book your free, private scalp consultation for non-surgical hair fixing.',
     url: 'https://ozzonehair.com/contact/',
     siteName: 'ozzone Hair',
-    images: [{ url: 'https://ozzonehair.com/hero-section/slide_2-1.webp', width: 1200, height: 630, alt: 'Contact ozzone Hair Studio' }],
+    images: [{ url: 'https://ozzonehair.com/hero-section/slide_2-1.webp', width: 1200, height: 630, alt: 'Contact ozzone Hair Studio Thiruvananthapuram and Bangalore' }],
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact ozzone Hair | Free Scalp Consultation Trivandrum',
+    title: 'Contact ozzone Hair Trivandrum | Book Free Scalp Consultation',
     description:
       'Contact ozzone Hair studios in Trivandrum & Bangalore. Book your free, private scalp consultation for non-surgical hair fixing and custom hair patches.',
     images: ['https://ozzonehair.com/hero-section/slide_2-1.webp'],
