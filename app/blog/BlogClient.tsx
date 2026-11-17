@@ -1,155 +1,195 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaWhatsapp } from 'react-icons/fa'
-import { FadeInUp, HoverLift3D } from '@/components/MotionWrappers'
-import { BLOG_POSTS, SITE_INFO } from '@/data/siteData'
+import { BLOG_POSTS, BlogPost } from '@/data/siteData'
+
+export interface BlogHeroSlide {
+  id: string
+  src: string
+  alt: string
+  contain?: boolean
+}
+
+const BLOG_HERO_SLIDES: BlogHeroSlide[] = [
+  {
+    id: 'slide-1',
+    src: '/images/blog/Blog_Hero_Section_Banner_Man.png',
+    alt: 'Hair Care & Fixing Guides by ozzone Hair Experts - Before and After Hair Transformation',
+    contain: false,
+  },
+
+]
 
 export default function BlogClient() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const touchStartX = useRef<number | null>(null)
+  const touchEndX = useRef<number | null>(null)
+  const totalSlides = BLOG_HERO_SLIDES.length
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % totalSlides)
+  }, [totalSlides])
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides)
+  }, [totalSlides])
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  // Automatic slide movement every 4.5 seconds; pauses on hover
+  useEffect(() => {
+    if (isHovered) return
+
+    const timer = setInterval(() => {
+      nextSlide()
+    }, 4500)
+
+    return () => clearInterval(timer)
+  }, [isHovered, nextSlide])
+
+  // Touch Swipe Support for mobile and tablet devices
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+    touchEndX.current = null
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return
+    const diff = touchStartX.current - touchEndX.current
+    const minSwipeDistance = 40
+
+    if (diff > minSwipeDistance) {
+      nextSlide()
+    } else if (diff < -minSwipeDistance) {
+      prevSlide()
+    }
+
+    touchStartX.current = null
+    touchEndX.current = null
+  }
+
   return (
     <div className="w-full bg-white">
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1: FULL-WIDTH BLOG HERO SECTION (FULL BACKGROUND IMAGE)
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="relative w-full min-h-[360px] sm:min-h-[500px] md:min-h-[580px] lg:min-h-[640px] flex items-center justify-center overflow-hidden bg-[#075078] text-white">
-        {/* Full-width background image covering 100vw */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/blog/Blog_Hero_Section_Banner_Man.png"
-            alt="Hair Care &amp; Fixing Guides by ozzone Hair Experts - Before and After Hair Transformation"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          {/* Subtle multi-layer overlay for maximum readability and brand atmosphere */}
-          <div className="absolute inset-0 bg-[#075078]/80 sm:bg-[#075078]/70 backdrop-blur-[1px]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#075078] via-transparent to-[#075078]/85" />
-          <div className="hero-subtle-glow absolute inset-0 opacity-40 pointer-events-none" />
-        </div>
-
-        {/* Content Container - Compact & Pixel-Perfect on Mobile, Spacious on Desktop */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-20 lg:py-24 text-center flex flex-col items-center justify-center">
-          {/* Breadcrumb Navigation inside Hero (Mobile Only) */}
-          <nav
-            aria-label="Breadcrumbs"
-            className="lg:hidden flex items-center justify-center flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-sm text-white/85 font-medium mb-3 sm:mb-5 tracking-wide drop-shadow-xs"
-          >
-            <Link
-              href="/"
-              className="text-white/85 hover:text-[#29B6EB] transition-colors"
-            >
-              Home
-            </Link>
-            <span className="text-[#29B6EB]/70">/</span>
-            <span className="text-[#29B6EB] font-semibold">Blog</span>
+      {/* Breadcrumb Navigation Bar (Above Hero Section - Mobile Only) */}
+      <div className="lg:hidden bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
+            <span className="text-slate-400" aria-hidden="true">/</span>
+            <span className="text-[#075078] font-bold">Blog</span>
           </nav>
+          <div className="hidden sm:flex items-center gap-3 text-xs text-slate-500">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[#005675]">
+              <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
+              Hair Care &amp; Fixing Guides
+            </span>
+          </div>
+        </div>
+      </div>
 
-          {/* Topic Tag Badge */}
-          <FadeInUp delay={0.05} yOffset={15}>
-            <div className="mb-2.5 sm:mb-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest bg-[#29B6EB]/25 text-[#29B6EB] border border-[#29B6EB]/40 backdrop-blur-md shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB] animate-pulse" />
-                Expert Hair Care &amp; Fixing Guides • Trivandrum &amp; Bangalore
-              </span>
-            </div>
-          </FadeInUp>
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE SLIDER)
+      ═══════════════════════════════════════════════════════════ */}
+      <section
+        className="relative w-full bg-[#075078] overflow-hidden select-none group"
+        aria-label="Blog Hero Banner Slider"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <h1 className="sr-only">
+          Hair Care &amp; Fixing Guides | ozzone Hair Blog
+        </h1>
+        <div className="relative w-full aspect-[2048/768] min-h-[220px] sm:min-h-[340px] md:min-h-[420px] lg:min-h-[480px]">
+          {/* Horizontal Slide Track */}
+          <div
+            className="flex w-full h-full transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
+            style={{ transform: `translate3d(-${currentIndex * 100}%, 0, 0)` }}
+          >
+            {BLOG_HERO_SLIDES.map((slide, index) => (
+              <div
+                key={slide.id}
+                className="w-full h-full shrink-0 relative overflow-hidden bg-[#075078]"
+                aria-hidden={currentIndex !== index}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`Slide ${index + 1} of ${totalSlides}`}
+              >
+                {slide.contain ? (
+                  <>
+                    {/* Ambient backdrop to prevent side borders */}
+                    <div className="absolute inset-0 select-none pointer-events-none">
+                      <Image
+                        src={slide.src}
+                        alt=""
+                        fill
+                        priority={index === 0}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        className="object-cover object-center blur-xl scale-110 opacity-30"
+                        sizes="100vw"
+                      />
+                    </div>
+                    {/* Main crisp full image */}
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      priority={index === 0}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      className="object-contain object-center relative z-10"
+                      sizes="100vw"
+                    />
+                  </>
+                ) : (
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    className="object-cover object-center"
+                    sizes="100vw"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
 
-          {/* Main Title - Center Aligned & Mobile Sized */}
-          <FadeInUp delay={0.15} yOffset={20}>
-            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-snug sm:leading-[1.15] tracking-tight max-w-4xl mx-auto mb-3 sm:mb-6 drop-shadow-md">
-              Hair Care &amp; Fixing Guides <span className="text-[#29B6EB] block sm:inline">| ozzone Hair Blog</span>
-            </h1>
-          </FadeInUp>
+          {/* Navigation Arrows */}
 
-          {/* Supporting Description */}
-          <FadeInUp delay={0.25} yOffset={20}>
-            <p className="text-xs sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-4 sm:mb-8 leading-relaxed font-normal drop-shadow-xs">
-              In-depth guides on non-surgical hair fixing, custom hair patch care, adhesive maintenance, and natural hairline restoration from certified specialists.
-            </p>
-          </FadeInUp>
 
-          {/* CTA Action Buttons: Side-by-side on Mobile, Full-Row on Desktop */}
-          <FadeInUp delay={0.35} yOffset={15} className="w-full sm:w-auto">
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-8 w-full max-w-md sm:max-w-none">
-              <HoverLift3D className="flex-1 sm:flex-initial min-w-[130px] sm:min-w-0">
-                <a
-                  href="#articles-section"
-                  className="btn-primary w-full justify-center py-2.5 sm:py-3.5 px-3 sm:px-6 text-xs sm:text-base font-semibold shadow-md whitespace-nowrap"
-                >
-                  <span>Explore Articles</span>
-                  <span className="ml-1" aria-hidden="true">↓</span>
-                </a>
-              </HoverLift3D>
-
-              <HoverLift3D className="flex-1 sm:flex-initial min-w-[130px] sm:min-w-0">
-                <a
-                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20have%20a%20question%20regarding%20hair%20fixing.`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-whatsapp w-full justify-center py-2.5 sm:py-3.5 px-3 sm:px-6 text-xs sm:text-base font-semibold shadow-md whitespace-nowrap"
-                >
-                  <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
-                  <span>WhatsApp Specialist</span>
-                </a>
-              </HoverLift3D>
-
-              <HoverLift3D className="w-full sm:w-auto">
-                <Link
-                  href="/contact/"
-                  className="btn-secondary-dark w-full sm:w-auto justify-center py-2 sm:py-3.5 px-3 sm:px-5 text-xs sm:text-base backdrop-blur-xs"
-                >
-                  <span>Book Free Consultation →</span>
-                </Link>
-              </HoverLift3D>
-            </div>
-          </FadeInUp>
-
-          {/* Topic Highlights - Mobile Sleek Pills, Desktop Glassmorphism Badges */}
-          <FadeInUp delay={0.45} yOffset={15} className="w-full">
-            {/* Mobile: Compact Pills */}
-            <div className="sm:hidden flex flex-wrap items-center justify-center gap-1.5 text-[10px] text-white/90">
-              {[
-                'Non-Surgical Fixing',
-                'Patch Maintenance',
-                'Cost & Longevity',
-                'Scalp Health',
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex items-center gap-1 bg-[#075078]/80 backdrop-blur-md rounded-full px-2.5 py-0.5 border border-white/20 text-white font-medium shadow-xs"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            {/* Desktop: 4-Column Cards */}
-            <div className="hidden sm:grid sm:grid-cols-4 gap-2 sm:gap-3 text-white/90 text-xs sm:text-sm w-full max-w-4xl mx-auto">
-              {[
-                { title: 'Non-Surgical Fixing', sub: 'Procedure Guides' },
-                { title: 'Patch Maintenance', sub: 'Washing & Bonding' },
-                { title: 'Cost & Longevity', sub: 'Price Transparency' },
-                { title: 'Scalp Health', sub: 'Dermatological Tips' },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="flex items-center gap-2 bg-[#005675]/60 sm:bg-white/10 backdrop-blur-md rounded-xl p-2.5 sm:px-3 sm:py-2.5 border border-white/20 shadow-sm"
-                >
-                  <span className="w-5 h-5 rounded-full bg-[#29B6EB]/30 text-[#29B6EB] flex items-center justify-center text-xs font-bold shrink-0">
-                    ✓
-                  </span>
-                  <div className="text-left leading-tight min-w-0">
-                    <div className="font-semibold text-white truncate text-[11px] sm:text-xs">{item.title}</div>
-                    <div className="text-white/75 text-[10px] sm:text-[11px] truncate">{item.sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeInUp>
+          {/* Navigation Dots */}
+          <div
+            className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20"
+            role="tablist"
+            aria-label="Blog Hero Carousel Dots"
+          >
+            {BLOG_HERO_SLIDES.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                role="tab"
+                aria-selected={currentIndex === index}
+                aria-label={`Go to slide ${index + 1}`}
+                onClick={() => goToSlide(index)}
+                className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#29B6EB] ${currentIndex === index
+                  ? 'w-6 sm:w-7 bg-[#29B6EB]'
+                  : 'w-2 sm:w-2.5 bg-white/60 hover:bg-white'
+                  }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
