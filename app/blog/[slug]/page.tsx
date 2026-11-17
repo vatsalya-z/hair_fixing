@@ -208,7 +208,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1: FULL-WIDTH BLOG HERO SECTION
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative w-full min-h-[500px] sm:min-h-[580px] md:min-h-[660px] flex items-center justify-center overflow-hidden bg-[#075078]">
+      <section className="relative w-full min-h-[360px] sm:min-h-[540px] md:min-h-[620px] lg:min-h-[660px] flex items-center justify-center overflow-hidden bg-[#075078]">
         {/* Full-width background image covering 100vw */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -219,26 +219,25 @@ export default async function BlogPostPage({ params }: PageProps) {
             className="object-cover object-center"
             sizes="100vw"
           />
-          {/* Subtle multi-layer overlay for maximum readability and brand atmosphere */}
         </div>
 
-        {/* Content Container - Expanded Full Width */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-20 sm:py-28 md:py-32 text-center flex flex-col items-center justify-center">
+        {/* Content Container - Fully Visible on Mobile & Spacious on Desktop */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-20 md:py-28 lg:py-32 text-center flex flex-col items-center justify-center">
           {/* Breadcrumb Navigation inside Hero (Mobile Only) */}
           <nav
             aria-label="Breadcrumbs"
-            className="lg:hidden flex items-center justify-center flex-wrap gap-2 text-xs sm:text-sm text-white/80 font-medium mb-5 sm:mb-7 tracking-wide"
+            className="lg:hidden flex items-center justify-center flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-sm text-white/85 font-medium mb-3 sm:mb-6 tracking-wide drop-shadow-xs"
           >
             <Link
               href="/"
-              className="text-white/80 hover:text-[#29B6EB] transition-colors"
+              className="text-white/85 hover:text-[#29B6EB] transition-colors"
             >
               Home
             </Link>
             <span className="text-[#29B6EB]/70">/</span>
             <Link
               href="/blog/"
-              className="text-white/80 hover:text-[#29B6EB] transition-colors"
+              className="text-white/85 hover:text-[#29B6EB] transition-colors"
             >
               Blog
             </Link>
@@ -249,31 +248,16 @@ export default async function BlogPostPage({ params }: PageProps) {
           </nav>
 
           {/* Category Tag Badge */}
-          <div className="mb-5">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#29B6EB]/20 text-[#29B6EB] border border-[#29B6EB]/40 backdrop-blur-md">
+          <div className="mb-3 sm:mb-5">
+            <span className="inline-block px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-widest bg-[#29B6EB]/25 text-[#29B6EB] border border-[#29B6EB]/40 backdrop-blur-md shadow-xs">
               {category}
             </span>
           </div>
 
           {/* Main Blog Title - Center Aligned & Full Width */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight max-w-5xl mx-auto mb-6 sm:mb-8">
+          <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-snug sm:leading-tight tracking-tight max-w-5xl mx-auto drop-shadow-sm">
             {title}
           </h1>
-
-          {/* Editorial Meta Info Bar - Human-Made Style without Icon Clutter */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm md:text-base text-white/90 font-medium max-w-3xl mx-auto">
-            <span>By <strong className="text-white font-semibold">{author}</strong></span>
-            <span className="text-white/40">•</span>
-            <span>Published {date}</span>
-            {updatedDate && (
-              <>
-                <span className="text-white/40 hidden sm:inline">•</span>
-                <span className="text-white/70 hidden sm:inline">(Updated: {updatedDate})</span>
-              </>
-            )}
-            <span className="text-white/40">•</span>
-            <span className="text-[#29B6EB] font-semibold">{readTime}</span>
-          </div>
         </div>
       </section>
 
