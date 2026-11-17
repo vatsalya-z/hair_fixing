@@ -1,10 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
-import { FaWhatsapp } from 'react-icons/fa'
+import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa'
 import { FadeInUp, HoverLift3D } from '@/components/MotionWrappers'
-import ContactHeroImageWithTilt from '@/components/ContactHeroImageWithTilt'
 import { SITE_INFO } from '@/data/siteData'
 
 const TIME_SLOTS = [
@@ -94,92 +94,66 @@ export default function ContactClient() {
 
   return (
     <div className="w-full bg-[#F3F7FB]">
-      {/* Breadcrumb Navigation Bar (Above Hero Section - Mobile Only) */}
-      <div className="lg:hidden bg-[#F8FAFC] border-b border-[#E2E8F0] py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
-          <nav className="flex items-center gap-2 text-slate-600 font-medium" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#005675] transition-colors">Home</Link>
-            <span className="text-slate-400" aria-hidden="true">/</span>
-            <span className="text-[#075078] font-bold">Contact</span>
-          </nav>
-          <div className="hidden sm:flex items-center gap-3 text-xs text-slate-500">
-            <span className="inline-flex items-center gap-1.5 font-semibold text-[#005675]">
-              <span className="w-2 h-2 rounded-full bg-[#29B6EB]" />
-              Free Scalp Consultation
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO SECTION
+          SECTION 1: FULL-WIDTH CONTACT HERO SECTION (FULL BACKGROUND IMAGE)
       ═══════════════════════════════════════════════════════════ */}
-      <section className="hero-gradient-bg relative overflow-hidden min-h-[60vh] flex items-center justify-center py-16 sm:py-20 lg:py-24">
-        {/* Ambient lighting glows */}
-        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/12 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#174BA5]/30 rounded-full blur-3xl" />
-          <div className="hero-subtle-glow absolute inset-0 opacity-40" />
+      <section className="relative w-full min-h-[360px] sm:min-h-[520px] md:min-h-[600px] lg:min-h-[660px] flex items-center justify-center overflow-hidden bg-[#075078] text-white">
+        {/* Full-width background image covering 100vw */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/contact/contact-hero.jpg"
+            alt="ozzone Hair Studio Private Consultation Suite in Trivandrum and Bangalore"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Subtle multi-layer overlay for maximum readability and brand atmosphere */}
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full text-center flex flex-col items-center">
-          <FadeInUp delay={0.05} yOffset={20}>
-            <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
-              Palayam, Thiruvananthapuram &amp; Indiranagar, Bengaluru
-            </span>
+        {/* Content Container - Compact & Pixel-Perfect on Mobile, Spacious on Desktop */}
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-20 lg:py-24 text-center flex flex-col items-center justify-center">
+          {/* Breadcrumb Navigation inside Hero (Mobile Only) */}
+          <nav
+            aria-label="Breadcrumbs"
+            className="lg:hidden flex items-center justify-center flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-sm text-white/85 font-medium mb-3 sm:mb-5 tracking-wide drop-shadow-xs"
+          >
+            <Link
+              href="/"
+              className="text-white/85 hover:text-[#29B6EB] transition-colors"
+            >
+              Home
+            </Link>
+            <span className="text-[#29B6EB]/70">/</span>
+            <span className="text-[#29B6EB] font-semibold">Contact</span>
+          </nav>
+
+          {/* Location Badge */}
+          <FadeInUp delay={0.05} yOffset={15}>
+            <div className="mb-2.5 sm:mb-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest bg-[#29B6EB]/25 text-[#29B6EB] border border-[#29B6EB]/40 backdrop-blur-md shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB] animate-pulse" />
+                Palayam, Trivandrum &amp; Indiranagar, Bengaluru
+              </span>
+            </div>
           </FadeInUp>
 
-          <FadeInUp delay={0.15} yOffset={25}>
-            <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-5 text-center max-w-3xl mx-auto">
-              Contact ozzone Hair | Free Scalp Consultation Trivandrum
+          {/* Main Title - Center Aligned & Mobile Sized */}
+          <FadeInUp delay={0.15} yOffset={20}>
+            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-snug sm:leading-[1.15] tracking-tight max-w-4xl mx-auto mb-3 sm:mb-6 drop-shadow-md">
+              Contact ozzone Hair <span className="text-[#29B6EB] block sm:inline">| Free Scalp Consultation Trivandrum</span>
             </h1>
           </FadeInUp>
 
-          <FadeInUp delay={0.25} yOffset={25}>
-            <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-7 max-w-2xl mx-auto text-center">
+          {/* Supporting Description */}
+          <FadeInUp delay={0.25} yOffset={20}>
+            <p className="text-xs sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-4 sm:mb-8 leading-relaxed font-normal drop-shadow-xs">
               Visit our 100% private consultation suites for a personalized scalp inspection, custom human hair trial, and transparent price quotation with zero pressure.
             </p>
           </FadeInUp>
+          
 
-          <FadeInUp delay={0.35} yOffset={20}>
-            <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
-              <HoverLift3D>
-                <a href="#booking-form" className="btn-primary">
-                  <span>Book Free Consultation</span>
-                  <span className="ml-1">→</span>
-                </a>
-              </HoverLift3D>
-
-              <HoverLift3D>
-                <a
-                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20free%20consultation.`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-whatsapp"
-                >
-                  <FaWhatsapp className="w-5 h-5 text-white" />
-                  <span>WhatsApp Specialist</span>
-                </a>
-              </HoverLift3D>
-            </div>
-          </FadeInUp>
-
-          {/* Trust highlights - Hidden on mobile view, visible on desktop/tablet */}
-          <FadeInUp delay={0.45} yOffset={15} className="hidden sm:block">
-            <div className="hidden sm:flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-white/80 text-xs sm:text-sm">
-              {[
-                '100% Private Consulting Suites',
-                'Zero-Obligation Scalp Analysis',
-                'Trivandrum & Bengaluru Studios',
-                'Dedicated Client Parking',
-              ].map((t) => (
-                <div key={t} className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#29B6EB]" />
-                  <span>{t}</span>
-                </div>
-              ))}
-            </div>
-          </FadeInUp>
+          
         </div>
       </section>
 
@@ -639,17 +613,15 @@ export default function ContactClient() {
                               key={slot.value}
                               type="button"
                               onClick={() => setFormData({ ...formData, preferredTime: slot.value })}
-                              className={`py-2 sm:py-2.5 px-1.5 sm:px-2 rounded-xl border text-center transition-all flex flex-col items-center justify-center min-h-[52px] touch-manipulation cursor-pointer ${
-                                isSelected
-                                  ? 'bg-[#005675] text-white border-[#005675] shadow-xs ring-2 ring-[#005675]/30'
-                                  : 'bg-[#F3F7FB] text-[#252B38] border-[#E2E8F0] hover:border-[#29B6EB] hover:bg-white'
-                              }`}
+                              className={`py-2 sm:py-2.5 px-1.5 sm:px-2 rounded-xl border text-center transition-all flex flex-col items-center justify-center min-h-[52px] touch-manipulation cursor-pointer ${isSelected
+                                ? 'bg-[#005675] text-white border-[#005675] shadow-xs ring-2 ring-[#005675]/30'
+                                : 'bg-[#F3F7FB] text-[#252B38] border-[#E2E8F0] hover:border-[#29B6EB] hover:bg-white'
+                                }`}
                             >
                               <span className="text-xs font-bold leading-tight">{slot.label}</span>
                               <span
-                                className={`text-[10px] sm:text-[11px] mt-0.5 leading-tight font-medium ${
-                                  isSelected ? 'text-white/85' : 'text-[#64748B]'
-                                }`}
+                                className={`text-[10px] sm:text-[11px] mt-0.5 leading-tight font-medium ${isSelected ? 'text-white/85' : 'text-[#64748B]'
+                                  }`}
                               >
                                 {slot.hours}
                               </span>

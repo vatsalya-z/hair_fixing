@@ -205,9 +205,6 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       )}
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1: FULL-WIDTH BLOG HERO SECTION
-      ═══════════════════════════════════════════════════════════ */}
       <section className="relative w-full min-h-[360px] sm:min-h-[540px] md:min-h-[620px] lg:min-h-[660px] flex items-center justify-center overflow-hidden bg-[#075078]">
         {/* Full-width background image covering 100vw */}
         <div className="absolute inset-0 z-0">
