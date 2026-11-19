@@ -486,7 +486,7 @@ export default function ContactClient() {
                         className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                       >
                         <FaWhatsapp className="w-5 h-5 text-white" />
-                        <span>Open WhatsApp Chat Directly</span>
+                        <span>Open WhatsApp Chat </span>
                       </a>
                       <button
                         onClick={() => setSubmitted(false)}
@@ -655,7 +655,7 @@ export default function ContactClient() {
                           <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-white" aria-hidden="true" />
                         </span>
                         <span className="text-sm sm:text-base font-bold leading-tight text-center">
-                          Confirm Consultation &amp; Chat on WhatsApp
+                          Confirm Consultation 
                         </span>
                       </button>
                     </HoverLift3D>

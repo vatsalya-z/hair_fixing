@@ -482,16 +482,6 @@ export default function GalleryClient() {
                   <FaWhatsapp className="w-4 h-4 text-white" />
                   <span>Consultation</span>
                 </a>
-
-                <a
-                  href="https://youtu.be/wTvV8Rhs5Gc"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-xs font-bold text-[#075078] hover:text-[#29B6EB] border border-[#CBD5E1] hover:border-[#29B6EB] bg-white rounded-lg px-4 py-2.5 transition-colors"
-                >
-                  <span>Watch on YouTube</span>
-                  <span className="text-[11px]">↗</span>
-                </a>
               </div>
             </div>
 
@@ -549,15 +539,6 @@ export default function GalleryClient() {
                   <span>Consultation</span>
                 </a>
 
-                <a
-                  href="https://youtu.be/HPTfePcIl9I"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-xs font-bold text-[#075078] hover:text-[#29B6EB] border border-[#CBD5E1] hover:border-[#29B6EB] bg-white rounded-lg px-4 py-2.5 transition-colors"
-                >
-                  <span>Watch on YouTube</span>
-                  <span className="text-[11px]">↗</span>
-                </a>
               </div>
             </div>
           </div>
