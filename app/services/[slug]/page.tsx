@@ -221,7 +221,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             alt={heroImageAlt}
             fill
             priority
-            className="object-cover object-center"
+            className="object-fit object-center"
             sizes="100vw"
           />
         </div>
