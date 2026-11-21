@@ -404,7 +404,7 @@ export function HoverLift3D({
         scale,
         transition: { duration: 0.25, ease: PREMIUM_EASE },
       }}
-      whileTap={{ scale: 0.98 }}
+      whileTap={{ scale: 0.97 }}
       className={className}
     >
       {children}

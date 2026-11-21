@@ -243,17 +243,17 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 flex flex-wrap gap-4 items-center">
+                  <div className="pt-6 mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
                     <Link
                       href="/about"
-                      className="btn-primary inline-flex items-center gap-2"
+                      className="btn-primary w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-sm font-semibold text-center touch-manipulation"
                     >
                       <span>Read More</span>
                       <span>→</span>
                     </Link>
                     <Link
                       href="/contact"
-                      className="btn-secondary-light inline-flex items-center gap-2"
+                      className="btn-secondary-light w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-sm font-semibold text-center touch-manipulation"
                     >
                       <span>Visit Us Now</span>
                     </Link>
@@ -288,17 +288,17 @@ export default function HomePage() {
                   Our expert hair solving services offer natural, undetectable effects that repair self assurance and style. With advanced strategies and top rate substances, we offer customized answers that blend seamlessly along with your present hair. Whether you are coping with thinning hair or looking for a complete transformation, our group guarantees consolation, durability, and a glance that’s definitely you. Experience reliable, splendid hair solving at our Trivandrum and Bangalore locations, and enjoy a rejuvenated look with an answer tailor-made for your needs.
                 </p>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                   <Link
                     href="/services"
-                    className="btn-primary inline-flex items-center gap-2 text-xs sm:text-sm"
+                    className="btn-primary w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-xs sm:text-sm font-semibold text-center touch-manipulation"
                   >
                     <span>Explore Our Services</span>
                     <span>→</span>
                   </Link>
                   <Link
                     href="/contact"
-                    className="btn-secondary-light inline-flex items-center gap-2 text-xs sm:text-sm"
+                    className="btn-secondary-light w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-xs sm:text-sm font-semibold text-center touch-manipulation"
                   >
                     <span>Book Consultation</span>
                   </Link>
@@ -358,7 +358,7 @@ export default function HomePage() {
                   <div>
                     <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md mb-6 border border-[#E2E8F0] bg-white">
                       <Image
-                        src="https://ozzonehair.com/wp-content/uploads/2024/06/thumb_1-150x150.png"
+                        src="/images/gallery/thumb_2.webp"
                         alt="Our Services - Non-invasive hair healing options"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-300"
@@ -392,7 +392,7 @@ export default function HomePage() {
                   <div>
                     <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md mb-6 border border-[#E2E8F0] bg-white">
                       <Image
-                        src="https://ozzonehair.com/wp-content/uploads/2022/09/thumb_2-150x150.png"
+                        src="/images/hero-section/home-page-hero-section.webp"
                         alt="Our Solutions - Tailored hair structures and fusion"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-300"
@@ -426,10 +426,10 @@ export default function HomePage() {
                   <div>
                     <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md mb-6 border border-[#E2E8F0] bg-white">
                       <Image
-                        src="https://ozzonehair.com/wp-content/uploads/2022/09/thumb_3-150x150.png"
+                        src="/images/products/c22-solvent-hd.webp"
                         alt="Our Products - Adhesives, solvents, and hair care devices"
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="object-fit group-hover:scale-110 transition-transform duration-300"
                         sizes="80px"
                       />
                     </div>
@@ -485,10 +485,10 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full sm:w-auto">
               <Link
                 href="https://ozzonehair.com/contact/"
-                className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-xs sm:text-sm px-7 py-3.5 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 w-full sm:w-auto text-center"
+                className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-xs sm:text-sm px-7 min-h-[48px] rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center text-center touch-manipulation"
               >
                 Please Contact Now
               </Link>
@@ -496,7 +496,7 @@ export default function HomePage() {
                 href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20inquire%20about%20hair%20fixing.`}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto text-center group"
+                className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm px-6 min-h-[48px] rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto flex-1 sm:flex-initial text-center touch-manipulation group"
               >
                 <FaWhatsapp className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
                 <span>WhatsApp Us</span>
@@ -701,23 +701,23 @@ export default function HomePage() {
               Schedule a free, 100% confidential scalp evaluation with our experienced specialists in Trivandrum or Bangalore. Zero pressure, clear expert guidance, and instant results.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-              <HoverLift3D>
+            <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3.5 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <Link
                   href="https://ozzonehair.com/contact/"
-                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
+                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto text-center touch-manipulation"
                 >
                   <span>Please Contact Now</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
               </HoverLift3D>
 
-              <HoverLift3D>
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <a
                   href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20book%20a%20free%20consultation.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-8 py-4 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto text-center group"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-8 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto text-center touch-manipulation group"
                 >
                   <FaWhatsapp className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" />
                   <span>WhatsApp Consultation</span>

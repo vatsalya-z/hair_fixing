@@ -66,16 +66,16 @@ export default function HeroBanner({
             {/* Optional CTAs */}
             {showCta && (
               <HeroTextItem delay={0.35} yOffset={16}>
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                   <Link
                     href="/contact/"
-                    className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-6 py-3 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                    className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-6 min-h-[48px] rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center text-center touch-manipulation"
                   >
                     Book Free Hair Analysis
                   </Link>
                   <a
                     href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
-                    className="bg-transparent hover:bg-white/10 text-white font-semibold text-sm sm:text-base px-6 py-3 rounded-lg border border-white hover:border-[#29B6EB] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                    className="bg-transparent hover:bg-white/10 text-white font-semibold text-sm sm:text-base px-6 min-h-[48px] rounded-lg border border-white hover:border-[#29B6EB] hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center text-center touch-manipulation"
                   >
                     Call {SITE_INFO.phone}
                   </a>

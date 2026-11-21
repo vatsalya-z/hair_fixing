@@ -415,12 +415,12 @@ export default function ProductsClient() {
                 </div>
 
                 {/* Direct Action Buttons */}
-                <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#E2E8F0] flex flex-col sm:flex-row gap-2.5 sm:gap-3">
+                <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#E2E8F0] flex flex-col sm:flex-row gap-2.5 sm:gap-3 w-full">
                   <a
                     href="https://maps.google.com/?q=Statue+Palayam+Thiruvananthapuram"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 bg-[#005675] hover:bg-[#174BA5] text-white text-xs sm:text-sm font-bold py-2.5 sm:py-3 px-4 rounded-lg text-center shadow-xs transition-colors"
+                    className="flex-1 w-full sm:w-auto min-h-[48px] bg-[#005675] hover:bg-[#174BA5] text-white text-xs sm:text-sm font-bold px-4 rounded-lg flex items-center justify-center text-center shadow-xs transition-colors touch-manipulation active:scale-[0.97]"
                   >
                     Open in Google Maps
                   </a>
@@ -428,7 +428,7 @@ export default function ProductsClient() {
                     href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20am%20coming%20for%20product%20pickup.`}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold py-2.5 sm:py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-1.5"
+                    className="flex-1 w-full sm:w-auto min-h-[48px] bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold px-4 rounded-lg transition-colors flex items-center justify-center gap-1.5 text-center touch-manipulation active:scale-[0.97]"
                   >
                     <FaWhatsapp className="w-4 h-4 text-white" />
                     <span>WhatsApp</span>

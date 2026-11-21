@@ -207,22 +207,22 @@ export default function HairFixingTrivandrumPage() {
           </HeroTextItem>
 
           <HeroTextItem delay={0.35}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <HoverLift3D>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <Link
                   href="/contact/"
-                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto"
+                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-lg hover:shadow-xl active:scale-[0.97] transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center touch-manipulation"
                 >
                   <span>Book Free Scalp Consultation</span>
                   <span>→</span>
                 </Link>
               </HoverLift3D>
-              <HoverLift3D>
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <a
                   href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20know%20more%20about%20hair%20fixing.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-md active:scale-[0.97] transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center touch-manipulation"
                 >
                   <FaWhatsapp className="w-5 h-5 text-white" />
                   <span>WhatsApp Trivandrum Studio</span>
@@ -445,20 +445,23 @@ export default function HairFixingTrivandrumPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
-                  <HoverLift3D>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+                  <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                     <a
                       href="https://maps.google.com/maps?q=Palayam+Thiruvananthapuram"
                       target="_blank"
                       rel="noreferrer"
-                      className="btn-primary text-xs sm:text-sm inline-flex items-center gap-1"
+                      className="btn-primary w-full sm:w-auto flex-1 sm:flex-initial text-xs sm:text-sm min-h-[44px] px-4 py-2.5 inline-flex items-center justify-center gap-1 text-center touch-manipulation"
                     >
                       <span>Open in Google Maps</span>
                       <span className="text-[11px]">↗</span>
                     </a>
                   </HoverLift3D>
-                  <HoverLift3D>
-                    <Link href="/contact/" className="btn-secondary-light text-xs sm:text-sm inline-block">
+                  <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
+                    <Link
+                      href="/contact/"
+                      className="btn-secondary-light w-full sm:w-auto flex-1 sm:flex-initial text-xs sm:text-sm min-h-[44px] px-4 py-2.5 inline-flex items-center justify-center text-center touch-manipulation"
+                    >
                       <span>Contact Page</span>
                     </Link>
                   </HoverLift3D>
@@ -534,21 +537,21 @@ export default function HairFixingTrivandrumPage() {
             <p className="text-white/90 text-sm sm:text-base max-w-2xl mx-auto mb-8">
               Book your free, completely private scalp consultation. Our experienced stylists will help you choose the ideal non-surgical hair patch with zero obligation.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <HoverLift3D>
+            <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3.5 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <Link
                   href="/contact/"
-                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all inline-block"
+                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-lg hover:shadow-xl active:scale-[0.97] transition-all flex items-center justify-center text-center w-full sm:w-auto touch-manipulation"
                 >
-                  Book Free Consultation
+                  <span>Book Free Consultation</span>
                 </Link>
               </HoverLift3D>
-              <HoverLift3D>
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <a
                   href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20consultation.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-md active:scale-[0.97] transition-all flex items-center justify-center gap-2 text-center w-full sm:w-auto touch-manipulation"
                 >
                   <FaWhatsapp className="w-5 h-5 text-white" />
                   <span>WhatsApp Trivandrum Studio</span>

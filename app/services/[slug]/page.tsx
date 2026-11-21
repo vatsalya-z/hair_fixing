@@ -229,8 +229,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-[#075078]/80 sm:bg-[#075078]/70 backdrop-blur-[0.5px]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#075078] via-transparent to-[#075078]/85" />
           <div className="hero-subtle-glow absolute inset-0 opacity-30 pointer-events-none" />
         </div>
 
@@ -280,12 +278,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
           {/* Centered CTA Buttons */}
           <HeroTextItem delay={0.35} yOffset={15}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-xs sm:max-w-none">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none">
               <a
                 href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(title)}%20and%20would%20like%20to%20book%20a%20free%20scalp%20consultation.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp w-full sm:w-auto px-5 sm:px-7 py-2.5 sm:py-3.5 text-xs sm:text-base font-semibold shadow-md hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                className="btn-whatsapp w-full sm:w-auto flex-1 sm:flex-initial px-6 min-h-[48px] text-sm sm:text-base font-semibold shadow-md hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 text-center touch-manipulation"
               >
                 <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <span>Book Free Consultation</span>
@@ -293,7 +291,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
               <Link
                 href="/contact/"
-                className="btn-secondary-dark w-full sm:w-auto px-5 sm:px-7 py-2.5 sm:py-3.5 text-xs sm:text-base font-semibold text-center hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                className="btn-secondary-dark w-full sm:w-auto flex-1 sm:flex-initial px-6 min-h-[48px] text-sm sm:text-base font-semibold flex items-center justify-center text-center hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 touch-manipulation"
               >
                 <span>Schedule Studio Visit →</span>
               </Link>
@@ -647,12 +645,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </p>
 
             {/* Centered CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-xl sm:max-w-none mx-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
               <a
                 href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20book%20a%20free%20scalp%20consultation%20for%20${encodeURIComponent(title)}.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp w-full sm:w-auto px-6 py-3.5 text-base font-semibold shadow-lg hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                className="btn-whatsapp w-full sm:w-auto flex-1 sm:flex-initial px-6 min-h-[48px] text-sm sm:text-base font-semibold shadow-lg hover:shadow-2xl hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 flex items-center justify-center gap-2 text-center touch-manipulation"
               >
                 <FaWhatsapp className="w-5 h-5 shrink-0" />
                 <span>Book Free Consultation</span>
@@ -660,14 +658,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
               <Link
                 href="/contact/"
-                className="btn-secondary-dark w-full sm:w-auto px-6 py-3.5 text-base font-semibold text-center hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                className="btn-secondary-dark w-full sm:w-auto flex-1 sm:flex-initial px-6 min-h-[48px] text-sm sm:text-base font-semibold flex items-center justify-center text-center hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 touch-manipulation"
               >
                 <span>Visit Contact Page →</span>
               </Link>
 
               <a
                 href={`tel:${SITE_INFO.phone}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-semibold transition-all duration-300 w-full sm:w-auto hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 px-6 min-h-[48px] rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 text-sm sm:text-base font-semibold transition-all duration-300 w-full sm:w-auto flex-1 sm:flex-initial text-center hover:-translate-y-0.5 active:scale-[0.97] touch-manipulation"
               >
                 <span>Call: {SITE_INFO.phone}</span>
               </a>

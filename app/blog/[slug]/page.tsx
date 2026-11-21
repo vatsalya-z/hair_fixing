@@ -495,7 +495,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20read%20your%20blog%20article%20on%20${encodeURIComponent(cleanTitle)}%20and%20would%20like%20to%20book%20a%20consultation.`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-whatsapp w-full justify-center text-sm font-semibold py-3 shadow-sm"
+                      className="btn-whatsapp w-full justify-center text-sm font-semibold min-h-[48px] shadow-sm touch-manipulation active:scale-[0.97]"
                     >
                       <FaWhatsapp className="w-5 h-5" />
                       <span>WhatsApp Consultation</span>
@@ -503,12 +503,10 @@ export default async function BlogPostPage({ params }: PageProps) {
 
                     <a
                       href={`tel:${SITE_INFO.phone}`}
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-white hover:bg-slate-50 text-[#075078] border border-[#E2E8F0] font-semibold text-xs sm:text-sm transition-colors shadow-2xs"
+                      className="w-full inline-flex items-center justify-center gap-2 min-h-[48px] px-4 rounded-lg bg-white hover:bg-slate-50 text-[#075078] border border-[#E2E8F0] font-semibold text-xs sm:text-sm transition-colors shadow-2xs touch-manipulation active:scale-[0.97]"
                     >
                       <span>Call Trivandrum: {SITE_INFO.phone}</span>
                     </a>
-
-                    
                   </div>
 
                   <div className="pt-4 border-t border-[#E2E8F0] text-[11px] sm:text-xs text-[#64748B] space-y-1.5">
@@ -702,13 +700,13 @@ export default async function BlogPostPage({ params }: PageProps) {
             </p>
 
             {/* Centered CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-xl sm:max-w-none mx-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
               {/* WhatsApp Booking */}
               <a
                 href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20read%20your%20blog%20article%20on%20${encodeURIComponent(cleanTitle)}%20and%20would%20like%20to%20book%20a%20free%20scalp%20consultation.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp w-full sm:w-auto px-6 py-3.5 text-base font-semibold shadow-lg hover:shadow-2xl sm:whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                className="btn-whatsapp w-full sm:w-auto flex-1 sm:flex-initial px-6 min-h-[48px] text-sm sm:text-base font-semibold shadow-lg hover:shadow-2xl hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 flex items-center justify-center gap-2 text-center touch-manipulation"
               >
                 <FaWhatsapp className="w-5 h-5 shrink-0" />
                 <span>Book Free Consultation</span>
@@ -717,7 +715,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               {/* View Services */}
               <Link
                 href="/services/"
-                className="btn-secondary-dark w-full sm:w-auto px-6 py-3.5 text-base font-semibold sm:whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                className="btn-secondary-dark w-full sm:w-auto flex-1 sm:flex-initial px-6 min-h-[48px] text-sm sm:text-base font-semibold flex items-center justify-center text-center hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-300 touch-manipulation"
               >
                 <span>Explore All Services →</span>
               </Link>
@@ -725,7 +723,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               {/* Direct Call */}
               <a
                 href={`tel:${SITE_INFO.phone}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-semibold transition-all duration-300 w-full sm:w-auto sm:whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 px-6 min-h-[48px] rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 text-sm sm:text-base font-semibold transition-all duration-300 w-full sm:w-auto flex-1 sm:flex-initial text-center hover:-translate-y-0.5 active:scale-[0.97] touch-manipulation"
               >
                 <span>Call: {SITE_INFO.phone}</span>
               </a>

@@ -11,8 +11,8 @@ export default function Footer() {
         {/* Main 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/15">
           {/* Col 1: Brand & About with official ozzone Hair Logo */}
-          <div className="space-y-4">
-            <div className="flex flex-col items-start gap-2">
+          <div className="space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center md:items-start gap-2">
               <div className="p-2 rounded-lg bg-black/30 border border-white/20 inline-block">
                 <Image
                   src="/images/ozzone-hair-logo-white.png"
@@ -27,11 +27,11 @@ export default function Footer() {
               </p>
             </div>
 
-            <p className="text-sm text-white/85 leading-relaxed">
+            <p className="text-sm text-white/85 leading-relaxed max-w-md md:max-w-none">
               Trivandrum&apos;s leading center for advanced non-surgical hair replacement, hair patching, bonding, and micro-track weaving. Restoring natural looks and youthful confidence with 100% virgin human hair.
             </p>
 
-            <div className="pt-2 flex items-center gap-3">
+            <div className="pt-2 flex items-center justify-center md:justify-start gap-3">
               <a 
                 href={`https://wa.me/${SITE_INFO.whatsapp}`} 
                 target="_blank" 
@@ -96,41 +96,41 @@ export default function Footer() {
             <h4 className="text-base font-bold text-white uppercase tracking-wider mb-4 pb-2 border-b border-[#29B6EB]/40 inline-block">
               Quick Links
             </h4>
-            <ul className="space-y-2.5 text-sm text-white/85">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-xs sm:text-sm text-white/85">
               <li>
-                <Link href="/hair-fixing-trivandrum/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
-                  <span className="text-[#29B6EB] text-xs">›</span>
-                  <span>Hair Fixing in Trivandrum</span>
+                <Link href="/hair-fixing-trivandrum/" className="hover:text-[#29B6EB] flex items-start gap-1.5 transition-colors">
+                  <span className="text-[#29B6EB] text-xs mt-0.5 leading-none">›</span>
+                  <span className="leading-snug">Hair Fixing in Trivandrum</span>
                 </Link>
               </li>
               <li>
-                <Link href="/hair-fixing-bangalore/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
-                  <span className="text-[#29B6EB] text-xs">›</span>
-                  <span>Hair Fixing in Bangalore</span>
+                <Link href="/hair-fixing-bangalore/" className="hover:text-[#29B6EB] flex items-start gap-1.5 transition-colors">
+                  <span className="text-[#29B6EB] text-xs mt-0.5 leading-none">›</span>
+                  <span className="leading-snug">Hair Fixing in Bangalore</span>
                 </Link>
               </li>
               <li>
-                <Link href="/about/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
-                  <span className="text-[#29B6EB] text-xs">›</span>
-                  <span>About ozzone Hair</span>
+                <Link href="/about/" className="hover:text-[#29B6EB] flex items-start gap-1.5 transition-colors">
+                  <span className="text-[#29B6EB] text-xs mt-0.5 leading-none">›</span>
+                  <span className="leading-snug">About ozzone Hair</span>
                 </Link>
               </li>
               <li>
-                <Link href="/gallery/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
-                  <span className="text-[#29B6EB] text-xs">›</span>
-                  <span>Before &amp; After Results</span>
+                <Link href="/gallery/" className="hover:text-[#29B6EB] flex items-start gap-1.5 transition-colors">
+                  <span className="text-[#29B6EB] text-xs mt-0.5 leading-none">›</span>
+                  <span className="leading-snug">Before &amp; After Results</span>
                 </Link>
               </li>
               <li>
-                <Link href="/blog/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
-                  <span className="text-[#29B6EB] text-xs">›</span>
-                  <span>Hair Care Guides &amp; Blog</span>
+                <Link href="/blog/" className="hover:text-[#29B6EB] flex items-start gap-1.5 transition-colors">
+                  <span className="text-[#29B6EB] text-xs mt-0.5 leading-none">›</span>
+                  <span className="leading-snug">Hair Care Guides &amp; Blog</span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact/" className="hover:text-[#29B6EB] flex items-center gap-2 transition-colors">
-                  <span className="text-[#29B6EB] text-xs">›</span>
-                  <span>Contact &amp; Free Scalp Analysis</span>
+                <Link href="/contact/" className="hover:text-[#29B6EB] flex items-start gap-1.5 transition-colors">
+                  <span className="text-[#29B6EB] text-xs mt-0.5 leading-none">›</span>
+                  <span className="leading-snug">Contact &amp; Free Scalp Analysis</span>
                 </Link>
               </li>
             </ul>

@@ -546,23 +546,23 @@ export default function GalleryClient() {
             We hold client privacy in the highest regard. For clients who have consented to video releases, we share full high-definition hairline close-ups, comb-through demos, and water tests during your confidential in-studio consultation.
           </p>
 
-          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
-            <HoverLift3D className="w-full sm:w-auto">
+          <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
+            <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
               <a
                 href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20consultation.`}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-whatsapp w-full sm:w-auto rounded-xl px-6 py-3 text-sm font-bold flex items-center justify-center gap-2"
+                className="btn-whatsapp w-full sm:w-auto flex-1 sm:flex-initial rounded-xl px-6 min-h-[48px] text-sm font-bold flex items-center justify-center gap-2 text-center touch-manipulation active:scale-[0.97]"
               >
                 <FaWhatsapp className="w-5 h-5 text-white" />
                 <span>Consultation</span>
               </a>
             </HoverLift3D>
 
-            <HoverLift3D className="w-full sm:w-auto">
+            <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
               <Link
                 href="/contact/"
-                className="w-full sm:w-auto bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-bold text-sm px-6 py-3 rounded-xl transition-colors flex items-center justify-center gap-2"
+                className="w-full sm:w-auto flex-1 sm:flex-initial bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-bold text-sm px-6 min-h-[48px] rounded-xl transition-colors flex items-center justify-center gap-2 text-center touch-manipulation active:scale-[0.97]"
               >
                 <span>Book In-Person Viewing</span>
                 <span>→</span>

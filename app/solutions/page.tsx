@@ -513,20 +513,20 @@ export default function SolutionsPage() {
                 </div>
               </div>
 
-              <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#E2E8F0] flex flex-wrap gap-4 items-center justify-center sm:justify-start">
-                <HoverLift3D>
+              <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#E2E8F0] flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto justify-center sm:justify-start">
+                <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                   <Link
                     href="https://ozzonehair.com/contact/"
-                    className="btn-primary inline-flex items-center justify-center gap-2"
+                    className="btn-primary w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-sm font-semibold text-center touch-manipulation"
                   >
                     <span>Please Contact Today</span>
                     <span>→</span>
                   </Link>
                 </HoverLift3D>
-                <HoverLift3D>
+                <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                   <a
                     href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
-                    className="btn-secondary-light inline-flex items-center justify-center gap-2"
+                    className="btn-secondary-light w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-sm font-semibold text-center touch-manipulation"
                   >
                     <span>Call {SITE_INFO.phone}</span>
                   </a>
@@ -563,21 +563,21 @@ export default function SolutionsPage() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
-              <HoverLift3D>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full sm:w-auto">
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <Link
                   href="https://ozzonehair.com/contact/"
-                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 w-full sm:w-auto text-center inline-block"
+                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm px-8 min-h-[48px] rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-200 w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center text-center touch-manipulation"
                 >
                   Please Contact Today
                 </Link>
               </HoverLift3D>
-              <HoverLift3D>
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <a
                   href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20consult%20about%20hair%20fixing%20solutions.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-7 min-h-[48px] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto flex-1 sm:flex-initial text-center touch-manipulation"
                 >
                   <FaWhatsapp className="w-4 h-4 text-white" />
                   <span>WhatsApp Consultation</span>
@@ -651,20 +651,20 @@ export default function SolutionsPage() {
             <p className="text-xs sm:text-sm text-[#64748B] mb-4">
               Have more questions? Reach out to our specialized team today.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <HoverLift3D>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto max-w-md mx-auto">
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <Link
                   href="https://ozzonehair.com/contact/"
-                  className="btn-primary inline-flex items-center gap-2 text-xs sm:text-sm"
+                  className="btn-primary w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-xs sm:text-sm font-semibold text-center touch-manipulation"
                 >
                   <span>Please Contact Today</span>
                   <span>→</span>
                 </Link>
               </HoverLift3D>
-              <HoverLift3D>
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <a
                   href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
-                  className="btn-secondary-light inline-flex items-center gap-2 text-xs sm:text-sm"
+                  className="btn-secondary-light w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-xs sm:text-sm font-semibold text-center touch-manipulation"
                 >
                   <span>Call {SITE_INFO.phone}</span>
                 </a>

@@ -279,20 +279,20 @@ export default function AboutPage() {
                     </p>
                   </div>
 
-                  <div className="pt-4 flex flex-wrap gap-4 items-center justify-center lg:justify-start">
-                    <HoverLift3D>
+                  <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto justify-center lg:justify-start">
+                    <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                       <Link
                         href="/contact/"
-                        className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto text-center"
+                        className="btn-primary w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-sm font-semibold text-center touch-manipulation"
                       >
                         <span>Book Scalp Consultation</span>
                         <span>→</span>
                       </Link>
                     </HoverLift3D>
-                    <HoverLift3D>
+                    <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                       <Link
                         href="/services/"
-                        className="btn-secondary-light inline-flex items-center justify-center gap-2 w-full sm:w-auto text-center"
+                        className="btn-secondary-light w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-sm font-semibold text-center touch-manipulation"
                       >
                         <span>View Our Signature Services</span>
                       </Link>
@@ -457,21 +457,21 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
-              <HoverLift3D>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full sm:w-auto">
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <Link
                   href="/contact/"
-                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 w-full sm:w-auto text-center inline-block"
+                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm px-8 min-h-[48px] rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-200 w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center text-center touch-manipulation"
                 >
                   Please Contact Us
                 </Link>
               </HoverLift3D>
-              <HoverLift3D>
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <a
                   href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20connect%20with%20customer%20care.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-7 min-h-[48px] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.97] transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto flex-1 sm:flex-initial text-center touch-manipulation"
                 >
                   <FaWhatsapp className="w-4 h-4 text-white" />
                   <span>WhatsApp Us</span>
@@ -545,17 +545,17 @@ export default function AboutPage() {
             <p className="text-xs sm:text-sm text-[#64748B] mb-4">
               Have a specific question not answered here? Our hair technicians are here to help.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto max-w-md mx-auto">
               <Link
                 href="/contact/"
-                className="btn-primary inline-flex items-center gap-2 text-xs sm:text-sm"
+                className="btn-primary w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-xs sm:text-sm font-semibold text-center touch-manipulation"
               >
                 <span>Ask Our Specialists</span>
                 <span>→</span>
               </Link>
               <a
                 href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
-                className="btn-secondary-light inline-flex items-center gap-2 text-xs sm:text-sm"
+                className="btn-secondary-light w-full sm:w-auto flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 text-xs sm:text-sm font-semibold text-center touch-manipulation"
               >
                 <span>Call {SITE_INFO.phone}</span>
               </a>
@@ -587,23 +587,23 @@ export default function AboutPage() {
               Schedule a free, 100% confidential scalp evaluation with our experienced specialists in Trivandrum or Bangalore. Zero pressure, clear transparent pricing, and instant results.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-              <HoverLift3D>
+            <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3.5 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <Link
                   href="/contact/"
-                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
+                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto text-center touch-manipulation"
                 >
                   <span>Please Contact Us</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
               </HoverLift3D>
 
-              <HoverLift3D>
+              <HoverLift3D className="w-full sm:w-auto flex-1 sm:flex-initial flex">
                 <a
                   href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20book%20a%20free%20consultation.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-8 py-4 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-8 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-md hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center touch-manipulation group"
                 >
                   <FaWhatsapp className="w-5 h-5 text-white" />
                   <span>WhatsApp Consultation</span>

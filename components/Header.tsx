@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { FaWhatsapp } from 'react-icons/fa'
+import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa'
 import { SITE_INFO } from '@/data/siteData'
 
 const NAV_LINKS = [
@@ -97,11 +97,10 @@ export default function Header() {
   return (
     <>
       <header
-        className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white shadow-[0_2px_20px_rgba(7,80,120,0.10)]'
-            : 'bg-white'
-        }`}
+        className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-white shadow-[0_2px_20px_rgba(7,80,120,0.10)]'
+          : 'bg-white'
+          }`}
       >
         <nav
           aria-label="Primary navigation"
@@ -128,11 +127,10 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`relative px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold transition-all duration-200 rounded-md whitespace-nowrap ${
-                    isActive
-                      ? 'text-[#075078]'
-                      : 'text-[#252B38] hover:text-[#075078] nav-link-animated'
-                  }`}
+                  className={`relative px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold transition-all duration-200 rounded-md whitespace-nowrap ${isActive
+                    ? 'text-[#075078]'
+                    : 'text-[#252B38] hover:text-[#075078] nav-link-animated'
+                    }`}
                 >
                   {link.name}
                   {isActive && (
@@ -185,9 +183,8 @@ export default function Header() {
       {/* Mobile Drawer & Backdrop (strictly mobile/tablet: lg:hidden) */}
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-xs z-50 lg:hidden transition-opacity duration-300 ${
-          mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 bg-black/60 backdrop-blur-xs z-50 lg:hidden transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
         onClick={() => setMobileMenuOpen(false)}
         aria-hidden="true"
       />
@@ -198,9 +195,8 @@ export default function Header() {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation drawer"
-        className={`fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-white shadow-2xl z-50 lg:hidden flex flex-col justify-between transition-transform duration-300 ease-out ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
-        }`}
+        className={`fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-white shadow-2xl z-50 lg:hidden flex flex-col justify-between transition-transform duration-300 ease-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
+          }`}
       >
         {/* Drawer Header */}
         <div className="p-4 border-b border-[#E2E8F0] flex items-center justify-between bg-white sticky top-0 z-10">
@@ -246,11 +242,10 @@ export default function Header() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`flex items-center justify-between px-3.5 py-3 text-sm font-semibold rounded-xl transition-all duration-200 min-h-[44px] touch-manipulation active:scale-[0.98] ${
-                    isActive
-                      ? 'bg-[#075078] text-white shadow-sm'
-                      : 'text-[#252B38] hover:bg-[#F3F7FB] hover:text-[#075078] hover:translate-x-1'
-                  }`}
+                  className={`flex items-center justify-between px-3.5 py-3 text-sm font-semibold rounded-xl transition-all duration-200 min-h-[44px] touch-manipulation active:scale-[0.98] ${isActive
+                    ? 'bg-[#075078] text-white shadow-sm'
+                    : 'text-[#252B38] hover:bg-[#F3F7FB] hover:text-[#075078] hover:translate-x-1'
+                    }`}
                 >
                   <span>{link.name}</span>
                   <span className={`text-xs ${isActive ? 'text-white' : 'text-[#94A3B8]'}`}>→</span>
@@ -258,9 +253,30 @@ export default function Header() {
               )
             })}
           </nav>
+          <div className="grid grid-cols-1 gap-3 w-full sm:mt-4">
+            <a
+              href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20free%20hair%20analysis%20consultation.`}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.97] text-white font-bold text-xs sm:text-sm min-h-[48px] px-3 rounded-xl shadow-xs hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2 text-center touch-manipulation"
+              aria-label="Chat on WhatsApp"
+            >
+              <FaWhatsapp className="w-6 h-6 text-white shrink-0" aria-hidden="true" />
+              <span >WhatsApp</span>
+            </a>
+
+            <a
+              href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
+              className="bg-[#005675] hover:bg-[#174BA5] active:scale-[0.97] text-white font-bold text-xs sm:text-sm min-h-[48px] px-3 rounded-xl shadow-xs hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2 text-center touch-manipulation"
+              aria-label={`Call Studio: ${SITE_INFO.phone}`}
+            >
+              <FaPhoneAlt className="w-5 h-5 text-white shrink-0" aria-hidden="true" />
+              <span>Call Now</span>
+            </a>
+          </div>
 
           {/* Quick Studio Info Card */}
-          
+         
         </div>
 
         {/* Drawer Footer CTA */}

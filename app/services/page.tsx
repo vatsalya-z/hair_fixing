@@ -611,10 +611,10 @@ export default function ServicesPage() {
             To arrange a consultation and begin your journey toward a self-confident full head of hair get in touch with us..
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3.5 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
             <Link
               href="/contact"
-              className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto text-center"
+              className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.97] transition-all duration-200 flex items-center justify-center gap-2 group w-full sm:w-auto flex-1 sm:flex-initial text-center touch-manipulation"
             >
               <span>Please Contact Today</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -623,7 +623,7 @@ export default function ServicesPage() {
               href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20arrange%20a%20consultation.`}
               target="_blank"
               rel="noreferrer"
-              className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto text-center"
+              className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 min-h-[48px] sm:min-h-[52px] rounded-xl shadow-md hover:scale-105 active:scale-[0.97] transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto flex-1 sm:flex-initial text-center touch-manipulation"
             >
               <FaWhatsapp className="w-5 h-5 text-white" />
               <span>WhatsApp Consultation</span>
