@@ -216,8 +216,66 @@ h1, h2, h3, h4, h5, h6 {
   perspective: 1000px;
 }
 
+.perspective-1200 {
+  perspective: 1200px;
+}
+
 .preserve-3d {
   transform-style: preserve-3d;
+}
+
+/* GPU Hardware Acceleration Layer */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Navigation Animated Underline Reveal */
+.nav-link-animated {
+  position: relative;
+}
+
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #29B6EB;
+  border-radius: 9999px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.nav-link-animated:hover::after {
+  width: 75%;
+  left: 12.5%;
+}
+
+/* Button Subtle Arrow Micro-Movement */
+.btn-primary:hover span:last-child,
+.btn-primary:hover svg:last-child {
+  transform: translateX(3px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary-light:hover span:last-child,
+.btn-secondary-dark:hover span:last-child {
+  transform: translateX(3px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium Image Zoom with Perspective */
+.img-zoom-hover {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  will-change: transform;
+}
+
+.group:hover .img-zoom-hover,
+.img-zoom-hover:hover {
+  transform: scale(1.06);
 }
 
 /* Section Backgrounds */

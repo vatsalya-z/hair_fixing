@@ -37,7 +37,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noreferrer" 
                 aria-label="WhatsApp"
-                className="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20bd5a] flex items-center justify-center text-white transition-all duration-200 shadow-sm"
+                className="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20bd5a] flex items-center justify-center text-white hover:-translate-y-1 hover:scale-110 hover:shadow-lg transition-all duration-300"
               >
                 <FaWhatsapp className="w-4 h-4 text-white" />
               </a>
@@ -46,7 +46,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#29B6EB] hover:text-[#005675] flex items-center justify-center text-white transition-all duration-200"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#29B6EB] hover:text-[#005675] flex items-center justify-center text-white hover:-translate-y-1 hover:scale-110 hover:shadow-lg transition-all duration-300"
               >
                 <FaInstagram className="w-4 h-4" />
               </a>
@@ -55,7 +55,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#29B6EB] hover:text-[#005675] flex items-center justify-center text-white transition-all duration-200"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#29B6EB] hover:text-[#005675] flex items-center justify-center text-white hover:-translate-y-1 hover:scale-110 hover:shadow-lg transition-all duration-300"
               >
                 <FaFacebookF className="w-3.5 h-3.5" />
               </a>
@@ -64,7 +64,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#29B6EB] hover:text-[#005675] flex items-center justify-center text-white transition-all duration-200"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#29B6EB] hover:text-[#005675] flex items-center justify-center text-white hover:-translate-y-1 hover:scale-110 hover:shadow-lg transition-all duration-300"
               >
                 <FaYoutube className="w-4 h-4" />
               </a>

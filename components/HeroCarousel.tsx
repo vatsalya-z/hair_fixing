@@ -132,7 +132,7 @@ export default function HeroCarousel({
               fill
               priority={index === 0}
               loading={index === 0 ? 'eager' : 'lazy'}
-              className="object-cover object-center"
+              className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
               sizes="100vw"
             />
           </div>

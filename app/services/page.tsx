@@ -4,6 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO, SERVICES_DATA } from '@/data/siteData'
+import {
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+  ImageHover3D,
+  FadeInUp,
+} from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
   title: 'Hair Fixing Services in Trivandrum & Kerala | ozzone Hair Studio',
@@ -179,30 +187,32 @@ export default function ServicesPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-white py-14 sm:py-18 lg:py-22 border-b border-[#E2E8F0]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Professional Solutions
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
-              Trivandrum and Bangalore Professional Hair Fixing Services
-            </h2>
-            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
-          </div>
+          <SectionReveal3D yOffset={30}>
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Professional Solutions
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+                Trivandrum and Bangalore Professional Hair Fixing Services
+              </h2>
+              <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+            </div>
 
-          <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 lg:p-10 shadow-sm space-y-4 text-sm sm:text-base text-[#475569] leading-relaxed">
-            <p>
-              The best hair fixing centers accredited by leaders in the business are Trivandrum and Bangalore that offer the following superb benefits to people through natural-looking and effective solutions. Browse on to know more about our services, what goes into them, and why we are unique in the industry.
-            </p>
-            <p>
-              Hair fixing is an instant, non-surgical solution for someone who has hair loss or thinning. With such other procedures, one may only start seeing the results after some weeks or months, but hair fixing brings about immediate transformation and to regain a facsimile of youth. The procedure does involve attachment of a natural-looking, quality hair system to your scalp that will then harmonize with your existing hair.
-            </p>
-            <p className="font-medium text-[#075078]">
-              This process is sure not only to fill bald areas but also add volume to hair overall, thus perfect for anyone wanting a quick and effective make-over.
-            </p>
-            <p>
-              For example, Trivandrum and Bangalore provide hair repair which restores one’s style to regain confidence by dealing with pattern baldness, alopecia, or general thinning. Services are catered, focusing on those seeking either a temporary and permanent solution-structures tailored to their lifestyle and preferences in style.
-            </p>
-          </div>
+            <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 lg:p-10 shadow-sm hover:shadow-lg transition-shadow duration-300 space-y-4 text-sm sm:text-base text-[#475569] leading-relaxed">
+              <p>
+                The best hair fixing centers accredited by leaders in the business are Trivandrum and Bangalore that offer the following superb benefits to people through natural-looking and effective solutions. Browse on to know more about our services, what goes into them, and why we are unique in the industry.
+              </p>
+              <p>
+                Hair fixing is an instant, non-surgical solution for someone who has hair loss or thinning. With such other procedures, one may only start seeing the results after some weeks or months, but hair fixing brings about immediate transformation and to regain a facsimile of youth. The procedure does involve attachment of a natural-looking, quality hair system to your scalp that will then harmonize with your existing hair.
+              </p>
+              <p className="font-medium text-[#075078]">
+                This process is sure not only to fill bald areas but also add volume to hair overall, thus perfect for anyone wanting a quick and effective make-over.
+              </p>
+              <p>
+                For example, Trivandrum and Bangalore provide hair repair which restores one’s style to regain confidence by dealing with pattern baldness, alopecia, or general thinning. Services are catered, focusing on those seeking either a temporary and permanent solution-structures tailored to their lifestyle and preferences in style.
+              </p>
+            </div>
+          </SectionReveal3D>
         </div>
       </section>
 
@@ -211,74 +221,86 @@ export default function ServicesPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-white py-14 sm:py-20 lg:py-24 border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Our Core Specializations
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
-              Explore Our Specialized Hair Fixing Services
-            </h2>
-            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
-            <p className="text-sm sm:text-base lg:text-lg text-[#64748B] leading-relaxed">
-              Select an individual service below to explore detailed procedures, customization options, transparent care guidelines, and verified studio locations.
-            </p>
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Our Core Specializations
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+                Explore Our Specialized Hair Fixing Services
+              </h2>
+              <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+              <p className="text-sm sm:text-base lg:text-lg text-[#64748B] leading-relaxed">
+                Select an individual service below to explore detailed procedures, customization options, transparent care guidelines, and verified studio locations.
+              </p>
+            </div>
+          </SectionReveal3D>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {/* Staggered Left-to-Right Card Grid with 3D Tilt */}
+          <StaggerGridLR
+            staggerDelay={0.12}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          >
             {SERVICES_DATA.map((service) => (
-              <div
-                key={service.id}
-                id={service.id}
-                className="scroll-mt-24 bg-white rounded-2xl border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:-translate-y-1.5"
-              >
-                <div>
-                  <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-slate-100">
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} - Professional Hair Fixing Service by ozzone Hair`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-xs text-[#075078] text-xs font-bold px-3 py-1 rounded-md shadow-xs">
-                      {service.duration}
-                    </span>
-                  </div>
+              <CardRevealLR key={service.id} className="h-full">
+                <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                  <div
+                    id={service.id}
+                    className="scroll-mt-24 bg-white rounded-2xl border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group h-full"
+                  >
+                    <div>
+                      {/* Image Frame with ImageHover3D */}
+                      <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-slate-100">
+                        <ImageHover3D scaleZoom={1.06}>
+                          <Image
+                            src={service.image}
+                            alt={`${service.title} - Professional Hair Fixing Service by ozzone Hair`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                        </ImageHover3D>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                        <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-xs text-[#075078] text-xs font-bold px-3 py-1 rounded-md shadow-xs z-10 pointer-events-none">
+                          {service.duration}
+                        </span>
+                      </div>
 
-                  <div className="p-6">
-                    <h3 className="text-lg sm:text-xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors mb-2.5 leading-snug">
-                      <Link href={service.href} className="hover:underline">
-                        {service.title}
-                      </Link>
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
-                      {service.shortDesc}
-                    </p>
+                      <div className="p-6">
+                        <h3 className="text-lg sm:text-xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors mb-2.5 leading-snug">
+                          <Link href={service.href} className="hover:underline">
+                            {service.title}
+                          </Link>
+                        </h3>
+                        <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
+                          {service.shortDesc}
+                        </p>
 
-                    <div className="space-y-2 pt-2 border-t border-[#F1F5F9] mb-4">
-                      {service.benefits.slice(0, 3).map((benefit, bIdx) => (
-                        <div key={bIdx} className="flex items-start gap-2 text-xs text-[#64748B]">
-                          <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
-                          <span>{benefit}</span>
+                        <div className="space-y-2 pt-2 border-t border-[#F1F5F9] mb-4">
+                          {service.benefits.slice(0, 3).map((benefit, bIdx) => (
+                            <div key={bIdx} className="flex items-start gap-2 text-xs text-[#64748B]">
+                              <span className="text-[#29B6EB] font-bold shrink-0">✓</span>
+                              <span>{benefit}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </div>
+                    </div>
+
+                    <div className="p-6 pt-0">
+                      <Link
+                        href={service.href}
+                        className="w-full btn-primary text-xs sm:text-sm flex items-center justify-center gap-2 group-hover:bg-[#174BA5] transition-colors py-3"
+                      >
+                        <span>View Service Details</span>
+                        <span className="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+                      </Link>
                     </div>
                   </div>
-                </div>
-
-                <div className="p-6 pt-0">
-                  <Link
-                    href={service.href}
-                    className="w-full btn-primary text-xs sm:text-sm flex items-center justify-center gap-2 group-hover:bg-[#174BA5] transition-colors py-3"
-                  >
-                    <span>View Service Details</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </Link>
-                </div>
-              </div>
+                </Card3DTilt>
+              </CardRevealLR>
             ))}
-          </div>
+          </StaggerGridLR>
         </div>
       </section>
 
@@ -287,48 +309,52 @@ export default function ServicesPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#F3F7FB] py-14 sm:py-18 lg:py-22 border-b border-[#E2E8F0]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+          <StaggerGridLR staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
             {/* 4. Trivandrum-based Our Hair Fixing Services */}
-            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 lg:p-9 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-              <div>
-                <div className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4">
-                  <span>Trivandrum Center</span>
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 lg:p-9 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+                      <span>Trivandrum Center</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-[#075078] mb-3">
+                      Trivandrum-based Our Hair Fixing Services
+                    </h3>
+                    <div className="w-10 h-0.5 bg-[#29B6EB] rounded-full mb-4" />
+                    <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
+                      In Trivandrum, each client is assured of experiencing years of the staff delivering sets to them for you. Our use of top-class materials ensures that hair systems match the color blend of your natural hair perfectly. We understand every aspect of consultations, from the selected texture and shade for color to the desired density and length in your new hair.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#075078] mb-3">
-                  Trivandrum-based Our Hair Fixing Services
-                </h3>
-                <div className="w-10 h-0.5 bg-[#29B6EB] rounded-full mb-4" />
-                <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
-                  In Trivandrum, each client is assured of experiencing years of the staff delivering sets to them for you. Our use of top-class materials ensures that hair systems match the color blend of your natural hair perfectly. We understand every aspect of consultations, from the selected texture and shade for color to the desired density and length in your new hair.
-                </p>
-              </div>
-
-              
-            </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
             {/* 5. Bangalore Service of Hair Fixing */}
-            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 lg:p-9 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-              <div>
-                <div className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4">
-                  <span>Bangalore Center</span>
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 lg:p-9 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+                      <span>Bangalore Center</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-[#075078] mb-3">
+                      Bangalore Service of Hair Fixing
+                    </h3>
+                    <div className="w-10 h-0.5 bg-[#29B6EB] rounded-full mb-4" />
+                    <div className="space-y-3.5 text-sm sm:text-base text-[#475569] leading-relaxed">
+                      <p>
+                        We bring the same level of expertise, quality, and commitment to our services in hair fixing in Bangalore, catering to the most diverse needs of a metropolitan clientele. The team in Bangalore is quite highly specialized in creating hair systems that cater to everyone’s lifestyle and fashionable trends. We work with precision to get the highest possible output so that every hair system looks very natural, empowering the clients to go about their daily lives rather without worry.
+                      </p>
+                      <p>
+                        Our Bangalore center has been designed with flexible appointment times to allow busy professionals to find time to have their hair fixed. Our customers come from all walks of life and continue to hold ourselves to a very high standard of service by whomever’s needs we attend to. The Bangalore centre is well equipped with the latest tools and quality hair systems, designed to last longer, thus helping them obtain a reliable solution for hair loss.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#075078] mb-3">
-                  Bangalore Service of Hair Fixing
-                </h3>
-                <div className="w-10 h-0.5 bg-[#29B6EB] rounded-full mb-4" />
-                <div className="space-y-3.5 text-sm sm:text-base text-[#475569] leading-relaxed">
-                  <p>
-                    We bring the same level of expertise, quality, and commitment to our services in hair fixing in Bangalore, catering to the most diverse needs of a metropolitan clientele. The team in Bangalore is quite highly specialized in creating hair systems that cater to everyone’s lifestyle and fashionable trends. We work with precision to get the highest possible output so that every hair system looks very natural, empowering the clients to go about their daily lives rather without worry.
-                  </p>
-                  <p>
-                    Our Bangalore center has been designed with flexible appointment times to allow busy professionals to find time to have their hair fixed. Our customers come from all walks of life and continue to hold ourselves to a very high standard of service by whomever’s needs we attend to. The Bangalore centre is well equipped with the latest tools and quality hair systems, designed to last longer, thus helping them obtain a reliable solution for hair loss.
-                  </p>
-                </div>
-              </div>
-
-              
-            </div>
-          </div>
+              </Card3DTilt>
+            </CardRevealLR>
+          </StaggerGridLR>
         </div>
       </section>
 
@@ -337,92 +363,114 @@ export default function ServicesPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-white py-10 sm:py-18 lg:py-22 border-b border-[#E2E8F0]">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Key Benefits
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
-              Advantages of our hair styling service hire
-            </h2>
-            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-            {/* Instant Result */}
-            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
-              <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
-                  01
-                </div>
-                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
-                  Instant Result
-                </h3>
-                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
-                  Unlike most other hair restoration techniques, hair fixing provides instant results as you can walk right out of our centers with a full head of hair.
-                </p>
-              </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Key Benefits
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+                Advantages of our hair styling service hire
+              </h2>
+              <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
             </div>
+          </SectionReveal3D>
+
+          <StaggerGridLR staggerDelay={0.1} className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+            {/* Instant Result */}
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between h-full">
+                  <div>
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                      01
+                    </div>
+                    <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
+                      Instant Result
+                    </h3>
+                    <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
+                      Unlike most other hair restoration techniques, hair fixing provides instant results as you can walk right out of our centers with a full head of hair.
+                    </p>
+                  </div>
+                </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
             {/* Non-Surgical Solution */}
-            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
-              <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
-                  02
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between h-full">
+                  <div>
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                      02
+                    </div>
+                    <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
+                      Non-Surgical Solution
+                    </h3>
+                    <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
+                      Hair fixing doesn’t involve any surgical procedures or downtime, making it a convenient option for those who prefer non-invasive treatments.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
-                  Non-Surgical Solution
-                </h3>
-                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
-                  Hair fixing doesn’t involve any surgical procedures or downtime, making it a convenient option for those who prefer non-invasive treatments.
-                </p>
-              </div>
-            </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
             {/* Natural Look */}
-            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
-              <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
-                  03
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between h-full">
+                  <div>
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                      03
+                    </div>
+                    <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
+                      Natural Look
+                    </h3>
+                    <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
+                      Each hair system meticulously designs itself to integrate flawlessly with your existing hair, so the total effect is absolutely natural.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
-                  Natural Look
-                </h3>
-                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
-                  Each hair system meticulously designs itself to integrate flawlessly with your existing hair, so the total effect is absolutely natural.
-                </p>
-              </div>
-            </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
             {/* Affordable */}
-            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between">
-              <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
-                  04
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between h-full">
+                  <div>
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                      04
+                    </div>
+                    <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
+                      Affordable
+                    </h3>
+                    <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
+                      Hair fixing services by our team in Trivandrum and Bangalore offered within a low range of costs, saving money without affecting quality.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
-                  Affordable
-                </h3>
-                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
-                  Hair fixing services by our team in Trivandrum and Bangalore offered within a low range of costs, saving money without affecting quality.
-                </p>
-              </div>
-            </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
             {/* Customizable */}
-            <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md col-span-2 sm:col-span-2 lg:col-span-2 flex flex-col justify-between">
-              <div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
-                  05
+            <CardRevealLR className="col-span-2 sm:col-span-2 lg:col-span-2 h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-[#F8FAFC] rounded-xl sm:rounded-2xl border border-[#E2E8F0] p-3.5 sm:p-6 hover:border-[#29B6EB] transition-all hover:shadow-md flex flex-col justify-between h-full">
+                  <div>
+                    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-xs sm:text-sm flex items-center justify-center mb-2.5 sm:mb-4">
+                      05
+                    </div>
+                    <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
+                      Customizable
+                    </h3>
+                    <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
+                      Any special length, texture, or color you may have is something our team will consider carefully with regards to making a hair system just exactly like what you prefer.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xs sm:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
-                  Customizable
-                </h3>
-                <p className="text-[11px] sm:text-sm text-[#475569] leading-relaxed">
-                  Any special length, texture, or color you may have is something our team will consider carefully with regards to making a hair system just exactly like what you prefer.
-                </p>
-              </div>
-            </div>
-          </div>
+              </Card3DTilt>
+            </CardRevealLR>
+          </StaggerGridLR>
         </div>
       </section>
 

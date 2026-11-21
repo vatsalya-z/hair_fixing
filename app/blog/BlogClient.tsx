@@ -4,6 +4,13 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BLOG_POSTS, BlogPost } from '@/data/siteData'
+import {
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+  ImageHover3D,
+} from '@/components/MotionWrappers'
 
 export interface BlogHeroSlide {
   id: string
@@ -199,59 +206,69 @@ export default function BlogClient() {
       <section id="articles-section" className="bg-white py-12 sm:py-24 px-3 sm:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Editorial &amp; Insights
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#075078] mt-3 mb-4">
-              Latest Hair Care &amp; Replacement Articles
-            </h2>
-            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
-            <p className="text-sm sm:text-base text-[#64748B]">
-              In-depth guides on non-surgical hair fixing, adhesive care, and healthy styling for residents in Trivandrum.
-            </p>
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Editorial &amp; Insights
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#075078] mt-3 mb-4">
+                Latest Hair Care &amp; Replacement Articles
+              </h2>
+              <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+              <p className="text-sm sm:text-base text-[#64748B]">
+                In-depth guides on non-surgical hair fixing, adhesive care, and healthy styling for residents in Trivandrum.
+              </p>
+            </div>
+          </SectionReveal3D>
 
-          {/* Grid of Articles: 2 columns on mobile, 2 on md, 3 on lg */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
+          {/* Grid of Articles: Staggered Left-to-Right Reveal with 3D Tilt */}
+          <StaggerGridLR
+            staggerDelay={0.1}
+            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8"
+          >
             {BLOG_POSTS.map((post) => (
-              <Link
-                key={post.id}
-                href={`/blog/${post.slug}/`}
-                className="group cursor-pointer bg-white rounded-xl md:rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1.5"
-              >
-                {/* 1. Image */}
-                <div className="relative h-32 sm:h-48 md:h-64 w-full overflow-hidden bg-slate-100">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={450}
-                    height={300}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="absolute bottom-3 right-3 bg-[#075078] text-white text-xs font-semibold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1">
-                    <span>Read Article</span>
-                    <span className="text-[#29B6EB]">→</span>
-                  </span>
-                  <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-white/90 backdrop-blur-xs text-[#075078] text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded sm:rounded-md shadow-xs">
-                    {post.category}
-                  </span>
-                </div>
+              <CardRevealLR key={post.id} className="h-full">
+                <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                  <Link
+                    href={`/blog/${post.slug}/`}
+                    className="group cursor-pointer bg-white rounded-xl md:rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                  >
+                    {/* 1. Image with ImageHover3D */}
+                    <div className="relative h-32 sm:h-48 md:h-64 w-full overflow-hidden bg-slate-100">
+                      <ImageHover3D scaleZoom={1.06}>
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          width={450}
+                          height={300}
+                          className="w-full h-full object-cover"
+                        />
+                      </ImageHover3D>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
+                      <span className="absolute bottom-3 right-3 bg-[#075078] text-white text-xs font-semibold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1 z-10 pointer-events-none">
+                        <span>Read Article</span>
+                        <span className="text-[#29B6EB]">→</span>
+                      </span>
+                      <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-white/90 backdrop-blur-xs text-[#075078] text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded sm:rounded-md shadow-xs z-10 pointer-events-none">
+                        {post.category}
+                      </span>
+                    </div>
 
-                {/* 2. Heading & Meta */}
-                <div className="p-3 sm:p-5 md:p-6 flex-1 flex flex-col justify-between">
-                  <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2 md:line-clamp-none">
-                    {post.title}
-                  </h3>
-                  <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0 text-[10px] sm:text-xs text-[#64748B]">
-                    <span className="line-clamp-1">{post.date}</span>
-                    <span className="font-medium text-[#075078]">{post.readTime}</span>
-                  </div>
-                </div>
-              </Link>
+                    {/* 2. Heading & Meta */}
+                    <div className="p-3 sm:p-5 md:p-6 flex-1 flex flex-col justify-between">
+                      <h3 className="text-xs sm:text-lg md:text-xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2 md:line-clamp-none">
+                        {post.title}
+                      </h3>
+                      <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0 text-[10px] sm:text-xs text-[#64748B]">
+                        <span className="line-clamp-1">{post.date}</span>
+                        <span className="font-medium text-[#075078]">{post.readTime}</span>
+                      </div>
+                    </div>
+                  </Link>
+                </Card3DTilt>
+              </CardRevealLR>
             ))}
-          </div>
+          </StaggerGridLR>
         </div>
       </section>
     </div>

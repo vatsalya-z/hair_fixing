@@ -4,6 +4,12 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BLOG_POSTS, BlogPost } from '@/data/siteData'
+import {
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+} from '@/components/MotionWrappers'
 
 export default function HomeBlogSection() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null)
@@ -32,75 +38,85 @@ export default function HomeBlogSection() {
       <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header - Centered & Mobile Responsive */}
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-4 py-1.5 rounded-full border border-[#E2E8F0] shadow-xs mb-3">
-              Editorial &amp; Insights
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#075078] tracking-tight mb-3">
-              Latest Hair Care &amp; Fixing Guides
-            </h2>
-            <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto" />
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-4 py-1.5 rounded-full border border-[#E2E8F0] shadow-xs mb-3">
+                Editorial &amp; Insights
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#075078] tracking-tight mb-3">
+                Latest Hair Care &amp; Fixing Guides
+              </h2>
+              <div className="w-16 h-1 bg-[#29B6EB] rounded-full mx-auto" />
+            </div>
+          </SectionReveal3D>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {/* Cards Grid with Left-to-Right Staggered Reveal and 3D Tilt */}
+          <StaggerGridLR
+            staggerDelay={0.14}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          >
             {BLOG_POSTS.slice(0, 3).map((post) => (
-              <div
-                key={post.id}
-                onClick={() => setSelectedPost(post)}
-                className="group bg-white rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1.5 cursor-pointer select-none"
-              >
-                {/* Article Image Container */}
-                <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-slate-100">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="bg-[#075078]/90 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg border border-white/20">
-                      Click to View Image
-                    </span>
-                  </div>
-                  <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[#075078] text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs">
-                    {post.category}
-                  </span>
-                </div>
-
-                {/* Article Details */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-3 text-xs text-[#64748B] mb-2.5">
-                      <span>{post.date}</span>
-                      <span>•</span>
-                      <span>{post.readTime}</span>
+              <CardRevealLR key={post.id} className="h-full">
+                <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                  <div
+                    onClick={() => setSelectedPost(post)}
+                    className="group bg-white rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer select-none h-full"
+                  >
+                    {/* Article Image Container */}
+                    <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-slate-100">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="bg-[#075078]/90 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg border border-white/20">
+                          Click to View Image
+                        </span>
+                      </div>
+                      <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[#075078] text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs">
+                        {post.category}
+                      </span>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2 mb-2 text-center md:text-left">
-                      {post.title}
-                    </h3>
+                    {/* Article Details */}
+                    <div className="p-6 flex-1 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center gap-3 text-xs text-[#64748B] mb-2.5">
+                          <span>{post.date}</span>
+                          <span>•</span>
+                          <span>{post.readTime}</span>
+                        </div>
 
-                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed line-clamp-3">
-                      {post.summary}
-                    </p>
+                        <h3 className="text-base sm:text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2 mb-2 text-center md:text-left">
+                          {post.title}
+                        </h3>
+
+                        <p className="text-xs sm:text-sm text-[#475569] leading-relaxed line-clamp-3">
+                          {post.summary}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </Card3DTilt>
+              </CardRevealLR>
             ))}
-          </div>
+          </StaggerGridLR>
 
           {/* Centered Button Below Section - Mobile Responsive */}
-          <div className="mt-10 sm:mt-14 flex justify-center">
-            <Link
-              href="/blog/"
-              className="inline-flex items-center justify-center gap-2 bg-[#075078] hover:bg-[#005675] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group w-full sm:w-auto text-center"
-            >
-              <span>View All Articles</span>
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
-          </div>
+          <SectionReveal3D delay={0.2} yOffset={20}>
+            <div className="mt-10 sm:mt-14 flex justify-center">
+              <Link
+                href="/blog/"
+                className="inline-flex items-center justify-center gap-2 bg-[#075078] hover:bg-[#005675] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group w-full sm:w-auto text-center"
+              >
+                <span>View All Articles</span>
+                <span className="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+              </Link>
+            </div>
+          </SectionReveal3D>
         </div>
       </section>
 

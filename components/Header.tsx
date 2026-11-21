@@ -128,15 +128,15 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`relative px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold transition-colors duration-200 rounded-md whitespace-nowrap ${
+                  className={`relative px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold transition-all duration-200 rounded-md whitespace-nowrap ${
                     isActive
                       ? 'text-[#075078]'
-                      : 'text-[#252B38] hover:text-[#075078]'
+                      : 'text-[#252B38] hover:text-[#075078] nav-link-animated'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0.5 left-2.5 xl:left-3 right-2.5 xl:right-3 h-[2px] bg-[#29B6EB] rounded-full" />
+                    <span className="absolute bottom-0.5 left-2.5 xl:left-3 right-2.5 xl:right-3 h-[2px] bg-[#29B6EB] rounded-full shadow-[0_0_8px_rgba(41,182,235,0.6)]" />
                   )}
                 </Link>
               )
@@ -149,9 +149,9 @@ export default function Header() {
               href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Trivandrum%2C%20I%20would%20like%20to%20book%20a%20free%20hair%20analysis%20consultation.`}
               target="_blank"
               rel="noreferrer"
-              className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs xl:text-sm font-semibold px-4 xl:px-5 py-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 flex items-center gap-2 whitespace-nowrap"
+              className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs xl:text-sm font-semibold px-4 xl:px-5 py-2.5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center gap-2 whitespace-nowrap group"
             >
-              <FaWhatsapp className="w-4 h-4 text-white" aria-hidden="true" />
+              <FaWhatsapp className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <span>Free Consultation</span>
             </a>
           </div>
@@ -246,10 +246,10 @@ export default function Header() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`flex items-center justify-between px-3.5 py-3 text-sm font-semibold rounded-xl transition-colors min-h-[44px] touch-manipulation ${
+                  className={`flex items-center justify-between px-3.5 py-3 text-sm font-semibold rounded-xl transition-all duration-200 min-h-[44px] touch-manipulation active:scale-[0.98] ${
                     isActive
                       ? 'bg-[#075078] text-white shadow-sm'
-                      : 'text-[#252B38] hover:bg-[#F3F7FB] hover:text-[#075078]'
+                      : 'text-[#252B38] hover:bg-[#F3F7FB] hover:text-[#075078] hover:translate-x-1'
                   }`}
                 >
                   <span>{link.name}</span>

@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     canonical: 'https://ozzonehair.com/',
   },
   verification: {
-    google: 'TODO_GOOGLE_SEARCH_CONSOLE_VERIFICATION_ID',
+    google: 'H2_m3Ab9hJxl2LbmMh7okuR3G7Y_eRl5yedrsR12uvc',
   },
   openGraph: {
     title: 'Hair Fixing in Thiruvananthapuram | ozzone Hair Studio',

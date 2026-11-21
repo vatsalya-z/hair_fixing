@@ -5,6 +5,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
 import { PRODUCTS_DATA, PRODUCT_FAQS, SITE_INFO } from '@/data/siteData'
+import {
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+  ImageHover3D,
+} from '@/components/MotionWrappers'
 
 export default function ProductsClient() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
@@ -64,108 +71,117 @@ export default function ProductsClient() {
       <section className="bg-white py-12 sm:py-16 lg:py-20 border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Certified Products
-            </span>
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-2.5 mb-2.5 sm:mt-3 sm:mb-3">
-              Professional Hair Fixing &amp; Maintenance Supplies
-            </h2>
-            <div className="w-14 sm:w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-3 sm:mb-4" />
-            <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
-              Discover the essential hair system products from Ozzone Hair Studio. Specially formulated for gentle adhesive release and ultra-strong hold.
-            </p>
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Certified Products
+              </span>
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-2.5 mb-2.5 sm:mt-3 sm:mb-3">
+                Professional Hair Fixing &amp; Maintenance Supplies
+              </h2>
+              <div className="w-14 sm:w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-3 sm:mb-4" />
+              <p className="text-xs sm:text-sm lg:text-base text-[#64748B] leading-relaxed">
+                Discover the essential hair system products from Ozzone Hair Studio. Specially formulated for gentle adhesive release and ultra-strong hold.
+              </p>
+            </div>
+          </SectionReveal3D>
 
           {/* Category Filter Tabs */}
           
 
-          {/* Product Cards: 2-Column Grid on Mobile, 2-Column on Desktop */}
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
+          {/* Product Cards: Staggered Left-to-Right Entrance + 3D Tilt */}
+          <StaggerGridLR
+            staggerDelay={0.12}
+            className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-5xl mx-auto"
+          >
             {filteredProducts.map((product) => (
-              <div
-                key={product.id}
-                id={product.id}
-                className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group scroll-mt-24"
-              >
-                <div>
-                  {/* Clean Photography Frame */}
-                  <div className="relative h-36 xs:h-44 sm:h-64 lg:h-72 w-full bg-[#F3F7FB] p-2 sm:p-6 flex items-center justify-center overflow-hidden border-b border-[#E2E8F0]">
-                    <Image
-                      src={product.image}
-                      alt={`${product.title} - Hair Fixing Products Ozzone Hair`}
-                      width={400}
-                      height={320}
-                      className="w-full h-full object-contain p-1 sm:p-2 group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#005675] text-white text-[9px] sm:text-[11px] font-bold px-1.5 py-0.5 sm:px-3 sm:py-1 rounded shadow-xs">
-                      {product.category}
-                    </div>
-                    <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/95 backdrop-blur-sm text-[#075078] border border-[#E2E8F0] text-[9px] sm:text-[11px] font-bold px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-xs">
-                      {product.lifespan}
-                    </div>
-                  </div>
+              <CardRevealLR key={product.id} className="h-full">
+                <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                  <div
+                    id={product.id}
+                    className="bg-white rounded-xl sm:rounded-2xl border border-[#E2E8F0] overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group scroll-mt-24 h-full"
+                  >
+                    <div>
+                      {/* Clean Photography Frame with ImageHover3D */}
+                      <div className="relative h-36 xs:h-44 sm:h-64 lg:h-72 w-full bg-[#F3F7FB] p-2 sm:p-6 flex items-center justify-center overflow-hidden border-b border-[#E2E8F0]">
+                        <ImageHover3D scaleZoom={1.05}>
+                          <Image
+                            src={product.image}
+                            alt={`${product.title} - Hair Fixing Products Ozzone Hair`}
+                            width={400}
+                            height={320}
+                            className="w-full h-full object-contain p-1 sm:p-2"
+                          />
+                        </ImageHover3D>
+                        <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#005675] text-white text-[9px] sm:text-[11px] font-bold px-1.5 py-0.5 sm:px-3 sm:py-1 rounded shadow-xs z-10 pointer-events-none">
+                          {product.category}
+                        </div>
+                        <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/95 backdrop-blur-sm text-[#075078] border border-[#E2E8F0] text-[9px] sm:text-[11px] font-bold px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-xs z-10 pointer-events-none">
+                          {product.lifespan}
+                        </div>
+                      </div>
 
-                  {/* Body Content */}
-                  <div className="p-3 sm:p-6 lg:p-7">
-                    <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-1 mb-2 sm:mb-3 text-[10px] sm:text-xs">
-                      <span className="text-[#005675] font-semibold bg-[#EBF5FB] px-2 py-0.5 rounded-md inline-block">
-                        Genuine
-                      </span>
-                      <div className="flex items-center gap-1 text-amber-500 font-bold text-[10px] sm:text-xs lg:text-sm">
-                        <span aria-hidden="true">&#9733;</span>
-                        <span>{product.rating}.0</span>
-                        <span className="text-[#94A3B8] font-normal text-[10px] hidden xs:inline">(Verified)</span>
+                      {/* Body Content */}
+                      <div className="p-3 sm:p-6 lg:p-7">
+                        <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-1 mb-2 sm:mb-3 text-[10px] sm:text-xs">
+                          <span className="text-[#005675] font-semibold bg-[#EBF5FB] px-2 py-0.5 rounded-md inline-block">
+                            Genuine
+                          </span>
+                          <div className="flex items-center gap-1 text-amber-500 font-bold text-[10px] sm:text-xs lg:text-sm">
+                            <span aria-hidden="true">&#9733;</span>
+                            <span>{product.rating}.0</span>
+                            <span className="text-[#94A3B8] font-normal text-[10px] hidden xs:inline">(Verified)</span>
+                          </div>
+                        </div>
+
+                        {/* Product Title */}
+                        <h3 className="text-xs xs:text-sm sm:text-xl lg:text-2xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-tight mb-1 sm:mb-2.5">
+                          {product.title}
+                        </h3>
+
+                        {/* Product Description */}
+                        <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed mb-2.5 sm:mb-4 line-clamp-2 sm:line-clamp-none">
+                          {product.description}
+                        </p>
+
+                        {/* Specifications List */}
+                        <div className="pt-2 sm:pt-3.5 border-t border-[#E2E8F0] space-y-1 sm:space-y-2 text-[10px] sm:text-xs lg:text-sm text-[#252B38]">
+                          <div>
+                            <span className="text-[#64748B]">Base: </span>
+                            <strong className="text-[#075078] block sm:inline">{product.baseType}</strong>
+                          </div>
+                          <div>
+                            <span className="text-[#64748B]">Fit: </span>
+                            <strong className="text-[#075078] block sm:inline">{product.hairType}</strong>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Product Title */}
-                    <h3 className="text-xs xs:text-sm sm:text-xl lg:text-2xl font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-tight mb-1 sm:mb-2.5">
-                      {product.title}
-                    </h3>
-
-                    {/* Product Description */}
-                    <p className="text-[10px] sm:text-xs lg:text-sm text-[#64748B] leading-snug sm:leading-relaxed mb-2.5 sm:mb-4 line-clamp-2 sm:line-clamp-none">
-                      {product.description}
-                    </p>
-
-                    {/* Specifications List */}
-                    <div className="pt-2 sm:pt-3.5 border-t border-[#E2E8F0] space-y-1 sm:space-y-2 text-[10px] sm:text-xs lg:text-sm text-[#252B38]">
-                      <div>
-                        <span className="text-[#64748B]">Base: </span>
-                        <strong className="text-[#075078] block sm:inline">{product.baseType}</strong>
+                    {/* Footer with Price & Actions */}
+                    <div className="p-3 sm:p-6 lg:p-7 pt-0">
+                      <div className="flex items-baseline justify-between mb-2.5 sm:mb-4 border-t border-[#E2E8F0] pt-2.5 sm:pt-4">
+                        <span className="text-[10px] sm:text-xs lg:text-sm text-[#64748B]">Price</span>
+                        <span className="text-xs sm:text-base lg:text-lg font-bold text-[#075078]">{product.price}</span>
                       </div>
-                      <div>
-                        <span className="text-[#64748B]">Fit: </span>
-                        <strong className="text-[#075078] block sm:inline">{product.hairType}</strong>
+
+                      <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-2.5">
+                        <a
+                          href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Fixing%20Trivandrum,%20I%20would%20like%20to%20order%20or%20inquire%20about%20${encodeURIComponent(product.title)}.`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex-1 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-[11px] sm:text-xs lg:text-sm py-2 px-2 sm:py-2.5 sm:px-3 rounded-lg text-center shadow-xs hover:shadow-md transition-all active:scale-95 flex items-center justify-center gap-1 group"
+                        >
+                          <FaWhatsapp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:scale-110 transition-transform" />
+                          <span>Inquire</span>
+                        </a>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Footer with Price & Actions */}
-                <div className="p-3 sm:p-6 lg:p-7 pt-0">
-                  <div className="flex items-baseline justify-between mb-2.5 sm:mb-4 border-t border-[#E2E8F0] pt-2.5 sm:pt-4">
-                    <span className="text-[10px] sm:text-xs lg:text-sm text-[#64748B]">Price</span>
-                    <span className="text-xs sm:text-base lg:text-lg font-bold text-[#075078]">{product.price}</span>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-2.5">
-                    <a
-                      href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Fixing%20Trivandrum,%20I%20would%20like%20to%20order%20or%20inquire%20about%20${encodeURIComponent(product.title)}.`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-[11px] sm:text-xs lg:text-sm py-2 px-2 sm:py-2.5 sm:px-3 rounded-lg text-center shadow-xs transition-colors flex items-center justify-center gap-1"
-                    >
-                      <FaWhatsapp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-                      <span>Inquire</span>
-                    </a>
-                    
-                  </div>
-                </div>
-              </div>
+                </Card3DTilt>
+              </CardRevealLR>
             ))}
-          </div>
+          </StaggerGridLR>
         </div>
       </section>
 

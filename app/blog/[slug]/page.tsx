@@ -6,6 +6,14 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { BLOG_POSTS, SITE_INFO } from '@/data/siteData'
 import { BLOG_DETAILS, BlogDetail } from '@/data/blogDetailData'
 import BlogFAQAccordion from '@/components/BlogFAQAccordion'
+import {
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+  ImageHover3D,
+  HeroTextItem,
+} from '@/components/MotionWrappers'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -252,9 +260,11 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
 
           {/* Main Blog Title - Center Aligned & Full Width */}
-          <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-snug sm:leading-tight tracking-tight max-w-5xl mx-auto drop-shadow-sm">
-            {title}
-          </h1>
+          <HeroTextItem delay={0.1} yOffset={20}>
+            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-snug sm:leading-tight tracking-tight max-w-5xl mx-auto drop-shadow-sm">
+              {title}
+            </h1>
+          </HeroTextItem>
         </div>
       </section>
 
@@ -264,15 +274,17 @@ export default async function BlogPostPage({ params }: PageProps) {
       <section className="py-14 sm:py-20 md:py-24 bg-white border-b border-[#E2E8F0]">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           {/* Centered Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-            <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-4 py-1.5 rounded-full border border-[#E2E8F0] mb-3">
-              Overview &amp; Key Insights
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#075078] tracking-tight">
-              {blog?.introHeading || 'Understanding the Essentials of Hair Fixing'}
-            </h2>
-            <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mt-4 mb-4" />
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-4 py-1.5 rounded-full border border-[#E2E8F0] mb-3">
+                Overview &amp; Key Insights
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#075078] tracking-tight">
+                {blog?.introHeading || 'Understanding the Essentials of Hair Fixing'}
+              </h2>
+              <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mt-4 mb-4" />
+            </div>
+          </SectionReveal3D>
 
           {/* Full-Width Intro Grid: 12 Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center mb-12 sm:mb-16">
@@ -285,21 +297,25 @@ export default async function BlogPostPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* Right: Featured Intro Image (5 cols) */}
+            {/* Right: Featured Intro Image (5 cols) with 3D Tilt & Zoom */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] aspect-[4/3] group">
-                <Image
-                  src={introImage}
-                  alt={introImageAlt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm font-medium bg-black/60 backdrop-blur-xs px-3.5 py-2 rounded-lg">
-                  {introImageAlt}
+              <Card3DTilt maxTilt={6} depth={10}>
+                <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] aspect-[4/3] group">
+                  <ImageHover3D scaleZoom={1.06}>
+                    <Image
+                      src={introImage}
+                      alt={introImageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 42vw"
+                    />
+                  </ImageHover3D>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm font-medium bg-black/60 backdrop-blur-xs px-3.5 py-2 rounded-lg pointer-events-none">
+                    {introImageAlt}
+                  </div>
                 </div>
-              </div>
+              </Card3DTilt>
             </div>
           </div>
 
@@ -315,30 +331,33 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </h3>
               </div>
 
-              {/* 2 columns on mobile, 4 columns on desktop */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+              {/* 2 columns on mobile, 4 columns on desktop with Staggered Entrance */}
+              <StaggerGridLR staggerDelay={0.1} className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                 {blog.keyTakeaways.map((point, idx) => {
                   const numStr = (idx + 1).toString().padStart(2, '0')
                   return (
-                    <div
-                      key={idx}
-                      className="bg-white rounded-xl p-3.5 sm:p-6 border border-[#E2E8F0] shadow-2xs hover:border-[#29B6EB] hover:shadow-md transition-all flex flex-col justify-between"
-                    >
-                      <div>
-                        <span className="inline-block text-lg sm:text-2xl font-mono font-extrabold text-[#29B6EB] mb-1.5 sm:mb-3">
-                          {numStr}
-                        </span>
-                        <h4 className="text-xs sm:text-base md:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
-                          {point.title}
-                        </h4>
-                        <p className="text-[11px] sm:text-sm text-[#64748B] leading-relaxed">
-                          {point.description}
-                        </p>
-                      </div>
-                    </div>
+                    <CardRevealLR key={idx} className="h-full">
+                      <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                        <div
+                          className="bg-white rounded-xl p-3.5 sm:p-6 border border-[#E2E8F0] shadow-2xs hover:border-[#29B6EB] hover:shadow-md transition-all flex flex-col justify-between h-full"
+                        >
+                          <div>
+                            <span className="inline-block text-lg sm:text-2xl font-mono font-extrabold text-[#29B6EB] mb-1.5 sm:mb-3">
+                              {numStr}
+                            </span>
+                            <h4 className="text-xs sm:text-base md:text-lg font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
+                              {point.title}
+                            </h4>
+                            <p className="text-[11px] sm:text-sm text-[#64748B] leading-relaxed">
+                              {point.description}
+                            </p>
+                          </div>
+                        </div>
+                      </Card3DTilt>
+                    </CardRevealLR>
                   )
                 })}
-              </div>
+              </StaggerGridLR>
             </div>
           )}
         </div>
@@ -594,56 +613,64 @@ export default async function BlogPostPage({ params }: PageProps) {
               </p>
             </div>
 
-            {/* 3 Related Blog Cards Spanning Full Width */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* 3 Related Blog Cards Spanning Full Width: Staggered Left-to-Right + 3D Tilt */}
+            <StaggerGridLR
+              staggerDelay={0.12}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+            >
               {relatedPosts.map((related) => (
-                <Link
-                  key={related.id}
-                  href={`/blog/${related.slug}/`}
-                  className="group bg-white rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1.5"
-                >
-                  {/* Card Image */}
-                  <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-slate-100">
-                    <Image
-                      src={related.image}
-                      alt={related.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-xs text-[#075078] text-[11px] font-bold px-3 py-1 rounded-md shadow-xs">
-                      {related.category}
-                    </span>
-                    <span className="absolute bottom-3.5 right-3.5 bg-[#075078] text-white text-xs font-semibold px-3.5 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5 shadow-md">
-                      <span>Read Article</span>
-                      <span className="text-[#29B6EB]">→</span>
-                    </span>
-                  </div>
-
-                  {/* Card Details */}
-                  <div className="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center gap-3 text-xs text-[#64748B] mb-3">
-                        <span>{related.date}</span>
-                        <span>•</span>
-                        <span className="font-medium text-[#075078]">{related.readTime}</span>
+                <CardRevealLR key={related.id} className="h-full">
+                  <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                    <Link
+                      href={`/blog/${related.slug}/`}
+                      className="group bg-white rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                    >
+                      {/* Card Image with ImageHover3D */}
+                      <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-slate-100">
+                        <ImageHover3D scaleZoom={1.06}>
+                          <Image
+                            src={related.image}
+                            alt={related.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                        </ImageHover3D>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                        <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-xs text-[#075078] text-[11px] font-bold px-3 py-1 rounded-md shadow-xs z-10 pointer-events-none">
+                          {related.category}
+                        </span>
+                        <span className="absolute bottom-3.5 right-3.5 bg-[#075078] text-white text-xs font-semibold px-3.5 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5 shadow-md z-10 pointer-events-none">
+                          <span>Read Article</span>
+                          <span className="text-[#29B6EB]">→</span>
+                        </span>
                       </div>
-                      <h3 className="text-base sm:text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2">
-                        {related.title}
-                      </h3>
-                      <p className="mt-2.5 text-xs sm:text-sm text-[#64748B] line-clamp-2 leading-relaxed">
-                        {related.summary}
-                      </p>
-                    </div>
 
-                    <div className="mt-5 pt-3.5 border-t border-[#E2E8F0] flex items-center text-xs font-semibold text-[#005675] group-hover:text-[#29B6EB] transition-colors">
-                      <span>Read full guide →</span>
-                    </div>
-                  </div>
-                </Link>
+                      {/* Card Details */}
+                      <div className="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center gap-3 text-xs text-[#64748B] mb-3">
+                            <span>{related.date}</span>
+                            <span>•</span>
+                            <span className="font-medium text-[#075078]">{related.readTime}</span>
+                          </div>
+                          <h3 className="text-base sm:text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug line-clamp-2">
+                            {related.title}
+                          </h3>
+                          <p className="mt-2.5 text-xs sm:text-sm text-[#64748B] line-clamp-2 leading-relaxed">
+                            {related.summary}
+                          </p>
+                        </div>
+
+                        <div className="mt-5 pt-3.5 border-t border-[#E2E8F0] flex items-center text-xs font-semibold text-[#005675] group-hover:text-[#29B6EB] transition-colors">
+                          <span>Read full guide →</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </Card3DTilt>
+                </CardRevealLR>
               ))}
-            </div>
+            </StaggerGridLR>
           </div>
         </section>
       )}
@@ -661,55 +688,57 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#32B9EE] rounded-full blur-3xl" />
         </div>
 
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 text-center relative z-10">
-          <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#29B6EB] bg-white/10 border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-md mb-5">
-            Private &amp; Confidential Consultation
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 max-w-4xl mx-auto">
-            Ready for Your Natural Hair Transformation?
-          </h2>
-          <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mb-6" />
-          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
-            Book a free, 100% confidential scalp analysis at our Thiruvananthapuram or Bangalore studio. Our certified specialists will assess your scalp, match your hair texture, and recommend the ideal custom hair system.
-          </p>
+        <SectionReveal3D yOffset={30}>
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 text-center relative z-10">
+            <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#29B6EB] bg-white/10 border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-md mb-5">
+              Private &amp; Confidential Consultation
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 max-w-4xl mx-auto">
+              Ready for Your Natural Hair Transformation?
+            </h2>
+            <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mb-6" />
+            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+              Book a free, 100% confidential scalp analysis at our Thiruvananthapuram or Bangalore studio. Our certified specialists will assess your scalp, match your hair texture, and recommend the ideal custom hair system.
+            </p>
 
-          {/* Centered CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-xl sm:max-w-none mx-auto">
-            {/* WhatsApp Booking */}
-            <a
-              href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20read%20your%20blog%20article%20on%20${encodeURIComponent(cleanTitle)}%20and%20would%20like%20to%20book%20a%20free%20scalp%20consultation.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp w-full sm:w-auto px-6 py-3.5 text-base font-semibold shadow-lg hover:shadow-2xl sm:whitespace-nowrap"
-            >
-              <FaWhatsapp className="w-5 h-5 shrink-0" />
-              <span>Book Free Consultation</span>
-            </a>
+            {/* Centered CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-xl sm:max-w-none mx-auto">
+              {/* WhatsApp Booking */}
+              <a
+                href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20read%20your%20blog%20article%20on%20${encodeURIComponent(cleanTitle)}%20and%20would%20like%20to%20book%20a%20free%20scalp%20consultation.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp w-full sm:w-auto px-6 py-3.5 text-base font-semibold shadow-lg hover:shadow-2xl sm:whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+              >
+                <FaWhatsapp className="w-5 h-5 shrink-0" />
+                <span>Book Free Consultation</span>
+              </a>
 
-            {/* View Services */}
-            <Link
-              href="/services/"
-              className="btn-secondary-dark w-full sm:w-auto px-6 py-3.5 text-base font-semibold sm:whitespace-nowrap"
-            >
-              <span>Explore All Services →</span>
-            </Link>
+              {/* View Services */}
+              <Link
+                href="/services/"
+                className="btn-secondary-dark w-full sm:w-auto px-6 py-3.5 text-base font-semibold sm:whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+              >
+                <span>Explore All Services →</span>
+              </Link>
 
-            {/* Direct Call */}
-            <a
-              href={`tel:${SITE_INFO.phone}`}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-semibold transition-all duration-300 w-full sm:w-auto sm:whitespace-nowrap"
-            >
-              <span>Call: {SITE_INFO.phone}</span>
-            </a>
+              {/* Direct Call */}
+              <a
+                href={`tel:${SITE_INFO.phone}`}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-semibold transition-all duration-300 w-full sm:w-auto sm:whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Call: {SITE_INFO.phone}</span>
+              </a>
+            </div>
+
+            {/* Trust badges footer */}
+            <div className="mt-10 sm:mt-12 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-white/80">
+              <span className="font-medium">✓ 100% Virgin Human Hair</span>
+              <span className="font-medium">✓ Hypoallergenic Medical Bonding</span>
+              <span className="font-medium">✓ Private Consultation Suites</span>
+            </div>
           </div>
-
-          {/* Trust badges footer */}
-          <div className="mt-10 sm:mt-12 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-white/80">
-            <span className="font-medium">✓ 100% Virgin Human Hair</span>
-            <span className="font-medium">✓ Hypoallergenic Medical Bonding</span>
-            <span className="font-medium">✓ Private Consultation Suites</span>
-          </div>
-        </div>
+        </SectionReveal3D>
       </section>
     </article>
   )

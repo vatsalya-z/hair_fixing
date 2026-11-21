@@ -4,7 +4,14 @@ import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
-import { HoverLift3D } from '@/components/MotionWrappers'
+import {
+  HoverLift3D,
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+  ImageHover3D,
+} from '@/components/MotionWrappers'
 import { GALLERY_ITEMS, GalleryItem, SITE_INFO } from '@/data/siteData'
 
 export interface GalleryHeroSlide {
@@ -109,9 +116,6 @@ export default function GalleryClient() {
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO SECTION (FULL WIDTH IMAGE SLIDER)
-      ═══════════════════════════════════════════════════════════ */}
       <section
         className="relative w-full bg-[#075078] overflow-hidden select-none group"
         aria-label="Gallery Hero Banner Slider"
@@ -179,10 +183,6 @@ export default function GalleryClient() {
             ))}
           </div>
 
-          {/* Navigation Arrows */}
-          
-
-          {/* Navigation Dots */}
           <div
             className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20"
             role="tablist"
@@ -207,9 +207,6 @@ export default function GalleryClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 2 — STUDIO RESULTS STATS STRIP
-      ═══════════════════════════════════════════════════════════ */}
       <section className="bg-white py-10 px-4 sm:px-8 border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -233,9 +230,6 @@ export default function GalleryClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 3 — MAIN GALLERY GRID SECTION
-      ═══════════════════════════════════════════════════════════ */}
       <section id="gallery-grid" className="bg-[#F3F7FB] py-16 sm:py-24 px-3 sm:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -286,12 +280,8 @@ export default function GalleryClient() {
             </div>
           </div>
 
-          {/* ═══════════════════════════════════════════════════════════
-              GALLERY GRID CONTAINER
-              - On mobile: 2-column grid when mobileLayout === 'grid' (default)
-              - On desktop (md/lg): 2 to 3 column spacious cards
-          ═══════════════════════════════════════════════════════════ */}
-          <div
+          <StaggerGridLR
+            staggerDelay={0.08}
             className={`grid gap-3 sm:gap-6 lg:gap-8 ${
               mobileLayout === 'grid'
                 ? 'grid-cols-2 md:grid-cols-2 lg:grid-cols-3'
@@ -299,61 +289,63 @@ export default function GalleryClient() {
             }`}
           >
             {filteredItems.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => setActiveItem(item)}
-                className="bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer hover:-translate-y-1"
-              >
-                {/* Visual Image Container */}
-                <div className="p-2 sm:p-3 bg-white border-b border-[#E2E8F0]">
-                  <div className="relative w-full h-36 sm:h-52 lg:h-56 rounded-xl overflow-hidden bg-slate-200">
-                    <Image
-                      src={item.beforeImg}
-                      alt={`${item.solutionProvided} - Before`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <span className="absolute top-1.5 left-1.5 bg-[#252B38]/90 text-white text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 rounded shadow-sm">
-                      {item.beforeImg.includes('Gemini') ? 'Before & After' : 'Before'}
-                    </span>
-                  </div>
-                </div>
+              <CardRevealLR key={item.id} className="h-full">
+                <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                  <div
+                    onClick={() => setActiveItem(item)}
+                    className="bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer h-full"
+                  >
+                    {/* Visual Image Container with ImageHover3D */}
+                    <div className="p-2 sm:p-3 bg-white border-b border-[#E2E8F0]">
+                      <div className="relative w-full h-36 sm:h-52 lg:h-56 rounded-xl overflow-hidden bg-slate-200">
+                        <ImageHover3D scaleZoom={1.06}>
+                          <Image
+                            src={item.beforeImg}
+                            alt={`${item.solutionProvided} - Before`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        </ImageHover3D>
+                        <span className="absolute top-1.5 left-1.5 bg-[#252B38]/90 text-white text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 rounded shadow-sm z-10 pointer-events-none">
+                          {item.beforeImg.includes('Gemini') ? 'Before & After' : 'Before'}
+                        </span>
+                      </div>
+                    </div>
 
-                {/* Card Meta & Details */}
-                <div className="p-3 sm:p-6 space-y-2 sm:space-y-3 flex-1 flex flex-col justify-between">
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <div className="flex items-center justify-between gap-1 text-[10px] sm:text-xs">
-                      <span className="bg-[#F3F7FB] border border-[#E2E8F0] text-[#075078] font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-md line-clamp-1">
-                        {item.category}
-                      </span>
-                      <span className="text-[#64748B] hidden sm:flex items-center gap-1 font-medium">
-                        <span>{item.recoveryTime}</span>
-                      </span>
-                    </div>                    
-                  </div>
+                    {/* Card Meta & Details */}
+                    <div className="p-3 sm:p-6 space-y-2 sm:space-y-3 flex-1 flex flex-col justify-between">
+                      <div className="space-y-1.5 sm:space-y-2">
+                        <div className="flex items-center justify-between gap-1 text-[10px] sm:text-xs">
+                          <span className="bg-[#F3F7FB] border border-[#E2E8F0] text-[#075078] font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-md line-clamp-1">
+                            {item.category}
+                          </span>
+                          <span className="text-[#64748B] hidden sm:flex items-center gap-1 font-medium">
+                            <span>{item.recoveryTime}</span>
+                          </span>
+                        </div>                    
+                      </div>
 
-                  {/* Actions */}
-                  <div className="pt-1.5 sm:pt-2">
-                    <button
-                      type="button"
-                      onClick={() => setActiveItem(item)}
-                      className="w-full bg-[#005675] hover:bg-[#174BA5] text-white text-[11px] sm:text-xs font-bold py-2 sm:py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-xs"
-                    >
-                      <span className="hidden sm:inline">Inspect Transformation</span>
-                      <span className="sm:hidden">View Details</span>
-                    </button>
+                      {/* Actions */}
+                      <div className="pt-1.5 sm:pt-2">
+                        <button
+                          type="button"
+                          onClick={() => setActiveItem(item)}
+                          className="w-full bg-[#005675] hover:bg-[#174BA5] text-white text-[11px] sm:text-xs font-bold py-2 sm:py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-xs active:scale-95"
+                        >
+                          <span className="hidden sm:inline">Inspect Transformation</span>
+                          <span className="sm:hidden">View Details</span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </Card3DTilt>
+              </CardRevealLR>
             ))}
-          </div>
+          </StaggerGridLR>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          LIGHTBOX MODAL FOR TRANSFORMATION INSPECTION
-      ═══════════════════════════════════════════════════════════ */}
       {activeItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#075078]/75 backdrop-blur-sm animate-fadeIn">
           <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-[#E2E8F0] relative">
@@ -397,20 +389,12 @@ export default function GalleryClient() {
                   {activeItem.beforeImg.includes('Gemini') ? 'Complete Before & After Hair Transformation' : 'Initial Thinning / Bald Area'}
                 </p>
               </div>
-
-              {/* Case Specifications */}
-              
-
-              {/* Action Buttons */}
               
             </div>
           </div>
         </div>
       )}
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 4 — CLIENT VIDEO TRANSFORMATIONS & LIVE DEMO
-      ═══════════════════════════════════════════════════════════ */}
       <section id="video-gallery" className="bg-white py-16 sm:py-24 px-4 sm:px-8 border-t border-[#E2E8F0] scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -545,9 +529,7 @@ export default function GalleryClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 5 — IN-STUDIO CONFIDENTIALITY NOTICE
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="bg-white py-16 px-4 sm:px-8 border-t border-[#E2E8F0]">
         <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#005675] via-[#075078] to-[#104C88] text-white rounded-3xl p-8 sm:p-12 shadow-xl text-center space-y-4 relative overflow-hidden">
           {/* Subtle glow */}

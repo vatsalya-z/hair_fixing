@@ -7,6 +7,14 @@ import { SITE_INFO } from '@/data/siteData'
 import { SERVICE_DETAILS, ServiceDetail } from '@/data/serviceDetailData'
 import ServiceFAQAccordion from '@/components/ServiceFAQAccordion'
 import ServiceMapsSection from '@/components/ServiceMapsSection'
+import {
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+  ImageHover3D,
+  HeroTextItem,
+} from '@/components/MotionWrappers'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -210,10 +218,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         />
       )}
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1: FULL-WIDTH HERO SECTION
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="relative w-full min-h-[520px] sm:min-h-[600px] md:min-h-[680px] flex items-center justify-center overflow-hidden bg-[#075078]">
+      <section className="relative w-full min-h-[380px] sm:min-h-[520px] md:min-h-[620px] lg:min-h-[680px] flex items-center justify-center overflow-hidden bg-[#075078] text-white">
         {/* Full-width background image covering 100vw */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -221,89 +226,96 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             alt={heroImageAlt}
             fill
             priority
-            className="object-fit object-center"
+            className="object-cover object-center"
             sizes="100vw"
           />
+          <div className="absolute inset-0 bg-[#075078]/80 sm:bg-[#075078]/70 backdrop-blur-[0.5px]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#075078] via-transparent to-[#075078]/85" />
+          <div className="hero-subtle-glow absolute inset-0 opacity-30 pointer-events-none" />
         </div>
 
-        {/* Content Container - Expanded Full Width */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-20 sm:py-28 md:py-32 text-center flex flex-col items-center justify-center">
-          {/* Breadcrumb Navigation inside Hero */}
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 md:py-24 lg:py-28 text-center flex flex-col items-center justify-center">
           <nav
             aria-label="Breadcrumbs"
-            className="flex items-center justify-center flex-wrap gap-2 text-xs sm:text-sm text-white/90 font-medium mb-5 sm:mb-6 tracking-wide drop-shadow-sm"
+            className="flex items-center justify-center flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-sm text-white/85 font-medium mb-2.5 sm:mb-5 tracking-wide drop-shadow-xs"
           >
             <Link
               href="/"
-              className="text-white/90 hover:text-[#29B6EB] transition-colors"
+              className="text-white/85 hover:text-[#29B6EB] transition-colors"
             >
               Home
             </Link>
-            <span className="text-[#29B6EB]/80">/</span>
+            <span className="text-[#29B6EB]/70">/</span>
             <Link
               href="/services/"
-              className="text-white/90 hover:text-[#29B6EB] transition-colors"
+              className="text-white/85 hover:text-[#29B6EB] transition-colors"
             >
               Services
             </Link>
-            <span className="text-[#29B6EB]/80">/</span>
+            <span className="text-[#29B6EB]/70">/</span>
             <span className="text-[#29B6EB] font-semibold">{title}</span>
           </nav>
 
           {/* Category Tag Badge */}
-          <div className="mb-4 sm:mb-5">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#29B6EB]/20 text-[#29B6EB] border border-[#29B6EB]/40 backdrop-blur-md">
-              {heroBadge}
-            </span>
-          </div>
+          <HeroTextItem delay={0.05} yOffset={15}>
+            <div className="mb-2.5 sm:mb-4">
+              <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest bg-[#29B6EB]/25 text-[#29B6EB] border border-[#29B6EB]/40 backdrop-blur-md shadow-xs">
+                {heroBadge}
+              </span>
+            </div>
+          </HeroTextItem>
 
-          {/* Main Service Title - Center Aligned & Full Width */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight max-w-5xl mx-auto mb-5 sm:mb-6 drop-shadow-md">
-            {title}
-          </h1>
+          <HeroTextItem delay={0.15} yOffset={20}>
+            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-snug sm:leading-tight tracking-tight max-w-4xl mx-auto mb-3 sm:mb-5 drop-shadow-md">
+              {title}
+            </h1>
+          </HeroTextItem>
 
           {/* Supporting Description */}
-          <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal drop-shadow-md">
-            {heroDescription}
-          </p>
+          <HeroTextItem delay={0.25} yOffset={18}>
+            <p className="text-xs sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl sm:max-w-3xl mx-auto mb-5 sm:mb-8 md:mb-10 leading-relaxed font-normal drop-shadow-xs">
+              {heroDescription}
+            </p>
+          </HeroTextItem>
 
           {/* Centered CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-md sm:max-w-none">
-            <a
-              href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(title)}%20and%20would%20like%20to%20book%20a%20free%20scalp%20consultation.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base font-semibold shadow-lg hover:shadow-2xl"
-            >
-              <FaWhatsapp className="w-5 h-5 shrink-0" />
-              <span>Book Free Consultation</span>
-            </a>
+          <HeroTextItem delay={0.35} yOffset={15}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-xs sm:max-w-none">
+              <a
+                href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(title)}%20and%20would%20like%20to%20book%20a%20free%20scalp%20consultation.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp w-full sm:w-auto px-5 sm:px-7 py-2.5 sm:py-3.5 text-xs sm:text-base font-semibold shadow-md hover:shadow-xl flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+              >
+                <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                <span>Book Free Consultation</span>
+              </a>
 
-            <Link
-              href="/contact/"
-              className="btn-secondary-dark w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base font-semibold text-center"
-            >
-              <span>Schedule Studio Visit →</span>
-            </Link>
-          </div>
+              <Link
+                href="/contact/"
+                className="btn-secondary-dark w-full sm:w-auto px-5 sm:px-7 py-2.5 sm:py-3.5 text-xs sm:text-base font-semibold text-center hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+              >
+                <span>Schedule Studio Visit →</span>
+              </Link>
+            </div>
+          </HeroTextItem>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 2: SERVICE INTRODUCTION & AUDIENCE (FULL WIDTH)
-      ═══════════════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 md:py-24 bg-white border-b border-[#E2E8F0]">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           {/* Centered Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-            <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-4 py-1.5 rounded-full border border-[#E2E8F0] mb-3">
-              Overview &amp; Purpose
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#075078] tracking-tight">
-              {introHeading}
-            </h2>
-            <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mt-4 mb-4" />
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-4 py-1.5 rounded-full border border-[#E2E8F0] mb-3">
+                Overview &amp; Purpose
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#075078] tracking-tight">
+                {introHeading}
+              </h2>
+              <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mt-4 mb-4" />
+            </div>
+          </SectionReveal3D>
 
           {/* Full-Width Intro Grid: 12 Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center mb-12 sm:mb-16">
@@ -329,32 +341,33 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Right: Featured Intro Image (5 cols) */}
+            {/* Right: Featured Intro Image (5 cols) with 3D Tilt */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] aspect-[4/3] group bg-[#F8FAFC]">
-                <Image
-                  src={introImage}
-                  alt={introImageAlt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm font-medium bg-black/60 backdrop-blur-xs px-3.5 py-2 rounded-lg">
-                  {introImageAlt}
+              <Card3DTilt maxTilt={6} depth={10}>
+                <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#E2E8F0] aspect-[4/3] group bg-[#F8FAFC]">
+                  <ImageHover3D scaleZoom={1.06}>
+                    <Image
+                      src={introImage}
+                      alt={introImageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 42vw"
+                    />
+                  </ImageHover3D>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm font-medium bg-black/60 backdrop-blur-xs px-3.5 py-2 rounded-lg pointer-events-none">
+                    {introImageAlt}
+                  </div>
                 </div>
-              </div>
+              </Card3DTilt>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 3 & 4: DETAILED SERVICE INFORMATION & IMAGES
-      ═══════════════════════════════════════════════════════════ */}
+     
       <section className="py-14 sm:py-20 md:py-24 bg-white">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-          {/* 12-Column Responsive Layout: 8 cols content + 4 cols consultation sidebar */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             {/* Main Content (8 columns) */}
             <div className="lg:col-span-8 space-y-12 sm:space-y-16">
@@ -448,7 +461,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* Sticky Sidebar: Studio Consultation Card (4 columns) */}
             <aside className="lg:col-span-4">
               <div className="sticky top-28 space-y-6">
                 {/* Consultation Card */}
@@ -493,7 +505,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   </div>
                 </div>
 
-                {/* Confidentiality Guarantee */}
                 <div className="p-5 rounded-2xl bg-white border border-[#E2E8F0] text-xs text-[#64748B] space-y-2">
                   <div className="text-[#075078] font-bold">
                     <span>100% Confidential &amp; Private</span>
@@ -508,46 +519,49 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 5: SERVICE PROCESS & KEY HIGHLIGHTS (FULL WIDTH)
-      ═══════════════════════════════════════════════════════════ */}
+     
       <section className="py-14 sm:py-20 md:py-24 bg-[#F8FAFC] border-y border-[#E2E8F0]">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           {/* Centered Process Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-4 py-1.5 rounded-full border border-[#E2E8F0] mb-3 shadow-2xs">
-              Step-by-Step Procedure
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#075078] tracking-tight">
-              {processHeading}
-            </h2>
-            <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mt-4 mb-4" />
-            <p className="text-sm sm:text-base md:text-lg text-[#64748B]">
-              {processSubheading}
-            </p>
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-4 py-1.5 rounded-full border border-[#E2E8F0] mb-3 shadow-2xs">
+                Step-by-Step Procedure
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#075078] tracking-tight">
+                {processHeading}
+              </h2>
+              <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mt-4 mb-4" />
+              <p className="text-sm sm:text-base md:text-lg text-[#64748B]">
+                {processSubheading}
+              </p>
+            </div>
+          </SectionReveal3D>
 
-          {/* 4 Process Cards (2-column on mobile, 4-column on desktop) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
+          {/* Staggered Left-to-Right Process Steps with 3D Tilt */}
+          <StaggerGridLR staggerDelay={0.12} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
             {processSteps.map((pStep, pIdx) => (
-              <div
-                key={pIdx}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E2E8F0] shadow-2xs hover:border-[#29B6EB] hover:shadow-md transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <span className="inline-block text-2xl sm:text-3xl font-mono font-extrabold text-[#29B6EB] mb-3">
-                    {pStep.step}
-                  </span>
-                  <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2 leading-snug">
-                    {pStep.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                    {pStep.description}
-                  </p>
-                </div>
-              </div>
+              <CardRevealLR key={pIdx} className="h-full">
+                <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                  <div
+                    className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E2E8F0] shadow-2xs hover:border-[#29B6EB] hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full"
+                  >
+                    <div>
+                      <span className="inline-block text-2xl sm:text-3xl font-mono font-extrabold text-[#29B6EB] mb-3">
+                        {pStep.step}
+                      </span>
+                      <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2 leading-snug">
+                        {pStep.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                        {pStep.description}
+                      </p>
+                    </div>
+                  </div>
+                </Card3DTilt>
+              </CardRevealLR>
             ))}
-          </div>
+          </StaggerGridLR>
 
           {/* Key Highlights Grid */}
           <div className="bg-white rounded-3xl p-4 sm:p-10 md:p-12 border border-[#E2E8F0] shadow-xs">
@@ -560,28 +574,26 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+            <StaggerGridLR staggerDelay={0.08} className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
               {keyHighlights.map((highlight, hIdx) => (
-                <div
-                  key={hIdx}
-                  className="bg-[#F8FAFC] rounded-xl p-3.5 sm:p-6 border border-[#E2E8F0] flex flex-col justify-between"
-                >
-                  <h4 className="text-xs sm:text-base font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
-                    {highlight.title}
-                  </h4>
-                  <p className="text-[11px] sm:text-sm text-[#64748B] leading-relaxed">
-                    {highlight.description}
-                  </p>
-                </div>
+                <CardRevealLR key={hIdx} className="h-full">
+                  <div
+                    className="bg-[#F8FAFC] rounded-xl p-3.5 sm:p-6 border border-[#E2E8F0] flex flex-col justify-between h-full hover:border-[#29B6EB] transition-colors"
+                  >
+                    <h4 className="text-xs sm:text-base font-bold text-[#075078] mb-1.5 sm:mb-2 leading-snug">
+                      {highlight.title}
+                    </h4>
+                    <p className="text-[11px] sm:text-sm text-[#64748B] leading-relaxed">
+                      {highlight.description}
+                    </p>
+                  </div>
+                </CardRevealLR>
               ))}
-            </div>
+            </StaggerGridLR>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 6: SERVICE-SPECIFIC FAQ ACCORDION
-      ═══════════════════════════════════════════════════════════ */}
       {faqs && faqs.length > 0 && (
         <section className="py-14 sm:py-20 md:py-24 bg-white border-b border-[#E2E8F0]">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
@@ -607,14 +619,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 7: GOOGLE MAPS SECTION (VERIFIED LOCATIONS)
-      ═══════════════════════════════════════════════════════════ */}
+
       <ServiceMapsSection />
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 8: FINAL CTA SECTION (FULL WIDTH)
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="w-full py-16 sm:py-24 bg-gradient-to-br from-[#075078] via-[#104C88] to-[#174BA5] text-white relative overflow-hidden">
         {/* Decorative Ambient Background Glow */}
         <div
@@ -625,52 +633,54 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#32B9EE] rounded-full blur-3xl" />
         </div>
 
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 text-center relative z-10">
-          <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#29B6EB] bg-white/10 border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-md mb-5">
-            Private &amp; Confidential Consultation
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 max-w-4xl mx-auto">
-            Ready for Your Natural Hair Transformation?
-          </h2>
-          <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mb-6" />
-          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
-            Schedule a free, confidential scalp analysis at our Thiruvananthapuram or Bangalore studio. Our certified specialists will assess your scalp, match your hair texture, and recommend the ideal custom hair system.
-          </p>
+        <SectionReveal3D yOffset={30}>
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 text-center relative z-10">
+            <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#29B6EB] bg-white/10 border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-md mb-5">
+              Private &amp; Confidential Consultation
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 max-w-4xl mx-auto">
+              Ready for Your Natural Hair Transformation?
+            </h2>
+            <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mb-6" />
+            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+              Schedule a free, confidential scalp analysis at our Thiruvananthapuram or Bangalore studio. Our certified specialists will assess your scalp, match your hair texture, and recommend the ideal custom hair system.
+            </p>
 
-          {/* Centered CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-xl sm:max-w-none mx-auto">
-            <a
-              href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20book%20a%20free%20scalp%20consultation%20for%20${encodeURIComponent(title)}.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp w-full sm:w-auto px-6 py-3.5 text-base font-semibold shadow-lg hover:shadow-2xl"
-            >
-              <FaWhatsapp className="w-5 h-5 shrink-0" />
-              <span>Book Free Consultation</span>
-            </a>
+            {/* Centered CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-xl sm:max-w-none mx-auto">
+              <a
+                href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20book%20a%20free%20scalp%20consultation%20for%20${encodeURIComponent(title)}.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp w-full sm:w-auto px-6 py-3.5 text-base font-semibold shadow-lg hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+              >
+                <FaWhatsapp className="w-5 h-5 shrink-0" />
+                <span>Book Free Consultation</span>
+              </a>
 
-            <Link
-              href="/contact/"
-              className="btn-secondary-dark w-full sm:w-auto px-6 py-3.5 text-base font-semibold text-center"
-            >
-              <span>Visit Contact Page →</span>
-            </Link>
+              <Link
+                href="/contact/"
+                className="btn-secondary-dark w-full sm:w-auto px-6 py-3.5 text-base font-semibold text-center hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+              >
+                <span>Visit Contact Page →</span>
+              </Link>
 
-            <a
-              href={`tel:${SITE_INFO.phone}`}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-semibold transition-all duration-300 w-full sm:w-auto"
-            >
-              <span>Call: {SITE_INFO.phone}</span>
-            </a>
+              <a
+                href={`tel:${SITE_INFO.phone}`}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-semibold transition-all duration-300 w-full sm:w-auto hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Call: {SITE_INFO.phone}</span>
+              </a>
+            </div>
+
+            {/* Trust Badges */}
+            <div className="mt-10 sm:mt-12 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-white/80">
+              <span className="font-medium">✓ 100% Virgin Human Hair</span>
+              <span className="font-medium">✓ Hypoallergenic Medical Adhesives</span>
+              <span className="font-medium">✓ 100% Private Consultation Suites</span>
+            </div>
           </div>
-
-          {/* Trust Badges */}
-          <div className="mt-10 sm:mt-12 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-white/80">
-            <span className="font-medium">✓ 100% Virgin Human Hair</span>
-            <span className="font-medium">✓ Hypoallergenic Medical Adhesives</span>
-            <span className="font-medium">✓ 100% Private Consultation Suites</span>
-          </div>
-        </div>
+        </SectionReveal3D>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
@@ -680,46 +690,54 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <section className="py-14 sm:py-20 md:py-24 bg-white">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
             {/* Centered Heading */}
-            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-4 py-1.5 rounded-full border border-[#E2E8F0] mb-3">
-                Related Hair Solutions
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#075078] tracking-tight">
-                Explore Our Other Services
-              </h2>
-              <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mt-4 mb-4" />
-              <p className="text-sm sm:text-base md:text-lg text-[#64748B]">
-                Discover additional non-surgical hair replacement techniques and maintenance options.
-              </p>
-            </div>
+            <SectionReveal3D yOffset={25}>
+              <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-4 py-1.5 rounded-full border border-[#E2E8F0] mb-3">
+                  Related Hair Solutions
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#075078] tracking-tight">
+                  Explore Our Other Services
+                </h2>
+                <div className="w-20 h-1 bg-[#29B6EB] rounded-full mx-auto mt-4 mb-4" />
+                <p className="text-sm sm:text-base md:text-lg text-[#64748B]">
+                  Discover additional non-surgical hair replacement techniques and maintenance options.
+                </p>
+              </div>
+            </SectionReveal3D>
 
-            {/* 5 Related Service Links (Pure URL Cards without Images) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            {/* 5 Related Service Links: Staggered Left-to-Right Grid with 3D Tilt */}
+            <StaggerGridLR
+              staggerDelay={0.1}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
+            >
               {otherServices.map((other) => (
-                <Link
-                  key={other.slug}
-                  href={`/services/${other.slug}/`}
-                  className="group bg-white rounded-2xl p-5 sm:p-6 border border-[#E2E8F0] shadow-xs hover:border-[#29B6EB] hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
-                >
-                  <div>
-                    <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#005675] bg-[#F3F7FB] px-2.5 py-1 rounded-md border border-[#E2E8F0] mb-3">
-                      {other.category}
-                    </span>
-                    <h3 className="text-base sm:text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug">
-                      {other.title}
-                    </h3>
-                    <p className="mt-2 text-xs sm:text-sm text-[#64748B] line-clamp-3 leading-relaxed">
-                      {other.shortDesc}
-                    </p>
-                  </div>
+                <CardRevealLR key={other.slug} className="h-full">
+                  <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                    <Link
+                      href={`/services/${other.slug}/`}
+                      className="group bg-white rounded-2xl p-5 sm:p-6 border border-[#E2E8F0] shadow-xs hover:border-[#29B6EB] hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full"
+                    >
+                      <div>
+                        <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#005675] bg-[#F3F7FB] px-2.5 py-1 rounded-md border border-[#E2E8F0] mb-3">
+                          {other.category}
+                        </span>
+                        <h3 className="text-base sm:text-lg font-bold text-[#075078] group-hover:text-[#174BA5] transition-colors leading-snug">
+                          {other.title}
+                        </h3>
+                        <p className="mt-2 text-xs sm:text-sm text-[#64748B] line-clamp-3 leading-relaxed">
+                          {other.shortDesc}
+                        </p>
+                      </div>
 
-                  <div className="mt-5 pt-4 border-t border-[#F1F5F9] flex items-center justify-between text-xs font-semibold text-[#005675] group-hover:text-[#29B6EB] transition-colors">
-                    <span>View Service Details</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
-                </Link>
+                      <div className="mt-5 pt-4 border-t border-[#F1F5F9] flex items-center justify-between text-xs font-semibold text-[#005675] group-hover:text-[#29B6EB] transition-colors">
+                        <span>View Service Details</span>
+                        <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      </div>
+                    </Link>
+                  </Card3DTilt>
+                </CardRevealLR>
               ))}
-            </div>
+            </StaggerGridLR>
           </div>
         </section>
       )}

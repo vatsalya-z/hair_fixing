@@ -1,16 +1,19 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SITE_INFO } from '@/data/siteData'
+import { HeroTextItem, HeroParallaxCard, Card3DTilt } from '@/components/MotionWrappers'
 
 interface HeroBannerProps {
-  title: string;
-  highlightText?: string;
-  subtitle: string;
-  breadcrumbCurrent: string;
-  showCta?: boolean;
-  imageSrc?: string;
-  imageAlt?: string;
+  title: string
+  highlightText?: string
+  subtitle: string
+  breadcrumbCurrent: string
+  showCta?: boolean
+  imageSrc?: string
+  imageAlt?: string
 }
 
 export default function HeroBanner({
@@ -41,54 +44,64 @@ export default function HeroBanner({
               <span className="text-[#29B6EB] font-semibold">{breadcrumbCurrent}</span>
             </nav>
 
-            {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-              {title}{' '}
-              {highlightText && (
-                <span className="text-[#29B6EB] drop-shadow-sm">{highlightText}</span>
-              )}
-            </h1>
+            {/* Heading with smooth staggered entrance */}
+            <HeroTextItem delay={0.05} yOffset={20}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                {title}{' '}
+                {highlightText && (
+                  <span className="text-[#29B6EB] drop-shadow-sm">{highlightText}</span>
+                )}
+              </h1>
+            </HeroTextItem>
 
             {/* Subtitle */}
             {subtitle && (
-              <p className="text-white/85 text-sm sm:text-base md:text-lg mb-6 max-w-2xl leading-relaxed">
-                {subtitle}
-              </p>
+              <HeroTextItem delay={0.2} yOffset={18}>
+                <p className="text-white/85 text-sm sm:text-base md:text-lg mb-6 max-w-2xl leading-relaxed">
+                  {subtitle}
+                </p>
+              </HeroTextItem>
             )}
 
             {/* Optional CTAs */}
             {showCta && (
-              <div className="flex flex-wrap items-center gap-3">
-                <Link
-                  href="/contact/"
-                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-6 py-3 rounded-lg shadow-md transition-all duration-200"
-                >
-                  Book Free Hair Analysis
-                </Link>
-                <a
-                  href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
-                  className="bg-transparent hover:bg-white/10 text-white font-semibold text-sm sm:text-base px-6 py-3 rounded-lg border border-white transition-all duration-200"
-                >
-                  Call {SITE_INFO.phone}
-                </a>
-              </div>
+              <HeroTextItem delay={0.35} yOffset={16}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <Link
+                    href="/contact/"
+                    className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-6 py-3 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                  >
+                    Book Free Hair Analysis
+                  </Link>
+                  <a
+                    href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
+                    className="bg-transparent hover:bg-white/10 text-white font-semibold text-sm sm:text-base px-6 py-3 rounded-lg border border-white hover:border-[#29B6EB] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                  >
+                    Call {SITE_INFO.phone}
+                  </a>
+                </div>
+              </HeroTextItem>
             )}
           </div>
 
-          {/* Optional Right Hero Image */}
+          {/* Optional Right Hero Image with 3D Tilt */}
           {imageSrc && (
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full max-w-md shadow-2xl border-2 border-white/20 bg-[#075078]">
-                <Image
-                  src={displayImage}
-                  alt={imageAlt || title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/50 via-transparent to-transparent pointer-events-none" />
-              </div>
+              <HeroParallaxCard className="w-full max-w-md">
+                <Card3DTilt maxTilt={6} depth={10}>
+                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full shadow-2xl border-2 border-white/20 bg-[#075078]">
+                    <Image
+                      src={displayImage}
+                      alt={imageAlt || title}
+                      fill
+                      className="object-cover transition-transform duration-700 hover:scale-105"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#075078]/50 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                </Card3DTilt>
+              </HeroParallaxCard>
             </div>
           )}
         </div>

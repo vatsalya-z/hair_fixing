@@ -4,7 +4,14 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa'
-import { FadeInUp, HoverLift3D } from '@/components/MotionWrappers'
+import {
+  FadeInUp,
+  HoverLift3D,
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+} from '@/components/MotionWrappers'
 import { SITE_INFO } from '@/data/siteData'
 
 const TIME_SLOTS = [
@@ -162,17 +169,19 @@ export default function ContactClient() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="bg-white py-14 px-4 sm:px-8 border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Consultation Process
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#075078] mt-2 mb-3">
-              What to Expect During Your Free 30-Minute Visit
-            </h2>
-            <div className="w-14 h-1 bg-[#29B6EB] mx-auto rounded-full" />
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Consultation Process
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#075078] mt-2 mb-3">
+                What to Expect During Your Free 30-Minute Visit
+              </h2>
+              <div className="w-14 h-1 bg-[#29B6EB] mx-auto rounded-full" />
+            </div>
+          </SectionReveal3D>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerGridLR staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 step: '01',
@@ -195,16 +204,21 @@ export default function ContactClient() {
                 desc: 'Take your personalized plan home with you. Absolutely no high-pressure sales tactics.',
               },
             ].map((item) => (
-              <div
-                key={item.step}
-                className="bg-[#F3F7FB] rounded-xl p-6 border border-[#E2E8F0] shadow-xs relative hover:border-[#29B6EB] transition-colors"
-              >
-                <span className="text-3xl font-black text-[#29B6EB]/30 block mb-2">{item.step}</span>
-                <h3 className="text-base font-bold text-[#075078] mb-1.5">{item.title}</h3>
-                <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">{item.desc}</p>
-              </div>
+              <CardRevealLR key={item.step} className="h-full">
+                <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                  <div
+                    className="bg-[#F3F7FB] rounded-xl p-6 border border-[#E2E8F0] shadow-xs hover:shadow-xl relative hover:border-[#29B6EB] transition-all duration-300 h-full flex flex-col justify-between"
+                  >
+                    <div>
+                      <span className="text-3xl font-black text-[#29B6EB]/30 block mb-2">{item.step}</span>
+                      <h3 className="text-base font-bold text-[#075078] mb-1.5">{item.title}</h3>
+                      <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                </Card3DTilt>
+              </CardRevealLR>
             ))}
-          </div>
+          </StaggerGridLR>
         </div>
       </section>
 
@@ -217,177 +231,183 @@ export default function ContactClient() {
             {/* Left Column: Direct Contact & Studio Location Cards */}
             <div className="lg:col-span-5 space-y-6">
               {/* Direct Channels Card */}
-              <div className="bg-white rounded-2xl p-7 border border-[#E2E8F0] shadow-sm space-y-5">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3 py-1 rounded-full border border-[#E2E8F0]">
-                    Direct Helpdesk
-                  </span>
-                  <h2 className="text-2xl font-bold text-[#075078] mt-2.5">
-                    Speak Directly With Our Stylists
-                  </h2>
-                  <p className="text-xs text-[#64748B] mt-1">
-                    Reach out for appointments, emergency servicing, or confidential photo evaluations.
-                  </p>
+              <Card3DTilt maxTilt={4} depth={6}>
+                <div className="bg-white rounded-2xl p-7 border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 space-y-5">
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3 py-1 rounded-full border border-[#E2E8F0]">
+                      Direct Helpdesk
+                    </span>
+                    <h2 className="text-2xl font-bold text-[#075078] mt-2.5">
+                      Speak Directly With Our Stylists
+                    </h2>
+                    <p className="text-xs text-[#64748B] mt-1">
+                      Reach out for appointments, emergency servicing, or confidential photo evaluations.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    {/* Phone Support */}
+                    <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
+                          Phone Call Support
+                        </h4>
+                        <a
+                          href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
+                          className="text-sm font-bold text-[#252B38] hover:text-[#005675] block mt-0.5"
+                        >
+                          {SITE_INFO.phone}
+                        </a>
+                        <span className="text-[11px] text-[#64748B]">Alt: {SITE_INFO.altPhone}</span>
+                      </div>
+                    </div>
+
+                    {/* WhatsApp Support */}
+                    <div className="flex items-start gap-3.5 p-3 rounded-xl bg-green-50/60 border border-green-200/60 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-sm">
+                        <FaWhatsapp className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
+                          WhatsApp Consultation Desk
+                        </h4>
+                        <a
+                          href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20consult.`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-sm font-bold text-[#1f2937] hover:text-[#25D366] block mt-0.5"
+                        >
+                          Chat: +91 98470 62707
+                        </a>
+                        <span className="text-[11px] text-[#059669]">
+                          Instant response • Photos kept 100% confidential
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Email Support */}
+                    <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
+                          Email Inquiries
+                        </h4>
+                        <a
+                          href={`mailto:${SITE_INFO.email}`}
+                          className="text-sm font-semibold text-[#252B38] hover:text-[#005675] block mt-0.5"
+                        >
+                          {SITE_INFO.email}
+                        </a>
+                        <span className="text-[11px] text-[#64748B]">Replies within 2 business hours</span>
+                      </div>
+                    </div>
+
+                    {/* Hours */}
+                    <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
+                          Studio Working Hours
+                        </h4>
+                        <p className="text-xs text-[#252B38] font-semibold mt-0.5">{SITE_INFO.timing}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <div className="space-y-4">
-                  {/* Phone Support */}
-                  <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
-                    <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
-                        Phone Call Support
-                      </h4>
-                      <a
-                        href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`}
-                        className="text-sm font-bold text-[#252B38] hover:text-[#005675] block mt-0.5"
-                      >
-                        {SITE_INFO.phone}
-                      </a>
-                      <span className="text-[11px] text-[#64748B]">Alt: {SITE_INFO.altPhone}</span>
-                    </div>
-                  </div>
-
-                  {/* WhatsApp Support */}
-                  <div className="flex items-start gap-3.5 p-3 rounded-xl bg-green-50/60 border border-green-200/60 transition-colors">
-                    <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-sm">
-                      <FaWhatsapp className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
-                        WhatsApp Consultation Desk
-                      </h4>
-                      <a
-                        href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%2C%20I%20would%20like%20to%20consult.`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm font-bold text-[#1f2937] hover:text-[#25D366] block mt-0.5"
-                      >
-                        Chat: +91 98470 62707
-                      </a>
-                      <span className="text-[11px] text-[#059669]">
-                        Instant response • Photos kept 100% confidential
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Email Support */}
-                  <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
-                    <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
-                        Email Inquiries
-                      </h4>
-                      <a
-                        href={`mailto:${SITE_INFO.email}`}
-                        className="text-sm font-semibold text-[#252B38] hover:text-[#005675] block mt-0.5"
-                      >
-                        {SITE_INFO.email}
-                      </a>
-                      <span className="text-[11px] text-[#64748B]">Replies within 2 business hours</span>
-                    </div>
-                  </div>
-
-                  {/* Hours */}
-                  <div className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-[#F3F7FB] transition-colors">
-                    <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-xs font-bold text-[#075078] uppercase tracking-wide">
-                        Studio Working Hours
-                      </h4>
-                      <p className="text-xs text-[#252B38] font-semibold mt-0.5">{SITE_INFO.timing}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </Card3DTilt>
 
               {/* Studio Locations Cards */}
               <div className="space-y-4">
                 {/* Branch 1 */}
-                <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-sm hover:border-[#29B6EB] transition-colors">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-lg bg-[#005675] text-white flex items-center justify-center text-xs font-bold">
-                        1
+                <Card3DTilt maxTilt={4} depth={6}>
+                  <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-sm hover:shadow-xl hover:border-[#29B6EB] transition-all duration-300">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-lg bg-[#005675] text-white flex items-center justify-center text-xs font-bold">
+                          1
+                        </div>
+                        <h3 className="text-base font-bold text-[#075078]">
+                          Thiruvananthapuram Flagship Studio
+                        </h3>
                       </div>
-                      <h3 className="text-base font-bold text-[#075078]">
-                        Thiruvananthapuram Flagship Studio
-                      </h3>
+                      <span className="bg-[#E0F2FE] text-[#0369A1] text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
+                        Palayam, Trivandrum
+                      </span>
                     </div>
-                    <span className="bg-[#E0F2FE] text-[#0369A1] text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
-                      Palayam, Trivandrum
-                    </span>
+                    <p className="text-xs text-[#64748B] leading-relaxed pl-9 mb-2">
+                      {SITE_INFO.address}
+                    </p>
+                    <p className="text-xs font-medium text-[#075078] pl-9 mb-3">
+                      Phone: <a href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.phone}</a> / <a href={`tel:${SITE_INFO.altPhone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.altPhone}</a>
+                    </p>
+                    <div className="pl-9 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#E2E8F0]">
+                      <span className="text-[11px] text-[#075078] font-semibold">
+                        Landmark: Opp. Jubilee Memorial Hospital (2nd Gate Mizpah)
+                      </span>
+                      <a
+                        href="https://maps.google.com/?q=PRA+48+Sunny+Meads+Lane+Palayam+Thiruvananthapuram+Kerala+695034"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
+                      >
+                        <span>Directions</span>
+                        <span className="text-[11px]">↗</span>
+                      </a>
+                    </div>
                   </div>
-                  <p className="text-xs text-[#64748B] leading-relaxed pl-9 mb-2">
-                    {SITE_INFO.address}
-                  </p>
-                  <p className="text-xs font-medium text-[#075078] pl-9 mb-3">
-                    Phone: <a href={`tel:${SITE_INFO.phone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.phone}</a> / <a href={`tel:${SITE_INFO.altPhone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.altPhone}</a>
-                  </p>
-                  <div className="pl-9 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#E2E8F0]">
-                    <span className="text-[11px] text-[#075078] font-semibold">
-                      Landmark: Opp. Jubilee Memorial Hospital (2nd Gate Mizpah)
-                    </span>
-                    <a
-                      href="https://maps.google.com/?q=PRA+48+Sunny+Meads+Lane+Palayam+Thiruvananthapuram+Kerala+695034"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
-                    >
-                      <span>Directions</span>
-                      <span className="text-[11px]">↗</span>
-                    </a>
-                  </div>
-                </div>
+                </Card3DTilt>
 
                 {/* Branch 2 */}
-                <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-sm hover:border-[#29B6EB] transition-colors">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-lg bg-[#005675] text-white flex items-center justify-center text-xs font-bold">
-                        2
+                <Card3DTilt maxTilt={4} depth={6}>
+                  <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-sm hover:shadow-xl hover:border-[#29B6EB] transition-all duration-300">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-lg bg-[#005675] text-white flex items-center justify-center text-xs font-bold">
+                          2
+                        </div>
+                        <h3 className="text-base font-bold text-[#075078]">
+                          Bengaluru Studio
+                        </h3>
                       </div>
-                      <h3 className="text-base font-bold text-[#075078]">
-                        Bengaluru Studio
-                      </h3>
+                      <span className="bg-[#E0F2FE] text-[#0369A1] text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
+                        Indiranagar, Bengaluru
+                      </span>
                     </div>
-                    <span className="bg-[#E0F2FE] text-[#0369A1] text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
-                      Indiranagar, Bengaluru
-                    </span>
+                    <p className="text-xs text-[#64748B] leading-relaxed pl-9 mb-2">
+                      {SITE_INFO.branch2}
+                    </p>
+                    <p className="text-xs font-medium text-[#075078] pl-9 mb-3">
+                      Phone: <a href={`tel:${SITE_INFO.altPhone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.altPhone}</a>
+                    </p>
+                    <div className="pl-9 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#E2E8F0]">
+                      <span className="text-[11px] text-[#075078] font-semibold">
+                        Landmark: Double Road, HAL 2nd Stage, Indiranagar
+                      </span>
+                      <a
+                        href="https://www.google.com/maps/place/Ozzone+Farrell+bangalore/@12.9660325,77.6380037,849m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae16a25d4a7c99:0xd411d97542f78f0b!8m2!3d12.9660325!4d77.6380037!16s%2Fg%2F1tfxf3nj"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
+                      >
+                        <span>Directions</span>
+                        <span className="text-[11px]">↗</span>
+                      </a>
+                    </div>
                   </div>
-                  <p className="text-xs text-[#64748B] leading-relaxed pl-9 mb-2">
-                    {SITE_INFO.branch2}
-                  </p>
-                  <p className="text-xs font-medium text-[#075078] pl-9 mb-3">
-                    Phone: <a href={`tel:${SITE_INFO.altPhone.replace(/\s+/g, '')}`} className="hover:underline">{SITE_INFO.altPhone}</a>
-                  </p>
-                  <div className="pl-9 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#E2E8F0]">
-                    <span className="text-[11px] text-[#075078] font-semibold">
-                      Landmark: Double Road, HAL 2nd Stage, Indiranagar
-                    </span>
-                    <a
-                      href="https://www.google.com/maps/place/Ozzone+Farrell+bangalore/@12.9660325,77.6380037,849m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae16a25d4a7c99:0xd411d97542f78f0b!8m2!3d12.9660325!4d77.6380037!16s%2Fg%2F1tfxf3nj"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-xs font-bold text-[#29B6EB] hover:text-[#005675] flex items-center gap-1"
-                    >
-                      <span>Directions</span>
-                      <span className="text-[11px]">↗</span>
-                    </a>
-                  </div>
-                </div>
+                </Card3DTilt>
               </div>
 
               {/* Clinic Privacy Guarantee Card */}
@@ -395,7 +415,8 @@ export default function ContactClient() {
 
             {/* Right Column: High-Conversion Appointment Form */}
             <div id="booking-form" className="lg:col-span-7 scroll-mt-28">
-              <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#E2E8F0] shadow-xl relative overflow-hidden">
+              <SectionReveal3D yOffset={25}>
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#E2E8F0] shadow-xl relative overflow-hidden">
                 {/* Form header */}
                 <div className="mb-8">
                   <div className="flex items-center justify-between mb-2">
@@ -678,13 +699,15 @@ export default function ContactClient() {
                   </form>
                 )}
               </div>
-            </div>
+            </SectionReveal3D>
           </div>
+        </div>
 
-          {/* ═══════════════════════════════════════════════════════════
-              SECTION 4 — INTERACTIVE GOOGLE MAPS (TRIVANDRUM & BANGALORE)
-          ═══════════════════════════════════════════════════════════ */}
-          <div className="mt-16 space-y-8">
+        {/* ═══════════════════════════════════════════════════════════
+            SECTION 4 — INTERACTIVE GOOGLE MAPS (TRIVANDRUM & BANGALORE)
+        ═══════════════════════════════════════════════════════════ */}
+        <div className="mt-16 space-y-8">
+          <SectionReveal3D yOffset={25}>
             <div className="text-center max-w-2xl mx-auto mb-6">
               <span className="text-xs font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
                 Studio Navigation &amp; Maps
@@ -696,97 +719,106 @@ export default function ContactClient() {
                 Private suites, dedicated client parking, and discrete consultation facilities at both locations.
               </p>
             </div>
+          </SectionReveal3D>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Trivandrum Studio Map */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm flex flex-col justify-between">
-                <div className="mb-4">
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full">
-                      <span>Flagship Trivandrum Studio</span>
-                    </span>
-                    <a
-                      href="https://maps.google.com/maps?q=Palayam+Thiruvananthapuram"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-xs font-bold text-[#005675] hover:text-[#29B6EB] flex items-center gap-1"
-                    >
-                      <span>Directions</span>
-                      <span className="text-[11px]">↗</span>
-                    </a>
+          <StaggerGridLR staggerDelay={0.15} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Trivandrum Studio Map */}
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={4} depth={6} className="h-full">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <span className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full">
+                        <span>Flagship Trivandrum Studio</span>
+                      </span>
+                      <a
+                        href="https://maps.google.com/maps?q=Palayam+Thiruvananthapuram"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs font-bold text-[#005675] hover:text-[#29B6EB] flex items-center gap-1"
+                      >
+                        <span>Directions</span>
+                        <span className="text-[11px]">↗</span>
+                      </a>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-[#075078]">
+                      ozzone Hair - Palayam, Thiruvananthapuram
+                    </h3>
+                    <p className="text-xs text-[#64748B] mt-1 leading-relaxed">
+                      TC 27/3103, PRA 48, Ground Floor, Opp. Jubilee Memorial Hospital (2nd Gate Mizpah), Sunny Meads Lane, Palayam, Trivandrum, Kerala 695034
+                    </p>
+                    <div className="mt-2 text-xs font-semibold text-[#005675]">
+                      <a href="tel:+917736077110" className="hover:underline">Phone: +91 77360 77110</a>
+                    </div>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-[#075078]">
-                    ozzone Hair - Palayam, Thiruvananthapuram
-                  </h3>
-                  <p className="text-xs text-[#64748B] mt-1 leading-relaxed">
-                    TC 27/3103, PRA 48, Ground Floor, Opp. Jubilee Memorial Hospital (2nd Gate Mizpah), Sunny Meads Lane, Palayam, Trivandrum, Kerala 695034
-                  </p>
-                  <div className="mt-2 text-xs font-semibold text-[#005675]">
-                    <a href="tel:+917736077110" className="hover:underline">Phone: +91 77360 77110</a>
-                  </div>
-                </div>
 
-                <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-inner">
-                  <iframe
-                    src="https://maps.google.com/maps?q=Palayam+Thiruvananthapuram&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={false}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="ozzone Hair Trivandrum Studio Location Map"
-                    className="w-full h-full"
-                  />
-                </div>
-              </div>
-
-              {/* Bangalore Studio Map */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm flex flex-col justify-between">
-                <div className="mb-4">
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full">
-                      <span>Bangalore Studio</span>
-                    </span>
-                    <a
-                      href={SITE_INFO.mapUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-xs font-bold text-[#005675] hover:text-[#29B6EB] flex items-center gap-1"
-                    >
-                      <span>Directions</span>
-                      <span className="text-[11px]">↗</span>
-                    </a>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-[#075078]">
-                    ozzone Farrell - Indiranagar, Bengaluru
-                  </h3>
-                  <p className="text-xs text-[#64748B] mt-1 leading-relaxed">
-                    Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008
-                  </p>
-                  <div className="mt-2 text-xs font-semibold text-[#005675]">
-                    <a href="tel:+919847062707" className="hover:underline">Phone: +91 98470 62707</a>
+                  <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-inner">
+                    <iframe
+                      src="https://maps.google.com/maps?q=Palayam+Thiruvananthapuram&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="ozzone Hair Trivandrum Studio Location Map"
+                      className="w-full h-full"
+                    />
                   </div>
                 </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
-                <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-inner">
-                  <iframe
-                    src={SITE_INFO.mapEmbedUrl}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={false}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="ozzone Farrell Bangalore Location Map"
-                    className="w-full h-full"
-                  />
+            {/* Bangalore Studio Map */}
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={4} depth={6} className="h-full">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <span className="inline-flex items-center gap-1.5 bg-[#EBF5FB] text-[#005675] font-bold text-xs px-3 py-1 rounded-full">
+                        <span>Bangalore Studio</span>
+                      </span>
+                      <a
+                        href={SITE_INFO.mapUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs font-bold text-[#005675] hover:text-[#29B6EB] flex items-center gap-1"
+                      >
+                        <span>Directions</span>
+                        <span className="text-[11px]">↗</span>
+                      </a>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-[#075078]">
+                      ozzone Farrell - Indiranagar, Bengaluru
+                    </h3>
+                    <p className="text-xs text-[#64748B] mt-1 leading-relaxed">
+                      Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008
+                    </p>
+                    <div className="mt-2 text-xs font-semibold text-[#005675]">
+                      <a href="tel:+919847062707" className="hover:underline">Phone: +91 98470 62707</a>
+                    </div>
+                  </div>
+
+                  <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-inner">
+                    <iframe
+                      src={SITE_INFO.mapEmbedUrl}
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="ozzone Farrell Bangalore Location Map"
+                      className="w-full h-full"
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </Card3DTilt>
+            </CardRevealLR>
+          </StaggerGridLR>
         </div>
-      </section>
-    </div>
-  )
+      </div>
+    </section>
+  </div>
+)
 }

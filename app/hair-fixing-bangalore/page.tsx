@@ -4,6 +4,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaWhatsapp } from 'react-icons/fa'
 import { SITE_INFO } from '@/data/siteData'
+import {
+  HoverLift3D,
+  SectionReveal3D,
+  StaggerGridLR,
+  CardRevealLR,
+  Card3DTilt,
+  HeroTextItem,
+} from '@/components/MotionWrappers'
 
 export const metadata: Metadata = {
   title: 'Hair Fixing in Bangalore | Non-Surgical Hair Replacement Indiranagar',
@@ -166,9 +174,6 @@ export default function HairFixingBangalorePage() {
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════════════
-          HERO SECTION
-      ═══════════════════════════════════════════════════════════ */}
       <section className="hero-gradient-bg py-14 sm:py-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#29B6EB]/15 rounded-full blur-3xl" />
@@ -176,302 +181,360 @@ export default function HairFixingBangalorePage() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
-            Indiranagar Studio • Bengaluru
-          </span>
+          <HeroTextItem delay={0.05}>
+            <span className="inline-flex items-center gap-1.5 bg-[#29B6EB]/20 text-[#29B6EB] text-xs font-semibold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4 border border-[#29B6EB]/30 backdrop-blur-xs">
+              Indiranagar Studio • Bengaluru
+            </span>
+          </HeroTextItem>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
-            Hair Fixing in Bangalore - Non-Surgical Hair Replacement Studio
-          </h1>
+          <HeroTextItem delay={0.15}>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
+              Hair Fixing in Bangalore - Non-Surgical Hair Replacement Studio
+            </h1>
+          </HeroTextItem>
 
-          <p className="text-white/90 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
-            Experience undetectable, premium hair fixing in Bangalore at ozzone Farrell. We specialize in custom 100% natural human hair patches, medical-grade hair bonding, and discrete scalp styling in Indiranagar.
-          </p>
+          <HeroTextItem delay={0.25}>
+            <p className="text-white/90 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
+              Experience undetectable, premium hair fixing in Bangalore at ozzone Farrell. We specialize in custom 100% natural human hair patches, medical-grade hair bonding, and discrete scalp styling in Indiranagar.
+            </p>
+          </HeroTextItem>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact/"
-              className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto"
-            >
-              <span>Book Free Scalp Consultation</span>
-              <span>→</span>
-            </Link>
-            <a
-              href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Bangalore%2C%20I%20would%20like%20to%20know%20more%20about%20hair%20fixing.`}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto"
-            >
-              <FaWhatsapp className="w-5 h-5 text-white" />
-              <span>WhatsApp Bangalore Studio</span>
-            </a>
-          </div>
+          <HeroTextItem delay={0.35}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <HoverLift3D>
+                <Link
+                  href="/contact/"
+                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto"
+                >
+                  <span>Book Free Scalp Consultation</span>
+                  <span>→</span>
+                </Link>
+              </HoverLift3D>
+              <HoverLift3D>
+                <a
+                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Bangalore%2C%20I%20would%20like%20to%20know%20more%20about%20hair%20fixing.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto"
+                >
+                  <FaWhatsapp className="w-5 h-5 text-white" />
+                  <span>WhatsApp Bangalore Studio</span>
+                </a>
+              </HoverLift3D>
+            </div>
+          </HeroTextItem>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 2 — WHY BANGALORE PROFESSIONALS CHOOSE OZZONE
-      ═══════════════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 bg-white border-b border-[#E2E8F0]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Confidence Restored
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
-              Why IT Professionals &amp; Youth in Bangalore Choose Hair Fixing
-            </h2>
-            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
-            <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
-              Fast-paced lifestyles, tech stress, and early male pattern baldness affect thousands of young adults across Bengaluru. Non-surgical hair fixing offers an instant, painless solution without taking medical leave or waiting months for hair growth.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
-                01
-              </div>
-              <h3 className="text-lg font-bold text-[#075078] mb-2">
-                Instant 90-Minute Results
-              </h3>
-              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
-                Walk into our Indiranagar studio and walk out the same day with a full head of thick, buoyant hair styled to your exact preference.
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Confidence Restored
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+                Why IT Professionals &amp; Youth in Bangalore Choose Hair Fixing
+              </h2>
+              <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+              <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
+                Fast-paced lifestyles, tech stress, and early male pattern baldness affect thousands of young adults across Bengaluru. Non-surgical hair fixing offers an instant, painless solution without taking medical leave or waiting months for hair growth.
               </p>
             </div>
+          </SectionReveal3D>
 
-            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
-                02
-              </div>
-              <h3 className="text-lg font-bold text-[#075078] mb-2">
-                Zero Medical Risks
-              </h3>
-              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
-                Completely non-invasive with zero incisions, scars, or systemic medications. Reversible, safe, and dermatologically approved.
-              </p>
-            </div>
+          <StaggerGridLR staggerDelay={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                      01
+                    </div>
+                    <h3 className="text-lg font-bold text-[#075078] mb-2">
+                      Instant 90-Minute Results
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                      Walk into our Indiranagar studio and walk out the same day with a full head of thick, buoyant hair styled to your exact preference.
+                    </p>
+                  </div>
+                </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
-            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] transition-all">
-              <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
-                03
-              </div>
-              <h3 className="text-lg font-bold text-[#075078] mb-2">
-                Undetectable Natural Hairline
-              </h3>
-              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
-                Hand-tied single knotting on French and Swiss lace bases mirrors natural root emergence, even under bright office and sunlight.
-              </p>
-            </div>
-          </div>
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                      02
+                    </div>
+                    <h3 className="text-lg font-bold text-[#075078] mb-2">
+                      Zero Medical Risks
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                      Completely non-invasive with zero incisions, scars, or systemic medications. Reversible, safe, and dermatologically approved.
+                    </p>
+                  </div>
+                </div>
+              </Card3DTilt>
+            </CardRevealLR>
+
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={6} depth={10} className="h-full">
+                <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 sm:p-7 hover:border-[#29B6EB] hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-[#005675] text-[#29B6EB] font-bold text-sm flex items-center justify-center mb-4 shadow-sm">
+                      03
+                    </div>
+                    <h3 className="text-lg font-bold text-[#075078] mb-2">
+                      Undetectable Natural Hairline
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                      Hand-tied single knotting on French and Swiss lace bases mirrors natural root emergence, even under bright office and sunlight.
+                    </p>
+                  </div>
+                </div>
+              </Card3DTilt>
+            </CardRevealLR>
+          </StaggerGridLR>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 3 — SERVICES AT BANGALORE STUDIO
-      ═══════════════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 bg-[#F3F7FB] border-b border-[#E2E8F0]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Our Bangalore Offerings
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
-              Hair Fixing &amp; Patch Services in Indiranagar
-            </h2>
-            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm">
-              <h3 className="text-xl font-bold text-[#075078] mb-2">
-                Custom Hair Patching System
-              </h3>
-              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
-                Custom-molded crown and hairline patches constructed with premium human hair. Styled to complement modern executive cuts and fades for working professionals.
-              </p>
-              <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
-                <span>Explore Hair Patch Systems</span>
-                <span>→</span>
-              </Link>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Our Bangalore Offerings
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+                Hair Fixing &amp; Patch Services in Indiranagar
+              </h2>
+              <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
             </div>
+          </SectionReveal3D>
 
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm">
-              <h3 className="text-xl font-bold text-[#075078] mb-2">
-                Dermatological Hair Bonding
-              </h3>
-              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
-                Waterproof and heat-resistant medical bonding suited for Bangalore&apos;s active lifestyle. Withstands daily gym workouts, pool sessions, and weekend getaways.
-              </p>
-              <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
-                <span>Explore Hair Bonding</span>
-                <span>→</span>
-              </Link>
-            </div>
+          <StaggerGridLR staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#075078] mb-2">
+                      Custom Hair Patching System
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
+                      Custom-molded crown and hairline patches constructed with premium human hair. Styled to complement modern executive cuts and fades for working professionals.
+                    </p>
+                  </div>
+                  <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1 group">
+                    <span>Explore Hair Patch Systems</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm">
-              <h3 className="text-xl font-bold text-[#075078] mb-2">
-                Non-Surgical Hair Weaving
-              </h3>
-              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
-                Micro-ring attachment method designed for clients preferring glue-free fixation. Interlocks securely with remaining roots without chemical adhesives.
-              </p>
-              <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
-                <span>Explore Hair Weaving</span>
-                <span>→</span>
-              </Link>
-            </div>
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#075078] mb-2">
+                      Dermatological Hair Bonding
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
+                      Waterproof and heat-resistant medical bonding suited for Bangalore&apos;s active lifestyle. Withstands daily gym workouts, pool sessions, and weekend getaways.
+                    </p>
+                  </div>
+                  <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1 group">
+                    <span>Explore Hair Bonding</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                </div>
+              </Card3DTilt>
+            </CardRevealLR>
 
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm">
-              <h3 className="text-xl font-bold text-[#075078] mb-2">
-                Routine Servicing &amp; Scalp Spa
-              </h3>
-              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
-                Comprehensive 45-minute monthly grooming: adhesive detox, conditioning hair mask, natural hair trim, and refreshed re-bonding.
-              </p>
-              <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1">
-                <span>Explore Servicing &amp; Spa</span>
-                <span>→</span>
-              </Link>
-            </div>
-          </div>
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#075078] mb-2">
+                      Non-Surgical Hair Weaving
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
+                      Micro-ring attachment method designed for clients preferring glue-free fixation. Interlocks securely with remaining roots without chemical adhesives.
+                    </p>
+                  </div>
+                  <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1 group">
+                    <span>Explore Hair Weaving</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                </div>
+              </Card3DTilt>
+            </CardRevealLR>
+
+            <CardRevealLR className="h-full">
+              <Card3DTilt maxTilt={5} depth={8} className="h-full">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#075078] mb-2">
+                      Routine Servicing &amp; Scalp Spa
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
+                      Comprehensive 45-minute monthly grooming: adhesive detox, conditioning hair mask, natural hair trim, and refreshed re-bonding.
+                    </p>
+                  </div>
+                  <Link href="/services/" className="text-xs sm:text-sm font-bold text-[#005675] hover:text-[#29B6EB] inline-flex items-center gap-1 group">
+                    <span>Explore Servicing &amp; Spa</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                </div>
+              </Card3DTilt>
+            </CardRevealLR>
+          </StaggerGridLR>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 4 — LOCAL STUDIO LOCATION & MAP
-      ═══════════════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 bg-white border-b border-[#E2E8F0]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-                Bangalore Studio Location
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#075078] mt-3 mb-4">
-                Visit Ozzone Farrell Studio in Indiranagar, Bengaluru
-              </h2>
-              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
-                Centrally positioned in HAL 2nd Stage, Indiranagar, with quick access from Koramangala, Domlur, Whitefield, MG Road, and Marathahalli.
-              </p>
+          <SectionReveal3D yOffset={30}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-[#F3F7FB] px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                  Bangalore Studio Location
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#075078] mt-3 mb-4">
+                  Visit Ozzone Farrell Studio in Indiranagar, Bengaluru
+                </h2>
+                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-4">
+                  Centrally positioned in HAL 2nd Stage, Indiranagar, with quick access from Koramangala, Domlur, Whitefield, MG Road, and Marathahalli.
+                </p>
 
-              <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-5 mb-5 space-y-2 text-xs sm:text-sm">
-                <p className="font-bold text-[#075078]">
-                  Address:
-                </p>
-                <p className="text-[#475569]">
-                  Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008
-                </p>
-                <div className="pt-2 text-[#005675] font-semibold space-y-1">
-                  <p>
-                    <a href="tel:+919847062707" className="hover:underline">
-                      📞 Phone: +91 98470 62707
+                <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-5 mb-5 space-y-2 text-xs sm:text-sm">
+                  <p className="font-bold text-[#075078]">
+                    Address:
+                  </p>
+                  <p className="text-[#475569]">
+                    Double Road, #3698, 9th Cross Road, 13th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008
+                  </p>
+                  <div className="pt-2 text-[#005675] font-semibold space-y-1">
+                    <p>
+                      <a href="tel:+919847062707" className="hover:underline">
+                        📞 Phone: +91 98470 62707
+                      </a>
+                    </p>
+                    <p className="text-[#64748B]">
+                      🕒 Timing: Mon - Sat: 9:00 AM - 7:30 PM | Sunday: By Appointment
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <HoverLift3D>
+                    <a
+                      href={SITE_INFO.mapUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-primary text-xs sm:text-sm inline-flex items-center gap-1"
+                    >
+                      <span>Open in Google Maps App</span>
+                      <span className="text-[11px]">↗</span>
                     </a>
-                  </p>
-                  <p className="text-[#64748B]">
-                    🕒 Timing: Mon - Sat: 9:00 AM - 7:30 PM | Sunday: By Appointment
-                  </p>
+                  </HoverLift3D>
+                  <HoverLift3D>
+                    <Link href="/contact/" className="btn-secondary-light text-xs sm:text-sm inline-block">
+                      <span>Contact Page</span>
+                    </Link>
+                  </HoverLift3D>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={SITE_INFO.mapUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-primary text-xs sm:text-sm"
-                >
-                  <span>Open in Google Maps App</span>
-                  <span className="text-[11px]">↗</span>
-                </a>
-                <Link href="/contact/" className="btn-secondary-light text-xs sm:text-sm">
-                  <span>Contact Page</span>
-                </Link>
+              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-sm">
+                <iframe
+                  src={SITE_INFO.mapEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="ozzone Farrell Bangalore Studio Map"
+                  className="w-full h-full"
+                />
               </div>
             </div>
-
-            <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-sm">
-              <iframe
-                src={SITE_INFO.mapEmbedUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="ozzone Farrell Bangalore Studio Map"
-                className="w-full h-full"
-              />
-            </div>
-          </div>
+          </SectionReveal3D>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 5 — LOCAL FAQ
-      ═══════════════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 bg-[#F8FAFC] border-b border-[#E2E8F0]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-3.5 py-1 rounded-full border border-[#E2E8F0]">
-              Bangalore FAQ
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
-              Frequently Asked Questions - Hair Fixing in Bangalore
-            </h2>
-            <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
-          </div>
+          <SectionReveal3D yOffset={25}>
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#005675] bg-white px-3.5 py-1 rounded-full border border-[#E2E8F0]">
+                Bangalore FAQ
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#075078] tracking-tight mt-3 mb-3">
+                Frequently Asked Questions - Hair Fixing in Bangalore
+              </h2>
+              <div className="w-16 h-1 bg-[#29B6EB] mx-auto rounded-full mb-4" />
+            </div>
+          </SectionReveal3D>
 
-          <div className="space-y-4">
+          <StaggerGridLR staggerDelay={0.08} className="space-y-4">
             {BANGALORE_FAQS.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white border border-[#E2E8F0] rounded-2xl p-6 hover:border-[#29B6EB] transition-colors shadow-xs"
-              >
-                <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2 flex items-start gap-2.5">
-                  <span className="w-6 h-6 rounded-full bg-[#005675] text-[#29B6EB] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
-                    Q
-                  </span>
-                  <span>{faq.question}</span>
-                </h3>
-                <p className="text-xs sm:text-sm sm:leading-relaxed text-[#475569] pl-8.5">
-                  {faq.answer}
-                </p>
-              </div>
+              <CardRevealLR key={index}>
+                <div
+                  className="bg-white border border-[#E2E8F0] rounded-2xl p-6 hover:border-[#29B6EB] hover:shadow-md transition-all shadow-xs"
+                >
+                  <h3 className="text-base sm:text-lg font-bold text-[#075078] mb-2 flex items-start gap-2.5">
+                    <span className="w-6 h-6 rounded-full bg-[#005675] text-[#29B6EB] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                      Q
+                    </span>
+                    <span>{faq.question}</span>
+                  </h3>
+                  <p className="text-xs sm:text-sm sm:leading-relaxed text-[#475569] pl-8.5">
+                    {faq.answer}
+                  </p>
+                </div>
+              </CardRevealLR>
             ))}
-          </div>
+          </StaggerGridLR>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 6 — CTA
-      ═══════════════════════════════════════════════════════════ */}
       <section className="hero-gradient-bg py-14 sm:py-20 text-white text-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4">
-            Transform Your Hair at ozzone Farrell Bangalore Today
-          </h2>
-          <p className="text-white/90 text-sm sm:text-base max-w-2xl mx-auto mb-8">
-            Book your free, private scalp consultation in Indiranagar. Our certified specialists will guide you through custom hair systems with zero pressure.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link
-              href="/contact/"
-              className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all"
-            >
-              Book Free Consultation
-            </Link>
-            <a
-              href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Bangalore%2C%20I%20would%20like%20to%20book%20a%20consultation.`}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all flex items-center gap-2"
-            >
-              <FaWhatsapp className="w-5 h-5 text-white" />
-              <span>WhatsApp Bangalore Studio</span>
-            </a>
+        <SectionReveal3D yOffset={30}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4">
+              Transform Your Hair at ozzone Farrell Bangalore Today
+            </h2>
+            <p className="text-white/90 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+              Book your free, private scalp consultation in Indiranagar. Our certified specialists will guide you through custom hair systems with zero pressure.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <HoverLift3D>
+                <Link
+                  href="/contact/"
+                  className="bg-[#29B6EB] hover:bg-[#1fa0d4] text-[#075078] hover:text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all inline-block"
+                >
+                  Book Free Consultation
+                </Link>
+              </HoverLift3D>
+              <HoverLift3D>
+                <a
+                  href={`https://wa.me/${SITE_INFO.whatsapp}?text=Hi%20ozzone%20Hair%20Bangalore%2C%20I%20would%20like%20to%20book%20a%20consultation.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+                >
+                  <FaWhatsapp className="w-5 h-5 text-white" />
+                  <span>WhatsApp Bangalore Studio</span>
+                </a>
+              </HoverLift3D>
+            </div>
           </div>
-        </div>
+        </SectionReveal3D>
       </section>
     </div>
   )
