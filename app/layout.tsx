@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     'Best Hair Fixing Centre in Trivandrum',
     'Non Surgical Hair Replacement in Kerala',
     'Hair Patch for Men in Kerala',
-    'Men\'s Hair System in Trivandrum',
+    "Men's Hair System in Trivandrum",
     'Hair Bonding Statue Junction',
     'Hair Weaving Pattom',
     'Hair Fixing Products in Kerala',
@@ -170,27 +171,15 @@ const globalSchema = {
         },
       ],
       areaServed: [
-        {
-          '@type': 'City',
-          name: 'Thiruvananthapuram',
-        },
-        {
-          '@type': 'City',
-          name: 'Bengaluru',
-        },
-        {
-          '@type': 'AdministrativeArea',
-          name: 'Kerala',
-        },
-        {
-          '@type': 'AdministrativeArea',
-          name: 'Karnataka',
-        },
+        { '@type': 'City', name: 'Thiruvananthapuram' },
+        { '@type': 'City', name: 'Bengaluru' },
+        { '@type': 'AdministrativeArea', name: 'Kerala' },
+        { '@type': 'AdministrativeArea', name: 'Karnataka' },
       ],
       sameAs: [
-        'https://www.facebook.com/ozzonehair', // TODO: Replace with official Facebook profile URL
-        'https://www.instagram.com/ozzonehair', // TODO: Replace with official Instagram profile URL
-        'https://www.youtube.com/@ozzonehair', // TODO: Replace with official YouTube channel URL
+        'https://www.facebook.com/ozzonehair',
+        'https://www.instagram.com/ozzonehair',
+        'https://www.youtube.com/@ozzonehair',
       ],
     },
   ],
@@ -207,24 +196,52 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
           rel="stylesheet"
         />
-        {/* Google Analytics 4 Placeholder (TODO: Insert your GA4 measurement ID e.g. G-XXXXXXXXXX) */}
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=TODO_GA4_MEASUREMENT_ID"></script> */}
+
+        {/* Google Tag Manager */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-TMZC3D5M"
+        />
+
+        {/* Google Analytics dataLayer initialization */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+            `,
+          }}
+        />
+
+        {/* Global JSON-LD Schema */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(globalSchema),
+          }}
         />
       </head>
+
       <body className="min-h-screen flex flex-col font-sans bg-white text-[#252B38] antialiased">
         <Header />
+
         <main className="flex-1 pt-16 pb-20 lg:pb-0">
           {children}
         </main>
+
         <Footer />
         <FloatingContact />
         <MobileBottomBar />
